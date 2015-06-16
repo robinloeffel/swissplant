@@ -1,3 +1,25 @@
+@-webkit-keyframes up-and-down {
+    from {
+        -webkit-transform: translateY(5px);
+        transform: translateY(5px);
+    }
+    to {
+        -webkit-transform: translateY(-5px);
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes up-and-down {
+    from {
+        -webkit-transform: translateY(5px);
+        transform: translateY(5px);
+    }
+    to {
+        -webkit-transform: translateY(-5px);
+        transform: translateY(-5px);
+    }
+}
+
 html {
     font-family: "Roboto", sans-serif;
     font-size: 21px;
@@ -45,7 +67,7 @@ main section {
 
 main section:not(:first-child),
 footer {
-    padding: 500px 0;
+    padding: 300px 0;
 }
 
 #landing {
@@ -56,6 +78,32 @@ footer {
     background-repeat: no-repeat;
     background-position: center;
     color: rgb(255, 255, 255);
+}
+
+#landing img {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-bottom: 0.75em;
+}
+
+#landing i {
+    -webkit-animation: up-and-down ease-in-out infinite;
+    animation: up-and-down ease-in-out infinite;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+    cursor: pointer;
+    padding: 20px 30px;
+}
+
+#landing i:hover {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
 }
 
 #sortiment {
