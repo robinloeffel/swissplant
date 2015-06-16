@@ -1,5 +1,15 @@
-# https://git-scm.com/docs/gitignore
-# https://help.github.com/articles/ignoring-files
-# Example .gitignore files: https://github.com/github/gitignore
+# windows
+Thumbs.db
+Desktop.ini
+
+# os x
+.DS_Store
+
+# ftp sync plugin
+.ftpsync_settings
+
+# node/npm
 /bower_components/
 /node_modules/
+
+# misc
