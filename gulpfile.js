@@ -14,7 +14,7 @@ gulp.task('default', function () {
 
 gulp.task('images', function () {
     gulp.src(paths.img + '**/*')
-        .pipe(changed(paths.dist + 'img/'))
+        .pipe(changed(paths.img))
         .pipe(imagemin())
-        .pipe(gulp.dest(paths.dist + 'img/'));
+        .pipe(gulp.dest(paths.img));
 });
