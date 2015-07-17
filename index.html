@@ -18,28 +18,40 @@
     <main>
         <section id="landing">
             <div class="v-center">
-                <img src="img/logo-white.svg" class="logo">
+                <div class="wrapper">
+                    <h1>
+                        Gemüsegärtner pflanzen Schweizer Pflanzen von SwissPlant
+                    </h1>
+                    <img src="img/logo-white.svg" class="hidden">
+                </div>
             </div>
         </section>
         <nav>
             <ul class="clearfix">
                 <li>
-                    <a href="#" data-scroll-target="sortiment">Sortiment</a>
+                    <a href="#start" data-scroll-target="landing">Start</a>
                 </li>
                 <li>
-                    <a href="#" data-scroll-target="ueber-uns">Über uns</a>
+                    <a href="#ueber-uns" data-scroll-target="ueber-uns">Über uns</a>
                 </li>
                 <li>
-                    <a href="#" data-scroll-target="partner">Partner</a>
+                    <a href="#sortiment" data-scroll-target="sortiment">Sortiment</a>
                 </li>
                 <li>
-                    <a href="#" data-scroll-target="kontakt">Kontakt</a>
+                    <a href="#partner" data-scroll-target="partner">Partner</a>
+                </li>
+                <li>
+                    <a href="#kontakt" data-scroll-target="kontakt">Kontakt</a>
                 </li>
             </ul>
         </nav>
-        <section id="sortiment">
-        </section>
         <section id="ueber-uns">
+            <div class="wrapper">
+                <h2>Herzlich willkommen bei der</h2>
+                <h1>SwissPlant GmbH in Müntschemier</h1>
+            </div>
+        </section>
+        <section id="sortiment">
         </section>
         <section id="partner">
         </section>
@@ -47,10 +59,22 @@
         </section>
     </main>
     <footer>
+        <div class="wrapper">
+            <small>
+                <a href="#start" data-scroll-target="landing">Start</a>
+                &mdash;
+                <a href="#ueber-uns" data-scroll-target="ueber-uns">Über uns</a>
+                &mdash;
+                <a href="#sortiment" data-scroll-target="sortiment">Sortiment</a>
+                &mdash;
+                <a href="#partner" data-scroll-target="partner">Partner</a>
+                &mdash;
+                <a href="#kontakt" data-scroll-target="kontakt">Kontakt</a>
+            </small>
+        </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="js/scroll.js"></script>
-    <script src="js/nav.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
