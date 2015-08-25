@@ -16,20 +16,12 @@
 
 <body>
     <main>
-        <section id="landing">
-            <div class="v-center">
-                <div class="wrapper">
-                    <h1>
-                        Gemüsegärtner pflanzen Schweizer Pflanzen von SwissPlant
-                    </h1>
-                    <img src="img/logo-white.svg" class="hidden">
-                </div>
-            </div>
-        </section>
         <nav>
             <ul class="clearfix">
                 <li>
-                    <a href="#start" data-scroll-target="landing">Start</a>
+                    <a href="#start" data-scroll-target="landing">
+                        <img src="img/logo.svg" data-scroll-target="landing">
+                    </a>
                 </li>
                 <li>
                     <a href="#ueber-uns" data-scroll-target="ueber-uns">Über uns</a>
@@ -45,36 +37,128 @@
                 </li>
             </ul>
         </nav>
-        <section id="ueber-uns">
-            <div class="wrapper">
-                <h2>Herzlich willkommen bei der</h2>
-                <h1>SwissPlant GmbH in Müntschemier</h1>
+        <section id="landing">
+            <div class="cover-parent">
+                <div class="cover-parent-background one top"></div>
+                <div class="cover-parent-background two"></div>
+                <div class="cover-parent-background three"></div>
+            </div>
+            <div class="v-center">
+                <div class="wrapper">
+                    <img src="img/logo-white.svg" class="logo">
+                </div>
             </div>
         </section>
-        <section id="sortiment">
+        <section id="ueber-uns" class="smooth clearfix">
+            <div class="half-full float-left about-image">
+            </div>
+            <div class="half-full float-right">
+                <div class="v-center">
+                    <div class="wrapper copytext">
+                        <h1>Wer wir sind</h1>
+                        <p>
+                            Lo-fi Intelligentsia roof party mixtape you probably haven't heard of them kitsch. PBR hashtag flexitarian, retro you probably haven't heard of them street art trust fund fingerstache sriracha cray stumptown.
+                        </p>
+                        <p>
+                            <a class="more-button" href="ueber-uns.html">Mehr erfahren</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </section>
-        <section id="partner">
+        <section id="sortiment" class="smooth clearfix">
+            <div class="half-full float-left">
+                <div class="v-center">
+                    <div class="wrapper copytext">
+                        <h1>Was wir Ihnen bieten</h1>
+                        <p>
+                            Forage trust fund whatever Bushwick Truffaut roof party. Locavore four loko farm-to-table cray, raw denim High Life blog. Gastropub art party Banksy synth, chillwave High Life chia.
+                        </p>
+                        <p>
+                            <a class="more-button" href="sortiment.html">Mehr erfahren</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="half-full float-right portfolio-image">
+            </div>
         </section>
-        <section id="kontakt">
+        <section id="partner" class="smooth clearfix">
+            <div class="half-full float-left partners-image">
+            </div>
+            <div class="half-full float-right">
+                <div class="v-center">
+                    <div class="wrapper copytext">
+                        <h1>Mit wem wir arbeiten</h1>
+                        <p>
+                            Swag pork belly hella cred. Cornhole retro stumptown, semiotics Neutra pour-over McSweeney's. Hoodie Helvetica gastropub gluten-free. Seitan salvia Odd Future bitters, Banksy narwhal gastropub photo booth.
+                        </p>
+                        <p>
+                            <a class="more-button" href="partner.html">Mehr erfahren</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="kontakt" class="smooth clearfix">
+            <div class="half-full float-left">
+                <div class="v-center">
+                    <div class="wrapper copytext">
+                        <h1>Wie Sie uns erreichen</h1>
+                        <p>
+                            Schlitz locavore irony tousled cornhole, keytar Austin seitan. Dreamcatcher Kickstarter butcher, four loko put a bird on it retro sriracha single-origin coffee selvage meh 3 wolf moon. Disrupt street art hella Marfa.
+                        </p>
+                        <p>
+                            <a class="more-button" href="kontakt.html">Mehr erfahren</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="half-full float-right" id="map-canvas">
+            </div>
         </section>
     </main>
     <footer>
         <div class="wrapper">
-            <small>
-                <a href="#start" data-scroll-target="landing">Start</a>
-                &mdash;
-                <a href="#ueber-uns" data-scroll-target="ueber-uns">Über uns</a>
-                &mdash;
-                <a href="#sortiment" data-scroll-target="sortiment">Sortiment</a>
-                &mdash;
-                <a href="#partner" data-scroll-target="partner">Partner</a>
-                &mdash;
-                <a href="#kontakt" data-scroll-target="kontakt">Kontakt</a>
-            </small>
+            <p>
+                <small>
+                    <a href="#start" data-scroll-target="landing">Start</a>
+                    &mdash;
+                    <a href="#ueber-uns" data-scroll-target="ueber-uns">Über uns</a>
+                    &mdash;
+                    <a href="#sortiment" data-scroll-target="sortiment">Sortiment</a>
+                    &mdash;
+                    <a href="#partner" data-scroll-target="partner">Partner</a>
+                    &mdash;
+                    <a href="#kontakt" data-scroll-target="kontakt">Kontakt</a>
+                </small>
+            </p>
+            <p>
+                <small>
+                   SwissPlant GmbH / AgriPlant AG &mdash; +41 32 313 52 10 &mdash; <a href="mailto:info@swissplant.ch">info@swissplant.ch</a> / <a href="mailto:info@agriplant.ch">info@agriplant.ch</a><br>
+                    Spitzallmendweg 11, CH-3225 Müntschemier<br>
+                    Postfach 11 (SwissPlant GmbH) / Postfach 5 (Agriplant AG)
+                </small>
+            </p>
+            <p>
+                <small>
+                   Montag bis Freitag &mdash; 07:30 bis 11:45 &amp; 13:30 bis 17:30
+                </small>
+            </p>
+            <p>
+                <small>
+                   Designed with <i class="fa fa-heart"></i> by <a href="http://rdizzle.synology.me/portfolio" target="_blank">Robin Löffel</a><br>
+                    2015
+                </small>
+            </p>
         </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/jquery.smoothState.js"></script>
+    <script src="js/smooth.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="js/map.js"></script>
 </body>
 
 </html>
