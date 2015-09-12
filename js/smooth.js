@@ -1,3 +1,0 @@
-(function ($) {
-    $('.smooth').smoothState();
-})(jQuery);

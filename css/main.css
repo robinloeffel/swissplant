@@ -156,7 +156,7 @@ nav ul li:first-child img {
     top: 0;
     bottom: 0;
     margin: auto 0;
-    max-width: 75%;
+    max-height: 75%;
 }
 
 nav ul li:not(:first-child):after {
@@ -278,4 +278,8 @@ nav ul li:hover:after {
 
 .partners-image {
     background-image: url(../img/partners.jpg);
+}
+
+[data-ng-cloak] {
+    display: none !important;
 }

@@ -1,8 +1,8 @@
 <!doctype html>
-<html>
+<html ng-app="swissPlant">
 
 <head>
-    <title>SwissPlant GmbH &mdash; Ihr Spezialist für Gemüsejungpflanzen</title>
+    <title>{{'meta_title_name' | translate}} &mdash; {{'meta_title_slogan' | translate}}</title>
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:500,400italic,700italic,300,700,500italic,300italic,400">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -14,26 +14,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 </head>
 
-<body>
+<body data-ng-cloak>
     <main>
         <nav>
             <ul class="clearfix">
                 <li>
                     <a href="#start" data-scroll-target="landing">
-                        <img src="img/logo.svg" data-scroll-target="landing">
+                        <img src="img/logo-cropped.svg" data-scroll-target="landing" alt="{{'common_logo_alt' | translate}}">
                     </a>
                 </li>
                 <li>
-                    <a href="#ueber-uns" data-scroll-target="ueber-uns">Über uns</a>
+                    <a href="#ueber-uns" data-scroll-target="ueber-uns">
+                        {{'nav_about' | translate}}
+                    </a>
                 </li>
                 <li>
-                    <a href="#sortiment" data-scroll-target="sortiment">Sortiment</a>
+                    <a href="#sortiment" data-scroll-target="sortiment">
+                        {{'nav_portfolio' | translate}}
+                    </a>
                 </li>
                 <li>
-                    <a href="#partner" data-scroll-target="partner">Partner</a>
+                    <a href="#partner" data-scroll-target="partner">
+                        {{'nav_partners' | translate}}
+                    </a>
                 </li>
                 <li>
-                    <a href="#kontakt" data-scroll-target="kontakt">Kontakt</a>
+                    <a href="#kontakt" data-scroll-target="kontakt">
+                        {{'nav_contact' | translate}}
+                    </a>
                 </li>
             </ul>
         </nav>
@@ -45,37 +53,43 @@
             </div>
             <div class="v-center">
                 <div class="wrapper">
-                    <img src="img/logo-white.svg" class="logo">
+                    <img src="img/logo-white.svg" class="logo" alt="{{'common_logo_alt' | translate}}">
                 </div>
             </div>
         </section>
-        <section id="ueber-uns" class="smooth clearfix">
+        <section id="ueber-uns" class="clearfix">
             <div class="half-full float-left about-image">
             </div>
             <div class="half-full float-right">
                 <div class="v-center">
                     <div class="wrapper copytext">
-                        <h1>Wer wir sind</h1>
+                        <h1>
+                            {{'about_heading' | translate}}
+                        </h1>
                         <p>
-                            Lo-fi Intelligentsia roof party mixtape you probably haven't heard of them kitsch. PBR hashtag flexitarian, retro you probably haven't heard of them street art trust fund fingerstache sriracha cray stumptown.
+                            {{'about_copy' | translate}}
                         </p>
                         <p>
-                            <a class="more-button" href="ueber-uns.html">Mehr erfahren</a>
+                            <a class="more-button" href="ueber-uns.html">
+                                {{'common_button_more' | translate}}
+                            </a>
                         </p>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="sortiment" class="smooth clearfix">
+        <section id="sortiment" class="clearfix">
             <div class="half-full float-left">
                 <div class="v-center">
                     <div class="wrapper copytext">
-                        <h1>Was wir Ihnen bieten</h1>
+                        <h1>{{'portfolio_heading' | translate}}</h1>
                         <p>
-                            Forage trust fund whatever Bushwick Truffaut roof party. Locavore four loko farm-to-table cray, raw denim High Life blog. Gastropub art party Banksy synth, chillwave High Life chia.
+                            {{'portfolio_copy' | translate}}
                         </p>
                         <p>
-                            <a class="more-button" href="sortiment.html">Mehr erfahren</a>
+                            <a class="more-button" href="sortiment.html">
+                                {{'common_button_more' | translate}}
+                            </a>
                         </p>
                     </div>
                 </div>
@@ -83,18 +97,22 @@
             <div class="half-full float-right portfolio-image">
             </div>
         </section>
-        <section id="partner" class="smooth clearfix">
+        <section id="partner" class="clearfix">
             <div class="half-full float-left partners-image">
             </div>
             <div class="half-full float-right">
                 <div class="v-center">
                     <div class="wrapper copytext">
-                        <h1>Mit wem wir arbeiten</h1>
+                        <h1>
+                            {{'partners_heading' | translate}}
+                        </h1>
                         <p>
-                            Swag pork belly hella cred. Cornhole retro stumptown, semiotics Neutra pour-over McSweeney's. Hoodie Helvetica gastropub gluten-free. Seitan salvia Odd Future bitters, Banksy narwhal gastropub photo booth.
+                            {{'partners_copy' | translate}}
                         </p>
                         <p>
-                            <a class="more-button" href="partner.html">Mehr erfahren</a>
+                            <a class="more-button" href="partner.html">
+                                {{'common_button_more' | translate}}
+                            </a>
                         </p>
                     </div>
                 </div>
@@ -104,12 +122,16 @@
             <div class="half-full float-left">
                 <div class="v-center">
                     <div class="wrapper copytext">
-                        <h1>Wie Sie uns erreichen</h1>
+                        <h1>
+                            {{'contact_heading' | translate}}
+                        </h1>
                         <p>
-                            Schlitz locavore irony tousled cornhole, keytar Austin seitan. Dreamcatcher Kickstarter butcher, four loko put a bird on it retro sriracha single-origin coffee selvage meh 3 wolf moon. Disrupt street art hella Marfa.
+                            {{'contact_copy' | translate}}
                         </p>
                         <p>
-                            <a class="more-button" href="kontakt.html">Mehr erfahren</a>
+                            <a class="more-button" href="kontakt.html">
+                                {{'common_button_more' | translate}}
+                            </a>
                         </p>
                     </div>
                 </div>
@@ -122,27 +144,39 @@
         <div class="wrapper">
             <p>
                 <small>
-                    <a href="#start" data-scroll-target="landing">Start</a>
+                    <a href="#start" data-scroll-target="landing">
+                        {{'nav_start' | translate}}
+                    </a>
                     &mdash;
-                    <a href="#ueber-uns" data-scroll-target="ueber-uns">Über uns</a>
+                    <a href="#ueber-uns" data-scroll-target="ueber-uns">
+                        {{'nav_about' | translate}}
+                    </a>
                     &mdash;
-                    <a href="#sortiment" data-scroll-target="sortiment">Sortiment</a>
+                    <a href="#sortiment" data-scroll-target="sortiment">
+                        {{'nav_portfolio' | translate}}
+                    </a>
                     &mdash;
-                    <a href="#partner" data-scroll-target="partner">Partner</a>
+                    <a href="#partner" data-scroll-target="partner">
+                        {{'nav_partners' | translate}}
+                    </a>
                     &mdash;
-                    <a href="#kontakt" data-scroll-target="kontakt">Kontakt</a>
+                    <a href="#kontakt" data-scroll-target="kontakt">
+                        {{'nav_contact' | translate}}
+                    </a>
                 </small>
             </p>
             <p>
                 <small>
-                   SwissPlant GmbH / AgriPlant AG &mdash; +41 32 313 52 10 &mdash; <a href="mailto:info@swissplant.ch">info@swissplant.ch</a> / <a href="mailto:info@agriplant.ch">info@agriplant.ch</a><br>
-                    Spitzallmendweg 11, CH-3225 Müntschemier<br>
-                    Postfach 11 (SwissPlant GmbH) / Postfach 5 (Agriplant AG)
+                   SwissPlant GmbH / AgriPlant AG &mdash; +41 32 313 52 10 &mdash; <a href="mailto:info@swissplant.ch">info@swissplant.ch</a> / <a href="mailto:info@agriplant.ch">info@agriplant.ch</a>
+                    <br>
+                    {{'footer_address' | translate}}
+                    <br>
+                    {{'footer_mailbox' | translate}}
                 </small>
             </p>
             <p>
                 <small>
-                   Montag bis Freitag &mdash; 07:30 bis 11:45 &amp; 13:30 bis 17:30
+                   {{'footer_mo_fr' | translate}}: &mdash; 07:30 {{'footer_to' | translate}} 11:45 &amp; 13:30 {{'footer_to' | translate}} 17:30
                 </small>
             </p>
             <p>
@@ -154,9 +188,10 @@
         </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.7.2/angular-translate.min.js"></script>
     <script src="js/script.js"></script>
-    <script src="js/jquery.smoothState.js"></script>
-    <script src="js/smooth.js"></script>
+    <script src="js/angular.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js"></script>
     <script src="js/map.js"></script>
 </body>
