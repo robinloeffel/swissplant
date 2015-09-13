@@ -283,3 +283,8 @@ nav ul li:hover:after {
 [data-ng-cloak] {
     display: none !important;
 }
+
+.active {
+    background-color: #007333;
+    color: white;
+}
