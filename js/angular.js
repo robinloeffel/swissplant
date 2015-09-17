@@ -1,6 +1,6 @@
 angular.module('swissPlant', ['pascalprecht.translate'])
     .config(function ($translateProvider) {
-        $translateProvider.translations('de_DE', {
+        $translateProvider.translations('de', {
             meta_title_name: "SwissPlant GmbH",
             meta_title_slogan: "Ihr Spezialist für Gemüsejungpflanzen",
             meta_description: "Die Swissplant GmbH ist Ihr Ansprechpartner für professionellen Gemüseanbau im Berner Seeland. Bei uns bekommen Sie Warmhauspflanzen in verschiedenen Varianten.",
@@ -26,7 +26,7 @@ angular.module('swissPlant', ['pascalprecht.translate'])
             footer_to: "bis"
         });
 
-        $translateProvider.translations('en_US', {
+        $translateProvider.translations('en', {
             meta_title_name: "SwissPlant Ltd",
             meta_title_slogan: "Your specialist for vegetable seedings",
             meta_description: "SwissPlant is your go-to specialist for the professional cultivation of vegetables in the Bernese Seeland. We offer warm house plants in many variations.",
@@ -52,7 +52,7 @@ angular.module('swissPlant', ['pascalprecht.translate'])
             footer_to: "to"
         });
 
-        $translateProvider.translations('fr_FR', {
+        $translateProvider.translations('fr', {
             meta_title: "SwissPlant Ltd. &mdash; Your specialist for vegetable seedings",
             meta_description: "SwissPlant is your go-to specialist for the professional cultivation of vegetables in the Bernese Seeland. We offer warm house plants in many variations.",
             meta_keywords: "Gemüse, Gemuese, Jungpflanzen, Setzlinge, Salat, Schweiz, Seeland, SwissPlant",
@@ -78,14 +78,22 @@ angular.module('swissPlant', ['pascalprecht.translate'])
         });
 
         $translateProvider.useSanitizeValueStrategy('escape');
-        $translateProvider.preferredLanguage('de_DE');
     })
     .controller('langCtrl', function ($scope, $translate) {
+        determineLang();
+
+        function determineLang() {
+            var userLang = navigator.language;
+            if (userLang.indexOf('de') > -1) {
+                $translate.use('de');
+            } else if (userLang.indexOf('fr') > -1) {
+                $translate.use('fr');
+            } else if (userLang.indexOf('en') > -1) {
+                $translate.use('fr');
+            }
+        }
+
         $scope.changeLang = function (langKey) {
-            $translate.use(langKey).then(function (langKey) {
-                console.log('The language has been changed to ' + langKey);
-            }, function (langKey) {
-                console.log('Something went wrong while changig the language to ' + langKey);
-            });
+            $translate.use(langKey);
         }
     });

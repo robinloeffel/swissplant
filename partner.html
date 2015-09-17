@@ -35,9 +35,16 @@
                 <li>
                     <a href="kontakt.html">Kontakt</a>
                 </li>
+                <li>
+                    <div>
+                        <span data-ng-click="changeLang('de')">de</span>
+                        <span data-ng-click="changeLang('en')">en</span>
+                        <span data-ng-click="changeLang('fr')">fr</span>
+                    </div>
+                </li>
             </ul>
         </nav>
-        <section id="landing">
+        <section id="landing" class="little-hero">
             <div class="cover-parent">
                 <div class="cover-parent-background partners-image top"></div>
             </div>
@@ -58,34 +65,46 @@
         <div class="wrapper">
             <p>
                 <small>
-                    <a href="#start" data-scroll-target="landing">Start</a>
+                    <a href=".">
+                        {{'nav_start' | translate}}
+                    </a>
                     &mdash;
-                    <a href="#ueber-uns" data-scroll-target="ueber-uns">Über uns</a>
+                    <a href="ueber-uns.html">
+                        {{'nav_about' | translate}}
+                    </a>
                     &mdash;
-                    <a href="#sortiment" data-scroll-target="sortiment">Sortiment</a>
+                    <a href="sortiment.html">
+                        {{'nav_portfolio' | translate}}
+                    </a>
                     &mdash;
-                    <a href="#partner" data-scroll-target="partner">Partner</a>
+                    <a href="partner.html">
+                        {{'nav_partners' | translate}}
+                    </a>
                     &mdash;
-                    <a href="#kontakt" data-scroll-target="kontakt">Kontakt</a>
+                    <a href="kontakt.html">
+                        {{'nav_contact' | translate}}
+                    </a>
                 </small>
             </p>
             <p>
                 <small>
-                   SwissPlant GmbH / AgriPlant AG &mdash; +41 32 313 52 10 &mdash; <a href="mailto:info@swissplant.ch">info@swissplant.ch</a> / <a href="mailto:info@agriplant.ch">info@agriplant.ch</a><br>
-                    Spitzallmendweg 11, CH-3225 Müntschemier<br>
-                    Postfach 11 (SwissPlant GmbH) / Postfach 5 (Agriplant AG)
+                   SwissPlant GmbH / AgriPlant AG &mdash; +41 32 313 52 10 &mdash; <a href="mailto:info@swissplant.ch">info@swissplant.ch</a> / <a href="mailto:info@agriplant.ch">info@agriplant.ch</a>
+                    <br>
+                    {{'footer_address' | translate}}
+                    <br>
+                    {{'footer_mailbox' | translate}}
                 </small>
             </p>
             <p>
                 <small>
-                   Montag bis Freitag &mdash; 07:30 bis 11:45 &amp; 13:30 bis 17:30
+                   {{'footer_mo_fr' | translate}}: &mdash; 07:30 {{'footer_to' | translate}} 11:45 &amp; 13:30 {{'footer_to' | translate}} 17:30
                 </small>
             </p>
             <p>
                 <small>
-                   Designed with <i class="fa fa-heart"></i> by <a href="http://rdizzle.synology.me/portfolio" target="_blank">Robin Löffel</a><br>
-                    2015
-                </small>
+                   Designed with <i class="fa fa-heart"></i> by <a href="http://robinloeffel.ch" target="_blank">Robin Löffel</a>
+                    <br> 2015
+                    </small>
             </p>
         </div>
     </footer>

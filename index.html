@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="swissPlant">
+<html data-ng-app="swissPlant">
 
 <head>
     <title>{{'meta_title_name' | translate}} &mdash; {{'meta_title_slogan' | translate}}</title>
@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 </head>
 
-<body data-ng-cloak>
+<body data-ng-cloak data-ng-controller="langCtrl">
     <main>
         <nav>
             <ul class="clearfix">
@@ -43,17 +43,28 @@
                         {{'nav_contact' | translate}}
                     </a>
                 </li>
+                <li>
+                    <div>
+                        <i class="fa fa-globe"></i>
+                        <span data-ng-click="changeLang('de')">de</span>
+                        <span data-ng-click="changeLang('en')">en</span>
+                        <span data-ng-click="changeLang('fr')">fr</span>
+                    </div>
+                </li>
             </ul>
         </nav>
         <section id="landing">
             <div class="cover-parent">
-                <div class="cover-parent-background one top"></div>
-                <div class="cover-parent-background two"></div>
-                <div class="cover-parent-background three"></div>
+                <div class="cover-parent-background rotate one top"></div>
+                <div class="cover-parent-background rotate two"></div>
+                <div class="cover-parent-background rotate three"></div>
+                <div class="cover-parent" style="background-color: rgba(0, 0, 0, .25)"></div>
             </div>
             <div class="v-center">
                 <div class="wrapper">
                     <img src="img/logo-white.svg" class="logo" alt="{{'common_logo_alt' | translate}}">
+                    <br>
+                    <i class="fa fa-caret-down fa-2x up-and-down" data-scroll-target="ueber-uns"></i>
                 </div>
             </div>
         </section>
@@ -144,23 +155,23 @@
         <div class="wrapper">
             <p>
                 <small>
-                    <a href="#start" data-scroll-target="landing">
+                    <a href=".">
                         {{'nav_start' | translate}}
                     </a>
                     &mdash;
-                    <a href="#ueber-uns" data-scroll-target="ueber-uns">
+                    <a href="ueber-uns.html">
                         {{'nav_about' | translate}}
                     </a>
                     &mdash;
-                    <a href="#sortiment" data-scroll-target="sortiment">
+                    <a href="sortiment.html">
                         {{'nav_portfolio' | translate}}
                     </a>
                     &mdash;
-                    <a href="#partner" data-scroll-target="partner">
+                    <a href="partner.html">
                         {{'nav_partners' | translate}}
                     </a>
                     &mdash;
-                    <a href="#kontakt" data-scroll-target="kontakt">
+                    <a href="kontakt.html">
                         {{'nav_contact' | translate}}
                     </a>
                 </small>
@@ -181,9 +192,9 @@
             </p>
             <p>
                 <small>
-                   Designed with <i class="fa fa-heart"></i> by <a href="http://rdizzle.synology.me/portfolio" target="_blank">Robin Löffel</a><br>
-                    2015
-                </small>
+                   Designed with <i class="fa fa-heart"></i> by <a href="http://robinloeffel.ch" target="_blank">Robin Löffel</a>
+                    <br> 2015
+                    </small>
             </p>
         </div>
     </footer>

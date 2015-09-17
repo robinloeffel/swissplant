@@ -1,3 +1,25 @@
+@-webkit-keyframes up-and-down {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    50% {
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+    }
+}
+
+@keyframes up-and-down {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    50% {
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+    }
+}
+
 html {
     font-family: Roboto, sans-serif;
     font-weight: normal;
@@ -45,6 +67,10 @@ footer {
     margin-top: 89px;
     height: 600px;
     color: rgb(255, 255, 255);
+}
+
+.little-hero {
+    height: 300px !important;
 }
 
 #ueber-uns {
@@ -131,7 +157,8 @@ nav ul li {
     position: relative;
 }
 
-nav ul li:not(:first-child) a {
+nav ul li:not(:first-child) a,
+nav ul li:last-child div {
     display: inline-block;
     text-align: center;
     width: 150px;
@@ -139,6 +166,23 @@ nav ul li:not(:first-child) a {
     position: relative;
     float: left;
     color: inherit;
+}
+
+nav ul li:last-child div span {
+    cursor: pointer;
+    padding: 2px 5px;
+    -webkit-transition: .25s;
+    display: none;
+    -webkit-transition: .25s;
+    transition: .25s;
+}
+
+nav ul li:last-child:hover nav ul li:last-child div span {
+    display: inline;
+}
+
+nav ul li:last-child div span:hover {
+    color: #007333;
 }
 
 nav ul li:first-child a {
@@ -157,6 +201,7 @@ nav ul li:first-child img {
     bottom: 0;
     margin: auto 0;
     max-height: 75%;
+    width: 190px;
 }
 
 nav ul li:not(:first-child):after {
@@ -175,6 +220,11 @@ nav ul li:not(:first-child):after {
 
 nav ul li:hover:after {
     border-bottom: 5px solid #007333;
+}
+
+nav ul li:last-child {
+    position: absolute;
+    right: 0;
 }
 
 .clearfix:after {
@@ -270,6 +320,7 @@ nav ul li:hover:after {
 
 .about-image {
     background-image: url(../img/about.jpg);
+    background-position: top;
 }
 
 .portfolio-image {
@@ -278,6 +329,25 @@ nav ul li:hover:after {
 
 .partners-image {
     background-image: url(../img/partners.jpg);
+    background-position: bottom;
+}
+
+.up-and-down {
+    -webkit-animation: up-and-down;
+    animation: up-and-down;
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.active {
+    background-color: #007333;
+    color: white;
 }
 
 [data-ng-cloak] {

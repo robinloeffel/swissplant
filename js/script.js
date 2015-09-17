@@ -12,18 +12,18 @@ $("document").ready(function () {
     function rotate() {
         switch (rotateCount) {
         case 1:
-            $(".cover-parent-background.one").removeClass("top");
-            $(".cover-parent-background.two").addClass("top");
+            $(".cover-parent-background.rotate.one").removeClass("top");
+            $(".cover-parent-background.rotate.two").addClass("top");
             rotateCount++;
             break;
         case 2:
-            $(".cover-parent-background.two").removeClass("top");
-            $(".cover-parent-background.three").addClass("top");
+            $(".cover-parent-background.rotate.two").removeClass("top");
+            $(".cover-parent-background.rotate.three").addClass("top");
             rotateCount++;
             break;
         case 3:
-            $(".cover-parent-background.three").removeClass("top");
-            $(".cover-parent-background.one").addClass("top");
+            $(".cover-parent-background.rotate.three").removeClass("top");
+            $(".cover-parent-background.rotate.one").addClass("top");
             rotateCount = 1;
             break;
         }
