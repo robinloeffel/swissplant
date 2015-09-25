@@ -6,7 +6,7 @@ angular.module('swissPlant', ['pascalprecht.translate'])
             meta_description: "Die Swissplant GmbH ist Ihr Ansprechpartner für professionellen Gemüseanbau im Berner Seeland. Bei uns bekommen Sie Warmhauspflanzen in verschiedenen Varianten.",
             meta_keywords: "Gemüse, Gemuese, Jungpflanzen, Setzlinge, Salat, Schweiz, Seeland, SwissPlant",
             nav_about: "Über uns",
-            nav_portfolio: "Sortiment",
+            nav_portfolio: "Angebot",
             nav_partners: "Partner",
             nav_contact: "Kontakt",
             nav_start: "Start",

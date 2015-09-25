@@ -3,7 +3,7 @@ function initialize() {
     var mapPosition = new google.maps.LatLng(46.9913104, 7.1441492);
     var mapOptions = {
         center: mapPosition,
-        zoom: 12,
+        zoom: 10,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     var mapMarker = new google.maps.Marker({

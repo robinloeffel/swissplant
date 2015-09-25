@@ -157,8 +157,13 @@ nav ul li {
     position: relative;
 }
 
+.lang-changer {
+    position: absolute;
+    right: 0;
+}
+
 nav ul li:not(:first-child) a,
-nav ul li:last-child div {
+.lang-changer div {
     display: inline-block;
     text-align: center;
     width: 150px;
@@ -168,7 +173,7 @@ nav ul li:last-child div {
     color: inherit;
 }
 
-nav ul li:last-child div span {
+.lang-changer div span {
     cursor: pointer;
     padding: 2px 5px;
     -webkit-transition: .25s;
@@ -177,11 +182,11 @@ nav ul li:last-child div span {
     transition: .25s;
 }
 
-nav ul li:last-child:hover nav ul li:last-child div span {
+.lang-changer:hover .lang-changer div span {
     display: inline;
 }
 
-nav ul li:last-child div span:hover {
+.lang-changer div span:hover {
     color: #007333;
 }
 
@@ -220,11 +225,6 @@ nav ul li:not(:first-child):after {
 
 nav ul li:hover:after {
     border-bottom: 5px solid #007333;
-}
-
-nav ul li:last-child {
-    position: absolute;
-    right: 0;
 }
 
 .clearfix:after {

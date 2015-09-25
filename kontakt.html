@@ -15,34 +15,29 @@
 </head>
 
 <body>
-    <nav>
-        <ul class="clearfix">
-            <li>
-                <a href="index.html">
-                    <img src="img/logo-cropped.svg">
-                </a>
-            </li>
-            <li>
-                <a href="ueber-uns.html">Über uns</a>
-            </li>
-            <li>
-                <a href="sortiment.html">Sortiment</a>
-            </li>
-            <li>
-                <a href="partner.html">Partner</a>
-            </li>
-            <li class="active">
-                <a href="kontakt.html">Kontakt</a>
-            </li>
-            <li>
-                <div>
-                    <span data-ng-click="changeLang('de')">de</span>
-                    <span data-ng-click="changeLang('en')">en</span>
-                    <span data-ng-click="changeLang('fr')">fr</span>
-                </div>
-            </li>
-        </ul>
-    </nav>
+    <header>
+        <nav>
+            <ul class="clearfix">
+                <li>
+                    <a href="index.html">
+                        <img src="img/logo-cropped.svg">
+                    </a>
+                </li>
+                <li>
+                    <a href="ueber-uns.html">Über uns</a>
+                </li>
+                <li>
+                    <a href="angebot.html">Angebot</a>
+                </li>
+                <li>
+                    <a href="partner.html">Partner</a>
+                </li>
+                <li class="active">
+                    <a href="kontakt.html">Kontakt</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
     <main id="main">
         <section id="landing" class="little-hero">
             <div class="cover-parent">
@@ -73,7 +68,7 @@
                         {{'nav_about' | translate}}
                     </a>
                     &mdash;
-                    <a href="sortiment.html">
+                    <a href="angebot.html">
                         {{'nav_portfolio' | translate}}
                     </a>
                     &mdash;
@@ -102,17 +97,22 @@
             </p>
             <p>
                 <small>
-                   Designed with <i class="fa fa-heart"></i> by <a href="http://robinloeffel.ch" target="_blank">Robin Löffel</a>
-                    <br> 2015
-                    </small>
+                   Entwickelt und gestaltet von <a href="http://robinloeffel.ch" target="_blank">Robin Löffel</a>
+                </small>
+            </p>
+            <p>
+                <small>
+                   &copy; SwissPlant GmbH, 2015
+                </small>
             </p>
         </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/jquery.smoothState.js"></script>
-    <script src="js/smooth.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.7.2/angular-translate.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/angular.js"></script>
     <script src="js/map.js"></script>
 </body>
 

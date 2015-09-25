@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>SwissPlant GmbH &mdash; Sortiment</title>
+    <title>SwissPlant GmbH &mdash; Angebot</title>
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:500,400italic,700italic,300,700,500italic,300italic,400">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <main>
+    <header>
         <nav>
             <ul class="clearfix">
                 <li>
@@ -27,7 +27,7 @@
                     <a href="ueber-uns.html">Über uns</a>
                 </li>
                 <li class="active">
-                    <a href="sortiment.html">Sortiment</a>
+                    <a href="angebot.html">Angebot</a>
                 </li>
                 <li>
                     <a href="partner.html">Partner</a>
@@ -35,15 +35,10 @@
                 <li>
                     <a href="kontakt.html">Kontakt</a>
                 </li>
-                <li>
-                    <div>
-                        <span data-ng-click="changeLang('de')">de</span>
-                        <span data-ng-click="changeLang('en')">en</span>
-                        <span data-ng-click="changeLang('fr')">fr</span>
-                    </div>
-                </li>
             </ul>
         </nav>
+    </header>
+    <main>
         <section id="landing" class="little-hero">
             <div class="cover-parent">
                 <div class="cover-parent-background portfolio-image top"></div>
@@ -51,7 +46,7 @@
         </section>
         <section id="ueber-uns" class="smooth clearfix section-main">
             <div class="wrapper copytext">
-                <h1>Sortiment</h1>
+                <h1>Angebot</h1>
                 <p>
                     Wer sich die guten Dinge im Leben ins Bewusstsein ruft, ist automatisch glücklicher: Das haben Sie bestimmt auch schon herausgefunden. Damit Sie aber nicht im Archiv des vergangenen Monats nach den guten Nachrichten suchen müssen, haben wir das für Sie erledigt. Gute Laune mit den Good News, die der August hervorbrachte!
                 </p>
@@ -73,7 +68,7 @@
                         {{'nav_about' | translate}}
                     </a>
                     &mdash;
-                    <a href="sortiment.html">
+                    <a href="angebot.html">
                         {{'nav_portfolio' | translate}}
                     </a>
                     &mdash;
@@ -88,7 +83,7 @@
             </p>
             <p>
                 <small>
-                   SwissPlant GmbH / AgriPlant AG &mdash; +41 32 313 52 10 &mdash; <a href="mailto:info@swissplant.ch">info@swissplant.ch</a> / <a href="mailto:info@agriplant.ch">info@agriplant.ch</a>
+                    SwissPlant GmbH / AgriPlant AG &mdash; +41 32 313 52 10 &mdash; <a href="mailto:info@swissplant.ch">info@swissplant.ch</a> / <a href="mailto:info@agriplant.ch">info@agriplant.ch</a>
                     <br>
                     {{'footer_address' | translate}}
                     <br>
@@ -97,22 +92,27 @@
             </p>
             <p>
                 <small>
-                   {{'footer_mo_fr' | translate}}: &mdash; 07:30 {{'footer_to' | translate}} 11:45 &amp; 13:30 {{'footer_to' | translate}} 17:30
+                    {{'footer_mo_fr' | translate}}: &mdash; 07:30 {{'footer_to' | translate}} 11:45 &amp; 13:30 {{'footer_to' | translate}} 17:30
                 </small>
             </p>
             <p>
                 <small>
-                   Designed with <i class="fa fa-heart"></i> by <a href="http://robinloeffel.ch" target="_blank">Robin Löffel</a>
-                    <br> 2015
-                    </small>
+                   Entwickelt und gestaltet von <a href="http://robinloeffel.ch" target="_blank">Robin Löffel</a>
+                </small>
+            </p>
+            <p>
+                <small>
+                   &copy; SwissPlant GmbH, 2015
+                </small>
             </p>
         </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/jquery.smoothState.js"></script>
-    <script src="js/smooth.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.7.2/angular-translate.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/angular.js"></script>
     <script src="js/map.js"></script>
 </body>
 
