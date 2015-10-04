@@ -95,7 +95,7 @@ footer {
 }
 
 .logo {
-    max-width: 80%;
+    width: 90%;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -267,6 +267,10 @@ nav ul li:hover:after {
 
 .three {
     background-image: url(../img/three.jpg);
+}
+
+.darken-background {
+    background-color: rgba(0, 0, 0, .25);
 }
 
 .top {

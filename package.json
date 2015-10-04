@@ -1,0 +1,25 @@
+{
+    "name": "swissplant",
+    "version": "1.0.0",
+    "description": "Company page for SwissPlant Ltd.",
+    "main": "index.html",
+    "dependencies": {
+        "gulp": "^3.9.0",
+        "gulp-connect": "^2.2.0"
+    },
+    "devDependencies": {
+        "gulp": "^3.9.0",
+        "gulp-connect": "^2.2.0"
+    },
+    "scripts": {},
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rdizzle/swissplant.git"
+    },
+    "author": "Robin Löffel",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/rdizzle/swissplant/issues"
+    },
+    "homepage": "https://github.com/rdizzle/swissplant#readme"
+}
