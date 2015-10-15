@@ -118,20 +118,6 @@ footer {
     text-align: center;
 }
 
-#landing h1 {
-    margin: 0;
-    font-weight: normal;
-    font-size: 2.5rem;
-    -webkit-animation: ;
-    -webkit-animation-name: slide-up;
-    animation-name: slide-up;
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-timing-function: ease-in-out;
-    animation-timing-function: ease-in-out;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, .25);
-}
-
 nav {
     top: 0;
     left: 0;
