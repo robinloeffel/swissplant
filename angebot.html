@@ -14,9 +14,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 </head>
 
-<body data-ng-cloak data-ng-controller="langCtrl">
-    <header>
-        <nav data-ng-cloak>
+<body data-ng-controller="langCtrl">
+    <header data-ng-cloak>
+        <nav>
             <ul class="clearfix">
                 <li>
                     <a href="index.html">
@@ -58,13 +58,13 @@
             </ul>
         </nav>
     </header>
-    <main>
+    <main data-ng-cloak>
         <section id="landing" class="little-hero">
             <div class="cover-parent">
                 <div class="cover-parent-background portfolio-image top"></div>
             </div>
         </section>
-        <section id="ueber-uns" class="section-main" data-ng-cloak>
+        <section id="ueber-uns" class="section-main">
             <div class="wrapper copytext">
                 <h1>
                     {{'nav_portfolio' | translate}}
@@ -104,9 +104,9 @@
                 </small>
             </p>
             <p>
-                <img src="img/logo-swissplant-tilted.svg" class="footer-logo">
+                <img src="img/logo-swissplant-tilted.svg" class="footer-logo" alt="{{common_logo_alt | translate}}">
                 <br>
-                <img src="img/logo-agriplant.svg" class="footer-logo">
+                <img src="img/logo-agriplant.svg" class="footer-logo" alt="{{common_logo_alt | translate}}">
             </p>
             <p>
                 <small>

@@ -15,9 +15,9 @@
 </head>
 
 <body data-ng-controller="langCtrl">
-    <header>
+    <header data-ng-cloak>
         <nav>
-            <ul class="clearfix" data-ng-cloak>
+            <ul class="clearfix">
                 <li>
                     <a href="index.html">
                         <img src="img/logo-swissplant-tilted.svg" alt="{{'common_logo_alt' | translate}}">
@@ -58,13 +58,13 @@
             </ul>
         </nav>
     </header>
-    <main id="main">
+    <main data-ng-cloak>
         <section id="landing" class="little-hero">
             <div class="cover-parent">
                 <div class="cover-parent-background one top"></div>
             </div>
         </section>
-        <section id="ueber-uns" class="section-main" data-ng-cloak>
+        <section id="ueber-uns" class="section-main">
             <div class="wrapper copytext">
                 <h1>
                     {{'nav_contact' | translate}}
@@ -104,9 +104,9 @@
                 </small>
             </p>
             <p>
-                <img src="img/logo-swissplant-tilted.svg" class="footer-logo">
+                <img src="img/logo-swissplant-tilted.svg" class="footer-logo" alt="{{common_logo_alt | translate}}">
                 <br>
-                <img src="img/logo-agriplant.svg" class="footer-logo">
+                <img src="img/logo-agriplant.svg" class="footer-logo" alt="{{common_logo_alt | translate}}">
             </p>
             <p>
                 <small>

@@ -15,9 +15,9 @@
 </head>
 
 <body data-ng-controller="langCtrl">
-    <header>
+    <header data-ng-cloak>
         <nav>
-            <ul class="clearfix" data-ng-cloak>
+            <ul class="clearfix">
                 <li>
                     <a href="#start" data-scroll-target="landing">
                         <img src="img/logo-swissplant-tilted.svg" data-scroll-target="landing" alt="{{'common_logo_alt' | translate}}">
@@ -61,7 +61,7 @@
             </ul>
         </nav>
     </header>
-    <main>
+    <main data-ng-cloak>
         <section id="landing">
             <div class="cover-parent">
                 <div class="cover-parent-background rotate one top"></div>
@@ -77,7 +77,7 @@
                 </div>
             </div>
         </section>
-        <section id="ueber-uns" class="clearfix" data-ng-cloak>
+        <section id="ueber-uns" class="clearfix">
             <div class="half-full float-left about-image no-mobile">
             </div>
             <div class="half-full float-right">
@@ -98,7 +98,7 @@
                 </div>
             </div>
         </section>
-        <section id="angebot" class="clearfix" data-ng-cloak>
+        <section id="angebot" class="clearfix">
             <div class="half-full float-left">
                 <div class="v-center">
                     <div class="wrapper copytext">
@@ -117,7 +117,7 @@
             <div class="half-full float-right portfolio-image no-mobile">
             </div>
         </section>
-        <section id="partner" class="clearfix" data-ng-cloak>
+        <section id="partner" class="clearfix">
             <div class="half-full float-left partners-image no-mobile">
             </div>
             <div class="half-full float-right">
@@ -138,7 +138,7 @@
                 </div>
             </div>
         </section>
-        <section id="kontakt" class="clearfix" data-ng-cloak>
+        <section id="kontakt" class="clearfix">
             <div class="half-full float-left">
                 <div class="v-center">
                     <div class="wrapper copytext">
@@ -186,9 +186,9 @@
                 </small>
             </p>
             <p>
-                <img src="img/logo-swissplant-tilted.svg" class="footer-logo">
+                <img src="img/logo-swissplant-tilted.svg" class="footer-logo" alt="{{common_logo_alt | translate}}">
                 <br>
-                <img src="img/logo-agriplant.svg" class="footer-logo">
+                <img src="img/logo-agriplant.svg" class="footer-logo" alt="{{common_logo_alt | translate}}">
             </p>
             <p>
                 <small>
