@@ -375,14 +375,9 @@ nav ul li:hover:after {
     color: white;
 }
 
-.full-width-video {
-    max-width: 100%;
-    min-width: 100%;
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+.footer-logo {
+    max-width: 150px;
+    max-height: 50px;
 }
 
 .mobile-menu {
