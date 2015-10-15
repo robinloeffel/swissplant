@@ -23,7 +23,8 @@ angular.module('swissPlant', ['pascalprecht.translate'])
             footer_address: "Spitzallmendweg 11, CH-3225 Müntschemier",
             footer_mailbox: "Postfach 11 (SwissPlant GmbH) / Postfach 5 (Agriplant AG)",
             footer_mo_fr: "Montag bis Freitag",
-            footer_to: "bis"
+            footer_to: "bis",
+            footer_robin: "Entwickelt und gestaltet von "
         });
 
         $translateProvider.translations('en', {
@@ -49,7 +50,8 @@ angular.module('swissPlant', ['pascalprecht.translate'])
             footer_address: "Spitzallmendweg 11, CH-3225 Müntschemier",
             footer_mailbox: "Mailbox 11 (SwissPlant GmbH) / Mailbox 5 (Agriplant AG)",
             footer_mo_fr: "Monday to Friday",
-            footer_to: "to"
+            footer_to: "to",
+            footer_robin: "Entwickelt und gestaltet von "
         });
 
         $translateProvider.translations('fr', {
@@ -74,7 +76,8 @@ angular.module('swissPlant', ['pascalprecht.translate'])
             footer_address: "Spitzallmendweg 11, CH-3225 Müntschemier",
             footer_mailbox: "Mailbox 11 (SwissPlant GmbH) / Mailbox 5 (Agriplant AG)",
             footer_mo_fr: "Monday to Friday",
-            footer_to: "to"
+            footer_to: "to",
+            footer_robin: "Entwickelt und gestaltet von "
         });
 
         $translateProvider.useSanitizeValueStrategy('escape');
@@ -83,17 +86,25 @@ angular.module('swissPlant', ['pascalprecht.translate'])
         determineLang();
 
         function determineLang() {
-            var userLang = navigator.language;
-            if (userLang.indexOf('de') > -1) {
-                $translate.use('de');
-            } else if (userLang.indexOf('fr') > -1) {
-                $translate.use('fr');
-            } else if (userLang.indexOf('en') > -1) {
-                $translate.use('fr');
+            if (!localStorage.swissPlantLang) {
+                var userLang = navigator.language;
+                if (userLang.indexOf('de') > -1) {
+                    $translate.use('de');
+                    localStorage.swissPlantLang = 'de';
+                } else if (userLang.indexOf('fr') > -1) {
+                    $translate.use('fr');
+                    localStorage.swissPlantLang = 'fr'
+                } else if (userLang.indexOf('en') > -1) {
+                    $translate.use('en');
+                    localStorage.swissPlantLang = 'en'
+                }
+            } else {
+                $translate.use(localStorage.swissPlantLang);
             }
         }
 
         $scope.changeLang = function (langKey) {
             $translate.use(langKey);
+            localStorage.swissPlantLang = langKey;
         }
     });

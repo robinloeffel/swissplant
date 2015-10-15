@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html data-ng-app="swissPlant">
 
 <head>
     <title>SwissPlant GmbH &mdash; Angebot</title>
@@ -14,26 +14,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 </head>
 
-<body>
+<body data-ng-cloak data-ng-controller="langCtrl">
     <header>
-        <nav>
+        <nav data-ng-cloak>
             <ul class="clearfix">
                 <li>
                     <a href="index.html">
-                        <img src="img/logo-cropped.svg">
+                        <img src="img/agriplant.svg" alt="{{'common_logo_alt' | translate}}">
                     </a>
                 </li>
                 <li>
-                    <a href="ueber-uns.html">Über uns</a>
+                    <a href="ueber-uns.html">
+                        {{'nav_about' | translate}}
+                    </a>
                 </li>
                 <li class="active">
-                    <a href="angebot.html">Angebot</a>
+                    <a href="angebot.html">
+                        {{'nav_portfolio' | translate}}
+                    </a>
                 </li>
                 <li>
-                    <a href="partner.html">Partner</a>
+                    <a href="partner.html">
+                        {{'nav_partners' | translate}}
+                    </a>
                 </li>
                 <li>
-                    <a href="kontakt.html">Kontakt</a>
+                    <a href="kontakt.html">
+                        {{'nav_contact' | translate}}
+                    </a>
+                </li>
+                <li class="lang-changer">
+                    <div class="lang-changer-container">
+                        <div class="icon-container">
+                            <i class="fa fa-globe"></i>
+                        </div>
+                        <div class="changer-container">
+                            <span data-ng-click="changeLang('de')">de</span>
+                            <span data-ng-click="changeLang('en')">en</span>
+                            <span data-ng-click="changeLang('fr')">fr</span>
+                        </div>
+                    </div>
                 </li>
             </ul>
         </nav>
@@ -44,9 +64,11 @@
                 <div class="cover-parent-background portfolio-image top"></div>
             </div>
         </section>
-        <section id="ueber-uns" class="smooth clearfix section-main">
+        <section id="ueber-uns" class="section-main" data-ng-cloak>
             <div class="wrapper copytext">
-                <h1>Angebot</h1>
+                <h1>
+                    {{'nav_portfolio' | translate}}
+                </h1>
                 <p>
                     Wer sich die guten Dinge im Leben ins Bewusstsein ruft, ist automatisch glücklicher: Das haben Sie bestimmt auch schon herausgefunden. Damit Sie aber nicht im Archiv des vergangenen Monats nach den guten Nachrichten suchen müssen, haben wir das für Sie erledigt. Gute Laune mit den Good News, die der August hervorbrachte!
                 </p>
@@ -56,7 +78,7 @@
             </div>
         </section>
     </main>
-    <footer>
+    <footer data-ng-cloak>
         <div class="wrapper">
             <p>
                 <small>
@@ -97,7 +119,7 @@
             </p>
             <p>
                 <small>
-                   Entwickelt und gestaltet von <a href="http://robinloeffel.ch" target="_blank">Robin Löffel</a>
+                   {{'footer_robin' | translate}} <a href="http://robinloeffel.ch">Robin Löffel</a>
                 </small>
             </p>
             <p>

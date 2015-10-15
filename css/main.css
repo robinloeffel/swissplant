@@ -55,7 +55,7 @@ main section {
     position: relative;
 }
 
-main section {
+main section:not(#landing) {
     padding: 150px 0;
 }
 
@@ -65,7 +65,7 @@ footer {
 
 #landing {
     margin-top: 89px;
-    height: 600px;
+    height: 90vh;
     color: rgb(255, 255, 255);
 }
 
@@ -148,7 +148,7 @@ nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    width: 900px;
+    width: 850px;
     margin: 0 auto;
 }
 
@@ -160,6 +160,7 @@ nav ul li {
 .lang-changer {
     position: absolute;
     right: 0;
+    padding-bottom: 30px;
 }
 
 nav ul li:not(:first-child) a,
@@ -173,27 +174,47 @@ nav ul li:not(:first-child) a,
     color: inherit;
 }
 
+.lang-changer div i,
 .lang-changer div span {
-    cursor: pointer;
-    padding: 2px 5px;
-    -webkit-transition: .25s;
-    display: none;
     -webkit-transition: .25s;
     transition: .25s;
 }
 
-.lang-changer:hover .lang-changer div span {
-    display: inline;
+.lang-changer div span {
+    cursor: pointer;
+    padding: 2px 5px;
+    opacity: 0;
+}
+
+.lang-changer:hover div i {
+    opacity: 0;
+    z-index: -999;
+}
+
+.lang-changer:hover div span {
+    opacity: 1;
 }
 
 .lang-changer div span:hover {
     color: #007333;
 }
 
+.lang-changer .icon-container,
+.lang-changer .changer-container {
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+.lang-changer-container {
+    position: relative;
+}
+
 nav ul li:first-child a {
     display: inline-block;
     text-align: left;
-    width: 300px;
+    width: 250px;
     position: relative;
     float: left;
     color: inherit;
@@ -339,8 +360,8 @@ nav ul li:hover:after {
 .up-and-down {
     -webkit-animation: up-and-down;
     animation: up-and-down;
-    -webkit-animation-duration: 3s;
-    animation-duration: 3s;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
     -webkit-animation-iteration-count: infinite;
@@ -354,6 +375,85 @@ nav ul li:hover:after {
     color: white;
 }
 
+.full-width-video {
+    max-width: 100%;
+    min-width: 100%;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.mobile-menu {
+    display: none;
+}
+
 [data-ng-cloak] {
     display: none !important;
+}
+
+@media (max-width: 1200px) {
+    .lang-changer {
+        display: none;
+    }
+    nav,
+    nav ul {
+        width: 100%;
+    }
+    .mobile-menu {
+        display: list-item;
+        float: right;
+        padding: 30px;
+        cursor: pointer;
+    }
+    nav li:not(:first-child):not(.mobile-menu) {
+        display: none;
+    }
+    nav li:first-child {
+        float: left;
+        margin-left: 20px;
+        width: 150px;
+    }
+    nav ul li:first-child a {
+        width: 100%;
+    }
+    nav ul li:first-child img {
+        max-height: 60%;
+        width: 100%;
+    }
+    .no-mobile {
+        display: none;
+    }
+    .half-full {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        border: none;
+    }
+    .float-left,
+    .float-right {
+        float: none;
+    }
+    main section {
+        padding: 0 !important;
+    }
+    .half-full .v-center {
+        top: auto;
+        -webkit-transform: none;
+        -ms-transform: none;
+        transform: none;
+    }
+    .wrapper {
+        padding: 50px 0;
+    }
+    section:nth-child(odd) {
+        background-color: rgb(245, 245, 245) !important;
+    }
+}
+
+@media (max-width: 640px) {
+    html {
+        font-size: 18px;
+    }
 }

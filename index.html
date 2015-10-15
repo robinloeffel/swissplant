@@ -2,7 +2,7 @@
 <html data-ng-app="swissPlant">
 
 <head>
-    <title>{{'meta_title_name' | translate}} &mdash; {{'meta_title_slogan' | translate}}</title>
+    <title>SwissPlant GmbH &mdash; Ihr Spezialist für Gemüsejungpflanzen</title>
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:500,400italic,700italic,300,700,500italic,300italic,400">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -14,10 +14,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 </head>
 
-<body data-ng-cloak data-ng-controller="langCtrl">
+<body data-ng-controller="langCtrl">
     <header>
         <nav>
-            <ul class="clearfix">
+            <ul class="clearfix" data-ng-cloak>
                 <li>
                     <a href="#start" data-scroll-target="landing">
                         <img src="img/logo-cropped.svg" data-scroll-target="landing" alt="{{'common_logo_alt' | translate}}">
@@ -43,12 +43,19 @@
                         {{'nav_contact' | translate}}
                     </a>
                 </li>
+                <li class="mobile-menu">
+                    <i class="fa fa-bars"></i>
+                </li>
                 <li class="lang-changer">
-                    <div>
-                        <i class="fa fa-globe"></i>
-                        <span data-ng-click="changeLang('de')">de</span>
-                        <span data-ng-click="changeLang('en')">en</span>
-                        <span data-ng-click="changeLang('fr')">fr</span>
+                    <div class="lang-changer-container">
+                        <div class="icon-container">
+                            <i class="fa fa-globe"></i>
+                        </div>
+                        <div class="changer-container">
+                            <span data-ng-click="changeLang('de')">de</span>
+                            <span data-ng-click="changeLang('en')">en</span>
+                            <span data-ng-click="changeLang('fr')">fr</span>
+                        </div>
                     </div>
                 </li>
             </ul>
@@ -58,8 +65,8 @@
         <section id="landing">
             <div class="cover-parent">
                 <div class="cover-parent-background rotate one top"></div>
-                <div class="cover-parent-background rotate two"></div>
-                <div class="cover-parent-background rotate three"></div>
+                <div class="cover-parent-background rotate two no-mobile"></div>
+                <div class="cover-parent-background rotate three no-mobile"></div>
                 <div class="cover-parent darken-background"></div>
             </div>
             <div class="v-center">
@@ -70,8 +77,8 @@
                 </div>
             </div>
         </section>
-        <section id="ueber-uns" class="clearfix">
-            <div class="half-full float-left about-image">
+        <section id="ueber-uns" class="clearfix" data-ng-cloak>
+            <div class="half-full float-left about-image no-mobile">
             </div>
             <div class="half-full float-right">
                 <div class="v-center">
@@ -91,7 +98,7 @@
                 </div>
             </div>
         </section>
-        <section id="angebot" class="clearfix">
+        <section id="angebot" class="clearfix" data-ng-cloak>
             <div class="half-full float-left">
                 <div class="v-center">
                     <div class="wrapper copytext">
@@ -107,11 +114,11 @@
                     </div>
                 </div>
             </div>
-            <div class="half-full float-right portfolio-image">
+            <div class="half-full float-right portfolio-image no-mobile">
             </div>
         </section>
-        <section id="partner" class="clearfix">
-            <div class="half-full float-left partners-image">
+        <section id="partner" class="clearfix" data-ng-cloak>
+            <div class="half-full float-left partners-image no-mobile">
             </div>
             <div class="half-full float-right">
                 <div class="v-center">
@@ -131,7 +138,7 @@
                 </div>
             </div>
         </section>
-        <section id="kontakt" class="clearfix">
+        <section id="kontakt" class="clearfix" data-ng-cloak>
             <div class="half-full float-left">
                 <div class="v-center">
                     <div class="wrapper copytext">
@@ -149,11 +156,11 @@
                     </div>
                 </div>
             </div>
-            <div class="half-full float-right" id="map-canvas">
+            <div class="half-full float-right no-mobile" id="map-canvas">
             </div>
         </section>
     </main>
-    <footer>
+    <footer data-ng-cloak>
         <div class="wrapper">
             <p>
                 <small>
@@ -194,7 +201,7 @@
             </p>
             <p>
                 <small>
-                   Entwickelt und gestaltet von <a href="http://robinloeffel.ch" target="_blank">Robin Löffel</a>
+                   {{'footer_robin' | translate}} <a href="http://robinloeffel.ch">Robin Löffel</a>
                 </small>
             </p>
             <p>
