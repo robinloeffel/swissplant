@@ -25,6 +25,7 @@ html {
     font-weight: normal;
     font-size: 21px;
     line-height: 1.4;
+    letter-spacing: 0.1px;
     color: rgb(50, 50, 50);
 }
 
@@ -260,8 +261,8 @@ nav ul li:hover:after {
     background-color: white;
     float: left;
     opacity: 0;
-    -webkit-transition: opacity 2.5s linear;
-    transition: opacity 2.5s linear;
+    -webkit-transition: opacity 2s ease-in-out;
+    transition: opacity 2s ease-in-out;
 }
 
 .one {

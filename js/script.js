@@ -7,7 +7,7 @@ $("document").ready(function () {
 
     setInterval(function () {
         rotate();
-    }, 10000);
+    }, 7500);
 
     function rotate() {
         if ($(document).width() > 1200) {
