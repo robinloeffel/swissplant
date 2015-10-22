@@ -353,7 +353,6 @@ nav ul li:hover:after {
     display: none !important;
 }
 
-<<<<<<< HEAD
 table {
     width: 100%;
     border-collapse: collapse;
@@ -375,7 +374,8 @@ tr {
 
 tr:hover {
     background-color: rgb(240, 240, 240);
-=======
+}
+
 @-webkit-keyframes up-and-down {
     0% {
         -webkit-transform: translateY(0);
@@ -396,7 +396,6 @@ tr:hover {
         -webkit-transform: translateY(10px);
         transform: translateY(10px);
     }
->>>>>>> origin/master
 }
 
 @media (max-width: 1200px) {
