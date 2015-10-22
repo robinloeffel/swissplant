@@ -1,30 +1,9 @@
-@-webkit-keyframes up-and-down {
-    0% {
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-    }
-    50% {
-        -webkit-transform: translateY(10px);
-        transform: translateY(10px);
-    }
-}
-
-@keyframes up-and-down {
-    0% {
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-    }
-    50% {
-        -webkit-transform: translateY(10px);
-        transform: translateY(10px);
-    }
-}
-
 html {
     font-family: Roboto, sans-serif;
     font-weight: normal;
     font-size: 21px;
     line-height: 1.4;
+    letter-spacing: 0.1px;
     color: rgb(50, 50, 50);
 }
 
@@ -260,8 +239,8 @@ nav ul li:hover:after {
     background-color: white;
     float: left;
     opacity: 0;
-    -webkit-transition: opacity 2.5s linear;
-    transition: opacity 2.5s linear;
+    -webkit-transition: opacity 2s ease-in-out;
+    transition: opacity 2s ease-in-out;
 }
 
 .one {
@@ -277,7 +256,7 @@ nav ul li:hover:after {
 }
 
 .darken-background {
-    background-color: rgba(0, 0, 0, .25);
+    background-color: rgba(0, 0, 0, .5);
 }
 
 .top {
@@ -374,6 +353,7 @@ nav ul li:hover:after {
     display: none !important;
 }
 
+<<<<<<< HEAD
 table {
     width: 100%;
     border-collapse: collapse;
@@ -395,6 +375,28 @@ tr {
 
 tr:hover {
     background-color: rgb(240, 240, 240);
+=======
+@-webkit-keyframes up-and-down {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    50% {
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+    }
+}
+
+@keyframes up-and-down {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    50% {
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+    }
+>>>>>>> origin/master
 }
 
 @media (max-width: 1200px) {
