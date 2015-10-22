@@ -11,13 +11,13 @@ angular.module('swissPlant', ['pascalprecht.translate'])
             nav_contact: "Kontakt",
             nav_start: "Start",
             about_heading: "Wer wir sind",
-            about_copy: "Lo-fi Intelligentsia roof party mixtape you probably haven't heard of them kitsch. PBR hashtag flexitarian, retro you probably haven't heard of them street art trust fund fingerstache sriracha cray stumptown.",
+            about_copy: "Die Firma SwissPlant GmbH ist Verkaufsstelle für Gemüsejungpflanzen der Firmen AgriPlant AG Schweiz und Gipmans Holland.",
             portfolio_heading: "Was wir Ihnen bieten",
-            portfolio_copy: "Forage trust fund whatever Bushwick Truffaut roof party. Locavore four loko farm-to-table cray, raw denim High Life blog. Gastropub art party Banksy synth, chillwave High Life chia.",
+            portfolio_copy: "Unser Produktionsstandort der Firma AgriPlant AG befindet sich im Berner Seeland. Die zentrale Lage der Firma bietet uns die Möglichkeit Sie schnell und kompetent zu beliefern.",
             partners_heading: "Mit wem wir arbeiten",
-            partners_copy: "Swag pork belly hella cred. Cornhole retro stumptown, semiotics Neutra pour-over McSweeney's. Hoodie Helvetica gastropub gluten-free. Seitan salvia Odd Future bitters, Banksy narwhal gastropub photo booth.",
+            partners_copy: "Die Firma Gipmans aus Holland beliefert uns als Sortimentsergänzung mit Warmhaus- und Speedypflanzen.",
             contact_heading: "Wie Sie uns erreichen",
-            contact_copy: "Schlitz locavore irony tousled cornhole, keytar Austin seitan. Dreamcatcher Kickstarter butcher, four loko put a bird on it retro sriracha single-origin coffee selvage meh 3 wolf moon. Disrupt street art hella Marfa.",
+            contact_copy: "Beispieltext",
             common_button_more: "Mehr erfahren",
             common_logo_alt: "Logo der SwissPlant GmbH",
             footer_address: "Spitzallmendweg 11, CH-3225 Müntschemier",
@@ -51,7 +51,7 @@ angular.module('swissPlant', ['pascalprecht.translate'])
             footer_mailbox: "Mailbox 11 (SwissPlant GmbH) / Mailbox 5 (Agriplant AG)",
             footer_mo_fr: "Monday to Friday",
             footer_to: "to",
-            footer_robin: "Entwickelt und gestaltet von "
+            footer_robin: "Developed and designed by "
         });
 
         $translateProvider.translations('fr', {
