@@ -467,7 +467,7 @@ tr:hover {
         width: 100%;
     }
     .no-mobile {
-        display: none;
+        display: none !important;
     }
     .half-full {
         width: 100%;
