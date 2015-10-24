@@ -38,4 +38,19 @@ $("document").ready(function () {
             scrollTop: ($("#" + scrollTarget).offset().top) - (89)
         }, 500);
     });
+
+    $("li.mobile-menu").click(function () {
+        $("nav.mobile-nav").css({
+            transform: "none"
+        });
+        $("nav.mobile-nav").addClass("open");
+    });
+
+    $(".close-mobile-nav").click(function (event) {
+        event.preventDefault();
+        $("nav.mobile-nav").css({
+            transform: "translateX(100%)"
+        });
+        $("nav.mobile-nav").removeClass("open");
+    });
 });

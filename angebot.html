@@ -16,7 +16,7 @@
 
 <body data-ng-controller="langCtrl">
     <header data-ng-cloak>
-        <nav>
+        <nav class="desktop-nav">
             <ul class="clearfix">
                 <li>
                     <a href="index.html">
@@ -43,6 +43,9 @@
                         {{'nav_contact' | translate}}
                     </a>
                 </li>
+                <li class="mobile-menu">
+                    <i class="fa fa-bars"></i>
+                </li>
                 <li class="lang-changer">
                     <div class="lang-changer-container">
                         <div class="icon-container">
@@ -54,6 +57,40 @@
                             <span data-ng-click="changeLang('fr')">fr</span>
                         </div>
                     </div>
+                </li>
+            </ul>
+        </nav>
+        <nav class="mobile-nav mobile-only">
+            <ul class="clearfix">
+                <li>
+                    <a href="#" class="close-mobile-nav">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html">
+                        {{'nav_start' | translate}}
+                    </a>
+                </li>
+                <li>
+                    <a href="ueber-uns.html">
+                        {{'nav_about' | translate}}
+                    </a>
+                </li>
+                <li>
+                    <a href="angebot.html">
+                        {{'nav_portfolio' | translate}}
+                    </a>
+                </li>
+                <li>
+                    <a href="partner.html">
+                        {{'nav_partners' | translate}}
+                    </a>
+                </li>
+                <li>
+                    <a href="kontakt.html">
+                        {{'nav_contact' | translate}}
+                    </a>
                 </li>
             </ul>
         </nav>

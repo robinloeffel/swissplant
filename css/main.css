@@ -97,11 +97,28 @@ footer {
     text-align: center;
 }
 
+nav.desktop-nav {
+    width: 100%;
+    z-index: 998;
+}
+
+nav.mobile-nav {
+    position: fixed;
+    width: 80%;
+    height: 100%;
+    top: 0;
+    left: 20%;
+    -webkit-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    z-index: 999;
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    transform: translateX(100%);
+}
+
 nav {
     top: 0;
     left: 0;
-    width: 100%;
-    z-index: 9999;
     position: fixed;
     box-shadow: 0 1px 5px rgba(0, 0, 0, .25);
     background-color: rgba(255, 255, 255, .95);
@@ -109,26 +126,45 @@ nav {
     -webkit-transform: translate3d(0, 0, 0);
 }
 
-nav ul {
+nav.desktop-nav ul {
     list-style-type: none;
-    margin: 0;
     padding: 0;
     width: 850px;
     margin: 0 auto;
 }
 
-nav ul li {
+nav.mobile-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav.desktop-nav ul li {
     float: left;
     position: relative;
 }
 
-.lang-changer {
+nav.mobile-nav ul li {
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+}
+
+nav.mobile-nav ul li a {
+    padding: 20px 30px;
+    height: auto;
+    width: 100%;
+    display: inline-block;
+    font-size: 1.1rem;
+}
+
+nav.desktop-nav ul li.lang-changer {
     position: absolute;
     right: 0;
     padding-bottom: 30px;
 }
 
-nav ul li:not(:first-child) a,
+nav.desktop-nav ul li:not(:first-child) a,
 .lang-changer div {
     display: inline-block;
     text-align: center;
@@ -176,7 +212,7 @@ nav ul li:not(:first-child) a,
     position: relative;
 }
 
-nav ul li:first-child a {
+nav.desktop-nav ul li:first-child a {
     display: inline-block;
     text-align: left;
     width: 250px;
@@ -186,7 +222,7 @@ nav ul li:first-child a {
     height: 89px;
 }
 
-nav ul li:first-child img {
+nav.desktop-nav ul li:first-child img {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -195,7 +231,7 @@ nav ul li:first-child img {
     width: 190px;
 }
 
-nav ul li:not(:first-child):after {
+nav.desktop-nav ul li:not(:first-child):after {
     content: "";
     position: absolute;
     width: 100%;
@@ -209,7 +245,7 @@ nav ul li:not(:first-child):after {
     z-index: -1;
 }
 
-nav ul li:hover:after {
+nav.desktop-nav ul li:hover:after {
     border-bottom: 5px solid #007333;
 }
 
@@ -376,6 +412,10 @@ tr:hover {
     background-color: rgb(240, 240, 240);
 }
 
+.mobile-only {
+    display: none;
+}
+
 @-webkit-keyframes up-and-down {
     0% {
         -webkit-transform: translateY(0);
@@ -402,28 +442,27 @@ tr:hover {
     .lang-changer {
         display: none;
     }
-    nav,
-    nav ul {
+    nav.desktop-nav,
+    nav.desktop-nav ul {
         width: 100%;
     }
-    .mobile-menu {
+    nav.desktop-nav ul li.mobile-menu {
         display: list-item;
         float: right;
-        padding: 30px;
+        padding: 32px;
         cursor: pointer;
     }
-    nav li:not(:first-child):not(.mobile-menu) {
+    nav.desktop-nav li:not(:first-child):not(.mobile-menu) {
         display: none;
     }
-    nav li:first-child {
-        float: left;
+    nav.desktop-nav li:first-child {
         margin-left: 20px;
         width: 150px;
     }
-    nav ul li:first-child a {
+    nav.desktop-nav ul li:first-child a {
         width: 100%;
     }
-    nav ul li:first-child img {
+    nav.desktop-nav ul li:first-child img {
         max-height: 60%;
         width: 100%;
     }
@@ -454,6 +493,12 @@ tr:hover {
     }
     section:nth-child(odd) {
         background-color: rgb(245, 245, 245) !important;
+    }
+    .mobile-only {
+        display: inline-block;
+    }
+    footer {
+        padding: 0;
     }
 }
 
