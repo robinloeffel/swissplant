@@ -500,6 +500,12 @@ tr:hover {
     footer {
         padding: 0;
     }
+    #landing {
+        height: 85vh;
+    }
+    .logo {
+        width: 100%;
+    }
 }
 
 @media (max-width: 640px) {
