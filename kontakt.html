@@ -54,7 +54,6 @@
                         <div class="changer-container">
                             <span data-ng-click="changeLang('de')">de</span>
                             <span data-ng-click="changeLang('en')">en</span>
-                            <span data-ng-click="changeLang('fr')">fr</span>
                         </div>
                     </div>
                 </li>
@@ -106,14 +105,22 @@
                 <h1>
                     {{'nav_contact' | translate}}
                 </h1>
-                <h2>Von Bern her</h2>
+                <h2>
+                    {{'contact_detail_header_h1' | translate}}
+                </h2>
                 <p>
-                    Autobahn Bern – Neuenburg Ausfahrt Kerzers anschliessend Richtung Neuenburg. In Müntschemier Richtung Bahnhof. Firmenwegweiser beachten.
+                    {{'contact_detail_copy_p1' | translate}}
                 </p>
-                <h2>Von Neuchâtel her</h2>
+                <h2>
+                    {{'contact_detail_header_h2' | translate}}
+                </h2>
                 <p>
-                    Richtung Ins – Müntschemier anschliessend in Müntschemier Richtung Bahnhof. Firmenwegweiser beachten.
+                    {{'contact_detail_copy_p2' | translate}}
                 </p>
+                <h2>
+                    {{'contact_detail_header_h3' | translate}}
+                </h2>
+                <div id="map-canvas" class="contact-map"></div>
             </div>
         </section>
     </main>

@@ -151,11 +151,15 @@ nav.mobile-nav ul li {
 }
 
 nav.mobile-nav ul li a {
-    padding: 20px 30px;
+    padding: 15px 30px;
     height: auto;
     width: 100%;
     display: inline-block;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+}
+
+nav.mobile-nav ul li a:first-child {
+    margin-top: 8px;
 }
 
 nav.desktop-nav ul li.lang-changer {
@@ -412,6 +416,11 @@ tr:hover {
     background-color: rgb(240, 240, 240);
 }
 
+.contact-map {
+    width: 100%;
+    height: 500px;
+}
+
 .mobile-only {
     display: none;
 }
@@ -511,5 +520,17 @@ tr:hover {
 @media (max-width: 640px) {
     html {
         font-size: 18px;
+    }
+    nav.desktop-nav ul li.mobile-menu {
+        padding: 23px;
+    }
+    nav.desktop-nav ul li:first-child a {
+        height: 72px;
+    }
+    #landing {
+        margin-top: 72px;
+    }
+    .contact-map {
+        height: 60vh;
     }
 }
