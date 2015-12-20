@@ -132,7 +132,9 @@ angular.module('swissPlant', ['pascalprecht.translate'])
         determineLang();
 
         function determineLang() {
-            if (!localStorage.swissPlantLang) {
+            if (localStorage.swissPlantLang) {
+                $translate.use(localStorage.swissPlantLang);
+            } else {
                 var userLang = navigator.language;
                 if (userLang.indexOf('de') > -1) {
                     $translate.use('de');
@@ -144,8 +146,6 @@ angular.module('swissPlant', ['pascalprecht.translate'])
                     $translate.use('en');
                     localStorage.swissPlantLang = 'en'
                 }
-            } else {
-                $translate.use(localStorage.swissPlantLang);
             }
         }
 

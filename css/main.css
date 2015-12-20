@@ -421,6 +421,10 @@ tr:hover {
     height: 500px;
 }
 
+video {
+    max-width: 100%;
+}
+
 .mobile-only {
     display: none;
 }

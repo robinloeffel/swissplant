@@ -33,9 +33,10 @@ $("document").ready(function () {
 
     $("[data-scroll-target]").click(function (event) {
         event.preventDefault();
-        var scrollTarget = $(event.target).attr("data-scroll-target");
+        var scrollTarget = "#" + event.target.dataset.scrollTarget;
+        var navHeight = $("nav.desktop-nav").outerHeight();
         $("html, body").animate({
-            scrollTop: ($("#" + scrollTarget).offset().top) - (89)
+            scrollTop: $(scrollTarget).offset().top - navHeight
         }, 500);
     });
 
