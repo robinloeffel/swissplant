@@ -139,10 +139,7 @@ angular.module('swissPlant', ['pascalprecht.translate'])
                 if (userLang.indexOf('de') > -1) {
                     $translate.use('de');
                     localStorage.swissPlantLang = 'de';
-                } else if (userLang.indexOf('fr') > -1) {
-                    $translate.use('fr');
-                    localStorage.swissPlantLang = 'fr'
-                } else if (userLang.indexOf('en') > -1) {
+                } else {
                     $translate.use('en');
                     localStorage.swissPlantLang = 'en'
                 }
