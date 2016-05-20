@@ -1,16 +1,14 @@
+# folders
+/node_modules/
+/dist/
+
 # windows
 Thumbs.db
+ehthumbs.db
 Desktop.ini
 
 # os x
 .DS_Store
-
-# ftp sync plugin
-.ftpsync_settings
-
-# node/npm
-/bower_components/
-/node_modules/
-
-# misc
-/raw/
+.AppleDouble
+.LSOverride
+._*

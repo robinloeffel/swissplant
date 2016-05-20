@@ -1,4 +1,8 @@
-# SwissPlant
-New web page for SwissPlant Ltd.
+# [swissplant.ch](http://swissplant.ch)
+Web page for SwissPlant Ltd.
 
-Initial product release in October 2015.
+Built with gulp, Less, jQuery and AngularJS.
+
+### Planned
+* Internationalization optimization
+* SEO support for all languages

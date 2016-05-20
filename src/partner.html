@@ -2,7 +2,7 @@
 <html data-ng-app="swissPlant">
 
 <head>
-    <title>SwissPlant GmbH &mdash; Ihr Spezialist für Gemüsejungpflanzen</title>
+    <title>SwissPlant GmbH &mdash; Partner</title>
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:500,400italic,700italic,300,700,500italic,300italic,400">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -19,27 +19,27 @@
         <nav class="desktop-nav">
             <ul class="clearfix">
                 <li>
-                    <a href="#start" data-scroll-target="landing">
-                        <img src="img/logo-swissplant-tilted.svg" data-scroll-target="landing" alt="{{'common_logo_alt' | translate}}">
+                    <a href="index.html">
+                        <img src="img/logo-swissplant-tilted.svg" alt="{{'common_logo_alt' | translate}}">
                     </a>
                 </li>
                 <li>
-                    <a href="#ueber-uns" data-scroll-target="ueber-uns">
+                    <a href="ueber-uns.html">
                         {{'nav_about' | translate}}
                     </a>
                 </li>
                 <li>
-                    <a href="#angebot" data-scroll-target="angebot">
+                    <a href="angebot.html">
                         {{'nav_portfolio' | translate}}
                     </a>
                 </li>
-                <li>
-                    <a href="#partner" data-scroll-target="partner">
+                <li class="active">
+                    <a href="partner.html">
                         {{'nav_partners' | translate}}
                     </a>
                 </li>
                 <li>
-                    <a href="#kontakt" data-scroll-target="kontakt">
+                    <a href="kontakt.html">
                         {{'nav_contact' | translate}}
                     </a>
                 </li>
@@ -95,101 +95,37 @@
         </nav>
     </header>
     <main data-ng-cloak>
-        <section id="landing">
+        <section id="landing" class="little-hero">
             <div class="cover-parent">
-                <div class="cover-parent-background rotate one top"></div>
-                <div class="cover-parent-background rotate two no-mobile"></div>
-                <div class="cover-parent-background rotate three no-mobile"></div>
-                <div class="cover-parent darken-background"></div>
-            </div>
-            <div class="v-center">
-                <div class="wrapper">
-                    <img src="img/logo-swissplant-white.svg" class="logo" alt="{{'common_logo_alt' | translate}}">
-                    <br class="no-mobile">
-                    <i class="fa fa-caret-down fa-2x up-and-down no-mobile" data-scroll-target="ueber-uns"></i>
-                </div>
+                <div class="cover-parent-background partners-image top"></div>
             </div>
         </section>
-        <section id="ueber-uns" class="clearfix">
-            <div class="half-full float-left about-image no-mobile">
-            </div>
-            <div class="half-full float-right">
-                <div class="v-center">
-                    <div class="wrapper copytext">
-                        <h1>
-                            {{'about_heading' | translate}}
-                        </h1>
-                        <p>
-                            {{'about_copy' | translate}}
-                        </p>
-                        <p>
-                            <a class="more-button" href="ueber-uns.html">
-                                {{'common_button_more' | translate}}
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="angebot" class="clearfix">
-            <div class="half-full float-left">
-                <div class="v-center">
-                    <div class="wrapper copytext">
-                        <h1>{{'portfolio_heading' | translate}}</h1>
-                        <p>
-                            {{'portfolio_copy' | translate}}
-                        </p>
-                        <p>
-                            <a class="more-button" href="angebot.html">
-                                {{'common_button_more' | translate}}
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="half-full float-right portfolio-image no-mobile">
-            </div>
-        </section>
-        <section id="partner" class="clearfix">
-            <div class="half-full float-left partners-image no-mobile">
-            </div>
-            <div class="half-full float-right">
-                <div class="v-center">
-                    <div class="wrapper copytext">
-                        <h1>
-                            {{'partners_heading' | translate}}
-                        </h1>
-                        <p>
-                            {{'partners_copy' | translate}}
-                        </p>
-                        <p>
-                            <a class="more-button" href="partner.html">
-                                {{'common_button_more' | translate}}
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="kontakt" class="clearfix">
-            <div class="half-full float-left">
-                <div class="v-center">
-                    <div class="wrapper copytext">
-                        <h1>
-                            {{'contact_heading' | translate}}
-                        </h1>
-                        <p>
-                            {{'contact_copy' | translate}}
-                        </p>
-                        <p>
-                            <a class="more-button" href="kontakt.html">
-                                {{'common_button_more' | translate}}
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="half-full float-right no-mobile" id="map-canvas">
+        <section id="ueber-uns">
+            <div class="wrapper copytext">
+                <h1>
+                    {{'nav_partners' | translate}}
+                </h1>
+                <h2>
+                    {{'partners_detail_header_h1' | translate}}
+                </h2>
+                <p>
+                    {{'partners_detail_copy_p1' | translate}}
+                </p>
+                <p>
+                    {{'partners_detail_copy_p2' | translate}}
+                </p>
+                <h2>
+                    {{'partners_detail_header_h2' | translate}}
+                </h2>
+                <p>
+                    {{'partners_detail_copy_p3' | translate}}
+                </p>
+                <p>
+                    {{'partners_detail_copy_p4' | translate}}
+                </p>
+                <p>
+                    {{'partners_detail_copy_p5' | translate}}
+                </p>
             </div>
         </section>
     </main>
@@ -244,18 +180,18 @@
             </p>
             <p>
                 <small>
-                   &copy; {{'footer_copyright' | translate}}, 2015
+                   &copy; {{'footer_copyright' | translate}}, 2016
                 </small>
             </p>
         </div>
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.7.2/angular-translate.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/angular.js"></script>
-    <script src="js/map.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.10.0/angular-translate.min.js" type="text/javascript"></script>
+    <script src="https://maps.googleapis.com/maps/api/js" type="text/javascript"></script>
+    <script src="js/script.min.js" type="text/javascript"></script>
+    <script src="js/angular.min.js" type="text/javascript"></script>
+    <script src="js/map.min.js" type="text/javascript"></script>
 </body>
 
 </html>

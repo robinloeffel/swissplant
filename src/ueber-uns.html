@@ -2,7 +2,7 @@
 <html data-ng-app="swissPlant">
 
 <head>
-    <title>SwissPlant GmbH &mdash; Angebot</title>
+    <title>SwissPlant GmbH &mdash; Über uns</title>
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:500,400italic,700italic,300,700,500italic,300italic,400">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -23,12 +23,12 @@
                         <img src="img/logo-swissplant-tilted.svg" alt="{{'common_logo_alt' | translate}}">
                     </a>
                 </li>
-                <li>
+                <li class="active">
                     <a href="ueber-uns.html">
                         {{'nav_about' | translate}}
                     </a>
                 </li>
-                <li class="active">
+                <li>
                     <a href="angebot.html">
                         {{'nav_portfolio' | translate}}
                     </a>
@@ -97,52 +97,34 @@
     <main data-ng-cloak>
         <section id="landing" class="little-hero">
             <div class="cover-parent">
-                <div class="cover-parent-background portfolio-image top"></div>
+                <div class="cover-parent-background about-image top"></div>
             </div>
         </section>
         <section id="ueber-uns">
             <div class="wrapper copytext">
                 <h1>
-                    {{'nav_portfolio' | translate}}
+                    {{'nav_about' | translate}}
                 </h1>
+                <video controls>
+                    <source src="video/swissplant.mp4" type="video/mp4"> Your Browser does not support HTML5 videos. Please consider upgrading.
+                </video>
                 <p>
-                    <table>
-                        <tr>
-                            <td>{{'portfolio_detail_copy_table_1x1' | translate}}</td>
-                            <td>{{'portfolio_detail_copy_table_1x2' | translate}}</td>
-                        </tr>
-                        <tr>
-                            <td>{{'portfolio_detail_copy_table_2x1' | translate}}</td>
-                            <td>{{'portfolio_detail_copy_table_2x2' | translate}}</td>
-                        </tr>
-                        <tr>
-                            <td>{{'portfolio_detail_copy_table_3x1' | translate}}</td>
-                            <td>{{'portfolio_detail_copy_table_3x2' | translate}}</td>
-                        </tr>
-                        <tr>
-                            <td>{{'portfolio_detail_copy_table_4x1' | translate}}</td>
-                            <td>{{'portfolio_detail_copy_table_4x2' | translate}}</td>
-                        </tr>
-                        <tr>
-                            <td>{{'portfolio_detail_copy_table_5x1' | translate}}</td>
-                            <td>{{'portfolio_detail_copy_table_5x2' | translate}}</td>
-                        </tr>
-                        <tr>
-                            <td>{{'portfolio_detail_copy_table_6x1' | translate}}</td>
-                            <td>{{'portfolio_detail_copy_table_6x2' | translate}}</td>
-                        </tr>
-                        <tr>
-                            <td>{{'portfolio_detail_copy_table_7x1' | translate}}</td>
-                            <td>{{'portfolio_detail_copy_table_7x2' | translate}}</td>
-                        </tr>
-                        <tr>
-                            <td>{{'portfolio_detail_copy_table_8x1' | translate}}</td>
-                            <td>{{'portfolio_detail_copy_table_8x2' | translate}}</td>
-                        </tr>
-                    </table>
+                    {{'about_detail_copy_p1' | translate}}
                 </p>
                 <p>
-                    {{'portfolio_detail_copy_p1' | translate}}
+                    {{'about_detail_copy_p2' | translate}}
+                </p>
+                <p>
+                    {{'about_detail_copy_p3' | translate}}
+                </p>
+                <p>
+                    {{'about_detail_copy_p4' | translate}}
+                </p>
+                <p>
+                    {{'about_detail_copy_p5' | translate}}
+                </p>
+                <p>
+                    {{'about_detail_copy_p6' | translate}}
                 </p>
             </div>
         </section>
@@ -198,17 +180,18 @@
             </p>
             <p>
                 <small>
-                   &copy; SwissPlant GmbH, 2015
+                   &copy; {{'footer_copyright' | translate}}, 2016
                 </small>
             </p>
         </div>
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.7.2/angular-translate.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.10.0/angular-translate.min.js" type="text/javascript"></script>
+    <script src="https://maps.googleapis.com/maps/api/js" type="text/javascript"></script>
+    <script src="js/script.min.js" type="text/javascript"></script>
+    <script src="js/angular.min.js" type="text/javascript"></script>
+    <script src="js/map.min.js" type="text/javascript"></script>
 </body>
 
 </html>

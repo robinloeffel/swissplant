@@ -1,5 +1,7 @@
 angular.module('swissPlant', ['pascalprecht.translate'])
     .config(function ($translateProvider) {
+    /* @ngInject */
+
         $translateProvider.translations('de', {
             meta_title_name: "SwissPlant GmbH",
             meta_title_slogan: "Ihr Spezialist für Gemüsejungpflanzen",
@@ -129,6 +131,8 @@ angular.module('swissPlant', ['pascalprecht.translate'])
         $translateProvider.useSanitizeValueStrategy('escape');
     })
     .controller('langCtrl', function ($scope, $translate) {
+        /* @ngInject */
+
         determineLang();
 
         function determineLang() {
@@ -141,7 +145,7 @@ angular.module('swissPlant', ['pascalprecht.translate'])
                     localStorage.swissPlantLang = 'de';
                 } else {
                     $translate.use('en');
-                    localStorage.swissPlantLang = 'en'
+                    localStorage.swissPlantLang = 'en';
                 }
             }
         }
@@ -149,5 +153,5 @@ angular.module('swissPlant', ['pascalprecht.translate'])
         $scope.changeLang = function (langKey) {
             $translate.use(langKey);
             localStorage.swissPlantLang = langKey;
-        }
+        };
     });
