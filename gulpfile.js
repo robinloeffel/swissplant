@@ -22,6 +22,7 @@ var src = 'src/',
     srcLess = src + 'less/*',
     srcVideo = src + 'video/*',
     srcHtml = src + '*.html',
+    srcMisc = [src + '.htaccess', src + 'robots.txt', src + 'sitemap.xml']
     dist = 'dist/',
     distImg = dist + 'img/',
     distJs = dist + 'js/',
@@ -122,14 +123,26 @@ gulp.task('html', function () {
         .pipe(connect.reload());
 });
 
+gulp.task('misc', function () {
+    return gulp.src(srcMisc)
+        .pipe(plumber())
+        .pipe(changed(dist))
+        .pipe(gulp.dest(dist));
+});
+
 gulp.task('watch', function () {
     gulp.watch(srcLess, ['less']);
     gulp.watch(srcJs, ['js', 'jshint']);
     gulp.watch(srcImg, ['img']);
     gulp.watch(srcVideo, ['video']);
     gulp.watch(srcHtml, ['html']);
+    gulp.watch(srcMisc, ['misc']);
 });
 
 gulp.task('default', function (callback) {
-    runSequence('clean', ['less', 'js', 'jshint', 'img', 'video', 'html'], 'watch', 'server', callback);
+    runSequence('clean', ['less', 'js', 'jshint', 'img', 'video', 'html', 'misc'], 'watch', 'server', callback);
+});
+
+gulp.task('build', function (callback) {
+    runSequence('clean', ['less', 'js', 'img', 'video', 'html', 'misc'], callback);
 });

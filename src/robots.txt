@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://swissplant.ch/sitemap.xml
