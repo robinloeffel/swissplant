@@ -17,7 +17,7 @@ var gulp = require('gulp'),
     ngAnnotate = require('gulp-ng-annotate');
 
 var src = 'src/',
-    srcImg = src + 'img/*',
+    srcImg = src + 'img/**/*',
     srcJs = src + 'js/*',
     srcLess = src + 'less/*',
     srcVideo = src + 'video/*',
@@ -52,7 +52,6 @@ gulp.task('less', function () {
             browsers: ['last 2 versions'],
             cascade: false
         }))
-        .pipe(gulp.dest(distCss))
         .pipe(cleanCss())
         .pipe(rename({
             suffix: '.min'
@@ -65,7 +64,6 @@ gulp.task('js', function () {
     var regularJs = gulp.src([srcJs, '!src/js/angular.js'])
         .pipe(plumber())
         .pipe(changed(distJs))
-        .pipe(gulp.dest(distJs))
         .pipe(uglify())
         .pipe(rename({
             suffix: '.min'
@@ -76,7 +74,6 @@ gulp.task('js', function () {
         .pipe(plumber())
         .pipe(changed(distJs))
         .pipe(ngAnnotate())
-        .pipe(gulp.dest(distJs))
         .pipe(uglify())
         .pipe(rename({
             suffix: '.min'
@@ -99,7 +96,7 @@ gulp.task('img', function () {
         .pipe(plumber())
         .pipe(changed(distImg))
         .pipe(imagemin({
-            optimizationLevel: 6,
+            optimizationLevel: 7,
             progressive: true,
             multipass: true
         }))
