@@ -9,7 +9,6 @@ var gulp = require('gulp'),
     less = require('gulp-less'),
     autoprefixer = require('gulp-autoprefixer'),
     cleanCss = require('gulp-clean-css'),
-    rename = require('gulp-rename'),
     jshint = require('gulp-jshint'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
@@ -53,35 +52,37 @@ gulp.task('less', function () {
             cascade: false
         }))
         .pipe(cleanCss())
-        .pipe(rename({
-            suffix: '.min'
-        }))
         .pipe(gulp.dest(distCss))
         .pipe(connect.reload());
 });
 
 gulp.task('js', function () {
-    var regularJs = gulp.src([srcJs, '!src/js/angular.js'])
+    var regular = gulp.src([srcJs, '!src/js/angular.js'])
         .pipe(plumber())
         .pipe(changed(distJs))
         .pipe(uglify())
-        .pipe(rename({
-            suffix: '.min'
-        }))
         .pipe(gulp.dest(distJs));
 
-    var angularJs = gulp.src('src/js/angular.js')
+    var angular = gulp.src('src/js/angular.js')
         .pipe(plumber())
         .pipe(changed(distJs))
         .pipe(ngAnnotate())
         .pipe(uglify())
-        .pipe(rename({
-            suffix: '.min'
-        }))
         .pipe(gulp.dest(distJs))
         .pipe(connect.reload());
 
-    return mergeStream(regularJs, angularJs);
+    return mergeStream(regular, angular);
+});
+
+gulp.task('vendor', function () {
+    return gulp.src([
+            'node_modules/jquery/dist/jquery.min.js',
+            'node_modules/angular/angular.min.js',
+            'node_modules/angular-translate/dist/angular-translate.min.js'
+        ])
+        .pipe(concat('vendor.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest(distJs));
 });
 
 gulp.task('jshint', function () {
@@ -137,9 +138,9 @@ gulp.task('watch', function () {
 });
 
 gulp.task('default', function (callback) {
-    runSequence('clean', ['less', 'js', 'jshint', 'img', 'video', 'html', 'misc'], 'watch', 'server', callback);
+    runSequence('clean', 'build', 'watch', 'server', callback);
 });
 
 gulp.task('build', function (callback) {
-    runSequence('clean', ['less', 'js', 'img', 'video', 'html', 'misc'], callback);
+    runSequence(['vendor', 'less', 'js', 'img', 'video', 'html', 'misc'], 'jshint', callback);
 });

@@ -1,14 +1,15 @@
 {
   "name": "swissplant",
-  "title": "SwissPlant GmbH",
-  "description": "Company page for SwissPlant Ltd.",
   "version": "1.0.0",
-  "author": {
-    "name": "Robin Löffel",
-    "url": "https://robinloeffel.ch"
-  },
+  "description": "Company page for SwissPlant Ltd.",
+  "homepage": "https://swissplant.ch",
+  "author": "Robin Löffel <hi@robinloeffel.ch> (https://robinloeffel.ch)",
   "license": "ISC",
-  "main": "gulpfile.js",
+  "private": true,
+  "scripts": {
+       "start": "gulp",
+       "dist": "gulp clean && gulp build"
+   },
   "repository": {
     "type": "git",
     "url": "https://github.com/rdizzle/swissplant.git"
@@ -16,8 +17,9 @@
   "bugs": {
     "url": "https://github.com/rdizzle/swissplant/issues"
   },
-  "homepage": "https://github.com/rdizzle/swissplant#readme",
   "devDependencies": {
+    "angular": "^1.5.8",
+    "angular-translate": "^2.13.0",
     "del": "^2.2.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
@@ -30,8 +32,8 @@
     "gulp-less": "^3.1.0",
     "gulp-ng-annotate": "^2.0.0",
     "gulp-plumber": "^1.1.0",
-    "gulp-rename": "^1.2.2",
     "gulp-uglify": "^1.5.3",
+    "jquery": "^2.2.4",
     "jshint": "^2.9.2",
     "jshint-stylish": "^2.2.0",
     "merge-stream": "^1.0.0",
