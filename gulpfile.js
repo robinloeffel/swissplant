@@ -3,6 +3,7 @@ var gulp = require('gulp'),
     stylish = require('jshint-stylish'),
     runSequence = require('run-sequence'),
     mergeStream = require('merge-stream'),
+    open = require('open'),
     connect = require('gulp-connect'),
     plumber = require('gulp-plumber'),
     changed = require('gulp-changed'),
@@ -13,37 +14,29 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
     imagemin = require('gulp-imagemin'),
-    ngAnnotate = require('gulp-ng-annotate');
+    ngAnnotate = require('gulp-ng-annotate'),
+    paths = require('./paths.json');
 
-var src = 'src/',
-    srcImg = src + 'img/**/*',
-    srcJs = src + 'js/*',
-    srcLess = src + 'less/*',
-    srcVideo = src + 'video/*',
-    srcHtml = src + '*.html',
-    srcMisc = [src + '.htaccess', src + 'robots.txt', src + 'sitemap.xml'],
-    dist = 'dist/',
-    distImg = dist + 'img/',
-    distJs = dist + 'js/',
-    distCss = dist + 'css/',
-    distVideo = dist + 'video/';
-
-gulp.task('clean', function () {
-    return del(dist);
+gulp.task('clean', function() {
+    return del(paths.dist);
 });
 
-gulp.task('server', function () {
+gulp.task('server', function() {
     return connect.server({
-        port: 3000,
+        port: 8080,
         livereload: true,
-        root: dist
+        root: paths.dist
     });
 });
 
-gulp.task('less', function () {
-    return gulp.src(srcLess)
+gulp.task('open', function() {
+    open('http://localhost:8080');
+});
+
+gulp.task('less', function() {
+    return gulp.src(paths.srcLess)
         .pipe(plumber())
-        .pipe(changed(distCss, {
+        .pipe(changed(paths.distCss, {
             extension: '.css'
         }))
         .pipe(less())
@@ -52,95 +45,104 @@ gulp.task('less', function () {
             cascade: false
         }))
         .pipe(cleanCss())
-        .pipe(gulp.dest(distCss))
+        .pipe(gulp.dest(paths.distCss))
         .pipe(connect.reload());
 });
 
-gulp.task('js', function () {
-    var regular = gulp.src([srcJs, '!src/js/angular.js'])
+gulp.task('js', function() {
+    var regular = gulp.src([paths.srcJs, '!src/js/angular.js'])
         .pipe(plumber())
-        .pipe(changed(distJs))
+        .pipe(changed(paths.distJs))
         .pipe(uglify())
-        .pipe(gulp.dest(distJs));
+        .pipe(gulp.dest(paths.distJs));
 
     var angular = gulp.src('src/js/angular.js')
         .pipe(plumber())
-        .pipe(changed(distJs))
+        .pipe(changed(paths.distJs))
         .pipe(ngAnnotate())
         .pipe(uglify())
-        .pipe(gulp.dest(distJs))
+        .pipe(gulp.dest(paths.distJs))
         .pipe(connect.reload());
 
     return mergeStream(regular, angular);
 });
 
-gulp.task('vendor', function () {
+gulp.task('vendor', function() {
     return gulp.src([
             'node_modules/jquery/dist/jquery.min.js',
             'node_modules/angular/angular.min.js',
-            'node_modules/angular-translate/dist/angular-translate.min.js'
+            'node_modules/angular-translate/dist/angular-translate.min.js',
+            'node_modules/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js'
         ])
         .pipe(concat('vendor.js'))
         .pipe(uglify())
-        .pipe(gulp.dest(distJs));
+        .pipe(gulp.dest(paths.distJs));
 });
 
-gulp.task('jshint', function () {
-    return gulp.src([srcJs, 'gulpfile.js'])
+gulp.task('jshint', function() {
+    return gulp.src([paths.srcJs, 'gulpfile.js'])
         .pipe(plumber())
         .pipe(jshint())
         .pipe(jshint.reporter(stylish));
 });
 
-gulp.task('img', function () {
-    return gulp.src(srcImg)
+gulp.task('img', function() {
+    return gulp.src(paths.srcImg)
         .pipe(plumber())
-        .pipe(changed(distImg))
+        .pipe(changed(paths.distImg))
         .pipe(imagemin({
             optimizationLevel: 7,
             progressive: true,
             multipass: true
         }))
-        .pipe(gulp.dest(distImg))
+        .pipe(gulp.dest(paths.distImg))
         .pipe(connect.reload());
 });
 
-gulp.task('video', function () {
-    return gulp.src(srcVideo)
-        .pipe(changed(distVideo))
+gulp.task('video', function() {
+    return gulp.src(paths.srcVideo)
+        .pipe(changed(paths.distVideo))
         .pipe(plumber())
-        .pipe(gulp.dest(distVideo))
+        .pipe(gulp.dest(paths.distVideo))
         .pipe(connect.reload());
 });
 
-gulp.task('html', function () {
-    return gulp.src(srcHtml)
-        .pipe(changed(dist))
+gulp.task('html', function() {
+    return gulp.src(paths.srcHtml)
+        .pipe(changed(paths.dist))
         .pipe(plumber())
-        .pipe(gulp.dest(dist))
+        .pipe(gulp.dest(paths.dist))
         .pipe(connect.reload());
 });
 
-gulp.task('misc', function () {
-    return gulp.src(srcMisc)
+gulp.task('json', function() {
+    return gulp.src(paths.srcJson)
+        .pipe(changed(paths.distJson))
         .pipe(plumber())
-        .pipe(changed(dist))
-        .pipe(gulp.dest(dist));
+        .pipe(gulp.dest(paths.distJson))
+        .pipe(connect.reload());
 });
 
-gulp.task('watch', function () {
-    gulp.watch(srcLess, ['less']);
-    gulp.watch(srcJs, ['js', 'jshint']);
-    gulp.watch(srcImg, ['img']);
-    gulp.watch(srcVideo, ['video']);
-    gulp.watch(srcHtml, ['html']);
-    gulp.watch(srcMisc, ['misc']);
+gulp.task('misc', function() {
+    return gulp.src(paths.srcMisc)
+        .pipe(plumber())
+        .pipe(changed(paths.dist))
+        .pipe(gulp.dest(paths.dist));
 });
 
-gulp.task('default', function (callback) {
-    runSequence('clean', 'build', 'watch', 'server', callback);
+gulp.task('watch', function() {
+    gulp.watch(paths.srcLess, ['less']);
+    gulp.watch(paths.srcJs, ['js', 'jshint']);
+    gulp.watch(paths.srcImg, ['img']);
+    gulp.watch(paths.srcVideo, ['video']);
+    gulp.watch(paths.srcHtml, ['html']);
+    gulp.watch(paths.srcMisc, ['misc']);
 });
 
-gulp.task('build', function (callback) {
-    runSequence(['vendor', 'less', 'js', 'img', 'video', 'html', 'misc'], 'jshint', callback);
+gulp.task('default', function(callback) {
+    runSequence('clean', 'build', 'watch', 'server', 'open', callback);
+});
+
+gulp.task('build', function(callback) {
+    runSequence(['vendor', 'less', 'js', 'img', 'video', 'html', 'misc', 'json'], 'jshint', callback);
 });

@@ -1,0 +1,16 @@
+{
+    "src": "src/",
+    "srcImg": "src/img/**/*",
+    "srcJs": "src/js/*",
+    "srcLess": "src/less/*",
+    "srcVideo": "src/video/*",
+    "srcJson": "src/json/*",
+    "srcHtml": "src/*.html",
+    "srcMisc": ["src/.htaccess", "src/robots.txt", "src/sitemap.xml"],
+    "dist": "dist/",
+    "distImg": "dist/img/",
+    "distJs": "dist/js/",
+    "distCss": "dist/css/",
+    "distVideo": "dist/video/",
+    "distJson": "dist/json"
+}
