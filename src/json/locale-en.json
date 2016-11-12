@@ -77,10 +77,8 @@
     "contact_detail_copy_p2": "Go towards Ins. After Ins, keep that direction. In Müntschemier, go in the direction of the train station. Once you're there, take a left and you should see us.",
     "common_button_more": "Find out more",
     "common_logo_alt": "Logo of SwissPlant Ltd.",
-    "footer_address": "Spitzallmendweg 11, CH-3225 Müntschemier",
-    "footer_mailbox": "Mailbox 11 (SwissPlant GmbH) / Mailbox 5 (Agriplant AG)",
-    "footer_mo_fr": "Monday to Friday",
-    "footer_to": "to",
-    "footer_robin": "Developed and designed by ",
-    "footer_copyright": "SwissPlant Ltd. and AgriPlant Corp."
+    "footer_address": "+41 32 313 52 10 &mdash; <a href=\"mailto:info@swissplant.ch\">info@swissplant.ch</a> / <a href=\"mailto:info@agriplant.ch\">info@agriplant.ch</a><br>Spitzallmendweg 11, CH-3225 Müntschemier<br>Mailbox 11 (SwissPlant Ltd.) / Postfach 5 (Agriplant Corp.)",
+    "footer_opening_hours": "Monday till Friday 07:30 &mdash; 11:45 &amp; 13:30 &mdash; 17:30",
+    "footer_robin": "Developed and designed by <a href=\"http://robinloeffel.ch\">Robin Löffel</a>",
+    "footer_copyright": "&copy; SwissPlant Ltd. &amp; AgriPlant Corp. 2016"
 }

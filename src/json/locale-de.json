@@ -77,10 +77,8 @@
     "contact_detail_copy_p2": "Richtung Ins – Müntschemier anschliessend in Müntschemier Richtung Bahnhof. Firmenwegweiser beachten.",
     "common_button_more": "Mehr erfahren",
     "common_logo_alt": "Logo der SwissPlant GmbH",
-    "footer_address": "Spitzallmendweg 11, CH-3225 Müntschemier",
-    "footer_mailbox": "Postfach 11 (SwissPlant GmbH) / Postfach 5 (Agriplant AG)",
-    "footer_mo_fr": "Montag bis Freitag",
-    "footer_to": "bis",
-    "footer_robin": "Entwickelt und gestaltet von ",
-    "footer_copyright": "SwissPlant GmbH und AgriPlant AG"
+    "footer_address": "+41 32 313 52 10 &mdash; <a href=\"mailto:info@swissplant.ch\">info@swissplant.ch</a> / <a href=\"mailto:info@agriplant.ch\">info@agriplant.ch</a><br>Spitzallmendweg 11, CH-3225 Müntschemier<br>Postfach 11 (SwissPlant GmbH) / Postfach 5 (Agriplant AG)",
+    "footer_opening_hours": "Montag bis Freitag 07:30 &mdash; 11:45 &amp; 13:30 &mdash; 17:30",
+    "footer_robin": "Entwickelt und gestaltet von <a href=\"http://robinloeffel.ch\">Robin Löffel</a>",
+    "footer_copyright": "&copy; SwissPlant GmbH &amp; AgriPlant AG 2016"
 }
