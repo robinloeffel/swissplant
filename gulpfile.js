@@ -137,6 +137,7 @@ gulp.task('watch', function() {
     gulp.watch(paths.srcVideo, ['video']);
     gulp.watch(paths.srcHtml, ['html']);
     gulp.watch(paths.srcMisc, ['misc']);
+    gulp.watch(paths.srcJson, ['json']);
 });
 
 gulp.task('default', function(callback) {

@@ -1,6 +1,6 @@
 angular.module('swissPlant', ['pascalprecht.translate'])
     .config(function ($translateProvider) {
-    /* @ngInject */
+        /* @ngInject */
         $translateProvider.useStaticFilesLoader({
             prefix: '../json/locale-',
             suffix: '.json'
