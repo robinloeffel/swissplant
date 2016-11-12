@@ -1,55 +1,55 @@
-$("document").ready(function () {
-    "use strict";
+$(function() {
+    'use strict';
 
     var rotateCount = 1;
 
-    setInterval(function () {
+    setInterval(function() {
         rotate();
     }, 7500);
 
     function rotate() {
         if ($(document).width() > 1200) {
             switch (rotateCount) {
-            case 1:
-                $(".cover-parent-background.rotate.one").removeClass("top");
-                $(".cover-parent-background.rotate.two").addClass("top");
-                rotateCount++;
-                break;
-            case 2:
-                $(".cover-parent-background.rotate.two").removeClass("top");
-                $(".cover-parent-background.rotate.three").addClass("top");
-                rotateCount++;
-                break;
-            case 3:
-                $(".cover-parent-background.rotate.three").removeClass("top");
-                $(".cover-parent-background.rotate.one").addClass("top");
-                rotateCount = 1;
-                break;
+                case 1:
+                    $('.cover-parent-background.rotate.one').removeClass('top');
+                    $('.cover-parent-background.rotate.two').addClass('top');
+                    rotateCount++;
+                    break;
+                case 2:
+                    $('.cover-parent-background.rotate.two').removeClass('top');
+                    $('.cover-parent-background.rotate.three').addClass('top');
+                    rotateCount++;
+                    break;
+                case 3:
+                    $('.cover-parent-background.rotate.three').removeClass('top');
+                    $('.cover-parent-background.rotate.one').addClass('top');
+                    rotateCount = 1;
+                    break;
             }
         }
     }
 
-    $("[data-scroll-target]").click(function (event) {
+    $('[data-scroll-target]').click(function(event) {
         event.preventDefault();
-        var scrollTarget = "#" + event.target.dataset.scrollTarget;
-        var navHeight = $("nav.desktop-nav").outerHeight();
-        $("html, body").animate({
+        var scrollTarget = '#' + event.target.dataset.scrollTarget;
+        var navHeight = $('nav.desktop-nav').outerHeight();
+        $('html, body').animate({
             scrollTop: $(scrollTarget).offset().top - navHeight
         }, 500);
     });
 
-    $("li.mobile-menu").click(function () {
-        $("nav.mobile-nav").css({
-            transform: "none"
+    $('li.mobile-menu').click(function() {
+        $('nav.mobile-nav').css({
+            transform: 'none'
         });
-        $("nav.mobile-nav").addClass("open");
+        $('nav.mobile-nav').addClass('open');
     });
 
-    $(".close-mobile-nav").click(function (event) {
+    $('.close-mobile-nav').click(function(event) {
         event.preventDefault();
-        $("nav.mobile-nav").css({
-            transform: "translateX(100%)"
+        $('nav.mobile-nav').css({
+            transform: 'translateX(100%)'
         });
-        $("nav.mobile-nav").removeClass("open");
+        $('nav.mobile-nav').removeClass('open');
     });
 });

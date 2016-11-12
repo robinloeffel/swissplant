@@ -161,7 +161,7 @@ nav {
                         position: relative;
                         float: left;
                         color: inherit;
-                        height: 89px;
+                        height: 91px;
                     }
 
                     img {
@@ -364,7 +364,7 @@ nav {
     margin-top: 25px;
     border: 3px solid rgb(0, 115, 51);
     color: rgb(0, 115, 51);
-    transition: all .25s ease-in-out;
+    transition: background-color .25s ease-in-out, color .25s ease-in-out;
     user-select: none;
     display: inline-block;
 
@@ -436,15 +436,13 @@ nav {
         margin: 10px;
         position: relative;
         border-radius: 5px;
-        transition: all .25s ease-in-out;
         overflow: hidden;
+        outline: none;
 
         &:hover,
         &:focus {
-            outline: none;
-
             figcaption {
-                transform: none;
+                transform: translateY(0);
 
                 span {
                     transform: translateY(105px);
@@ -475,7 +473,7 @@ nav {
             span {
                 display: block;
                 margin-bottom: 5px;
-                transition: inherit;
+                transition: transform .25s ease-in-out;
 
                 &:not(:first-child) {
                     font-size: 16px;
@@ -484,10 +482,6 @@ nav {
             }
         }
     }
-}
-
-[data-ng-cloak] {
-    display: none !important;
 }
 
 @keyframes up-and-down {

@@ -1,5 +1,5 @@
 function initialize() {
-    var mapCanvas = document.getElementById("map-canvas");
+    var mapCanvas = document.getElementById('map-canvas');
     var mapPosition = new google.maps.LatLng(46.9913104, 7.1441492);
     var mapOptions = {
         center: mapPosition,
@@ -13,4 +13,4 @@ function initialize() {
     mapMarker.setMap(map);
 }
 
-google.maps.event.addDomListener(window, "load", initialize);
+google.maps.event.addDomListener(window, 'load', initialize);
