@@ -30,7 +30,7 @@ gulp.task('server', function() {
 });
 
 gulp.task('open', function() {
-    open('http://localhost:8080');
+    return open('http://localhost:8080');
 });
 
 gulp.task('less', function() {
