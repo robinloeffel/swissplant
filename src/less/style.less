@@ -95,13 +95,12 @@ video {
 }
 
 #landing {
-    margin-top: 91px;
-    height: 90vh;
+    height: 100vh;
     color: @primary-background-color;
-}
 
-.little-hero {
-    height: 300px !important;
+    &.little-hero {
+        height: 400px;
+    }
 }
 
 .logo {
@@ -178,18 +177,19 @@ nav {
                         content: "";
                         position: absolute;
                         width: 100%;
-                        height: 100%;
-                        top: 0;
+                        height: 5px;
+                        bottom: 0;
                         left: 0;
-                        box-sizing: border-box;
-                        border-bottom: 0px solid @link-color;
-                        transition: .25s;
+                        background-color: @link-color;
+                        transform: scale(1, 0);
+                        transform-origin: bottom;
+                        transition: transform .25s ease-in-out;
                         z-index: -1;
                     }
 
                     &:hover {
                         &::after {
-                            border-bottom: 5px solid @link-color;
+                            transform: scale(1);
                         }
                     }
 
@@ -322,7 +322,6 @@ nav {
     left: 0;
     height: 100%;
     width: 100%;
-    overflow: hidden;
 
     &-background {
         position: absolute;
@@ -333,7 +332,6 @@ nav {
         background-position: center;
         background-size: cover;
         background-color: white;
-        float: left;
         opacity: 0;
         transition: opacity 2s ease-in-out;
     }
@@ -355,7 +353,7 @@ nav {
     }
 
     .top {
-        opacity: 1 !important;
+        opacity: 1;
     }
 }
 
@@ -419,9 +417,10 @@ nav {
 
 .up-and-down {
     animation: up-and-down;
-    animation-duration: 2s;
-    animation-fill-mode: both;
+    animation-duration: 1s;
     animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
     padding: 10px 20px;
     cursor: pointer;
 }
@@ -493,7 +492,7 @@ nav {
     0% {
         transform: translateY(0);
     }
-    50% {
+    100% {
         transform: translateY(10px);
     }
 }
@@ -581,10 +580,6 @@ nav {
         padding: 0;
     }
 
-    #landing {
-        height: 85vh;
-    }
-
     .logo {
         width: 100%;
     }
@@ -611,10 +606,6 @@ nav {
                 }
             }
         }
-    }
-
-    #landing {
-        margin-top: 72px;
     }
 
     .contact-map {
