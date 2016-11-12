@@ -59,6 +59,7 @@ footer {
     background-color: @secondary-background-color;
     color: @primary-background-color;
     padding: 75px 0;
+    border-top: 5px solid @link-color;
 
     .footer-logo {
         max-width: 150px;
@@ -71,14 +72,15 @@ table {
     border-collapse: collapse;
 
     tr {
-        transition: .2s ease-in-out;
-
-        &:hover {
-            background-color: rgb(240, 240, 240);
-        }
+        transition: background-color .25s ease-in-out, color .25s ease-in-out;
 
         &:nth-child(odd) {
-            background-color: rgba(0, 0, 0, .025);
+            background-color: rgba(0, 0, 0, .05);
+        }
+
+        &:hover {
+            background-color: @link-color;
+            color: #fff;
         }
 
         td {
