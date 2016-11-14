@@ -6,5 +6,4 @@ Built with gulp, Less, jQuery and AngularJS.
 
 ## Planned
 
-- Internationalization optimization
 - SEO support for all languages
