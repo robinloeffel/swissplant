@@ -190,9 +190,26 @@
         </section>
     </main>
     <footer ng-cloak>
-        <div class="wrapper">
-            <p>
-                <small>
+        <div class="wrapper clearfix">
+            <div class="left">
+                <p>
+                    <img src="img/logo-swissplant-tilted.svg" class="footer-logo" translate-attr="{alt: 'common.logo.swissplant.alt'}">
+                    <br/>
+                    <img src="img/logo-agriplant.svg" class="footer-logo" translate-attr="{alt: 'common.logo.agriplant.alt'}">
+                </p>
+                <p translate="footer.copyright"></p>
+            </div>
+            <div class="center">
+                <p translate="footer.address"></p>
+                <p translate="footer.po-boxes"></p>
+                <p translate="footer.phone"></p>
+            </div>
+            <div class="right">
+                <p translate="footer.hours"></p>
+                <p translate="footer.emails"></p>
+            </div>
+            <div class="row separator">
+                <p>
                     <a href="." translate="nav.start"></a>
                     &mdash;
                     <a href="ueber-uns.html" translate="nav.about"></a>
@@ -202,25 +219,11 @@
                     <a href="partner.html" translate="nav.partners"></a>
                     &mdash;
                     <a href="kontakt.html" translate="nav.contact"></a>
-                </small>
-            </p>
-            <p>
-                <img src="img/logo-swissplant-tilted.svg" class="footer-logo" translate-attr="{alt: 'common.logo.swissplant.alt'}">
-                <br>
-                <img src="img/logo-agriplant.svg" class="footer-logo" translate-attr="{alt: 'common.logo.agriplant.alt'}">
-            </p>
-            <p>
-                <small translate="footer.address"></small>
-            </p>
-            <p>
-                <small translate="footer.hours"></small>
-            </p>
-            <p>
-                <small translate="footer.robin"></small>
-            </p>
-            <p>
-                <small translate="footer.copyright"></small>
-            </p>
+                </p>
+            </div>
+            <div class="row">
+                <p translate="footer.robin"></p>
+            </div>
         </div>
     </footer>
     <script src="js/vendor.js" type="text/javascript"></script>

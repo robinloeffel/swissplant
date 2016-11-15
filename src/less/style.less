@@ -65,6 +65,46 @@ footer {
         max-width: 150px;
         max-height: 50px;
     }
+
+    .wrapper {
+        .row {
+            display: inline-block;
+            width: 100%;
+
+            &.separator {
+                border-top: 2px solid @copy-color;
+                margin-top: 25px;
+                padding-top: 25px;
+            }
+        }
+
+        .left {
+            float: left;
+            width: 30%;
+        }
+
+        .right {
+            float: right;
+            width: 30%;
+        }
+
+        .center {
+            float: left;
+            width: 40%;
+            padding: 0 25px;
+            box-sizing: border-box;
+        }
+
+        .left,
+        .right,
+        .center {
+            text-align: left;
+        }
+
+        p {
+            font-size: smaller;
+        }
+    }
 }
 
 table {
@@ -363,14 +403,14 @@ nav {
 .more-button {
     padding: 20px 25px;
     margin-top: 25px;
-    border: 3px solid rgb(0, 115, 51);
-    color: rgb(0, 115, 51);
+    border: 3px solid @link-color;
+    color: @link-color;
     transition: background-color .25s ease-in-out, color .25s ease-in-out;
     user-select: none;
     display: inline-block;
 
     &:hover {
-        background-color: rgb(0, 115, 51);
+        background-color: @link-color;
         color: white;
     }
 }
@@ -561,7 +601,7 @@ nav {
         padding: 0 !important;
 
         &:nth-child(odd) {
-            background-color: rgb(245, 245, 245) !important;
+            background-color: #f9f9f9;
         }
     }
 
@@ -613,6 +653,20 @@ nav {
         figure {
             figcaption {
                 transform: translateY(234px);
+            }
+        }
+    }
+
+    footer {
+        .wrapper {
+            .left,
+            .right,
+            .center,
+            .row {
+                width: 100%;
+                padding: 0 25px;
+                float: left;
+                box-sizing: border-box;
             }
         }
     }
