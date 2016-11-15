@@ -22,7 +22,7 @@
     "about.meta.title": "SwissPlant Ltd. &mdash; About us",
     "about.copy.first": "In the beginning, all these vegetables and salands are seedings, which come directly from AgriPlant here in Müntschemier. CEO and founder of both of our companies, SwissPlant Ltd. and AgriPlant Corp., is Martin Löffel. He summarizes the process from the seedings growing to plants like this: \"We grow the seedings and then supply the cultivation firms with saplings. These then get planted out in the fields.\"",
     "about.copy.second": "The tranding company (SwissPlant) offers vegetables in all possible variations and sizes. Through years of experience, whe can guarantee competent and specific consultings for our climatic circumstances. Our product line is based around products of different breeding programs from worldwide leading companies.",
-    "about.copy.third": "Our suppliers are Bejo, Enza, Rijk Zwaan, Hild, Syngenta and Sakata. We obtain the soild we're using from Floragard and Klasmann.",
+    "about.copy.third": "Our suppliers are <a href=\"//bejo.com\" target=\"_blank\">Bejo</a>, <a href=\"//enzazaden.com\" target=\"_blank\">Enza</a>, <a href=\"//rijkzwaan.com\" target=\"_blank\">Rijk Zwaan</a>, <a href=\"//hildsamen.de/eng_ueber_uns.htm\" target=\"_blank\">Hild</a>, <a href=\"//syngenta.com\" target=\"_blank\">Syngenta</a> and <a href=\"//www.sakata.com/\" target=\"_blank\">Sakata</a>. We obtain the soild we're using from <a href=\"//floragard.de/en/\" target=\"_blank\">Floragard</a> and <a href=\"//www.klasmann-deilmann.com/en/\" target=\"_blank\">Klasmann</a>.",
     "about.martin.alt": "Martin Löffel, CEO",
     "about.martin.position": "CEO &amp; Sales",
     "about.telja.alt": "Telja Baumann, Administration",
@@ -65,14 +65,14 @@
     "portfolio.table.7x2": "Cabbages and celery",
     "portfolio.table.8x1": "G280",
     "portfolio.table.8x2": "Cabbages and celery",
-    "portfolio.description": "We offer warm house plants in various variants. For example refined or unrefined plants or plants in mineral wool or soil. If you need any client-specific information or have questions, our personnel would be happy to help.",
+    "portfolio.description": "We offer warm house plants in various variants. For example refined or unrefined plants or plants in mineral wool or soil. If you need any client-specific information or have questions, <a href=\"./ueber-uns.html\">our sales team</a> would be happy to help.",
 
     "partners.meta.title": "SwissPlant Ltd. &mdash; Partners",
     "partners.agriplant": "AgriPlant Corp.",
     "partners.agriplant.description.first": "Since we produce where we sell, all our saplings grow up in the same \"house\" as they will be cultivated in. Thanks to the individual delivery days and short transportation distances to our clients, we can offer stress-free plants.",
     "partners.agriplant.description.second": "To make every wish of our clients come true, there are several different cultivation areas in our house. From a like aspargus to z like zucchini, we're able to cultivate saplings in the best quality. Our growing houses are updated with the latest technical improvements, and free field areas as well as convertible roof houses allow us to harden the plants before delivering them to you.",
     "partners.gipmans": "Gipmans Netherlands",
-    "partners.gipmans.description.first": "At Gipmans in the Netherlands, we seed our speedy and warm house saplings. Tray plants are obtained half-finished, so we can then cultivate them in our own house. The warm house plants are delivered to us already finished. They get delivered to our clients through our transportation units.",
+    "partners.gipmans.description.first": "At <a href=\"//gipmans.nl\" target=\"_blank\">Gipmans</a> in the Netherlands, we seed our speedy and warm house saplings. Tray plants are obtained half-finished, so we can then cultivate them in our own house. The warm house plants are delivered to us already finished. They get delivered to our clients through our transportation units.",
     "partners.gipmans.description.second": "Gipmans stands for market-oriented knowledge and know-how. Joint knowledge improvements and innovations lead not only to a greater gain, but let us also help us adapt to your specific market situation and desired quality.",
 
     "contact.meta.title": "SwissPlant Ltd. &mdash; Contact",
@@ -85,8 +85,8 @@
     "common.logo.swissplant.alt": "Logo of SwissPlant Ltd.",
     "common.logo.agriplant.alt": "Logo of AgriPlant Corp.",
 
-    "footer.address": "+41 32 313 52 10 &mdash; <a href=\"mailto:info@swissplant.ch\">info@swissplant.ch</a> / <a href=\"mailto:info@agriplant.ch\">info@agriplant.ch</a><br>Spitzallmendweg 11, CH-3225 Müntschemier<br>Mailbox 11 (SwissPlant Ltd.) / Mailbox 5 (Agriplant Corp.)",
+    "footer.address": "<a href=\"tel:+41323135210\">+41 32 313 52 10</a> &mdash; <a href=\"mailto:info@swissplant.ch\">info@swissplant.ch</a> / <a href=\"mailto:info@agriplant.ch\">info@agriplant.ch</a><br>Spitzallmendweg 11, CH-3225 Müntschemier<br>Mailbox 11 (SwissPlant Ltd.) / Mailbox 5 (Agriplant Corp.)",
     "footer.hours": "Monday till Friday 07:30 &mdash; 11:45 &amp; 13:30 &mdash; 17:30",
-    "footer.robin": "Developed and designed by <a href=\"http://robinloeffel.ch\">Robin Löffel</a>",
+    "footer.robin": "Developed and designed by <a href=\"//robinloeffel.ch\" target=\"_blank\">Robin Löffel</a>",
     "footer.copyright": "&copy; SwissPlant Ltd. &amp; AgriPlant Corp. 2016"
 }

@@ -22,7 +22,7 @@
     "about.meta.title": "SwissPlant GmbH &mdash; Über uns",
     "about.copy.first": "Den Anfang nehmen all diese Gemüse und Salate als Jungpflanzen, die von der Firma AgriPlant AG in Müntschemier angezogen werden. Geschäftsführer unserer Firmen Martin Löffel, fasst den Weg der Keimlinge bis hin zu ausgewachsenen Pflanzen so zusammen: \"Wir stehen als Zulieferbetrieb der Gemüsebaubetriebe am Anfang der Produktionskette und kultivieren die Jungpflanzen, die anschliessend von den Gemüsegärtnern gepflanzt werden.\"",
     "about.copy.second": "Die Handelsfirma SwissPlant GmbH, bietet Ihnen Gemüsejungpflanzen in allen möglichen Variationen und Grössen an. Durch unsere jahrelange Erfahrung im Gemüsebau können wir Ihnen eine kompetente und fachspezifische Beratung für unsere klimatischen Bedingungen garantieren. Unser Sortiment ist eine Zusammenstellung aus verschiedenen Züchtungsprogrammen der weltweit tätigen Anbieter von Hochleistungssaatgut.",
-    "about.copy.third": "Zu unseren Zulieferfirmen im Bereich Saatgut gehören: Bejo, Enza, Rijk Zwaan, Hild, Syngenta und Sakata. Unsere Anzuchterde beziehen wir bei den Firmen Floragard und Klasmann.",
+    "about.copy.third": "Zu unseren Zulieferfirmen im Bereich Saatgut gehören: <a href=\"//bejosamen.de\" target=\"_blank\">Bejo</a>, <a href=\"//enzazaden.de\" target=\"_blank\">Enza</a>, <a href=\"//rijkzwaan.de\" target=\"_blank\">Rijk Zwaan</a>, <a href=\"//hildsamen.de/ueber_uns.htm\" target=\"_blank\">Hild</a>, <a href=\"//syngenta.ch\" target=\"_blank\">Syngenta</a> und <a href=\"//www.sakata.com\" target=\"_blank\">Sakata</a>. Unsere Anzuchterde beziehen wir bei den Firmen <a href=\"//floragard.de\" target=\"_blank\">Floragard</a> und <a href=\"//klasmann-deilmann.com\" target=\"_blank\">Klasmann</a>.",
     "about.martin.alt": "Martin Löffel, Geschäftsführer",
     "about.martin.position": "Geschäftsführer &amp; Verkauf",
     "about.telja.alt": "Telja Baumann, Administration",
@@ -65,14 +65,14 @@
     "portfolio.table.7x2": "Kohlarten und Sellerie",
     "portfolio.table.8x1": "G280",
     "portfolio.table.8x2": "Kohlarten und Sellerie",
-    "portfolio.description": "Wir bieten Ihnen Warmhauspflanzen in verschiedenen Varianten an. Beispielsweise veredelte und unveredelte Pflanzen oder Pflanzen in Steinwolle oder Erde. Über unser reichhaltiges Jungpflanzensortiment informieren wir Sie gerne. Für kundenspezifische Auskünfte oder Fragen steht Ihnen unser Verkaufspersonal jederzeit zur Verfügung.",
+    "portfolio.description": "Wir bieten Ihnen Warmhauspflanzen in verschiedenen Varianten an. Beispielsweise veredelte und unveredelte Pflanzen oder Pflanzen in Steinwolle oder Erde. Über unser reichhaltiges Jungpflanzensortiment informieren wir Sie gerne. Für kundenspezifische Auskünfte oder Fragen steht Ihnen <a href=\"./ueber-uns.html\">unser Verkaufspersonal</a> jederzeit zur Verfügung.",
 
     "partners.meta.title": "SwissPlant GmbH &mdash; Partner",
     "partners.agriplant": "AgriPlant AG",
     "partners.agriplant.description.first": "Durch unseren ortsansässigen Produktionsbetrieb wachsen unsere Jungpflanzen im selben \"Haus\", wo sie anschliessend weiter kultiviert werden. Dank der individuellen Ausliefertage und den kurzen Transportdistanzen zum Kunden, können wir Ihnen stressfreie Pflanzen anbieten.",
     "partners.agriplant.description.second": "Um alle Wünsche und Bedürfnisse der Kundschaft zu erfüllen, stehen verschiedene Kulturräume zur Verfügung. Der Betrieb ist in der Lage Jungpflanzen von Auberginen bis Zwiebeln bestens zu kultivieren. Die Gewächshäuser entsprechen den neusten technischen Erkenntnissen im Gewächshausbau. Freilandflächen und Cabrio-Häuser zum Abhärten der Pflanzen garantieren optimale Startbedingungen nach dem Pflanzen.",
     "partners.gipmans": "Gipmans Holland",
-    "partners.gipmans.description.first": "Bei der Firma Gipmans in Holland lassen wir unsere Speedy- und Warmhauspflanzen aussäen. Traypflanzen werden halbfertig bezogen, um sie anschliessend bei uns fertig zu kultivieren. Warmhauspflanzen werden fertig zu uns geliefert und durch unsere eigene Betriebsspedition direkt zum Kunden geliefert.",
+    "partners.gipmans.description.first": "Bei der Firma <a href=\"//gipmans.nl\" target=\"_blank\">Gipmans</a> in Holland lassen wir unsere Speedy- und Warmhauspflanzen aussäen. Traypflanzen werden halbfertig bezogen, um sie anschliessend bei uns fertig zu kultivieren. Warmhauspflanzen werden fertig zu uns geliefert und durch unsere eigene Betriebsspedition direkt zum Kunden geliefert.",
     "partners.gipmans.description.second": "Die Firma Gipmans steht für eine marktorientiertes Wissen und Können. Gemeinsame Wissensentwicklungen und Innovationen führen nicht nur zu einem besseren Ertrag, sondern tragen auch dazu bei, dass wir uns weitaus besser auf Ihre jeweils spezifische Marktsituation und die gewünschte Qualität einstellen können.",
 
     "contact.meta.title": "SwissPlant GmbH &mdash; Kontakt",
@@ -85,8 +85,8 @@
     "common.logo.swissplant.alt": "Logo der SwissPlant GmbH",
     "common.logo.agriplant.alt": "Logo der AgriPlant AG",
 
-    "footer.address": "+41 32 313 52 10 &mdash; <a href=\"mailto:info@swissplant.ch\">info@swissplant.ch</a> / <a href=\"mailto:info@agriplant.ch\">info@agriplant.ch</a><br>Spitzallmendweg 11, CH-3225 Müntschemier<br>Postfach 11 (SwissPlant GmbH) / Postfach 5 (Agriplant AG)",
+    "footer.address": "<a href=\"tel:+41323135210\">+41 32 313 52 10</a> &mdash; <a href=\"mailto:info@swissplant.ch\">info@swissplant.ch</a> / <a href=\"mailto:info@agriplant.ch\">info@agriplant.ch</a><br>Spitzallmendweg 11, CH-3225 Müntschemier<br>Postfach 11 (SwissPlant GmbH) / Postfach 5 (Agriplant AG)",
     "footer.hours": "Montag bis Freitag 07:30 &mdash; 11:45 &amp; 13:30 &mdash; 17:30",
-    "footer.robin": "Entwickelt und gestaltet von <a href=\"http://robinloeffel.ch\">Robin Löffel</a>",
+    "footer.robin": "Entwickelt und gestaltet von <a href=\"//robinloeffel.ch\" target=\"_blank\">Robin Löffel</a>",
     "footer.copyright": "&copy; SwissPlant GmbH &amp; AgriPlant AG 2016"
 }
