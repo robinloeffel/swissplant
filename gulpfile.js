@@ -72,7 +72,9 @@ gulp.task('vendor', function() {
             'node_modules/jquery/dist/jquery.min.js',
             'node_modules/angular/angular.min.js',
             'node_modules/angular-translate/dist/angular-translate.min.js',
-            'node_modules/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js'
+            'node_modules/angular-cookies/angular-cookies.min.js',
+            'node_modules/angular-translate-storage-local/angular-translate-storage-local.min.js',
+            'node_modules/angular-translate-storage-cookie/angular-translate-storage-cookie.min.js'
         ])
         .pipe(concat('vendor.js'))
         .pipe(uglify())
