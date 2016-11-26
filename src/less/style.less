@@ -147,15 +147,25 @@ video {
 }
 
 .logo {
-    width: 90%;
+    width: 100%;
+    float: left;
     user-select: none;
 }
 
-.v-center {
-    text-align: center;
-    position: relative;
+.absolute-center {
+    position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    right: 50%;
+    transform: translate(50%, -50%);
+    width: 50%;
+    max-width: 1000px;
+    min-width: 300px;
+
+    .up-and-down {
+        position: absolute;
+        bottom: -100px;
+        left: calc(~'50% - 32px');
+    }
 }
 
 .wrapper {
@@ -416,6 +426,7 @@ nav {
 }
 
 .half-full {
+    position: relative;
     width: 50%;
     height: 600px;
     margin: -150px 0;
@@ -429,6 +440,21 @@ nav {
 
     &.float-left {
         float: left;
+    }
+
+    .absolute-center {
+        width: 80%;
+        max-width: none;
+        min-width: 0;
+    }
+
+    .wrapper {
+        width: 100%;
+        max-width: none;
+
+        p:last-of-type {
+            margin-bottom: 0;
+        }
     }
 }
 
@@ -585,11 +611,6 @@ nav {
         width: 100%;
         height: auto;
         margin: 0;
-
-        .v-center {
-            top: auto;
-            transform: none;
-        }
     }
 
     .float-left,
