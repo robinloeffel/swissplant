@@ -1,4 +1,4 @@
-var gulp = require('gulp'),
+const gulp = require('gulp'),
     del = require('del'),
     stylish = require('jshint-stylish'),
     runSequence = require('run-sequence'),
@@ -17,11 +17,11 @@ var gulp = require('gulp'),
     ngAnnotate = require('gulp-ng-annotate'),
     paths = require('./paths.json');
 
-gulp.task('clean', function() {
+gulp.task('clean', () => {
     return del(paths.dist);
 });
 
-gulp.task('server', function() {
+gulp.task('server', () => {
     return connect.server({
         port: 8080,
         livereload: true,
@@ -29,11 +29,11 @@ gulp.task('server', function() {
     });
 });
 
-gulp.task('open', function() {
+gulp.task('open', () => {
     return open('http://localhost:8080');
 });
 
-gulp.task('less', function() {
+gulp.task('less', () => {
     return gulp.src(paths.srcLess)
         .pipe(plumber())
         .pipe(changed(paths.distCss, {
@@ -49,14 +49,14 @@ gulp.task('less', function() {
         .pipe(connect.reload());
 });
 
-gulp.task('js', function() {
-    var regular = gulp.src([paths.srcJs, '!src/js/angular.js'])
+gulp.task('js', () => {
+    const regular = gulp.src('src/js/{script,map}.js')
         .pipe(plumber())
         .pipe(changed(paths.distJs))
         .pipe(uglify())
         .pipe(gulp.dest(paths.distJs));
 
-    var angular = gulp.src('src/js/angular.js')
+    const angular = gulp.src('src/js/angular.js')
         .pipe(plumber())
         .pipe(changed(paths.distJs))
         .pipe(ngAnnotate())
@@ -67,41 +67,42 @@ gulp.task('js', function() {
     return mergeStream(regular, angular);
 });
 
-gulp.task('vendor', function() {
-    return gulp.src([
-            'node_modules/jquery/dist/jquery.min.js',
-            'node_modules/angular/angular.min.js',
-            'node_modules/angular-translate/dist/angular-translate.min.js',
-            'node_modules/angular-cookies/angular-cookies.min.js',
-            'node_modules/angular-translate-storage-local/angular-translate-storage-local.min.js',
-            'node_modules/angular-translate-storage-cookie/angular-translate-storage-cookie.min.js'
-        ])
+gulp.task('vendor', () => {
+    return gulp.src(paths.srcVendor)
         .pipe(concat('vendor.js'))
         .pipe(uglify())
         .pipe(gulp.dest(paths.distJs));
 });
 
-gulp.task('jshint', function() {
+gulp.task('jshint', () => {
     return gulp.src([paths.srcJs, 'gulpfile.js'])
         .pipe(plumber())
         .pipe(jshint())
         .pipe(jshint.reporter(stylish));
 });
 
-gulp.task('img', function() {
+gulp.task('img', () => {
     return gulp.src(paths.srcImg)
         .pipe(plumber())
         .pipe(changed(paths.distImg))
-        .pipe(imagemin({
-            optimizationLevel: 7,
-            progressive: true,
-            multipass: true
-        }))
+        .pipe(imagemin([
+            imagemin.gifsicle({
+                interlaced: true,
+                optimizationLevel: 3
+            }),
+            imagemin.jpegtran({
+                progressive: true
+            }),
+            imagemin.optipng({
+                optimizationLevel: 7
+            }),
+            imagemin.svgo()
+        ]))
         .pipe(gulp.dest(paths.distImg))
         .pipe(connect.reload());
 });
 
-gulp.task('video', function() {
+gulp.task('video', () => {
     return gulp.src(paths.srcVideo)
         .pipe(changed(paths.distVideo))
         .pipe(plumber())
@@ -109,7 +110,7 @@ gulp.task('video', function() {
         .pipe(connect.reload());
 });
 
-gulp.task('html', function() {
+gulp.task('html', () => {
     return gulp.src(paths.srcHtml)
         .pipe(changed(paths.dist))
         .pipe(plumber())
@@ -117,7 +118,7 @@ gulp.task('html', function() {
         .pipe(connect.reload());
 });
 
-gulp.task('json', function() {
+gulp.task('json', () => {
     return gulp.src(paths.srcJson)
         .pipe(changed(paths.distJson))
         .pipe(plumber())
@@ -125,14 +126,14 @@ gulp.task('json', function() {
         .pipe(connect.reload());
 });
 
-gulp.task('misc', function() {
+gulp.task('misc', () => {
     return gulp.src(paths.srcMisc)
         .pipe(plumber())
         .pipe(changed(paths.dist))
         .pipe(gulp.dest(paths.dist));
 });
 
-gulp.task('watch', function() {
+gulp.task('watch', () => {
     gulp.watch(paths.srcLess, ['less']);
     gulp.watch(paths.srcJs, ['js', 'jshint']);
     gulp.watch(paths.srcImg, ['img']);
@@ -142,10 +143,10 @@ gulp.task('watch', function() {
     gulp.watch(paths.srcJson, ['json']);
 });
 
-gulp.task('default', function(callback) {
+gulp.task('default', (callback) => {
     runSequence('clean', 'build', 'watch', 'server', 'open', callback);
 });
 
-gulp.task('build', function(callback) {
+gulp.task('build', (callback) => {
     runSequence(['vendor', 'less', 'js', 'img', 'video', 'html', 'misc', 'json'], 'jshint', callback);
 });
