@@ -77,7 +77,9 @@ gulp.task('vendor', () => {
 gulp.task('jshint', () => {
     return gulp.src([paths.srcJs, 'gulpfile.js'])
         .pipe(plumber())
-        .pipe(jshint())
+        .pipe(jshint({
+            esversion: 6
+        }))
         .pipe(jshint.reporter(stylish));
 });
 

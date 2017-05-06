@@ -268,7 +268,7 @@ nav {
         left: 20%;
         transition: .5s ease-in-out;
         z-index: 999;
-        transform: translateX(100%);
+        transform: translateX(101vw);
 
         ul {
             list-style-type: none;
@@ -609,13 +609,21 @@ nav {
 
     .half-full {
         width: 100%;
-        height: auto;
         margin: 0;
-    }
+        height: auto;
 
-    .float-left,
-    .float-right {
-        float: none;
+        &.float-left,
+        &.float-right {
+            float: none;
+        }
+
+        .absolute-center {
+            position: relative;
+            top: auto;
+            right: auto;
+            transform: translate(0);
+            margin: auto;
+        }
     }
 
     main section {

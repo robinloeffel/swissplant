@@ -48,7 +48,7 @@ $(function() {
     $('.close-mobile-nav').click(function(event) {
         event.preventDefault();
         $('nav.mobile-nav').css({
-            transform: 'translateX(100%)'
+            transform: 'translateX(101vw)'
         });
         $('nav.mobile-nav').removeClass('open');
     });
