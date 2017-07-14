@@ -10,6 +10,10 @@
 @primary-background-color: #fff;
 @secondary-background-color: #323232;
 
+* {
+    box-sizing: border-box;
+}
+
 html {
     font-family: @font-family;
     font-weight: @font-weight;
@@ -48,9 +52,11 @@ h2 {
 main {
     section {
         position: relative;
+        display: flex;
 
-        &:not(#landing) {
-            padding: 150px 0;
+        &#landing {
+            align-items: center;
+            justify-content: center;
         }
     }
 }
@@ -143,6 +149,10 @@ video {
 
     &.little-hero {
         height: 400px;
+
+        ~ section {
+            padding: 100px 0;
+        }
     }
 }
 
@@ -153,13 +163,7 @@ video {
 }
 
 .absolute-center {
-    position: absolute;
-    top: 50%;
-    right: 50%;
-    transform: translate(50%, -50%);
-    width: 50%;
-    max-width: 1000px;
-    min-width: 300px;
+    position: relative;
 
     .up-and-down {
         position: absolute;
@@ -433,17 +437,13 @@ nav {
     position: relative;
     width: 50%;
     height: 600px;
-    margin: -150px 0;
-    box-sizing: border-box;
-    background-size: cover;
-    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    &.float-right {
-        float: right;
-    }
-
-    &.float-left {
-        float: left;
+    &[class*=image] {
+        background-size: cover;
+        background-position: center;
     }
 
     .absolute-center {
