@@ -1,10 +1,10 @@
-const merge = require('webpack-merge');
 const webpack = require('webpack');
 
 let config = {
     output: {
         filename: 'bundle.js'
     },
+    devtool: 'eval-source-map',
     module: {
         rules: [{
             test: /\.js$/,
@@ -35,7 +35,8 @@ let config = {
 };
 
 if (!process.argv.includes('--dev')) {
-    config = merge(config, {
+    config = Object.assign(config, {
+        devtool: false,
         plugins: [
             new webpack.optimize.UglifyJsPlugin({
                 mangle: {

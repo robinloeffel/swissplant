@@ -13,8 +13,6 @@ const gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     cleanCss = require('gulp-clean-css'),
     jshint = require('gulp-jshint'),
-    concat = require('gulp-concat'),
-    uglify = require('gulp-uglify'),
     imagemin = require('gulp-imagemin'),
     ngAnnotate = require('gulp-ng-annotate'),
     paths = require('./paths.json');
@@ -84,7 +82,8 @@ gulp.task('copy', () => {
     return gulp.src(paths.copyFiles, {
             base: 'src'
         })
-        .pipe(gulp.dest(paths.dist));
+        .pipe(gulp.dest(paths.dist))
+        .pipe(connect.reload());
 
 });
 
