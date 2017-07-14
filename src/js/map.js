@@ -1,21 +1,23 @@
-const initialize = () => {
-    let mapCanvas = document.getElementById('map-canvas'),
+if ('google' in window) {
+    const initialize = () => {
+        let mapCanvas = document.getElementById('map-canvas'),
 
-        mapPosition = new google.maps.LatLng(46.9913104, 7.1441492),
+            mapPosition = new google.maps.LatLng(46.9913104, 7.1441492),
 
-        mapOptions = {
-            center: mapPosition,
-            zoom: 10,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        },
+            mapOptions = {
+                center: mapPosition,
+                zoom: 10,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            },
 
-        mapMarker = new google.maps.Marker({
-            position: mapPosition
-        }),
+            mapMarker = new google.maps.Marker({
+                position: mapPosition
+            }),
 
-        map = new google.maps.Map(mapCanvas, mapOptions);
+            map = new google.maps.Map(mapCanvas, mapOptions);
 
-    mapMarker.setMap(map);
-};
+        mapMarker.setMap(map);
+    };
 
-google.maps.event.addDomListener(window, 'load', initialize);
+    google.maps.event.addDomListener(window, 'load', initialize);
+}

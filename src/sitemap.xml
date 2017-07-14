@@ -2,31 +2,31 @@
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
         <url>
             <loc>https://swissplant.ch</loc>
-            <lastmod>2017-05-12</lastmod>
+            <lastmod>2017-07-14</lastmod>
             <changefreq>monthly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://swissplant.ch/angebot.html</loc>
-            <lastmod>2017-05-12</lastmod>
+            <lastmod>2017-07-14</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
         <url>
             <loc>https://swissplant.ch/kontakt.html</loc>
-            <lastmod>2017-05-12</lastmod>
+            <lastmod>2017-07-14</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
         <url>
             <loc>https://swissplant.ch/partner.html</loc>
-            <lastmod>2017-05-12</lastmod>
+            <lastmod>2017-07-14</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
         <url>
             <loc>https://swissplant.ch/ueber-uns.html</loc>
-            <lastmod>2017-05-12</lastmod>
+            <lastmod>2017-07-14</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
