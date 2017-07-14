@@ -2,8 +2,10 @@ const gulp = require('gulp'),
     del = require('del'),
     stylish = require('jshint-stylish'),
     runSequence = require('run-sequence'),
-    mergeStream = require('merge-stream'),
     open = require('open'),
+    webpack = require('webpack'),
+    webpackStream = require('webpack-stream'),
+    webpackConfig = require('./webpack.config'),
     connect = require('gulp-connect'),
     plumber = require('gulp-plumber'),
     changed = require('gulp-changed'),
@@ -17,21 +19,11 @@ const gulp = require('gulp'),
     ngAnnotate = require('gulp-ng-annotate'),
     paths = require('./paths.json');
 
-gulp.task('clean', () => {
-    return del(paths.dist);
-});
+gulp.task('clean', () => del(paths.dist));
 
-gulp.task('server', () => {
-    return connect.server({
-        port: 8080,
-        livereload: true,
-        root: paths.dist
-    });
-});
+gulp.task('open', () => open('http://localhost:8080'));
 
-gulp.task('open', () => {
-    return open('http://localhost:8080');
-});
+gulp.task('server', () => connect.server({port: 8080, livereload: true, root: paths.dist}));
 
 gulp.task('less', () => {
     return gulp.src(paths.srcLess)
@@ -41,7 +33,7 @@ gulp.task('less', () => {
         }))
         .pipe(less())
         .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
+            browsers: ['last 2 versions', 'not ie < 11', 'not ie_mob < 11'],
             cascade: false
         }))
         .pipe(cleanCss())
@@ -49,36 +41,20 @@ gulp.task('less', () => {
         .pipe(connect.reload());
 });
 
-gulp.task('js', () => {
-    const regular = gulp.src('src/js/{script,map}.js')
+gulp.task('js', ['jshint'], () => {
+    return gulp.src('src/js/main.js')
         .pipe(plumber())
-        .pipe(changed(paths.distJs))
-        .pipe(uglify())
-        .pipe(gulp.dest(paths.distJs));
-
-    const angular = gulp.src('src/js/angular.js')
-        .pipe(plumber())
-        .pipe(changed(paths.distJs))
-        .pipe(ngAnnotate())
-        .pipe(uglify())
+        .pipe(webpackStream(webpackConfig, webpack))
         .pipe(gulp.dest(paths.distJs))
         .pipe(connect.reload());
-
-    return mergeStream(regular, angular);
-});
-
-gulp.task('vendor', () => {
-    return gulp.src(paths.srcVendor)
-        .pipe(concat('vendor.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest(paths.distJs));
 });
 
 gulp.task('jshint', () => {
-    return gulp.src([paths.srcJs, 'gulpfile.js'])
+    return gulp.src(['src/**/*.js', './*.js'])
         .pipe(plumber())
         .pipe(jshint({
-            esversion: 6
+            esversion: 6,
+            jquery: true
         }))
         .pipe(jshint.reporter(stylish));
 });
@@ -104,45 +80,19 @@ gulp.task('img', () => {
         .pipe(connect.reload());
 });
 
-gulp.task('video', () => {
-    return gulp.src(paths.srcVideo)
-        .pipe(changed(paths.distVideo))
-        .pipe(plumber())
-        .pipe(gulp.dest(paths.distVideo))
-        .pipe(connect.reload());
-});
-
-gulp.task('html', () => {
-    return gulp.src(paths.srcHtml)
-        .pipe(changed(paths.dist))
-        .pipe(plumber())
-        .pipe(gulp.dest(paths.dist))
-        .pipe(connect.reload());
-});
-
-gulp.task('json', () => {
-    return gulp.src(paths.srcJson)
-        .pipe(changed(paths.distJson))
-        .pipe(plumber())
-        .pipe(gulp.dest(paths.distJson))
-        .pipe(connect.reload());
-});
-
-gulp.task('misc', () => {
-    return gulp.src(paths.srcMisc)
-        .pipe(plumber())
-        .pipe(changed(paths.dist))
+gulp.task('copy', () => {
+    return gulp.src(paths.copyFiles, {
+            base: 'src'
+        })
         .pipe(gulp.dest(paths.dist));
+
 });
 
 gulp.task('watch', () => {
     gulp.watch(paths.srcLess, ['less']);
-    gulp.watch(paths.srcJs, ['js', 'jshint']);
+    gulp.watch(paths.srcJs, ['js']);
     gulp.watch(paths.srcImg, ['img']);
-    gulp.watch(paths.srcVideo, ['video']);
-    gulp.watch(paths.srcHtml, ['html']);
-    gulp.watch(paths.srcMisc, ['misc']);
-    gulp.watch(paths.srcJson, ['json']);
+    gulp.watch(paths.copyFiles, ['copy']);
 });
 
 gulp.task('default', (callback) => {
@@ -150,5 +100,5 @@ gulp.task('default', (callback) => {
 });
 
 gulp.task('build', (callback) => {
-    runSequence(['vendor', 'less', 'js', 'img', 'video', 'html', 'misc', 'json'], 'jshint', callback);
+    runSequence(['less', 'js', 'img', 'copy'], callback);
 });

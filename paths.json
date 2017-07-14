@@ -1,28 +1,11 @@
 {
-    "src": "src/",
+    "src": "src",
     "srcImg": "src/img/**/*",
     "srcJs": "src/js/*",
     "srcLess": "src/less/*",
-    "srcVideo": "src/video/*",
-    "srcJson": "src/json/*",
-    "srcHtml": "src/*.html",
-    "srcMisc": [
-        "src/.htaccess",
-        "src/robots.txt",
-        "src/sitemap.xml"
-    ],
-    "srcVendor": [
-        "node_modules/jquery/dist/jquery.min.js",
-        "node_modules/angular/angular.min.js",
-        "node_modules/angular-translate/dist/angular-translate.min.js",
-        "node_modules/angular-cookies/angular-cookies.min.js",
-        "node_modules/angular-translate-storage-local/angular-translate-storage-local.min.js",
-        "node_modules/angular-translate-storage-cookie/angular-translate-storage-cookie.min.js"
-    ],
-    "dist": "dist/",
-    "distImg": "dist/img/",
-    "distJs": "dist/js/",
-    "distCss": "dist/css/",
-    "distVideo": "dist/video/",
-    "distJson": "dist/json"
+    "copyFiles": ["src/{*,}.*", "src/video/*"],
+    "dist": "dist",
+    "distImg": "dist/img",
+    "distJs": "dist/js",
+    "distCss": "dist/css"
 }
