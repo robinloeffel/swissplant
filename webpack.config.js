@@ -35,7 +35,7 @@ let config = {
 };
 
 if (!process.argv.includes('--dev')) {
-    config = Object.assign(config, {
+    Object.assign(config, {
         devtool: false,
         plugins: [
             new webpack.optimize.UglifyJsPlugin({
