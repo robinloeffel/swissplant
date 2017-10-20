@@ -3,6 +3,7 @@ import jump from 'jump.js';
 const smoothScrollTriggers = document.querySelectorAll('[data-scroll-target]');
 const mobileMenuOpenTrigger = document.querySelector('.mobile-menu');
 const mobileMenuCloseTrigger = document.querySelector('.close-mobile-nav');
+const navHeight = document.querySelector('.desktop-nav').clientHeight;
 
 const rotateHeroImage = () => {
     if (!window.matchMedia('(max-width: 1200px)').matches) {
@@ -22,7 +23,9 @@ for (let i = 0; i < smoothScrollTriggers.length; i++) {
     smoothScrollTriggers[i].addEventListener('click', (event) => {
         event.preventDefault();
 
-        jump(event.currentTarget.dataset.scrollTarget);
+        jump(event.currentTarget.dataset.scrollTarget, {
+            offset: -navHeight
+        });
     });
 }
 
