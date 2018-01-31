@@ -46,18 +46,16 @@ h1 {
 
 h2 {
     font-size: @secondary-heading-size;
-    font-weight: @font-weight
+    font-weight: @font-weight;
 }
 
 main {
     section {
         position: relative;
         display: flex;
-
-        &#landing {
-            align-items: center;
-            justify-content: center;
-        }
+        justify-content: center;
+        align-items: center;
+        transition: transform 1s ease-in-out 1s;
     }
 }
 
@@ -156,6 +154,30 @@ video {
     }
 }
 
+#announcement {
+    flex-direction: column;
+    padding: 75px 0;
+    border-bottom: 5px solid @link-color;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out, margin 1s ease-in-out;
+
+    h2, p, strong {
+        width: 55%;
+    }
+
+    h2 {
+        margin-top: 0;
+    }
+
+    &.closing {
+        transform: scale(0);
+        opacity: 0;
+
+        ~ section {
+            transform: translateY(-529px);
+        }
+    }
+}
+
 .logo {
     width: 100%;
     float: left;
@@ -177,6 +199,23 @@ video {
     width: 80%;
     max-width: 900px;
     text-align: center;
+}
+
+.close-announcement {
+    position: absolute;
+    right: 70px;
+    top: 70px;
+    font-size: @secondary-heading-size;
+    line-height: 1;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::after {
+        content: '\00D7';
+    }
 }
 
 nav {
