@@ -5,6 +5,7 @@ const gulp = require('gulp'),
     open = require('open'),
     webpack = require('webpack'),
     webpackStream = require('webpack-stream'),
+    named = require('vinyl-named'),
     webpackConfig = require('./webpack.config'),
     connect = require('gulp-connect'),
     plumber = require('gulp-plumber'),
@@ -42,6 +43,7 @@ gulp.task('less', () => {
 gulp.task('js', ['jshint'], () => {
     return gulp.src('src/js/main.js')
         .pipe(plumber())
+        .pipe(named())
         .pipe(webpackStream(webpackConfig, webpack))
         .pipe(gulp.dest(paths.distJs))
         .pipe(connect.reload());
@@ -50,10 +52,7 @@ gulp.task('js', ['jshint'], () => {
 gulp.task('jshint', () => {
     return gulp.src(['src/**/*.js', './*.js'])
         .pipe(plumber())
-        .pipe(jshint({
-            esversion: 6,
-            jquery: true
-        }))
+        .pipe(jshint({esversion: 6}))
         .pipe(jshint.reporter(stylish));
 });
 

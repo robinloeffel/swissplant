@@ -19,8 +19,8 @@ setInterval(() => {
     rotateHeroImage();
 }, 7500);
 
-for (let i = 0; i < smoothScrollTriggers.length; i++) {
-    smoothScrollTriggers[i].addEventListener('click', (event) => {
+for (let trigger of smoothScrollTriggers) {
+    trigger.addEventListener('click', event => {
         event.preventDefault();
 
         jump(event.currentTarget.dataset.scrollTarget, {
@@ -29,13 +29,13 @@ for (let i = 0; i < smoothScrollTriggers.length; i++) {
     });
 }
 
-mobileMenuOpenTrigger.addEventListener('click', (event) => {
+mobileMenuOpenTrigger.addEventListener('click', event => {
     event.preventDefault();
 
     document.querySelector('.mobile-nav').classList.add('open');
 });
 
-mobileMenuCloseTrigger.addEventListener('click', (event) => {
+mobileMenuCloseTrigger.addEventListener('click', event => {
     event.preventDefault();
 
     document.querySelector('.mobile-nav').classList.remove('open');

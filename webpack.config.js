@@ -1,10 +1,11 @@
 const webpack = require('webpack');
+const merge = require('webpack-merge');
 
 let config = {
     output: {
-        filename: 'bundle.js'
+        filename: '[name].js'
     },
-    devtool: 'eval-source-map',
+    devtool: 'source-map',
     module: {
         rules: [{
             test: /\.js$/,
@@ -13,44 +14,28 @@ let config = {
                 loader: 'babel-loader',
                 options: {
                     presets: [
-                        [
-                            'env',
-                            {
-                                targets: {
-                                    browsers: ['last 2 versions', 'not ie < 11', 'not ie_mob < 11']
-                                },
-                                modules: false
-                            }
-                        ],
+                        ['env', {
+                            targets: {
+                                browsers: 'last 2 versions',
+                                ie: 11
+                            },
+                            modules: false,
+                            debug: true,
+                            useBuiltIns: 'entry'
+                        }],
                         'angular'
                     ]
-
                 }
             }]
         }]
-    },
-    resolve: {
-        extensions: ['.js']
     }
 };
 
 if (!process.argv.includes('--dev')) {
-    Object.assign(config, {
+    config = merge(config, {
         devtool: false,
         plugins: [
-            new webpack.optimize.UglifyJsPlugin({
-                mangle: {
-                    keep_fnames: true
-                },
-                output: {
-                    comments: false
-                }
-            }),
-
-            new webpack.LoaderOptionsPlugin({
-                minimize: true,
-                debug: false
-            })
+            new webpack.optimize.UglifyJsPlugin()
         ]
     });
 }
