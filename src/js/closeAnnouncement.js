@@ -1,22 +1,21 @@
 const anchor = document.querySelector('.close-announcement');
 const announcement = document.querySelector('#announcement');
 const sections = Array.from(document.querySelectorAll('#announcement ~ section'));
-let originalHeight;
 
 const close = event => {
     event.preventDefault();
+    const nodeHeight = announcement.clientHeight;
 
-    originalHeight = announcement.clientHeight;
     announcement.classList.add('closing');
 
     for (let section of sections) {
-        section.style.transform = `translateY(-${originalHeight}px)`;
+        section.style.transform = `translateY(-${nodeHeight}px)`;
     }
 };
 
 const remove = event => {
     setTimeout(() => {
-        announcement.remove();
+        announcement.parentNode.removeChild(announcement);
 
         for (let section of sections) {
             section.removeAttribute('style');
