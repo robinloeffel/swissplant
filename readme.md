@@ -1,8 +1,8 @@
-# [swissplant.ch](http://swissplant.ch)
+# [SwissPlant Ltd.](https://swissplant.ch)
 
 Web page for SwissPlant Ltd.
 
-Built with gulp, Less, jQuery and AngularJS.
+Built on gulp, webpack, Less, ESNext and AngularJS.
 
 ## Planned
 

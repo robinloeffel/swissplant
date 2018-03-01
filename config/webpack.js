@@ -23,9 +23,8 @@ let config = {
                                 browsers: 'last 2 versions',
                                 ie: 11
                             },
-                            modules: false,
-                            debug: true,
-                            useBuiltIns: 'usage'
+                            useBuiltIns: 'usage',
+                            modules: false
                         }]
                     ],
                     ignore: ['node_modules']

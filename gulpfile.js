@@ -1,22 +1,22 @@
 const gulp = require('gulp');
 const del = require('del');
-const stylish = require('jshint-stylish');
 const runSequence = require('run-sequence');
 const open = require('open');
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
 const named = require('vinyl-named');
-const webpackConfig = require('./webpack.config');
+
 const connect = require('gulp-connect');
 const plumber = require('gulp-plumber');
 const changed = require('gulp-changed');
 const less = require('gulp-less');
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCss = require('gulp-clean-css');
-const jshint = require('gulp-jshint');
 const imagemin = require('gulp-imagemin');
-const ngAnnotate = require('gulp-ng-annotate');
-const paths = require('./paths.json');
+const eslint = require('gulp-eslint');
+
+const webpackConfig = require('./config/webpack');
+const paths = require('./config/paths');
 
 gulp.task('clean', () => del(paths.dist));
 
@@ -40,8 +40,8 @@ gulp.task('less', () => {
         .pipe(connect.reload());
 });
 
-gulp.task('js', ['jshint'], () => {
-    return gulp.src('src/js/main.js')
+gulp.task('js:transpile', ['js:lint'], () => {
+    return gulp.src(paths.srcMainJs)
         .pipe(plumber())
         .pipe(named())
         .pipe(webpackStream(webpackConfig, webpack))
@@ -49,11 +49,11 @@ gulp.task('js', ['jshint'], () => {
         .pipe(connect.reload());
 });
 
-gulp.task('jshint', () => {
-    return gulp.src(['src/**/*.js', './*.js'])
+gulp.task('js:lint', () => {
+    return gulp.src(paths.srcJs)
         .pipe(plumber())
-        .pipe(jshint({esversion: 6}))
-        .pipe(jshint.reporter(stylish));
+        .pipe(eslint())
+        .pipe(eslint.format());
 });
 
 gulp.task('img', () => {
@@ -88,15 +88,15 @@ gulp.task('copy', () => {
 
 gulp.task('watch', () => {
     gulp.watch(paths.srcLess, ['less']);
-    gulp.watch(paths.srcJs, ['js']);
+    gulp.watch(paths.srcJs, ['js:transpile']);
     gulp.watch(paths.srcImg, ['img']);
     gulp.watch(paths.copyFiles, ['copy']);
 });
 
-gulp.task('default', (callback) => {
+gulp.task('default', callback => {
     runSequence('clean', 'build', 'watch', 'server', 'open', callback);
 });
 
-gulp.task('build', (callback) => {
-    runSequence(['less', 'js', 'img', 'copy'], callback);
+gulp.task('build', callback => {
+    runSequence(['less', 'js:transpile', 'img', 'copy'], callback);
 });
