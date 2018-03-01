@@ -5,6 +5,8 @@ const open = require('open');
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
 const named = require('vinyl-named');
+const { readdir } = require('fs');
+const { join } = require('path');
 
 const connect = require('gulp-connect');
 const plumber = require('gulp-plumber');
@@ -14,6 +16,8 @@ const autoprefixer = require('gulp-autoprefixer');
 const cleanCss = require('gulp-clean-css');
 const imagemin = require('gulp-imagemin');
 const eslint = require('gulp-eslint');
+const mustache = require('gulp-mustache');
+const rename = require('gulp-rename');
 
 const webpackConfig = require('./config/webpack');
 const paths = require('./config/paths');
@@ -54,6 +58,24 @@ gulp.task('js:lint', () => {
         .pipe(plumber())
         .pipe(eslint())
         .pipe(eslint.format());
+});
+
+gulp.task('html', async () => {
+    readdir('src/views', (err, files) => {
+        const templates = files.filter(file => file.includes('mustache'));
+
+        templates.forEach(template => {
+            const templatePath = join(__dirname, `src/views/${template}`);
+            const dataPath = join(__dirname, `src/views/${template.replace('mustache', 'data.js')}`);
+            const data = require(dataPath);
+
+            return gulp.src(templatePath)
+                .pipe(plumber())
+                .pipe(mustache(data))
+                .pipe(rename({ extname: '.html' }))
+                .pipe(gulp.dest(paths.dist));
+        });
+    });
 });
 
 gulp.task('img', () => {
