@@ -10,7 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" />
     <link rel="shortcut icon" href="img/favicon.ico" />
 </head>
 
@@ -39,14 +38,11 @@
                     <i class="fa fa-bars"></i>
                 </li>
                 <li class="lang-changer">
-                    <div class="lang-changer-container">
-                        <div class="icon-container">
-                            <i class="fa fa-globe"></i>
-                        </div>
-                        <div class="changer-container">
-                            <span data-ng-click="changeLang('de')">de</span>
-                            <span data-ng-click="changeLang('en')">en</span>
-                        </div>
+                    <div class="icon icon--globe lang-changer__icon">
+                    </div>
+                    <div class="lang-changer__button-container">
+                        <span data-ng-click="changeLang('de')" class="lang-changer__button">de</span>
+                        <span data-ng-click="changeLang('en')" class="lang-changer__button">en</span>
                     </div>
                 </li>
             </ul>
@@ -87,7 +83,7 @@
             </div>
             <div class="absolute-center">
                 <img src="img/logo-swissplant-white.svg" class="logo" translate-attr="{alt: 'common.logo.swissplant.alt'}">
-                <i class="fa fa-caret-down fa-2x up-and-down" data-scroll-target="#ueber-uns"></i>
+                <i class="icon icon--caret-down up-and-down" data-scroll-target="#ueber-uns"></i>
             </div>
         </section>
         <section id="ueber-uns">

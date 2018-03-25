@@ -151,6 +151,13 @@ video {
             padding: 100px 0;
         }
     }
+
+    .icon {
+        &::before {
+            width: 40px;
+            height: 40px;
+        }
+    }
 }
 
 #announcement {
@@ -175,6 +182,30 @@ video {
 
         ~ section {
             transition: transform .5s ease-in-out .5s;
+        }
+    }
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &--globe {
+        &::before {
+            content: '';
+            background-image: url('https://icongr.am/fontawesome/globe.svg?color=@{copy-color}');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &--caret-down {
+        &::before {
+            content: '';
+            background-image: url('https://icongr.am/fontawesome/caret-down.svg?color=ffffff');
+            background-size: contain;
+            background-repeat: no-repeat;
         }
     }
 }
@@ -246,7 +277,6 @@ nav {
                 &.lang-changer {
                     position: absolute;
                     right: 0;
-                    padding-bottom: 31px;
                 }
 
                 &:first-child {
@@ -347,54 +377,48 @@ nav {
 }
 
 .lang-changer {
-    div {
-        display: inline-block;
-        text-align: center;
-        width: 150px;
-        padding: 30px 0;
-        position: relative;
-        float: left;
-        color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 15px 30px;
 
-        i,
-        span {
-            transition: .25s;
+    &__icon {
+        position: absolute;
+        transition: opacity .3s ease-in-out;
+
+        &::before {
+            width: 20px;
+            height: 20px;
         }
+    }
 
-        span {
-            cursor: pointer;
-            padding: 2px 5px;
-            opacity: 0;
+    &__button-container {
+        opacity: 0;
+        transition: opacity .3s ease-in-out;
+        pointer-events: none;
+    }
+
+    &__button {
+        padding: 5px 7px;
+        cursor: pointer;
+        transition: color .3s ease-in-out;
+
+        &:hover {
+            color: @link-color;
         }
     }
 
     &:hover {
-        div {
-            i {
-                opacity: 0;
-                z-index: -999;
-            }
-
-            span {
-                opacity: 1;
-
-                &:hover {
-                    color: @link-color;
-                }
-            }
+        .lang-changer__icon {
+            opacity: 0;
+            pointer-events: none;
         }
-    }
 
-    .icon-container,
-    .changer-container {
-        width: 100%;
-        top: 0;
-        left: 0;
-        position: absolute;
-    }
-
-    &-container {
-        position: relative;
+        .lang-changer__button-container {
+            opacity: 1;
+            pointer-events: auto;
+        }
     }
 }
 

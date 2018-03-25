@@ -39,14 +39,11 @@
                     <i class="fa fa-bars"></i>
                 </li>
                 <li class="lang-changer">
-                    <div class="lang-changer-container">
-                        <div class="icon-container">
-                            <i class="fa fa-globe"></i>
-                        </div>
-                        <div class="changer-container">
-                            <span data-ng-click="changeLang('de')">de</span>
-                            <span data-ng-click="changeLang('en')">en</span>
-                        </div>
+                    <div class="icon icon--globe lang-changer__icon">
+                    </div>
+                    <div class="lang-changer__button-container">
+                        <span data-ng-click="changeLang('de')" class="lang-changer__button">de</span>
+                        <span data-ng-click="changeLang('en')" class="lang-changer__button">en</span>
                     </div>
                 </li>
             </ul>
