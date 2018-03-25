@@ -208,6 +208,24 @@ video {
             background-repeat: no-repeat;
         }
     }
+
+    &--bars {
+        &::before {
+            content: '';
+            background-image: url('https://icongr.am/fontawesome/bars.svg?color=@{copy-color}');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &--times {
+        &::before {
+            content: '';
+            background-image: url('https://icongr.am/fontawesome/times.svg?color=@{copy-color}');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
 }
 
 .logo {
@@ -624,6 +642,19 @@ nav {
     }
 }
 
+.close-mobile-nav {
+    width: auto;
+
+    .icon {
+        justify-content: flex-start;
+
+        &::before {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
 @keyframes up-and-down {
     0% {
         transform: translateY(0);
@@ -647,10 +678,17 @@ nav {
         &.desktop-nav ul {
             li {
                 &.mobile-menu {
-                    display: list-item;
+                    display: flex;
                     float: right;
                     padding: 32px;
-                    cursor: pointer;
+                    height: 91px;
+
+                    .icon {
+                        &::before {
+                            width: 20px;
+                            height: 20px;
+                        }
+                    }
                 }
 
                 &:first-child {
