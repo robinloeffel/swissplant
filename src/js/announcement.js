@@ -1,6 +1,6 @@
 const anchor = document.querySelector('.close-announcement');
 const announcement = document.querySelector('#announcement');
-const sections = Array.from(document.querySelectorAll('#announcement ~ section'));
+const sections = document.querySelectorAll('#announcement ~ section');
 
 if (anchor && announcement && sections) {
     const close = event => {
@@ -9,7 +9,7 @@ if (anchor && announcement && sections) {
 
         announcement.classList.add('closing');
 
-        for (let section of sections) {
+        for (let section of sections.values()) {
             section.style.transform = `translateY(-${nodeHeight}px)`;
         }
     };
@@ -18,7 +18,7 @@ if (anchor && announcement && sections) {
         setTimeout(() => {
             announcement.parentNode.removeChild(announcement);
 
-            for (let section of sections) {
+            for (let section of sections.values()) {
                 section.removeAttribute('style');
             }
         }, event.elapsedTime * 1000);

@@ -1,4 +1,7 @@
-import './script';
-import './angular';
+import './i18n';
 import './map';
-import './closeAnnouncement';
+import './mobile'
+
+import './hero';
+import './announcement';
+import './jumplink';
