@@ -7,6 +7,7 @@
     "repository": "rbnlffl/swissplant",
     "dependencies": {
         "@babel/polyfill": "^7.2.5",
+        "feather-icons": "^4.10.0",
         "jump.js": "^1.0.2",
         "mehrsprachig": "^0.2.0"
     },

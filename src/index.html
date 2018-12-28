@@ -15,135 +15,91 @@
 
 <body>
     <header>
-        <nav class="desktop-nav">
-            <ul>
-                <li>
-                    <a href="./">
-                        <img src="img/logo-swissplant-tilted.svg" data-mehrsprachig="alt=commons.logos.swissplant">
+        <nav class="navigation">
+            <ul class="navigation__list">
+                <li class="navigation__item">
+                    <a href="./" class="navigation__link navigation__link--logo">
+                        <img class="navigation__logo" src="img/logo-swissplant-tilted.svg" data-mehrsprachig="alt=commons.logos.swissplant">
                     </a>
                 </li>
-                <li>
-                    <a href="ueber-uns.html" data-mehrsprachig="nav.about"></a>
+                <li class="navigation__item">
+                    <a class="navigation__link" href="ueber-uns.html" data-mehrsprachig="nav.about"></a>
                 </li>
-                <li>
-                    <a href="angebot.html" data-mehrsprachig="nav.portfolio"></a>
+                <li class="navigation__item">
+                    <a class="navigation__link" href="angebot.html" data-mehrsprachig="nav.portfolio"></a>
                 </li>
-                <li>
-                    <a href="partner.html" data-mehrsprachig="nav.partners"></a>
+                <li class="navigation__item">
+                    <a class="navigation__link" href="partner.html" data-mehrsprachig="nav.partners"></a>
                 </li>
-                <li>
-                    <a href="kontakt.html" data-mehrsprachig="nav.contact"></a>
+                <li class="navigation__item">
+                    <a class="navigation__link" href="kontakt.html" data-mehrsprachig="nav.contact"></a>
                 </li>
-                <li class="mobile-menu">
-                    <i class="icon icon--bars"></i>
-                </li>
-                <li class="lang-changer">
-                    <div class="icon icon--globe lang-changer__icon">
-                    </div>
-                    <div class="lang-changer__button-container">
-                        <span data-ng-click="changeLang('de')" class="lang-changer__button">de</span>
-                        <span data-ng-click="changeLang('en')" class="lang-changer__button">en</span>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-        <nav class="mobile-nav mobile-only">
-            <ul class="clearfix">
-                <li>
-                    <a href="#" class="close-mobile-nav">
-                        <i class="icon icon--times"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="./" data-mehrsprachig="nav.start"></a>
-                </li>
-                <li>
-                    <a href="ueber-uns.html" data-mehrsprachig="nav.about"></a>
-                </li>
-                <li>
-                    <a href="angebot.html" data-mehrsprachig="nav.portfolio"></a>
-                </li>
-                <li>
-                    <a href="partner.html" data-mehrsprachig="nav.partners"></a>
-                </li>
-                <li>
-                    <a href="kontakt.html" data-mehrsprachig="nav.contact"></a>
+                <li class="navigation__item settings">
+                    <i data-feather="settings"></i>
+                    <ul class="settings-list">
+                        <li class="settings-list__item">
+                            <a href="#de" class="settings__option" data-mehrsprachig-toggle="de">Deutsch</a>
+                        </li>
+                        <li class="settings-list__item">
+                            <a href="#en" class="settings__option" data-mehrsprachig-toggle="en">Englisch</a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </nav>
     </header>
     <main>
-        <section id="landing">
-            <div class="cover-parent">
-                <div class="cover-parent-background rotate one top"></div>
-                <div class="cover-parent-background rotate two no-mobile"></div>
-                <div class="cover-parent-background rotate three no-mobile"></div>
-                <div class="cover-parent-background rotate four no-mobile"></div>
-                <div class="cover-parent darken-background"></div>
+        <section class="cover-section">
+            <div class="cover-section__images">
+                <img class="cover-section__image" src="img/one.jpg">
+                <img class="cover-section__image" src="img/two.jpg">
+                <img class="cover-section__image" src="img/three.jpg">
+                <img class="cover-section__image" src="img/four.jpg">
             </div>
-            <div class="absolute-center">
-                <img src="img/logo-swissplant-white.svg" class="logo" data-mehrsprachig="alt=commons.logos.swissplant">
-                <i class="icon icon--caret-down up-and-down" data-scroll-target="#ueber-uns"></i>
+            <div class="cover-section__content">
+                <img class="cover-section__logo" src="img/logo-swissplant-white.svg" data-mehrsprachig="alt=commons.logos.swissplant">
             </div>
         </section>
-        <section id="ueber-uns">
-            <div class="half-full about-image no-mobile">
-            </div>
-            <div class="half-full">
-                <div class="absolute-center">
-                    <div class="wrapper copytext">
-                        <h1 data-mehrsprachig="home.content.about.heading"></h1>
-                        <p data-mehrsprachig="home.content.about.intro"></p>
-                        <p>
-                            <a class="more-button" href="ueber-uns.html" data-mehrsprachig="commons.buttons.showMore"></a>
-                        </p>
-                    </div>
-                </div>
+        <section class="split-section">
+            <img class="split-section__content" src="img/three.jpg">
+            <div class="split-section__content">
+                <h1 data-mehrsprachig="home.content.about.heading"></h1>
+                <p data-mehrsprachig="home.content.about.intro"></p>
+                <p>
+                    <a class="more-button" href="ueber-uns.html" data-mehrsprachig="commons.buttons.showMore"></a>
+                </p>
             </div>
         </section>
-        <section id="angebot">
-            <div class="half-full">
-                <div class="absolute-center">
-                    <div class="wrapper copytext">
-                        <h1 data-mehrsprachig="home.content.portfolio.heading"></h1>
-                        <p data-mehrsprachig="home.content.portfolio.intro"></p>
-                        <p>
-                            <a class="more-button" href="angebot.html" data-mehrsprachig="commons.buttons.showMore"></a>
-                        </p>
-                    </div>
-                </div>
+        <section class="split-section">
+            <div class="split-section__content">
+                <h1 data-mehrsprachig="home.content.portfolio.heading"></h1>
+                <p data-mehrsprachig="home.content.portfolio.intro"></p>
+                <p>
+                    <a class="more-button" href="angebot.html" data-mehrsprachig="commons.buttons.showMore"></a>
+                </p>
             </div>
-            <div class="half-full portfolio-image no-mobile">
+            <img class="split-section__content" src="img/portfolio.jpg">
+        </section>
+        <section class="split-section">
+            <img class="split-section__content" src="img/partners.jpg">
+            <div class="split-section__content">
+                <h1 data-mehrsprachig="home.content.partners.heading"></h1>
+                <p data-mehrsprachig="home.content.partners.intro"></p>
+                <p>
+                    <a class="more-button" href="partner.html" data-mehrsprachig="commons.buttons.showMore"></a>
+                </p>
             </div>
         </section>
-        <section id="partner">
-            <div class="half-full partners-image no-mobile">
+        <section class="split-section">
+            <div class="split-section__content">
+                <h1 data-mehrsprachig="home.content.contact.heading"></h1>
+                <p data-mehrsprachig="home.content.contact.intro"></p>
+                <p>
+                    <a class="more-button" href="kontakt.html" data-mehrsprachig="commons.buttons.showMore"></a>
+                </p>
             </div>
-            <div class="half-full">
-                <div class="absolute-center">
-                    <div class="wrapper copytext">
-                        <h1 data-mehrsprachig="home.content.partners.heading"></h1>
-                        <p data-mehrsprachig="home.content.partners.intro"></p>
-                        <p>
-                            <a class="more-button" href="partner.html" data-mehrsprachig="commons.buttons.showMore"></a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="kontakt">
-            <div class="half-full">
-                <div class="absolute-center">
-                    <div class="wrapper copytext">
-                        <h1 data-mehrsprachig="home.content.contact.heading"></h1>
-                        <p data-mehrsprachig="home.content.contact.intro"></p>
-                        <p>
-                            <a class="more-button" href="kontakt.html" data-mehrsprachig="commons.buttons.showMore"></a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="half-full no-mobile" id="map-canvas">
+            <div class="split-section__content" id="google-maps">
+
             </div>
         </section>
     </main>
