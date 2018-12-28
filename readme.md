@@ -1,2 +1,1 @@
-# swissplant.ch
-![alt text][page.png]
+[![swissplant.ch](page.png)](https://swissplant.ch)
