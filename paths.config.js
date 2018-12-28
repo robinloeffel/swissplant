@@ -1,12 +1,17 @@
 module.exports = {
-    src: "src",
-    srcImg: "src/img/**/*",
-    srcJs: "src/js/*",
-    srcLess: "src/less/*",
-    srcMainJs: "src/js/main.js",
-    copyFiles: ["src/{*,}.*", "src/video/*"],
-    dist: "dist",
-    distImg: "dist/img",
-    distJs: "dist/js",
-    distCss: "dist/css"
+    dist: {
+        root: 'dist',
+        css: 'dist/css',
+        js: 'dist/js',
+        img: 'dist/img'
+    },
+    src: {
+        root: 'src',
+        js: 'src/**/*.js',
+        css: 'src/**/*.scss',
+        img: 'src/img/*',
+        rootFiles: 'src/*.*',
+        jsEntry: 'src/js/main.js',
+        cssEntry: 'src/css/main.scss',
+    }
 };

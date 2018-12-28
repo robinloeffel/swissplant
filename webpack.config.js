@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const dev = process.argv.includes('--dev');
+const prod = process.argv.includes('--prod');
 const stats = process.argv.includes('--stats');
 
 let config = {
@@ -14,27 +14,25 @@ let config = {
         rules: [{
             test: /\.js$/,
             exclude: /node_modules/,
-            use: [{
-                loader: 'babel-loader',
-                options: {
-                    presets: [
-                        ['@babel/preset-env', {
-                            targets: {
-                                browsers: 'last 2 versions',
-                                ie: 11
-                            },
-                            useBuiltIns: 'usage',
-                            modules: false
-                        }]
-                    ],
-                    ignore: ['node_modules']
-                }
-            }]
+            loader: 'babel-loader',
+            query: {
+                presets: [
+                    ['@babel/preset-env', {
+                        targets: {
+                            browsers: 'last 2 versions',
+                            ie: 11
+                        },
+                        useBuiltIns: 'usage',
+                        modules: false
+                    }]
+                ],
+                ignore: [ 'node_modules' ]
+            }
         }]
     }
 };
 
-if (!dev) {
+if (prod) {
     config = merge(config, {
         devtool: false,
         mode: 'production'

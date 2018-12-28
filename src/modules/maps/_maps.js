@@ -17,5 +17,5 @@ if ('google' in window) {
 
     window.addEventListener('load', () => {
         initialize();
-    }, { capture: false, once: true});
+    });
 }
