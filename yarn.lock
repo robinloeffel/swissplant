@@ -503,7 +503,7 @@
     "@babel/helper-regex" "^7.0.0"
     regexpu-core "^4.1.3"
 
-"@babel/polyfill@^7.2.5":
+"@babel/polyfill@^7.0.0", "@babel/polyfill@^7.2.5":
   version "7.2.5"
   resolved "https://registry.yarnpkg.com/@babel/polyfill/-/polyfill-7.2.5.tgz#6c54b964f71ad27edddc567d065e57e87ed7fa7d"
   integrity sha512-8Y/t3MWThtMLYr0YNC/Q76tqN1w30+b0uQMeFUYauG2UGTR19zyUtFrAzT23zNtBxPp+LbE5E/nwV/q/r3y6ug==
@@ -4964,6 +4964,13 @@ mdn-data@~1.1.0:
 media-typer@0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
+
+mehrsprachig@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/mehrsprachig/-/mehrsprachig-0.2.0.tgz#0d5657184b780ff60a1b100a4704b4b82480f369"
+  integrity sha512-jqLxaVNHJPCJSc8y7ZRTaAR8bTBelZbMuBPGB2yd6RZipjNWV6x5gKfHEoMtC8kkOGx7W7gPYms1FMwmb5/tzQ==
+  dependencies:
+    "@babel/polyfill" "^7.0.0"
 
 memoizee@0.4.X:
   version "0.4.14"

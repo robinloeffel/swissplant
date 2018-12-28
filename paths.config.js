@@ -10,6 +10,7 @@ module.exports = {
         js: 'src/**/*.js',
         css: 'src/**/*.scss',
         img: 'src/img/*',
+        data: 'src/data/*',
         rootFiles: 'src/*.*',
         jsEntry: 'src/js/main.js',
         cssEntry: 'src/css/main.scss',

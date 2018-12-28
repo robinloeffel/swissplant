@@ -77,7 +77,10 @@ gulp.task('img', () => {
 
 
 gulp.task('copy', () => {
-    return gulp.src(pathsConfig.src.rootFiles, {
+    return gulp.src([
+            pathsConfig.src.rootFiles,
+            pathsConfig.src.data
+        ], {
             base: pathsConfig.src.root
         })
         .pipe(changed(pathsConfig.dist.root))
@@ -103,7 +106,7 @@ gulp.task('watch:css', done => {
 });
 
 gulp.task('watch:root', done => {
-    gulp.watch(pathsConfig.src.rootFiles, gulp.parallel('copy'));
+    gulp.watch([ pathsConfig.src.rootFiles, pathsConfig.src.data ], gulp.parallel('copy'));
     done();
 });
 
