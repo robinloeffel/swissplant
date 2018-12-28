@@ -1,0 +1,33 @@
+html {
+    font-family: "Roboto", sans-serif;
+    font-weight: normal;
+    font-size: 130%;
+    line-height: 1.5;
+    color: $textPrimary;
+    letter-spacing: .1px;
+}
+
+.title {
+    line-height: 1.1;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.paragraph {
+    margin-bottom: 1.2rem;
+}
+
+.button {
+    display: inline-block;
+    color: $brandPrimary;
+    border: 3px solid $brandPrimary;
+    padding: 20px 25px;
+    text-decoration: none;
+    transition: background-color $transitionLength $transitionEasing,
+                color $transitionLength $transitionEasing;
+
+    &:hover {
+        background-color: $brandPrimary;
+        color: white;
+    }
+}

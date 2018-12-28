@@ -1,6 +1,6 @@
 if ('google' in window) {
     const initialize = () => {
-        const canvas = document.getElementById('map-canvas');
+        const canvas = document.getElementById('google-maps');
         const position = new google.maps.LatLng(46.9913104, 7.1441492);
         const options = {
             center: position,
