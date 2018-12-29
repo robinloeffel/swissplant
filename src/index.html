@@ -58,6 +58,7 @@
             </div>
             <div class="cover-section__content">
                 <img class="cover-section__logo" src="img/logo-swissplant-white.svg" data-mehrsprachig="alt=commons.logos.swissplant">
+                <i data-feather="chevrons-down" class="cover-section__icon" data-jump-link=".split-section"></i>
             </div>
         </section>
         <section class="split-section">
@@ -101,40 +102,67 @@
             <div class="split-section__content" id="google-maps"></div>
         </section>
     </main>
-    <footer>
-        <div class="wrapper clearfix">
-            <div class="left">
-                <p>
-                    <img src="img/logo-swissplant-tilted.svg" class="footer-logo" data-mehrsprachig="alt=commons.logos.swissplant">
-                    <br/>
-                    <img src="img/logo-agriplant.svg" class="footer-logo" data-mehrsprachig="alt=commons.logos.agriplant">
-                </p>
+    <footer class="footer">
+        <div class="footer__row">
+            <div class="footer__item">
+                <img src="img/logo-swissplant-tilted.svg" class="footer__logo" data-mehrsprachig="alt=commons.logos.swissplant">
+                <br/>
+                <img src="img/logo-agriplant.svg" class="footer__logo" data-mehrsprachig="alt=commons.logos.agriplant">
                 <p data-mehrsprachig="commons.footer.copyright"></p>
             </div>
-            <div class="center">
-                <p data-mehrsprachig="commons.footer.address"></p>
-                <p data-mehrsprachig="commons.footer.poBoxes"></p>
-                <p data-mehrsprachig="commons.footer.phone"></p>
-            </div>
-            <div class="right">
-                <p data-mehrsprachig="commons.footer.hours"></p>
-                <p data-mehrsprachig="commons.footer.emails"></p>
-            </div>
-            <div class="row separator">
-                <p>
-                    <a href="." data-mehrsprachig="nav.start"></a>
-                    &mdash;
-                    <a href="ueber-uns.html" data-mehrsprachig="nav.about"></a>
-                    &mdash;
-                    <a href="angebot.html" data-mehrsprachig="nav.portfolio"></a>
-                    &mdash;
-                    <a href="partner.html" data-mehrsprachig="nav.partners"></a>
-                    &mdash;
-                    <a href="kontakt.html" data-mehrsprachig="nav.contact"></a>
+            <div class="footer__item">
+                <p class="paragraph">
+                    <span data-mehrsprachig="commons.footer.address.street"></span>
+                    <br>
+                    <span data-mehrsprachig="commons.footer.address.city"></span>
+                </p>
+                <p class="paragraph">
+                    <span data-mehrsprachig="commons.footer.poBox.swissplant"></span>
+                    <br>
+                    <span data-mehrsprachig="commons.footer.poBox.agriplant"></span>
+                </p>
+                <p class="paragraph">
+                    <a href="tel:+41323135210" class="link">+41 32 313 52 10</a>
                 </p>
             </div>
-            <div class="row">
-                <p data-mehrsprachig="commons.footer.robin"></p>
+            <div class="footer__item">
+                <p class="paragraph">
+                    <span data-mehrsprachig="commons.footer.opening.days"></span>
+                    <br>
+                    <span data-mehrsprachig="commons.footer.opening.hours.morning"></span>
+                    <br>
+                    <span data-mehrsprachig="commons.footer.opening.hours.afternoon"></span>
+                </p>
+                <p class="paragraph">
+                    <a href="mailto:info@swissplant.ch" class="link">info@swissplant.ch</a>
+                    <br>
+                    <a href="mailto:info@agriplant.ch" class="link">info@agriplant.ch</a>
+                </p>
+            </div>
+        </div>
+        <div class="footer__row footer__row--with-separator">
+            <div class="footer__item">
+                <p class="paragraph paragraph--text-center">
+                    <a href="." data-mehrsprachig="nav.start" class="link"></a>
+                    &mdash;
+                    <a href="ueber-uns.html" data-mehrsprachig="nav.about" class="link"></a>
+                    &mdash;
+                    <a href="angebot.html" data-mehrsprachig="nav.portfolio" class="link"></a>
+                    &mdash;
+                    <a href="partner.html" data-mehrsprachig="nav.partners" class="link"></a>
+                    &mdash;
+                    <a href="kontakt.html" data-mehrsprachig="nav.contact" class="link"></a>
+                </p>
+            </div>
+        </div>
+        <div class="footer__row">
+            <div class="footer__item">
+                <p class="paragraph paragraph--text-center">
+                    <span data-mehrsprachig="commons.footer.robin"></span>
+                    <span>
+                        <a href="https://robinloeffel.ch" target="_blank" class="link">Robin Löffel</a>
+                    </span>
+                </p>
             </div>
         </div>
     </footer>

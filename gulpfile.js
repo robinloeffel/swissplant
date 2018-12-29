@@ -39,7 +39,8 @@ gulp.task('css', () => {
         .pipe(autoprefixer())
         .pipe(cleanCss())
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(pathsConfig.dist.css));
+        .pipe(gulp.dest(pathsConfig.dist.css))
+        .pipe(connect.reload());
 });
 
 gulp.task('js:lint', () => {

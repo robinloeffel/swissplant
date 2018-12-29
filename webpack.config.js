@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const merge = require('webpack-merge');
+const babelConfig = require('./babel.config');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const prod = process.argv.includes('--prod');
 const stats = process.argv.includes('--stats');
@@ -15,19 +16,7 @@ let config = {
             test: /\.js$/,
             exclude: /node_modules/,
             loader: 'babel-loader',
-            query: {
-                presets: [
-                    ['@babel/preset-env', {
-                        targets: {
-                            browsers: 'last 2 versions',
-                            ie: 11
-                        },
-                        useBuiltIns: 'usage',
-                        modules: false
-                    }]
-                ],
-                ignore: [ 'node_modules' ]
-            }
+            query: babelConfig
         }]
     }
 };

@@ -4,12 +4,22 @@
             "showMore": "Mehr erfahren"
         },
         "footer": {
-            "address": "Spitzallmendweg 11<br/>CH-3225 Müntschemier",
-            "poBoxes": "Postfach 11 (SwissPlant GmbH)<br/>Postfach 5 (Agriplant AG)",
-            "phone": "<a href=\"tel:+41323135210\">+41 32 313 52 10</a>",
-            "hours": "Montag bis Freitag<br/>07:30&ndash;11:45 Uhr<br/>13:30&ndash;17:30 Uhr",
-            "emails": "<a href=\"mailto:info@swissplant.ch\">info@swissplant.ch</a><br/><a href=\"mailto:info@agriplant.ch\">info@agriplant.ch</a>",
-            "robin": "Entwickelt und gestaltet von <a href=\"https://robinloeffel.ch\" target=\"_blank\">Robin Löffel</a>",
+            "address": {
+                "street": "Spitzallmendweg 11",
+                "city": "CH-3225 Müntschemier"
+            },
+            "poBox": {
+                "swissplant": "Postfach 11 (SwissPlant GmbH)",
+                "agriplant": "Postfach 5 (Agriplant AG)"
+            },
+            "opening": {
+                "days": "Montag bis Freitag",
+                "hours": {
+                    "morning": "07:30–11:45 Uhr",
+                    "afternoon": "13:30–17:30 Uhr"
+                }
+            },
+            "robin": "Entwickelt und gestaltet von ",
             "copyright": "© SwissPlant GmbH 2019"
         },
         "logos": {
