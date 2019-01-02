@@ -9,9 +9,9 @@ module.exports = {
         root: 'src',
         js: 'src/**/*.js',
         css: 'src/**/*.scss',
-        img: 'src/img/*',
+        img: 'src/img/**/*',
         data: 'src/{data,video}/*',
-        rootFiles: 'src/*.*',
+        rootFiles: 'src/{*,}.*',
         jsEntry: 'src/js/main.js',
         cssEntry: 'src/css/main.scss',
     }

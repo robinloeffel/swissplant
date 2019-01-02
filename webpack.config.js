@@ -14,10 +14,12 @@ let config = {
     mode: 'development',
     module: {
         rules: [{
-            test: /\.js$/,
-            exclude: /node_modules/,
-            loader: 'babel-loader',
-            query: babelConfig
+            test: /\.m?js$/,
+            use: {
+                loader: 'babel-loader',
+                options: babelConfig
+            },
+            exclude: /node_modules/
         }]
     }
 };

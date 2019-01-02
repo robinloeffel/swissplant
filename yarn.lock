@@ -503,7 +503,7 @@
     "@babel/helper-regex" "^7.0.0"
     regexpu-core "^4.1.3"
 
-"@babel/polyfill@^7.0.0", "@babel/polyfill@^7.2.5":
+"@babel/polyfill@^7.2.5":
   version "7.2.5"
   resolved "https://registry.yarnpkg.com/@babel/polyfill/-/polyfill-7.2.5.tgz#6c54b964f71ad27edddc567d065e57e87ed7fa7d"
   integrity sha512-8Y/t3MWThtMLYr0YNC/Q76tqN1w30+b0uQMeFUYauG2UGTR19zyUtFrAzT23zNtBxPp+LbE5E/nwV/q/r3y6ug==
@@ -4872,12 +4872,13 @@ media-typer@0.3.0:
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
   integrity sha1-hxDXrwqmJvj/+hzgAWhUUmMlV0g=
 
-mehrsprachig@^0.2.3:
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/mehrsprachig/-/mehrsprachig-0.2.3.tgz#7d4be5089d7737c59825338b7afe51d792fd6b6b"
-  integrity sha512-RF0UwejMC8O6pSR62thMf2OqaGDUVqxEf1sLWqzKRmCwOBbIBNcHQDpoQuStS2oiT0P8T+/dBZOC3NMJKTR/yw==
+mehrsprachig@^0.2.4:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/mehrsprachig/-/mehrsprachig-0.2.4.tgz#fd19fdc311c8bb9a1bece676768b1b159f835ce8"
+  integrity sha512-ZGiCf9akztJ/ddwFEn8KbAUcmXF8KGefOm/atMpZzj9F4jAq+iewIG5BXdYptznZhEDqubjJkyVzJFq0Ga/EwA==
   dependencies:
-    "@babel/polyfill" "^7.0.0"
+    promise-polyfill "^8.1.0"
+    whatwg-fetch "^3.0.0"
 
 memoizee@0.4.X:
   version "0.4.14"
@@ -5957,6 +5958,11 @@ promise-inflight@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/promise-inflight/-/promise-inflight-1.0.1.tgz#98472870bf228132fcbdd868129bad12c3c029e3"
   integrity sha1-mEcocL8igTL8vdhoEputEsPAKeM=
+
+promise-polyfill@^8.1.0:
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/promise-polyfill/-/promise-polyfill-8.1.0.tgz#30059da54d1358ce905ac581f287e184aedf995d"
+  integrity sha512-OzSf6gcCUQ01byV4BgwyUCswlaQQ6gzXc23aLQWhicvfX9kfsUiUhgt3CCQej8jDnl8/PhGF31JdHX2/MzF3WA==
 
 proto-list@~1.2.1:
   version "1.2.4"
@@ -7752,6 +7758,11 @@ websocket-extensions@>=0.1.1:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/websocket-extensions/-/websocket-extensions-0.1.3.tgz#5d2ff22977003ec687a4b87073dfbbac146ccf29"
   integrity sha512-nqHUnMXmBzT0w570r2JpJxfiSD1IzoI+HGVdd3aZ0yNi3ngvQ4jv1dtHt5VGxfI2yj5yqImPhOK4vmIh2xMbGg==
+
+whatwg-fetch@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-3.0.0.tgz#fc804e458cc460009b1a2b966bc8817d2578aefb"
+  integrity sha512-9GSJUgz1D4MfyKU7KRqwOjXCXTqWdFNvEr7eUBYchQiVc744mqK/MzXPNR2WsPkmkOa4ywfg8C2n8h+13Bey1Q==
 
 which-module@^1.0.0:
   version "1.0.0"
