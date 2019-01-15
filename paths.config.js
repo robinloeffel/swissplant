@@ -7,12 +7,12 @@ module.exports = {
     },
     src: {
         root: 'src',
-        js: 'src/**/*.js',
-        css: 'src/**/*.scss',
-        img: 'src/img/*',
+        js: 'src/js/**/*.{m,}js',
+        css: 'src/css/**/*.scss',
+        img: 'src/img/**/*',
         data: 'src/{data,video}/*',
-        rootFiles: 'src/*.*',
-        jsEntry: 'src/js/main.js',
+        rootFiles: 'src/{*,}.*',
+        jsEntry: 'src/js/main.{m,}js',
         cssEntry: 'src/css/main.scss',
     }
 };
