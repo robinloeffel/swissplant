@@ -62,32 +62,60 @@
         }
     },
 
-    "about.meta.title": "SwissPlant GmbH &ndash; Über uns",
-    "about.meta.description": "Erfahren Sie mehr über die SwissPlant GmbH und wer überhaupt hinter ihr steckt.",
-    "about.meta.keywords": "über uns, anfang, geschichte, müntschemier, martin löffel, erfahrung, gemüsebau, kompetent, muentschemier, swissplant, agriplant, swissplant gmbh, agriplant ag, angestellte, mitarbeiter, geschäftsführung",
-    "about.copy.first": "Den Anfang nehmen all diese Gemüse und Salate als Jungpflanzen, die von der Firma AgriPlant AG in Müntschemier angezogen werden. Geschäftsführer unserer Firmen Martin Löffel, fasst den Weg der Keimlinge bis hin zu ausgewachsenen Pflanzen so zusammen: &laquo;Wir stehen als Zulieferbetrieb der Gemüsebaubetriebe am Anfang der Produktionskette und kultivieren die Jungpflanzen, die anschliessend von den Gemüsegärtnern gepflanzt werden.&raquo;",
-    "about.copy.second": "Die Handelsfirma SwissPlant GmbH, bietet Ihnen Gemüsejungpflanzen in allen möglichen Variationen und Grössen an. Durch unsere jahrelange Erfahrung im Gemüsebau können wir Ihnen eine kompetente und fachspezifische Beratung für unsere klimatischen Bedingungen garantieren. <a href=\"./angebot.html\">Unser Sortiment</a> ist eine Zusammenstellung aus verschiedenen Züchtungsprogrammen der weltweit tätigen Anbieter von Hochleistungssaatgut.",
-    "about.copy.third": "Zu unseren Zulieferfirmen im Bereich Saatgut gehören: <a href=\"http://bejosamen.de\" target=\"_blank\">Bejo</a>, <a href=\"http://enzazaden.de\" target=\"_blank\">Enza</a>, <a href=\"http://rijkzwaan.de\" target=\"_blank\">Rijk Zwaan</a>, <a href=\"http://hildsamen.de/ueber_uns.htm\" target=\"_blank\">Hild</a>, <a href=\"http://syngenta.ch\" target=\"_blank\">Syngenta</a> und <a href=\"http://www.sakata.com\" target=\"_blank\">Sakata</a>. Unsere Anzuchterde beziehen wir bei den Firmen <a href=\"http://floragard.de\" target=\"_blank\">Floragard</a> und <a href=\"http://klasmann-deilmann.com\" target=\"_blank\">Klasmann</a>.",
-    "about.martin.alt": "Martin Löffel, Geschäftsführer",
-    "about.martin.position": "Geschäftsführer &amp; Verkauf",
-    "about.telja.alt": "Telja Baumann, Administration",
-    "about.telja.position": "Administration &amp; Verkauf",
-    "about.pascal.alt": "Pascal Probst, Verkauf und Logistik",
-    "about.pascal.position": "Verkauf &amp; Logistik",
-    "about.sandro.alt": "Sandro Löffel, Warendispo",
-    "about.sandro.position": "Warendispo &amp; Stv. Betriebsleiter",
-    "about.ivan.alt": "Ivan Gross, Betriebsleiter Gewächshaus",
-    "about.ivan.position": "Leiter Gewächshaus",
-    "about.shpend.alt": "Shpend Thaqi, Leiter Produktionsanlage",
-    "about.shpend.position": "Leiter Produktionsanlage",
-    "about.andrzej.alt": "Andrzej Mojsym, Mechaniker und Chauffeur",
-    "about.andrzej.position": "Mechaniker &amp; Chauffeur",
-    "about.hans-peter.alt": "Hans-Peter Schwab, Chauffeur",
-    "about.hans-peter.position": "Interner Transport &amp; Chauffeur",
-    "about.damian.alt": "Damian Makarewicz, Stv. Leiter Produktionsanlage",
-    "about.damian.position": "Stv. Leiter Produktionsanlage",
-    "about.mariusz.alt": "Mariusz Wronski, Interner Transport",
-    "about.mariusz.position": "Interner Transport",
+    "about": {
+        "meta": {
+            "title": "SwissPlant GmbH – Über uns",
+            "description": "Erfahren Sie mehr über die SwissPlant GmbH und wer überhaupt hinter ihr steckt.",
+            "keywords": "über uns, anfang, geschichte, müntschemier, martin löffel, erfahrung, gemüsebau, kompetent, muentschemier, swissplant, agriplant, swissplant gmbh, agriplant ag, angestellte, mitarbeiter, geschäftsführung"
+        },
+        "paragraphs": {
+            "first": "Den Anfang nehmen all diese Gemüse und Salate als Jungpflanzen, die von der Firma AgriPlant AG in Müntschemier angezogen werden. Geschäftsführer unserer Firmen Martin Löffel, fasst den Weg der Keimlinge bis hin zu ausgewachsenen Pflanzen so zusammen: «Wir stehen als Zulieferbetrieb der Gemüsebaubetriebe am Anfang der Produktionskette und kultivieren die Jungpflanzen, die anschliessend von den Gemüsegärtnern gepflanzt werden.»",
+            "second": "Die Handelsfirma SwissPlant GmbH, bietet Ihnen Gemüsejungpflanzen in allen möglichen Variationen und Grössen an. Durch unsere jahrelange Erfahrung im Gemüsebau können wir Ihnen eine kompetente und fachspezifische Beratung für unsere klimatischen Bedingungen garantieren. <a class=\"link\" href=\"angebot.html\">Unser Sortiment</a> ist eine Zusammenstellung aus verschiedenen Züchtungsprogrammen der weltweit tätigen Anbieter von Hochleistungssaatgut.",
+            "third": "Zu unseren Zulieferfirmen im Bereich Saatgut gehören: <a class=\"link\" href=\"//bejosamen.de\" target=\"_blank\">Bejo</a>, <a class=\"link\" href=\"//enzazaden.de\" target=\"_blank\">Enza</a>, <a class=\"link\" href=\"//rijkzwaan.de\" target=\"_blank\">Rijk Zwaan</a>, <a class=\"link\" href=\"//hildsamen.de\" target=\"_blank\">Hild</a>, <a class=\"link\" href=\"//syngenta.ch\" target=\"_blank\">Syngenta</a> und <a class=\"link\" href=\"//www.sakata.com\" target=\"_blank\">Sakata</a>. Unsere Anzuchterde beziehen wir bei den Firmen <a class=\"link\" href=\"//floragard.de\" target=\"_blank\">Floragard</a> und <a class=\"link\" href=\"//klasmann-deilmann.com\" target=\"_blank\">Klasmann</a>."
+        },
+        "photos": {
+            "martin": {
+                "alt": "Martin Löffel, Geschäftsführer",
+                "position": "Geschäftsführer & Verkauf"
+            },
+            "telja": {
+                "alt": "Telja Baumann, Administration",
+                "position": "Administration & Verkauf"
+            },
+            "pascal": {
+                "alt": "Pascal Probst, Verkauf und Logistik",
+                "position": "Verkauf & Logistik"
+            },
+            "sandro": {
+                "alt": "Sandro Löffel, Warendispo & Stv. Betriebsleiter",
+                "position": "Warendispo & Stv. Betriebsleiter"
+            },
+            "ivan": {
+                "alt": "Ivan Gross, Betriebsleiter Gewächshaus",
+                "position": "Leiter Gewächshaus"
+            },
+            "shpend": {
+                "alt": "Shpend Thaqi, Leiter Produktionsanlage",
+                "position": "Leiter Produktionsanlage"
+            },
+            "andrzej": {
+                "alt": "Andrzej Mojsym, Mechaniker & Chauffeur",
+                "position": "Mechaniker & Chauffeur"
+            },
+            "hans-peter": {
+                "alt": "Hans-Peter Schwab, Chauffeur & Interner Transport",
+                "position": "Interner Transport & Chauffeur"
+            },
+            "damian": {
+                "alt": "Damian Makarewicz, Stv. Leiter Produktionsanlage",
+                "position": "Stv. Leiter Produktionsanlage"
+            },
+            "mariusz": {
+                "alt": "Mariusz Wronski, Interner Transport",
+                "position": "Interner Transport"
+            }
+        }
+    },
 
     "portfolio.meta.title": "SwissPlant GmbH &ndash; Angebot",
     "portfolio.meta.description": "Schauen Sie sich unser Angebot an. Wir bieten Warmhauspflanzen verschiedener Sorten an.",

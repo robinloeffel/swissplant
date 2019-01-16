@@ -6,6 +6,10 @@
     justify-content: center;
     align-items: center;
 
+    &--narrow {
+        height: 400px;
+    }
+
     &__images {
         height: 100%;
 
@@ -31,6 +35,10 @@
 
         &--hidden {
             opacity: 0;
+        }
+
+        &--align-top {
+            object-position: top;
         }
     }
 

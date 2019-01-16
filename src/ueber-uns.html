@@ -50,100 +50,95 @@
         </nav>
     </header>
     <main>
-        <section id="landing" class="little-hero">
-            <div class="cover-parent">
-                <div class="cover-parent-background about-image top"></div>
-            </div>
+        <section class="cover-section cover-section--narrow">
+            <img class="cover-section__image" src="img/three.jpg">
         </section>
-        <section id="ueber-uns">
-            <div class="wrapper copytext">
-                <h1 translate="nav.about"></h1>
-                <video controls poster="../img/poster.jpg">
-                    <source src="video/swissplant.mp4" type="video/mp4">
-                    Your Browser does not support HTML5 videos. Please consider upgrading.
-                </video>
-                <p translate="about.copy.first"></p>
-                <p translate="about.copy.second"></p>
-                <p translate="about.copy.third"></p>
-                <div class="photo-list clearfix">
-                    <figure tabindex="0">
-                        <img src="img/mitarbeiter/martin-loeffel.jpg" translate-attr="{alt: 'about.martin.alt'}" />
-                        <figcaption>
-                            <span>Martin Löffel</span>
-                            <span translate="about.martin.position"></span>
-                            <span><a href="mailto:m.loeffel@swissplant.ch">m.loeffel@swissplant.ch</a></span>
-                            <span><a href="tel:+41796314559">+41 79 631 45 59</a></span>
-                        </figcaption>
-                    </figure>
-                    <figure tabindex="0">
-                        <img src="img/mitarbeiter/telja-baumann.jpg" translate-attr="{alt: 'about.telja.alt'}" />
-                        <figcaption>
-                            <span>Telja Baumann</span>
-                            <span translate="about.telja.position"></span>
-                            <span><a href="mailto:t.baumann@swissplant.ch">t.baumann@swissplant.ch</a></span>
-                            <span><a href="tel:+41798153835">+41 79 815 38 35</a></span>
-                        </figcaption>
-                    </figure>
-                    <figure tabindex="0">
-                        <img src="img/mitarbeiter/pascal-probst.jpg" translate-attr="{alt: 'about.pascal.alt'}" />
-                        <figcaption>
-                            <span>Pascal Probst</span>
-                            <span translate="about.pascal.position"></span>
-                            <span><a href="mailto:p.probst@swissplant.ch">p.probst@swissplant.ch</a></span>
-                            <span><a href="tel:+41796415210">+41 79 641 52 10</a></span>
-                        </figcaption>
-                    </figure>
-                    <figure tabindex="0">
-                        <img src="img/mitarbeiter/sandro-loeffel.jpg" translate-attr="{alt: 'about.sandro.alt'}" />
-                        <figcaption>
-                            <span>Sandro Löffel</span>
-                            <span translate="about.sandro.position"></span>
-                            <span><a href="mailto:s.loeffel@swissplant.ch">s.loeffel@swissplant.ch</a></span>
-                            <span><a href="tel:+41797415210">+41 79 741 52 10</a></span>
-                        </figcaption>
-                    </figure>
-                    <figure tabindex="0">
-                        <img src="img/mitarbeiter/ivan-gross.jpg" translate-attr="{alt: 'about.ivan.alt'}" />
-                        <figcaption>
-                            <span>Ivan Gross</span>
-                            <span translate="about.ivan.position"></span>
-                        </figcaption>
-                    </figure>
-                    <figure tabindex="0">
-                        <img src="img/mitarbeiter/shpend-thaqi.jpg" translate-attr="{alt: 'about.shpend.alt'}" />
-                        <figcaption>
-                            <span>Shpend Thaqi</span>
-                            <span translate="about.shpend.position"></span>
-                        </figcaption>
-                    </figure>
-                    <figure tabindex="0">
-                        <img src="img/mitarbeiter/andrzej-mojsym.jpg" translate-attr="{alt: 'about.andrzej.alt'}" />
-                        <figcaption>
-                            <span>Andrzej Mojsym</span>
-                            <span translate="about.andrzej.position"></span>
-                        </figcaption>
-                    </figure>
-                    <figure tabindex="0">
-                        <img src="img/mitarbeiter/hans-peter-schwab.jpg" translate-attr="{alt: 'about.hans-peter.alt'}" />
-                        <figcaption>
-                            <span>Hans-Peter Schwab</span>
-                            <span translate="about.hans-peter.position"></span>
-                        </figcaption>
-                    </figure>
-                    <figure tabindex="0">
-                        <img src="img/mitarbeiter/placeholder.jpg" translate-attr="{alt: 'about.damian.alt'}" />
-                        <figcaption>
-                            <span>Damian Makarewicz</span>
-                            <span translate="about.damian.position"></span>
-                        </figcaption>
-                    </figure>
-                    <figure tabindex="0">
-                        <img src="img/mitarbeiter/placeholder.jpg" translate-attr="{alt: 'about.mariusz.alt'}" />
-                        <figcaption>
-                            <span>Mariusz Wronski</span>
-                            <span translate="about.mariusz.position"></span>
-                        </figcaption>
-                    </figure>
+        <section class="section">
+            <h2 data-mehrsprachig="nav.about" class="title"></h2>
+            <video controls poster="/img/poster.jpg" class="video">
+                <source src="/video/swissplant.mp4" type="video/mp4">
+            </video>
+            <p data-mehrsprachig="about.paragraphs.first" class="paragraph"></p>
+            <p data-mehrsprachig="about.paragraphs.second:html" class="paragraph"></p>
+            <p data-mehrsprachig="about.paragraphs.third:html" class="paragraph"></p>
+            <div class="photo-list">
+                <div class="photo">
+                    <img class="image" src="img/mitarbeiter/martin-loeffel.jpg" data-mehrsprachig="alt=about.photos.martin.alt" />
+                    <div class="image__description">
+                        <span>Martin Löffel</span>
+                        <span data-mehrsprachig="about.photos.martin.position"></span>
+                        <a class="link" href="mailto:m.loeffel@swissplant.ch">m.loeffel@swissplant.ch</a>
+                        <a class="link" href="tel:+41796314559">+41 79 631 45 59</a>
+                    </div>
+                </div>
+                <div class="photo">
+                    <img class="image" src="img/mitarbeiter/telja-baumann.jpg" data-mehrsprachig="alt=about.photos.telja.alt" />
+                    <div class="image__description">
+                        <span>Telja Baumann</span>
+                        <span data-mehrsprachig="about.photos.telja.position"></span>
+                        <a class="link" href="mailto:t.baumann@swissplant.ch">t.baumann@swissplant.ch</a>
+                        <a class="link" href="tel:+41798153835">+41 79 815 38 35</a>
+                    </div>
+                </div>
+                <div class="photo">
+                    <img class="image" src="img/mitarbeiter/pascal-probst.jpg" data-mehrsprachig="alt=about.photos.pascal.alt" />
+                    <div class="image__description">
+                        <span>Pascal Probst</span>
+                        <span data-mehrsprachig="about.photos.pascal.position"></span>
+                        <a class="link" href="mailto:p.probst@swissplant.ch">p.probst@swissplant.ch</a>
+                        <a class="link" href="tel:+41796415210">+41 79 641 52 10</a>
+                    </div>
+                </div>
+                <div class="photo">
+                    <img class="image" src="img/mitarbeiter/sandro-loeffel.jpg" data-mehrsprachig="alt=about.photos.sandro.alt" />
+                    <div class="image__description">
+                        <span>Sandro Löffel</span>
+                        <span data-mehrsprachig="about.photos.sandro.position"></span>
+                        <a class="link" href="mailto:s.loeffel@swissplant.ch">s.loeffel@swissplant.ch</a>
+                        <a class="link" href="tel:+41797415210">+41 79 741 52 10</a>
+                    </div>
+                </div>
+                <div class="photo">
+                    <img class="image" src="img/mitarbeiter/ivan-gross.jpg" data-mehrsprachig="alt=about.photos.ivan.alt" />
+                    <div class="image__description">
+                        <span>Ivan Gross</span>
+                        <span data-mehrsprachig="about.photos.ivan.position"></span>
+                    </div>
+                </div>
+                <div class="photo">
+                    <img class="image" src="img/mitarbeiter/shpend-thaqi.jpg" data-mehrsprachig="alt=about.photos.shpend.alt" />
+                    <div class="image__description">
+                        <span>Shpend Thaqi</span>
+                        <span data-mehrsprachig="about.photos.shpend.position"></span>
+                    </div>
+                </div>
+                <div class="photo">
+                    <img class="image" src="img/mitarbeiter/andrzej-mojsym.jpg" data-mehrsprachig="alt=about.photos.andrzej.alt" />
+                    <div class="image__description">
+                        <span>Andrzej Mojsym</span>
+                        <span data-mehrsprachig="about.photos.andrzej.position"></span>
+                    </div>
+                </div>
+                <div class="photo">
+                    <img class="image" src="img/mitarbeiter/hans-peter-schwab.jpg" data-mehrsprachig="alt=about.photos.hans-peter.alt" />
+                    <div class="image__description">
+                        <span>Hans-Peter Schwab</span>
+                        <span data-mehrsprachig="about.photos.hans-peter.position"></span>
+                    </div>
+                </div>
+                <div class="photo">
+                    <img class="image" src="img/mitarbeiter/placeholder.jpg" data-mehrsprachig="alt=about.photos.damian.alt" />
+                    <div class="image__description">
+                        <span>Damian Makarewicz</span>
+                        <span data-mehrsprachig="about.photos.damian.position"></span>
+                    </div>
+                </div>
+                <div class="photo">
+                    <img class="image" src="img/mitarbeiter/placeholder.jpg" data-mehrsprachig="alt=about.photos.mariusz.alt" />
+                    <div class="image__description">
+                        <span>Mariusz Wronski</span>
+                        <span data-mehrsprachig="about.photos.mariusz.position"></span>
+                    </div>
                 </div>
             </div>
         </section>

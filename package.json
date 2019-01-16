@@ -8,7 +8,7 @@
     "dependencies": {
         "feather-icons": "^4.10.0",
         "jump.js": "^1.0.2",
-        "mehrsprachig": "^0.2.4"
+        "mehrsprachig": "^0.3.2"
     },
     "devDependencies": {
         "@babel/core": "^7.2.2",

@@ -4848,10 +4848,10 @@ media-typer@0.3.0:
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
   integrity sha1-hxDXrwqmJvj/+hzgAWhUUmMlV0g=
 
-mehrsprachig@^0.2.4:
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/mehrsprachig/-/mehrsprachig-0.2.4.tgz#fd19fdc311c8bb9a1bece676768b1b159f835ce8"
-  integrity sha512-ZGiCf9akztJ/ddwFEn8KbAUcmXF8KGefOm/atMpZzj9F4jAq+iewIG5BXdYptznZhEDqubjJkyVzJFq0Ga/EwA==
+mehrsprachig@^0.3.2:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/mehrsprachig/-/mehrsprachig-0.3.2.tgz#4ad0ad288e6853bffda4b5492430e0f25c0fe37c"
+  integrity sha512-jzsl9WVUNpdGOY6OLBR0b06seCyucTudKr6MHuq2jCKZctTXtFZyptO5hmOn0i8h/uVH2agxX2ZBCG3gYA7jrQ==
   dependencies:
     promise-polyfill "^8.1.0"
     whatwg-fetch "^3.0.0"

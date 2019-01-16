@@ -7,8 +7,8 @@ module.exports = {
     },
     src: {
         root: 'src',
-        js: 'src/js/**/*.{m,}js',
-        css: 'src/css/**/*.scss',
+        js: 'src/{js,modules}/**/*.{m,}js',
+        css: 'src/{css,modules}/**/*.scss',
         img: 'src/img/**/*',
         data: 'src/{data,video}/*',
         rootFiles: 'src/{*,}.*',
