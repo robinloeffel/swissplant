@@ -14,15 +14,10 @@ let config = {
     mode: 'development',
     module: {
         rules: [{
-            test: /\.m?js$/,
+            test: /\.js$/,
             loader: 'babel-loader',
             exclude: /node_modules/
         }]
-    },
-    resolve: {
-        alias: {
-            mehrsprachig: 'mehrsprachig/dist/mehrsprachig.esm.js'
-        }
     }
 };
 
