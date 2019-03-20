@@ -18,6 +18,9 @@ let config = {
             loader: 'babel-loader',
             exclude: /node_modules/
         }]
+    },
+    resolve: {
+        mainFields: [ 'module', 'jsnext:main', 'main' ]
     }
 };
 

@@ -4848,12 +4848,11 @@ media-typer@0.3.0:
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
   integrity sha1-hxDXrwqmJvj/+hzgAWhUUmMlV0g=
 
-mehrsprachig@^0.3.2:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/mehrsprachig/-/mehrsprachig-0.3.2.tgz#4ad0ad288e6853bffda4b5492430e0f25c0fe37c"
-  integrity sha512-jzsl9WVUNpdGOY6OLBR0b06seCyucTudKr6MHuq2jCKZctTXtFZyptO5hmOn0i8h/uVH2agxX2ZBCG3gYA7jrQ==
+mehrsprachig@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/mehrsprachig/-/mehrsprachig-0.4.0.tgz#f55f6fe8b92113cb1a64b54133049a5df7eb53ec"
+  integrity sha512-bvDrzIfRVzK9n4i7PyUfRTNnM/NPHRSJT0E2sVvyGu2cXOrGX8BbHQS4MMwHCjSb0FfLJP/tMTgpQNTV/o9B6A==
   dependencies:
-    promise-polyfill "^8.1.0"
     whatwg-fetch "^3.0.0"
 
 memoizee@0.4.X:
@@ -5908,11 +5907,6 @@ promise-inflight@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/promise-inflight/-/promise-inflight-1.0.1.tgz#98472870bf228132fcbdd868129bad12c3c029e3"
   integrity sha1-mEcocL8igTL8vdhoEputEsPAKeM=
-
-promise-polyfill@^8.1.0:
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/promise-polyfill/-/promise-polyfill-8.1.0.tgz#30059da54d1358ce905ac581f287e184aedf995d"
-  integrity sha512-OzSf6gcCUQ01byV4BgwyUCswlaQQ6gzXc23aLQWhicvfX9kfsUiUhgt3CCQej8jDnl8/PhGF31JdHX2/MzF3WA==
 
 proto-list@~1.2.1:
   version "1.2.4"
