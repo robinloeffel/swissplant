@@ -3,13 +3,11 @@ const closeButton = document.querySelector('.close-mobile-nav');
 const nav = document.querySelector('.mobile-nav');
 
 openButton.addEventListener('click', event => {
-    event.preventDefault();
-
-    nav.classList.add('open');
+  event.preventDefault();
+  nav.classList.add('open');
 }, false);
 
 closeButton.addEventListener('click', event => {
-    event.preventDefault();
-
-    nav.classList.remove('open');
+  event.preventDefault();
+  nav.classList.remove('open');
 }, false);

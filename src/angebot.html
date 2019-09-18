@@ -2,164 +2,164 @@
 <html data-ng-app="swissPlant">
 
 <head>
-    <meta charset="utf-8" />
-    <title translate="portfolio.meta.title">SwissPlant</title>
-    <meta name="description" translate-attr="{content: 'portfolio.meta.description'}" />
-    <meta name="keywords" translate-attr="{content: 'portfolio.meta.keywords'}" />
-    <meta name="author" content="Robin Löffel" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" />
-    <link rel="shortcut icon" href="img/favicon.ico" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" translate-attr="{content: 'portfolio.meta.description'}">
+  <meta name="keywords" translate-attr="{content: 'portfolio.meta.keywords'}">
+  <meta name="author" content="Robin Löffel">
+  <title translate="portfolio.meta.title">SwissPlant</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="img/favicon.ico">
 </head>
 
 <body ng-controller="langCtrl">
-    <header ng-cloak translate-cloak>
-        <nav class="desktop-nav">
-            <ul class="clearfix">
-                <li>
-                    <a href="./">
-                        <img src="img/logo-swissplant-tilted.svg" translate-attr="{alt: 'common.logo.swissplant.alt'}">
-                    </a>
-                </li>
-                <li>
-                    <a href="ueber-uns.html" translate="nav.about"></a>
-                </li>
-                <li class="active">
-                    <a href="angebot.html" translate="nav.portfolio"></a>
-                </li>
-                <li>
-                    <a href="partner.html" translate="nav.partners"></a>
-                </li>
-                <li>
-                    <a href="kontakt.html" translate="nav.contact"></a>
-                </li>
-                <li class="mobile-menu">
-                    <i class="icon icon--bars"></i>
-                </li>
-                <li class="lang-changer">
-                    <div class="icon icon--globe lang-changer__icon">
-                    </div>
-                    <div class="lang-changer__button-container">
-                        <span data-ng-click="changeLang('de')" class="lang-changer__button">de</span>
-                        <span data-ng-click="changeLang('en')" class="lang-changer__button">en</span>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-        <nav class="mobile-nav mobile-only">
-            <ul class="clearfix">
-                <li>
-                    <a href="#" class="close-mobile-nav">
-                        <i class="icon icon--times"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="./" translate="nav.start"></a>
-                </li>
-                <li>
-                    <a href="ueber-uns.html" translate="nav.about"></a>
-                </li>
-                <li>
-                    <a href="angebot.html" translate="nav.portfolio"></a>
-                </li>
-                <li>
-                    <a href="partner.html" translate="nav.partners"></a>
-                </li>
-                <li>
-                    <a href="kontakt.html" translate="nav.contact"></a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <main ng-cloak>
-        <section id="landing" class="little-hero">
-            <div class="cover-parent">
-                <div class="cover-parent-background portfolio-image top"></div>
-            </div>
-        </section>
-        <section id="ueber-uns">
-            <div class="wrapper copytext">
-                <h1 translate="nav.portfolio"></h1>
-                <p>
-                    <table>
-                        <tr>
-                            <td translate="portfolio.table.1x1"></td>
-                            <td translate="portfolio.table.1x2"></td>
-                        </tr>
-                        <tr>
-                            <td translate="portfolio.table.2x1"></td>
-                            <td translate="portfolio.table.2x2"></td>
-                        </tr>
-                        <tr>
-                            <td translate="portfolio.table.3x1"></td>
-                            <td translate="portfolio.table.3x2"></td>
-                        </tr>
-                        <tr>
-                            <td translate="portfolio.table.4x1"></td>
-                            <td translate="portfolio.table.4x2"></td>
-                        </tr>
-                        <tr>
-                            <td translate="portfolio.table.5x1"></td>
-                            <td translate="portfolio.table.5x2"></td>
-                        </tr>
-                        <tr>
-                            <td translate="portfolio.table.6x1"></td>
-                            <td translate="portfolio.table.6x2"></td>
-                        </tr>
-                        <tr>
-                            <td translate="portfolio.table.7x1"></td>
-                            <td translate="portfolio.table.7x2"></td>
-                        </tr>
-                        <tr>
-                            <td translate="portfolio.table.8x1"></td>
-                            <td translate="portfolio.table.8x2"></td>
-                        </tr>
-                    </table>
-                </p>
-                <p translate="portfolio.description"></p>
-            </div>
-        </section>
-    </main>
-    <footer ng-cloak>
-        <div class="wrapper clearfix">
-            <div class="left">
-                <p>
-                    <img src="img/logo-swissplant-tilted.svg" class="footer-logo" translate-attr="{alt: 'common.logo.swissplant.alt'}">
-                    <br/>
-                    <img src="img/logo-agriplant.svg" class="footer-logo" translate-attr="{alt: 'common.logo.agriplant.alt'}">
-                </p>
-                <p translate="footer.copyright"></p>
-            </div>
-            <div class="center">
-                <p translate="footer.address"></p>
-                <p translate="footer.po-boxes"></p>
-                <p translate="footer.phone"></p>
-            </div>
-            <div class="right">
-                <p translate="footer.hours"></p>
-                <p translate="footer.emails"></p>
-            </div>
-            <div class="row separator">
-                <p>
-                    <a href="." translate="nav.start"></a>
-                    &mdash;
-                    <a href="ueber-uns.html" translate="nav.about"></a>
-                    &mdash;
-                    <a href="angebot.html" translate="nav.portfolio"></a>
-                    &mdash;
-                    <a href="partner.html" translate="nav.partners"></a>
-                    &mdash;
-                    <a href="kontakt.html" translate="nav.contact"></a>
-                </p>
-            </div>
-            <div class="row">
-                <p translate="footer.robin"></p>
-            </div>
-        </div>
-    </footer>
-    <script src="js/main.js"></script>
+  <header ng-cloak translate-cloak>
+    <nav class="desktop-nav">
+      <ul class="clearfix">
+        <li>
+          <a href="./">
+            <img src="img/logo-swissplant-tilted.svg" translate-attr="{alt: 'common.logo.swissplant.alt'}">
+          </a>
+        </li>
+        <li>
+          <a href="ueber-uns.html" translate="nav.about"></a>
+        </li>
+        <li class="active">
+          <a href="angebot.html" translate="nav.portfolio"></a>
+        </li>
+        <li>
+          <a href="partner.html" translate="nav.partners"></a>
+        </li>
+        <li>
+          <a href="kontakt.html" translate="nav.contact"></a>
+        </li>
+        <li class="mobile-menu">
+          <i class="icon icon--bars"></i>
+        </li>
+        <li class="lang-changer">
+          <div class="icon icon--globe lang-changer__icon">
+          </div>
+          <div class="lang-changer__button-container">
+            <span data-ng-click="changeLang('de')" class="lang-changer__button">de</span>
+            <span data-ng-click="changeLang('en')" class="lang-changer__button">en</span>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <nav class="mobile-nav mobile-only">
+      <ul class="clearfix">
+        <li>
+          <a href="#" class="close-mobile-nav">
+            <i class="icon icon--times"></i>
+          </a>
+        </li>
+        <li>
+          <a href="./" translate="nav.start"></a>
+        </li>
+        <li>
+          <a href="ueber-uns.html" translate="nav.about"></a>
+        </li>
+        <li>
+          <a href="angebot.html" translate="nav.portfolio"></a>
+        </li>
+        <li>
+          <a href="partner.html" translate="nav.partners"></a>
+        </li>
+        <li>
+          <a href="kontakt.html" translate="nav.contact"></a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main ng-cloak>
+    <section id="landing" class="little-hero">
+      <div class="cover-parent">
+        <div class="cover-parent-background portfolio-image top"></div>
+      </div>
+    </section>
+    <section id="ueber-uns">
+      <div class="wrapper copytext">
+        <h1 translate="nav.portfolio"></h1>
+        <p>
+          <table>
+            <tr>
+              <td translate="portfolio.table.1x1"></td>
+              <td translate="portfolio.table.1x2"></td>
+            </tr>
+            <tr>
+              <td translate="portfolio.table.2x1"></td>
+              <td translate="portfolio.table.2x2"></td>
+            </tr>
+            <tr>
+              <td translate="portfolio.table.3x1"></td>
+              <td translate="portfolio.table.3x2"></td>
+            </tr>
+            <tr>
+              <td translate="portfolio.table.4x1"></td>
+              <td translate="portfolio.table.4x2"></td>
+            </tr>
+            <tr>
+              <td translate="portfolio.table.5x1"></td>
+              <td translate="portfolio.table.5x2"></td>
+            </tr>
+            <tr>
+              <td translate="portfolio.table.6x1"></td>
+              <td translate="portfolio.table.6x2"></td>
+            </tr>
+            <tr>
+              <td translate="portfolio.table.7x1"></td>
+              <td translate="portfolio.table.7x2"></td>
+            </tr>
+            <tr>
+              <td translate="portfolio.table.8x1"></td>
+              <td translate="portfolio.table.8x2"></td>
+            </tr>
+          </table>
+        </p>
+        <p translate="portfolio.description"></p>
+      </div>
+    </section>
+  </main>
+  <footer ng-cloak>
+    <div class="wrapper clearfix">
+      <div class="left">
+        <p>
+          <img src="img/logo-swissplant-tilted.svg" class="footer-logo" translate-attr="{alt: 'common.logo.swissplant.alt'}">
+          <br />
+          <img src="img/logo-agriplant.svg" class="footer-logo" translate-attr="{alt: 'common.logo.agriplant.alt'}">
+        </p>
+        <p translate="footer.copyright"></p>
+      </div>
+      <div class="center">
+        <p translate="footer.address"></p>
+        <p translate="footer.po-boxes"></p>
+        <p translate="footer.phone"></p>
+      </div>
+      <div class="right">
+        <p translate="footer.hours"></p>
+        <p translate="footer.emails"></p>
+      </div>
+      <div class="row separator">
+        <p>
+          <a href="." translate="nav.start"></a>
+          &mdash;
+          <a href="ueber-uns.html" translate="nav.about"></a>
+          &mdash;
+          <a href="angebot.html" translate="nav.portfolio"></a>
+          &mdash;
+          <a href="partner.html" translate="nav.partners"></a>
+          &mdash;
+          <a href="kontakt.html" translate="nav.contact"></a>
+        </p>
+      </div>
+      <div class="row">
+        <p translate="footer.robin"></p>
+      </div>
+    </div>
+  </footer>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+  <script src="js/swissplant.js"></script>
 </body>
 
 </html>

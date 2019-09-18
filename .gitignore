@@ -1,6 +1,6 @@
 # folders
-/node_modules/
-/dist/
+node_modules
+dist
 
 # os
 Thumbs.db
@@ -10,6 +10,3 @@ Desktop.ini
 .AppleDouble
 .LSOverride
 ._*
-
-# misc
-report.html

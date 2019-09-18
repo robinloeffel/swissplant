@@ -1,118 +1,118 @@
 const gulp = require('gulp');
 const del = require('del');
-const runSequence = require('run-sequence');
 const open = require('open');
-const webpack = require('webpack');
-const webpackStream = require('webpack-stream');
-const named = require('vinyl-named');
-
 const connect = require('gulp-connect');
 const plumber = require('gulp-plumber');
-const changed = require('gulp-changed');
 const less = require('gulp-less');
-const autoprefixer = require('gulp-autoprefixer');
-const cleanCss = require('gulp-clean-css');
 const imagemin = require('gulp-imagemin');
-const eslint = require('gulp-eslint');
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
 
-const webpackConfig = require('./config/webpack');
-const paths = require('./config/paths');
+const prod = !process.argv.includes('--dev');
 
 
 gulp.task('clean', () => del('dist'));
-
 gulp.task('open', () => open('http://localhost:8080'));
 
 gulp.task('serve', done => {
-    connect.server({
-        port: 8080,
-        livereload: true,
-        root: 'dist'
-    });
-    done();
+  connect.server({
+    livereload: true,
+    root: 'dist'
+  });
+  done();
 });
 
 gulp.task('less', () => {
-    return gulp.src(paths.srcLess)
-        .pipe(plumber())
-        .pipe(changed(paths.distCss, {
-            extension: '.css'
-        }))
-        .pipe(less())
-        .pipe(autoprefixer({
-            browsers: ['last 2 versions', 'not ie < 11', 'not ie_mob < 11']
-        }))
-        .pipe(cleanCss())
-        .pipe(gulp.dest(paths.distCss))
-        .pipe(connect.reload());
-});
-
-gulp.task('js:transpile', () => {
-    return gulp.src(paths.srcMainJs)
-        .pipe(plumber())
-        .pipe(named())
-        .pipe(webpackStream(webpackConfig, webpack))
-        .pipe(gulp.dest(paths.distJs))
-        .pipe(connect.reload());
-});
-
-gulp.task('js:lint', () => {
-    return gulp.src(paths.srcJs)
-        .pipe(plumber())
-        .pipe(eslint())
-        .pipe(eslint.format());
+  return gulp.src('src/less/style.less')
+    .pipe(plumber())
+    .pipe(less())
+    .pipe(postcss([
+      ...(prod ? [
+        autoprefixer(),
+        cssnano()
+      ] : [])
+    ]))
+    .pipe(gulp.dest('dist/css'))
+    .pipe(connect.reload());
 });
 
 gulp.task('img', () => {
-    return gulp.src(paths.srcImg)
-        .pipe(plumber())
-        .pipe(changed(paths.distImg))
-        .pipe(imagemin([
-            imagemin.gifsicle({
-                interlaced: true,
-                optimizationLevel: 3
-            }),
-            imagemin.jpegtran({
-                progressive: true
-            }),
-            imagemin.optipng({
-                optimizationLevel: 7
-            }),
-            imagemin.svgo()
-        ]))
-        .pipe(gulp.dest(paths.distImg))
-        .pipe(connect.reload());
+  return gulp.src('src/img/**/*')
+    .pipe(plumber())
+    .pipe(imagemin([
+      imagemin.jpegtran({
+        progressive: true
+      }),
+      imagemin.optipng({
+        optimizationLevel: 7
+      }),
+      imagemin.svgo()
+    ]))
+    .pipe(gulp.dest('dist/img'))
+    .pipe(connect.reload());
 });
 
 gulp.task('files', () => {
-    return gulp.src(paths.copyFiles, {
-            base: 'src'
-        })
-        .pipe(gulp.dest(paths.dist))
-        .pipe(connect.reload());
+  return gulp.src([
+    'src/{*,}.*',
+    'src/video/**/*'
+    ], {
+      base: 'src'
+    })
+    .pipe(gulp.dest('dist'))
+    .pipe(connect.reload());
+});
+
+gulp.task('rollup', async () => {
+  const { rollup } = require('rollup');
+  const babel = require('rollup-plugin-babel');
+  const resolve = require('rollup-plugin-node-resolve');
+  const commonjs = require('rollup-plugin-commonjs');
+  const { terser } = require('rollup-plugin-terser');
+  const { eslint } = require('rollup-plugin-eslint');
+  const json = require('rollup-plugin-json');
+
+  const bundle = await rollup({
+    input: 'src/js/main.js',
+    plugins: [
+      eslint(),
+      resolve(),
+      commonjs(),
+      json(),
+      prod && babel(),
+      prod && terser()
+    ]
+  });
+
+  await bundle.write({
+    sourcemap: !prod,
+    file: 'dist/js/swissplant.js',
+    format: 'iife'
+  });
 });
 
 
 gulp.task('watch:less', done => {
-    gulp.watch('src/less/**/*', gulp.parallel('less'));
-    done();
+  gulp.watch('src/less/**/*', gulp.parallel('less'));
+  done();
 });
 
 gulp.task('watch:js', done => {
-    gulp.watch('src/js/**/*', gulp.parallel('js:lint', 'js:transpile'));
-    done();
+  gulp.watch('src/js/**/*', gulp.parallel('rollup'));
+  done();
 });
 
 gulp.task('watch:img', done => {
-    gulp.watch('src/img/**/*', gulp.parallel('img'));
-    done();
+  gulp.watch('src/img/**/*', gulp.parallel('img'));
+  done();
 });
 
 gulp.task('watch:files', done => {
-    gulp.watch('src/{*,}.*', gulp.parallel('files'));
-    done();
+  gulp.watch('src/{*,}.*', gulp.parallel('files'));
+  done();
 });
 
-gulp.task('build', gulp.parallel('less', 'js:transpile', 'js:lint', 'img', 'files'));
+gulp.task('build', gulp.parallel('less', 'rollup', 'img', 'files'));
 gulp.task('watch', gulp.parallel('watch:less', 'watch:js', 'watch:img', 'watch:files'));
 gulp.task('default', gulp.series('clean', 'build', 'watch', 'serve', 'open'));
