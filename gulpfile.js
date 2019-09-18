@@ -71,7 +71,6 @@ gulp.task('rollup', async () => {
   const commonjs = require('rollup-plugin-commonjs');
   const { terser } = require('rollup-plugin-terser');
   const { eslint } = require('rollup-plugin-eslint');
-  const json = require('rollup-plugin-json');
 
   const bundle = await rollup({
     input: 'src/js/main.js',
