@@ -90,18 +90,12 @@ export const german = {
   "common.logo.swissplant.alt": "Logo der SwissPlant GmbH",
   "common.logo.agriplant.alt": "Logo der AgriPlant AG",
 
-  "footer.address": "Spitzallmendweg 11<br/>CH-3225 Müntschemier",
-  "footer.po-boxes": "Postfach 11 (SwissPlant GmbH)<br/>Postfach 5 (Agriplant AG)",
+  "footer.address": "Spitzallmendweg 11c<br/>CH-3225 Müntschemier",
   "footer.phone": "<a href=\"tel:+41323135210\">+41 32 313 52 10</a>",
   "footer.hours": "Montag bis Freitag<br/>07:30&ndash;11:45 Uhr<br/>13:30&ndash;17:30 Uhr",
   "footer.emails": "<a href=\"mailto:info@swissplant.ch\">info@swissplant.ch</a><br/><a href=\"mailto:info@agriplant.ch\">info@agriplant.ch</a>",
   "footer.robin": "Entwickelt und gestaltet von <a href=\"https://robinloeffel.ch\" target=\"_blank\">Robin Löffel</a>",
-  "footer.copyright": "&copy; SwissPlant GmbH 2017",
-
-  "announcement.title": "Tag der öffenen Tür",
-  "announcement.copy.p1": "Wir laden Sie herzlich ein zu unserem Tag der offenen Tür! Wir zeigen Ihnen, wie mit modernsten, zum Teil vollautomatischen Maschinen Gemüsejungpflanzen produziert werden. Bei einem Rundgang durch die Gewächshäuser werden Sie die Vielfalt der Pflanzen begutachten können.",
-  "announcement.copy.p2": "Für den gemütlichen Teil ist eine kleine Festwirtschaft vorhanden. Wir würden uns freuen, Sie bei uns begrüssen zu dürfen!",
-  "announcement.hours": "Am Sonntag, dem 25. Februar 2018, zwischen 10:00 und 17:00 Uhr."
+  "footer.copyright": "&copy; SwissPlant GmbH 2019"
 };
 
 export const english = {
@@ -194,16 +188,10 @@ export const english = {
   "common.logo.swissplant.alt": "Logo of SwissPlant Ltd.",
   "common.logo.agriplant.alt": "Logo of AgriPlant Corp.",
 
-  "footer.address": "Spitzallmendweg 11<br/>CH-3225 Müntschemier",
-  "footer.po-boxes": "P.O. Box 11 (SwissPlant Ltd.)<br/>P.O. Box 5 (Agriplant Corp.)",
+  "footer.address": "Spitzallmendweg 11c<br/>CH-3225 Müntschemier",
   "footer.phone": "<a href=\"tel:+41323135210\">+41 32 313 52 10</a>",
   "footer.hours": "Mondays to Fridays<br/>07:30&ndash;11:45<br/>13:30&ndash;17:30",
   "footer.emails": "<a href=\"mailto:info@swissplant.ch\">info@swissplant.ch</a><br/><a href=\"mailto:info@agriplant.ch\">info@agriplant.ch</a>",
   "footer.robin": "Developed and designed by <a href=\"https://robinloeffel.ch\" target=\"_blank\">Robin Löffel</a>",
-  "footer.copyright": "&copy; SwissPlant Ltd. 2017",
-
-  "announcement.title": "Day of Open Doors",
-  "announcement.copy.p1": "We'd like to cordially invite you to join us at our \"Day of Open Doors!\" We'll show you how we produce, in part with fully automated, high tech machines, our best seedlings yet. On a tour through our greenhouses, you'll see the whole variety of our plants!",
-  "announcement.copy.p2": "For the more laid-back part of the day, we have a small bar and benches ready for you. We'd love to have you there!",
-  "announcement.hours": "Come see us on: Sunday, February 25. 2018, from 10 until 17 o'clock."
+  "footer.copyright": "&copy; SwissPlant Ltd. 2019"
 };
