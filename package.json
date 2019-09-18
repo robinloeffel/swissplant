@@ -8,14 +8,14 @@
     "dependencies": {
         "feather-icons": "^4.10.0",
         "jump.js": "^1.0.2",
-        "mehrsprachig": "^0.2.4"
+        "mehrsprachig": "^0.2.3"
     },
     "devDependencies": {
         "@babel/core": "^7.2.2",
         "@babel/polyfill": "^7.2.5",
         "@babel/preset-env": "^7.2.3",
         "babel-eslint": "^10.0.1",
-        "babel-loader": "^8.0.5",
+        "babel-loader": "^8.0.4",
         "del": "^3.0.0",
         "gulp": "^4.0.0",
         "gulp-autoprefixer": "^6.0.0",
@@ -30,15 +30,14 @@
         "open": "^0.0.5",
         "terser-webpack-plugin": "^1.2.1",
         "vinyl-named": "^1.1.0",
-        "webpack": "^4.28.4",
+        "webpack": "^4.28.3",
         "webpack-bundle-analyzer": "^3.0.3",
-        "webpack-merge": "^4.2.1",
+        "webpack-merge": "^4.1.5",
         "webpack-stream": "^5.2.1"
     },
     "scripts": {
         "start": "gulp",
         "prod": "gulp --prod",
-        "stats": "gulp --stats --prod",
-        "update": "yarn upgrade-interactive --latest"
+        "stats": "gulp --stats --prod"
     }
 }
