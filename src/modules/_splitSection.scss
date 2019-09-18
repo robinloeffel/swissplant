@@ -1,0 +1,17 @@
+.split-section {
+    display: flex;
+
+    &__content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 50%;
+        height: 550px;
+        object-fit: cover;
+    }
+
+    &__text {
+        width: 80%;
+    }
+}

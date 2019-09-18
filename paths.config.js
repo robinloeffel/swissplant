@@ -7,12 +7,21 @@ module.exports = {
     },
     src: {
         root: 'src',
-        js: 'src/{js,modules}/**/*.{m,}js',
-        css: 'src/{css,modules}/**/*.scss',
+<<<<<<< HEAD
+        js: 'src/js/**/*.{m,}js',
+        css: 'src/css/**/*.scss',
         img: 'src/img/**/*',
         data: 'src/{data,video}/*',
         rootFiles: 'src/{*,}.*',
         jsEntry: 'src/js/main.{m,}js',
+=======
+        js: 'src/**/*.js',
+        css: 'src/**/*.scss',
+        img: 'src/img/**/*',
+        data: 'src/{data,video}/*',
+        rootFiles: 'src/{*,}.*',
+        jsEntry: 'src/js/main.js',
+>>>>>>> 7efd17fa3925e9de1cdca6a783dc38006b65ab8d
         cssEntry: 'src/css/main.scss',
     }
 };

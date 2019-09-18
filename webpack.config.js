@@ -14,13 +14,13 @@ let config = {
     mode: 'development',
     module: {
         rules: [{
-            test: /\.js$/,
-            loader: 'babel-loader',
+            test: /\.m?js$/,
+            use: {
+                loader: 'babel-loader',
+                options: babelConfig
+            },
             exclude: /node_modules/
         }]
-    },
-    resolve: {
-        mainFields: [ 'module', 'jsnext:main', 'main' ]
     }
 };
 
