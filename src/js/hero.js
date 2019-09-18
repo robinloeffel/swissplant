@@ -1,13 +1,5 @@
-const rotate = () => {
-  if (window.matchMedia('(min-width: 1200px)').matches) {
-    const current = document.querySelector('.cover-parent-background.rotate.top');
-    const next = current.nextElementSibling.classList.contains('cover-parent-background') ? current.nextElementSibling : document.querySelector('.cover-parent-background.rotate');
+const images = document.getElementsByClassName('_landing-image');
 
-    current.classList.remove('top');
-    next.classList.add('top');
-  }
-};
+const fade = () => {};
 
-setInterval(() => {
-  rotate();
-}, 7500);
+setInterval(fade, 7500);

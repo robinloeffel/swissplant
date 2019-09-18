@@ -19,7 +19,7 @@
       <ul>
         <li>
           <a href="./">
-            <img src="img/logo-swissplant-tilted.svg" translate-attr="{alt: 'common.logo.swissplant.alt'}">
+            <img src="img/swissplant-swooshless.svg" translate-attr="{alt: 'common.logo.swissplant.alt'}">
           </a>
         </li>
         <li>
@@ -73,17 +73,21 @@
     </nav>
   </header>
   <main ng-cloak>
-    <section id="landing">
-      <div class="cover-parent">
-        <div class="cover-parent-background rotate one top"></div>
-        <div class="cover-parent-background rotate two no-mobile"></div>
-        <div class="cover-parent-background rotate three no-mobile"></div>
-        <div class="cover-parent-background rotate four no-mobile"></div>
-        <div class="cover-parent darken-background"></div>
+    <section class="_landing">
+      <div class="_landing-images">
+        <img src="img/one.jpg" alt="" class="_landing-image">
+        <img src="img/two.jpg" alt="" class="_landing-image">
+        <img src="img/three.jpg" alt="" class="_landing-image">
+        <img src="img/four.jpg" alt="" class="_landing-image">
       </div>
-      <div class="absolute-center">
-        <img src="img/logo-swissplant-white.svg" class="logo" translate-attr="{alt: 'common.logo.swissplant.alt'}">
-        <i class="icon icon--caret-down up-and-down" data-scroll-target="#ueber-uns"></i>
+      <div class="_landing-content">
+        <img src="img/swissplant.svg" class="_landing-logo" translate-attr="{alt: 'common.logo.swissplant.alt'}">
+
+        <a href="#" class="_landing-jump" data-scroll-target="#ueber-uns">
+          <svg class="feather-icon">
+               <use href="img/feather-sprite.svg#chevrons-down"></use>
+          </svg>
+        </a>
       </div>
     </section>
     <section id="ueber-uns">
@@ -151,9 +155,9 @@
     <div class="wrapper clearfix">
       <div class="left">
         <p>
-          <img src="img/logo-swissplant-tilted.svg" class="footer-logo" translate-attr="{alt: 'common.logo.swissplant.alt'}">
+          <img src="img/swissplant-swooshless.svg" class="footer-logo" translate-attr="{alt: 'common.logo.swissplant.alt'}">
           <br />
-          <img src="img/logo-agriplant.svg" class="footer-logo" translate-attr="{alt: 'common.logo.agriplant.alt'}">
+          <img src="img/agriplant-swooshless.svg" class="footer-logo" translate-attr="{alt: 'common.logo.agriplant.alt'}">
         </p>
         <p translate="footer.copyright"></p>
       </div>

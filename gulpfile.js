@@ -53,7 +53,10 @@ gulp.task('less:lint', () => {
 });
 
 gulp.task('img', () => {
-  return gulp.src('src/img/**/*')
+  return gulp.src([
+      'src/img/**/*',
+      'node_modules/feather-icons/dist/feather-sprite.svg'
+    ])
     .pipe(plumber())
     .pipe(imagemin([
       imagemin.jpegtran({

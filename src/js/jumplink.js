@@ -1,13 +1,16 @@
 import jump from 'jump.js';
+const links = document.querySelectorAll('[data-scroll-target]');
 
-const jumplinks = document.querySelectorAll('[data-scroll-target]');
+const scrollToTarget = event => {
+  let anchor = event.target;
 
-for (let link of jumplinks.values()) {
-  link.addEventListener('click', event => {
-    event.preventDefault();
+  while (!anchor.dataset.scrollTarget) {
+    anchor = anchor.parentNode;
+  }
 
-    jump(event.target.dataset.scrollTarget, {
-      offset: -document.querySelector('.desktop-nav').clientHeight
-    });
-  }, false);
+  jump(anchor.dataset.scrollTarget);
+};
+
+for (let i = 0; i < links.length; i++) {
+  links[i].addEventListener('click', scrollToTarget);
 }

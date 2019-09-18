@@ -17,6 +17,7 @@
     "cssnano": "^4.1.10",
     "del": "^5.1.0",
     "eslint": "^6.4.0",
+    "feather-icons": "^4.24.1",
     "gulp": "^4.0.2",
     "gulp-connect": "^5.7.0",
     "gulp-imagemin": "^6.1.0",
