@@ -18,11 +18,19 @@ const eslint = require('gulp-eslint');
 const webpackConfig = require('./config/webpack');
 const paths = require('./config/paths');
 
-gulp.task('clean', () => del(paths.dist));
+
+gulp.task('clean', () => del('dist'));
 
 gulp.task('open', () => open('http://localhost:8080'));
 
-gulp.task('server', () => connect.server({port: 8080, livereload: true, root: paths.dist}));
+gulp.task('serve', done => {
+    connect.server({
+        port: 8080,
+        livereload: true,
+        root: 'dist'
+    });
+    done();
+});
 
 gulp.task('less', () => {
     return gulp.src(paths.srcLess)
@@ -32,15 +40,14 @@ gulp.task('less', () => {
         }))
         .pipe(less())
         .pipe(autoprefixer({
-            browsers: ['last 2 versions', 'not ie < 11', 'not ie_mob < 11'],
-            cascade: false
+            browsers: ['last 2 versions', 'not ie < 11', 'not ie_mob < 11']
         }))
         .pipe(cleanCss())
         .pipe(gulp.dest(paths.distCss))
         .pipe(connect.reload());
 });
 
-gulp.task('js:transpile', ['js:lint'], () => {
+gulp.task('js:transpile', () => {
     return gulp.src(paths.srcMainJs)
         .pipe(plumber())
         .pipe(named())
@@ -77,26 +84,35 @@ gulp.task('img', () => {
         .pipe(connect.reload());
 });
 
-gulp.task('copy', () => {
+gulp.task('files', () => {
     return gulp.src(paths.copyFiles, {
             base: 'src'
         })
         .pipe(gulp.dest(paths.dist))
         .pipe(connect.reload());
-
 });
 
-gulp.task('watch', () => {
-    gulp.watch(paths.srcLess, ['less']);
-    gulp.watch(paths.srcJs, ['js:transpile']);
-    gulp.watch(paths.srcImg, ['img']);
-    gulp.watch(paths.copyFiles, ['copy']);
+
+gulp.task('watch:less', done => {
+    gulp.watch('src/less/**/*', gulp.parallel('less'));
+    done();
 });
 
-gulp.task('default', callback => {
-    runSequence('clean', 'build', 'watch', 'server', 'open', callback);
+gulp.task('watch:js', done => {
+    gulp.watch('src/js/**/*', gulp.parallel('js:lint', 'js:transpile'));
+    done();
 });
 
-gulp.task('build', callback => {
-    runSequence(['less', 'js:transpile', 'img', 'copy'], callback);
+gulp.task('watch:img', done => {
+    gulp.watch('src/img/**/*', gulp.parallel('img'));
+    done();
 });
+
+gulp.task('watch:files', done => {
+    gulp.watch('src/{*,}.*', gulp.parallel('files'));
+    done();
+});
+
+gulp.task('build', gulp.parallel('less', 'js:transpile', 'js:lint', 'img', 'files'));
+gulp.task('watch', gulp.parallel('watch:less', 'watch:js', 'watch:img', 'watch:files'));
+gulp.task('default', gulp.series('clean', 'build', 'watch', 'serve', 'open'));
