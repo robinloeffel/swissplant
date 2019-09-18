@@ -8,6 +8,8 @@ const imagemin = require('gulp-imagemin');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
+const stylelint = require('stylelint');
+const reporter = require('postcss-reporter');
 
 const prod = !process.argv.includes('--dev');
 
@@ -31,10 +33,23 @@ gulp.task('less', () => {
       ...(prod ? [
         autoprefixer(),
         cssnano()
-      ] : [])
+      ] : []),
+      reporter({
+        clearReportedMessages: true
+      })
     ]))
     .pipe(gulp.dest('dist/css'))
     .pipe(connect.reload());
+});
+
+gulp.task('less:lint', () => {
+  return gulp.src('src/less/**/*')
+    .pipe(postcss([
+      stylelint(),
+      reporter({
+        clearReportedMessages: true
+      })
+    ]));
 });
 
 gulp.task('img', () => {
@@ -92,7 +107,7 @@ gulp.task('rollup', async () => {
 
 
 gulp.task('watch:less', done => {
-  gulp.watch('src/less/**/*', gulp.parallel('less'));
+  gulp.watch('src/less/**/*', gulp.parallel('less', 'less:lint'));
   done();
 });
 
@@ -111,6 +126,6 @@ gulp.task('watch:files', done => {
   done();
 });
 
-gulp.task('build', gulp.parallel('less', 'rollup', 'img', 'files'));
+gulp.task('build', gulp.parallel('less', 'less:lint', 'rollup', 'img', 'files'));
 gulp.task('watch', gulp.parallel('watch:less', 'watch:js', 'watch:img', 'watch:files'));
 gulp.task('default', gulp.series('clean', 'build', 'watch', 'serve', 'open'));
