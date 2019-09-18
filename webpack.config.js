@@ -1,9 +1,7 @@
 const webpack = require('webpack');
 const merge = require('webpack-merge');
-const babelConfig = require('./babel.config');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const TerserPlugin = require('terser-webpack-plugin');
-const prod = process.argv.includes('--prod');
+const dev = process.argv.includes('--dev');
 const stats = process.argv.includes('--stats');
 
 let config = {
@@ -14,31 +12,32 @@ let config = {
     mode: 'development',
     module: {
         rules: [{
-            test: /\.m?js$/,
-            use: {
+            test: /\.js$/,
+            exclude: /node_modules/,
+            use: [{
                 loader: 'babel-loader',
-                options: babelConfig
-            },
-            exclude: /node_modules/
+                options: {
+                    presets: [
+                        ['@babel/preset-env', {
+                            targets: {
+                                browsers: 'last 2 versions',
+                                ie: 11
+                            },
+                            useBuiltIns: 'usage',
+                            modules: false
+                        }]
+                    ],
+                    ignore: ['node_modules']
+                }
+            }]
         }]
     }
 };
 
-if (prod) {
+if (!dev) {
     config = merge(config, {
         devtool: false,
-        mode: 'production',
-        optimization: {
-            minimizer: [
-                new TerserPlugin({
-                    terserOptions: {
-                        output: {
-                            comments: false
-                        }
-                    }
-                })
-            ]
-        }
+        mode: 'production'
     });
 }
 

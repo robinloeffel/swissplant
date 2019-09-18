@@ -1,66 +1,22 @@
 {
-    "commons": {
-        "buttons": {
-            "showMore": "Mehr erfahren"
-        },
-        "footer": {
-            "address": {
-                "street": "Spitzallmendweg 11",
-                "city": "CH-3225 Müntschemier"
-            },
-            "poBox": {
-                "swissplant": "Postfach 11 (SwissPlant GmbH)",
-                "agriplant": "Postfach 5 (Agriplant AG)"
-            },
-            "opening": {
-                "days": "Montag bis Freitag",
-                "hours": {
-                    "morning": "07:30–11:45 Uhr",
-                    "afternoon": "13:30–17:30 Uhr"
-                }
-            },
-            "robin": "Entwickelt und gestaltet von ",
-            "copyright": "© SwissPlant GmbH 2019"
-        },
-        "logos": {
-            "swissplant": "Logo der SwissPlant GmbH",
-            "agriplant": "Logo der AgriPlant AG"
-        }
-    },
+    "nav.about": "Über uns",
+    "nav.portfolio": "Angebot",
+    "nav.partners": "Partner",
+    "nav.contact": "Kontakt",
+    "nav.start": "Start",
 
-    "nav": {
-        "about": "Über uns",
-        "portfolio": "Angebot",
-        "partners": "Partner",
-        "contact": "Kontakt",
-        "start": "Start"
-    },
-
-    "home": {
-        "meta": {
-            "title": "SwissPlant GmbH – Ihr Spezialist für Gemüsejungpflanzen",
-            "description": "Die Swissplant GmbH ist Ihr Ansprechpartner für professionellen Gemüseanbau im Berner Seeland. Bei uns bekommen Sie Warmhauspflanzen in verschiedenen Varianten.",
-            "keywords": "gemüse, gemuese, jungpflanzen, setzlinge, salat, schweiz, seeland, müntschemier, muentschemier, swissplant, agriplant, swissplant gmbh, agriplant ag, anbau, warmhauspflanzen, distro"
-        },
-        "content": {
-            "about": {
-                "heading": "Wer wir sind",
-                "intro": "Die Firma SwissPlant GmbH ist Verkaufsstelle für Gemüsejungpflanzen der Firmen AgriPlant AG Schweiz und Gipmans Holland."
-            },
-            "portfolio": {
-                "heading": "Was wir Ihnen bieten",
-                "intro": "Unser Produktionsstandort der Firma AgriPlant AG befindet sich im Berner Seeland. Die zentrale Lage der Firma bietet uns die Möglichkeit Sie schnell und kompetent zu beliefern."
-            },
-            "partners": {
-                "heading": "Mit wem wir arbeiten",
-                "intro": "Die Firma Gipmans aus Holland beliefert uns als Sortimentsergänzung mit Warmhaus- und Speedypflanzen."
-            },
-            "contact": {
-                "heading": "Wie Sie uns erreichen",
-                "intro": "Wir stehen natürlich gerne für allfällige Informationen und Ratschläge zur Verfügung. Egal, ob E-Mail, Telefon oder vor Ort."
-            }
-        }
-    },
+    "home.meta.title": "SwissPlant GmbH &ndash; Ihr Spezialist für Gemüsejungpflanzen",
+    "home.meta.description": "Die Swissplant GmbH ist Ihr Ansprechpartner für professionellen Gemüseanbau im Berner Seeland. Bei uns bekommen Sie Warmhauspflanzen in verschiedenen Varianten.",
+    "home.meta.keywords": "gemüse, gemuese, jungpflanzen, setzlinge, salat, schweiz, seeland, müntschemier, muentschemier, swissplant, agriplant, swissplant gmbh, agriplant ag, anbau, warmhauspflanzen, distro",
+    "home.about.heading": "Wer wir sind",
+    "home.about.intro": "Die Firma SwissPlant GmbH ist Verkaufsstelle für Gemüsejungpflanzen der Firmen AgriPlant AG Schweiz und Gipmans Holland.",
+    "home.portfolio.heading": "Was wir Ihnen bieten",
+    "home.portfolio.intro": "Unser Produktionsstandort der Firma AgriPlant AG befindet sich im Berner Seeland. Die zentrale Lage der Firma bietet uns die Möglichkeit Sie schnell und kompetent zu beliefern.",
+    "home.partners.heading": "Mit wem wir arbeiten",
+    "home.partners.intro": "Die Firma Gipmans aus Holland beliefert uns als Sortimentsergänzung mit Warmhaus- und Speedypflanzen.",
+    "home.contact.heading": "Wie Sie uns erreichen",
+    "home.contact.intro": "Wir stehen natürlich gerne für allfällige Informationen und Ratschläge zur Verfügung. Egal, ob E-Mail, Telefon oder vor Ort.",
+    "home.button.more": "Mehr erfahren",
 
     "about.meta.title": "SwissPlant GmbH &ndash; Über uns",
     "about.meta.description": "Erfahren Sie mehr über die SwissPlant GmbH und wer überhaupt hinter ihr steckt.",
@@ -127,5 +83,21 @@
     "contact.from.bern.description": "Autobahn Bern–Neuenburg Ausfahrt Kerzers anschliessend Richtung Neuenburg. In Müntschemier Richtung Bahnhof. Firmenwegweiser beachten.",
     "contact.from.neuchatel": "Von Neuchâtel her",
     "contact.from.neuchatel.description": "Richtung Ins–Müntschemier anschliessend in Müntschemier Richtung Bahnhof. Firmenwegweiser beachten.",
-    "contact.map": "Karte"
+    "contact.map": "Karte",
+
+    "common.logo.swissplant.alt": "Logo der SwissPlant GmbH",
+    "common.logo.agriplant.alt": "Logo der AgriPlant AG",
+
+    "footer.address": "Spitzallmendweg 11<br/>CH-3225 Müntschemier",
+    "footer.po-boxes": "Postfach 11 (SwissPlant GmbH)<br/>Postfach 5 (Agriplant AG)",
+    "footer.phone": "<a href=\"tel:+41323135210\">+41 32 313 52 10</a>",
+    "footer.hours": "Montag bis Freitag<br/>07:30&ndash;11:45 Uhr<br/>13:30&ndash;17:30 Uhr",
+    "footer.emails": "<a href=\"mailto:info@swissplant.ch\">info@swissplant.ch</a><br/><a href=\"mailto:info@agriplant.ch\">info@agriplant.ch</a>",
+    "footer.robin": "Entwickelt und gestaltet von <a href=\"https://robinloeffel.ch\" target=\"_blank\">Robin Löffel</a>",
+    "footer.copyright": "&copy; SwissPlant GmbH 2017",
+
+    "announcement.title": "Tag der öffenen Tür",
+    "announcement.copy.p1": "Wir laden Sie herzlich ein zu unserem Tag der offenen Tür! Wir zeigen Ihnen, wie mit modernsten, zum Teil vollautomatischen Maschinen Gemüsejungpflanzen produziert werden. Bei einem Rundgang durch die Gewächshäuser werden Sie die Vielfalt der Pflanzen begutachten können.",
+    "announcement.copy.p2": "Für den gemütlichen Teil ist eine kleine Festwirtschaft vorhanden. Wir würden uns freuen, Sie bei uns begrüssen zu dürfen!",
+    "announcement.hours": "Am Sonntag, dem 25. Februar 2018, zwischen 10:00 und 17:00 Uhr."
 }

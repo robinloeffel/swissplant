@@ -1,55 +1,79 @@
 <!doctype html>
-<html>
+<html data-ng-app="swissPlant">
 
 <head>
-    <meta charset="utf-8">
-    <title data-mehrsprachig="portfolio.meta.title">SwissPlant</title>
-    <meta name="description" data-mehrsprachig="content=portfolio.meta.description">
-    <meta name="keywords" data-mehrsprachig="content=portfolio.meta.keywords">
-    <meta name="author" content="Robin Löffel">
-    <meta name="viewport" content="width=device-width">
-    <meta property="og:image" content="https://swissplant.ch/img/page.jpg">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,700">
-    <link rel="shortcut icon" href="img/favicon.ico">
+    <meta charset="utf-8" />
+    <title translate="portfolio.meta.title">SwissPlant</title>
+    <meta name="description" translate-attr="{content: 'portfolio.meta.description'}" />
+    <meta name="keywords" translate-attr="{content: 'portfolio.meta.keywords'}" />
+    <meta name="author" content="Robin Löffel" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" />
+    <link rel="shortcut icon" href="img/favicon.ico" />
 </head>
 
-<body>
-    <header>
-        <nav class="navigation">
-            <ul class="navigation__list">
-                <li class="navigation__item">
-                    <a href="./" class="navigation__link navigation__link--logo">
-                        <img class="navigation__logo" src="img/logo-swissplant-tilted.svg" data-mehrsprachig="alt=commons.logos.swissplant">
+<body ng-controller="langCtrl">
+    <header ng-cloak translate-cloak>
+        <nav class="desktop-nav">
+            <ul class="clearfix">
+                <li>
+                    <a href="./">
+                        <img src="img/logo-swissplant-tilted.svg" translate-attr="{alt: 'common.logo.swissplant.alt'}">
                     </a>
                 </li>
-                <li class="navigation__item">
-                    <a class="navigation__link" href="ueber-uns.html" data-mehrsprachig="nav.about"></a>
+                <li>
+                    <a href="ueber-uns.html" translate="nav.about"></a>
                 </li>
-                <li class="navigation__item">
-                    <a class="navigation__link" href="angebot.html" data-mehrsprachig="nav.portfolio"></a>
+                <li class="active">
+                    <a href="angebot.html" translate="nav.portfolio"></a>
                 </li>
-                <li class="navigation__item">
-                    <a class="navigation__link" href="partner.html" data-mehrsprachig="nav.partners"></a>
+                <li>
+                    <a href="partner.html" translate="nav.partners"></a>
                 </li>
-                <li class="navigation__item">
-                    <a class="navigation__link" href="kontakt.html" data-mehrsprachig="nav.contact"></a>
+                <li>
+                    <a href="kontakt.html" translate="nav.contact"></a>
                 </li>
-                <li class="navigation__item settings">
-                    <i data-feather="settings"></i>
-                    <ul class="settings-list">
-                        <li class="settings-list__item">
-                            <a href="#de" class="settings__option" data-mehrsprachig-toggle="de">Deutsch</a>
-                        </li>
-                        <li class="settings-list__item">
-                            <a href="#en" class="settings__option" data-mehrsprachig-toggle="en">Englisch</a>
-                        </li>
-                    </ul>
+                <li class="mobile-menu">
+                    <i class="icon icon--bars"></i>
+                </li>
+                <li class="lang-changer">
+                    <div class="icon icon--globe lang-changer__icon">
+                    </div>
+                    <div class="lang-changer__button-container">
+                        <span data-ng-click="changeLang('de')" class="lang-changer__button">de</span>
+                        <span data-ng-click="changeLang('en')" class="lang-changer__button">en</span>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <nav class="mobile-nav mobile-only">
+            <ul class="clearfix">
+                <li>
+                    <a href="#" class="close-mobile-nav">
+                        <i class="icon icon--times"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="./" translate="nav.start"></a>
+                </li>
+                <li>
+                    <a href="ueber-uns.html" translate="nav.about"></a>
+                </li>
+                <li>
+                    <a href="angebot.html" translate="nav.portfolio"></a>
+                </li>
+                <li>
+                    <a href="partner.html" translate="nav.partners"></a>
+                </li>
+                <li>
+                    <a href="kontakt.html" translate="nav.contact"></a>
                 </li>
             </ul>
         </nav>
     </header>
-    <main>
+    <main ng-cloak>
         <section id="landing" class="little-hero">
             <div class="cover-parent">
                 <div class="cover-parent-background portfolio-image top"></div>
@@ -98,67 +122,40 @@
             </div>
         </section>
     </main>
-    <footer class="footer">
-        <div class="footer__row">
-            <div class="footer__item">
-                <img src="img/logo-swissplant-tilted.svg" class="footer__logo" data-mehrsprachig="alt=commons.logos.swissplant">
-                <br/>
-                <img src="img/logo-agriplant.svg" class="footer__logo" data-mehrsprachig="alt=commons.logos.agriplant">
-                <p data-mehrsprachig="commons.footer.copyright"></p>
+    <footer ng-cloak>
+        <div class="wrapper clearfix">
+            <div class="left">
+                <p>
+                    <img src="img/logo-swissplant-tilted.svg" class="footer-logo" translate-attr="{alt: 'common.logo.swissplant.alt'}">
+                    <br/>
+                    <img src="img/logo-agriplant.svg" class="footer-logo" translate-attr="{alt: 'common.logo.agriplant.alt'}">
+                </p>
+                <p translate="footer.copyright"></p>
             </div>
-            <div class="footer__item">
-                <p class="paragraph">
-                    <span data-mehrsprachig="commons.footer.address.street"></span>
-                    <br>
-                    <span data-mehrsprachig="commons.footer.address.city"></span>
-                </p>
-                <p class="paragraph">
-                    <span data-mehrsprachig="commons.footer.poBox.swissplant"></span>
-                    <br>
-                    <span data-mehrsprachig="commons.footer.poBox.agriplant"></span>
-                </p>
-                <p class="paragraph">
-                    <a href="tel:+41323135210" class="link">+41 32 313 52 10</a>
-                </p>
+            <div class="center">
+                <p translate="footer.address"></p>
+                <p translate="footer.po-boxes"></p>
+                <p translate="footer.phone"></p>
             </div>
-            <div class="footer__item">
-                <p class="paragraph">
-                    <span data-mehrsprachig="commons.footer.opening.days"></span>
-                    <br>
-                    <span data-mehrsprachig="commons.footer.opening.hours.morning"></span>
-                    <br>
-                    <span data-mehrsprachig="commons.footer.opening.hours.afternoon"></span>
-                </p>
-                <p class="paragraph">
-                    <a href="mailto:info@swissplant.ch" class="link">info@swissplant.ch</a>
-                    <br>
-                    <a href="mailto:info@agriplant.ch" class="link">info@agriplant.ch</a>
+            <div class="right">
+                <p translate="footer.hours"></p>
+                <p translate="footer.emails"></p>
+            </div>
+            <div class="row separator">
+                <p>
+                    <a href="." translate="nav.start"></a>
+                    &mdash;
+                    <a href="ueber-uns.html" translate="nav.about"></a>
+                    &mdash;
+                    <a href="angebot.html" translate="nav.portfolio"></a>
+                    &mdash;
+                    <a href="partner.html" translate="nav.partners"></a>
+                    &mdash;
+                    <a href="kontakt.html" translate="nav.contact"></a>
                 </p>
             </div>
-        </div>
-        <div class="footer__row footer__row--with-separator">
-            <div class="footer__item">
-                <p class="paragraph paragraph--text-center">
-                    <a href="." data-mehrsprachig="nav.start" class="link"></a>
-                    &mdash;
-                    <a href="ueber-uns.html" data-mehrsprachig="nav.about" class="link"></a>
-                    &mdash;
-                    <a href="angebot.html" data-mehrsprachig="nav.portfolio" class="link"></a>
-                    &mdash;
-                    <a href="partner.html" data-mehrsprachig="nav.partners" class="link"></a>
-                    &mdash;
-                    <a href="kontakt.html" data-mehrsprachig="nav.contact" class="link"></a>
-                </p>
-            </div>
-        </div>
-        <div class="footer__row">
-            <div class="footer__item">
-                <p class="paragraph paragraph--text-center">
-                    <span data-mehrsprachig="commons.footer.robin"></span>
-                    <span>
-                        <a href="https://robinloeffel.ch" target="_blank" class="link">Robin Löffel</a>
-                    </span>
-                </p>
+            <div class="row">
+                <p translate="footer.robin"></p>
             </div>
         </div>
     </footer>
