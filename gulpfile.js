@@ -78,7 +78,6 @@ gulp.task('rollup', async () => {
       eslint(),
       resolve(),
       commonjs(),
-      json(),
       prod && babel(),
       prod && terser()
     ]
