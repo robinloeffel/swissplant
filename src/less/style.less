@@ -10,21 +10,6 @@
 @primary-background-color: #fff;
 @secondary-background-color: #323232;
 
-body {
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  main & {
-    color: @link-color;
-  }
-
-  footer & {
-    color: @primary-background-color;
-  }
-}
-
 h1 {
   font-size: @primary-heading-size;
 }
@@ -503,6 +488,7 @@ video {
 }
 
 @import "_reset";
+@import "_variables";
 @import "_font";
 @import "_base";
 @import "_icon";

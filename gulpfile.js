@@ -27,7 +27,9 @@ gulp.task('serve', done => {
 });
 
 gulp.task('less', () => {
-  return gulp.src('src/less/style.less')
+  return gulp.src('src/less/style.less',{
+        sourcemaps: !prod
+    })
     .pipe(plumber())
     .pipe(less())
     .pipe(postcss([
@@ -41,7 +43,9 @@ gulp.task('less', () => {
     ], {
       syntax: lesssyntax
     }))
-    .pipe(gulp.dest('dist/css'))
+    .pipe(gulp.dest('dist/css', {
+        sourcemaps: '.'
+    }))
     .pipe(connect.reload());
 });
 

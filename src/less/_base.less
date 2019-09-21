@@ -1,6 +1,21 @@
 html {
-  font-family: "Inter", "system-ui", sans-serif;
-  font-size: 125%;
+  font-family: @font-family;
+  font-size: @font-size;
   line-height: 1.6;
-  color: #393939;
+  color: @color-text;
+}
+
+h1,
+table,
+video {
+  margin-bottom: 30px;
+}
+
+h2,
+p:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+a {
+  color: @color-brand;
 }

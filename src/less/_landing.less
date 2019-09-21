@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  color: #fff;
+  color: @color-white;
 
   &::after {
     content: '';
@@ -13,7 +13,7 @@
     left: 0;
     width: 100%;
     height: 5px;
-    background-color: #007333;
+    background-color: @color-brand;
   }
 
   &-images,
@@ -34,8 +34,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: #000;
-      opacity: .25;
+      background-color: rgba(@color-black, .25);
     }
   }
 
