@@ -90,10 +90,10 @@ export const german = {
   "common.logo.swissplant.alt": "Logo der SwissPlant GmbH",
   "common.logo.agriplant.alt": "Logo der AgriPlant AG",
 
-  "footer.address": "Spitzallmendweg 11c<br/>CH-3225 Müntschemier",
+  "footer.address": "Spitzallmendweg 11c<br>CH-3225 Müntschemier",
   "footer.phone": "<a href=\"tel:+41323135210\">+41 32 313 52 10</a>",
-  "footer.hours": "Montag bis Freitag<br/>07:30&ndash;11:45 Uhr<br/>13:30&ndash;17:30 Uhr",
-  "footer.emails": "<a href=\"mailto:info@swissplant.ch\">info@swissplant.ch</a><br/><a href=\"mailto:info@agriplant.ch\">info@agriplant.ch</a>",
+  "footer.hours": "Montag bis Freitag<br>07:30&ndash;11:45 Uhr<br>13:30&ndash;17:30 Uhr",
+  "footer.emails": "<a href=\"mailto:info@swissplant.ch\">info@swissplant.ch</a><br><a href=\"mailto:info@agriplant.ch\">info@agriplant.ch</a>",
   "footer.robin": "Entwickelt und gestaltet von <a href=\"https://robinloeffel.ch\" target=\"_blank\">Robin Löffel</a>",
   "footer.copyright": "&copy; SwissPlant GmbH 2019"
 };

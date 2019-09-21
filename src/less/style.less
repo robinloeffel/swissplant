@@ -43,58 +43,6 @@ main {
   }
 }
 
-footer {
-  background-color: @secondary-background-color;
-  color: @primary-background-color;
-  padding: 75px 0;
-  border-top: 5px solid @link-color;
-
-  .footer-logo {
-    max-width: 150px;
-    max-height: 50px;
-  }
-
-  .wrapper {
-    .row {
-      display: inline-block;
-      width: 100%;
-
-      &.separator {
-        border-top: 2px solid @copy-color;
-        margin-top: 25px;
-        padding-top: 25px;
-      }
-    }
-
-    .left {
-      float: left;
-      width: 30%;
-    }
-
-    .right {
-      float: right;
-      width: 30%;
-    }
-
-    .center {
-      float: left;
-      width: 40%;
-      padding: 0 25px;
-      box-sizing: border-box;
-    }
-
-    .center,
-    .left,
-    .right {
-      text-align: left;
-    }
-
-    p {
-      font-size: smaller;
-    }
-  }
-}
-
 table {
   width: 100%;
   border-collapse: collapse;
@@ -555,7 +503,9 @@ video {
 }
 
 @import "_reset";
+@import "_font";
 @import "_base";
 @import "_icon";
 @import "_landing";
 @import "_header";
+@import "_footer";

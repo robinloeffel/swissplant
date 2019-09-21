@@ -63,44 +63,34 @@
       </div>
     </section>
   </main>
-  <footer ng-cloak>
-    <div class="wrapper clearfix">
-      <div class="left">
-        <p>
-          <svg class="_icon">
-               <use href="img/sprite.svg#swissplant-swooshless"></use>
-          </svg>
-          <br>
-          <svg class="_icon">
-               <use href="img/sprite.svg#agriplant-swooshless"></use>
-          </svg>
-        </p>
-        <p translate="footer.copyright"></p>
+  <footer class="_footer" ng-cloak>
+    <div class="_footer-content">
+      <div class="_footer-content-left">
+        <svg class="_icon _footer-logo">
+          <use href="img/sprite.svg#swissplant-swooshless"></use>
+        </svg>
+        <svg class="_icon _footer-logo">
+          <use href="img/sprite.svg#agriplant-swooshless"></use>
+        </svg>
+        <p class="_footer-text" translate="footer.copyright"></p>
       </div>
-      <div class="center">
-        <p translate="footer.address"></p>
-        <p translate="footer.emails"></p>
+      <div class="_footer-content-center">
+        <p class="_footer-text" translate="footer.address"></p>
+        <p class="_footer-text" translate="footer.emails"></p>
       </div>
-      <div class="right">
-        <p translate="footer.hours"></p>
-        <p translate="footer.phone"></p>
+      <div class="_footer-content-right">
+        <p class="_footer-text" translate="footer.hours"></p>
+        <p class="_footer-text" translate="footer.phone"></p>
       </div>
-      <div class="row separator">
-        <p>
-          <a href="." translate="nav.start"></a>
-          &mdash;
-          <a href="ueber-uns.html" translate="nav.about"></a>
-          &mdash;
-          <a href="angebot.html" translate="nav.portfolio"></a>
-          &mdash;
-          <a href="partner.html" translate="nav.partners"></a>
-          &mdash;
-          <a href="kontakt.html" translate="nav.contact"></a>
-        </p>
-      </div>
-      <div class="row">
-        <p translate="footer.robin"></p>
-      </div>
+    </div>
+    <hr class="_footer-hr">
+    <div class="_footer-content">
+      <p class="_footer-text">
+        <a href="." translate="nav.start"></a> &mdash; <a href="ueber-uns.html" translate="nav.about"></a> &mdash; <a href="angebot.html" translate="nav.portfolio"></a> &mdash; <a href="partner.html" translate="nav.partners"></a> &mdash; <a href="kontakt.html" translate="nav.contact"></a>
+      </p>
+    </div>
+    <div class="_footer-content">
+      <p class="_footer-text" translate="footer.robin"></p>
     </div>
   </footer>
   <script src="js/swissplant.js"></script>
