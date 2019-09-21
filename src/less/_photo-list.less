@@ -1,0 +1,34 @@
+._photo-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+
+  &-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    flex: 0 0 30%;
+    width: 30%;
+
+    &::after {
+      content: '';
+      padding-top: 100%;
+    }
+  }
+
+  &-content {
+    position: absolute;
+  }
+
+  &-image {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+}

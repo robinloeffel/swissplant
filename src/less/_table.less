@@ -1,0 +1,27 @@
+._table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid rgba(@color-black, .05);
+
+  tr {
+    transition: background-color .3s ease-in-out,
+                color .3s ease-in-out;
+
+    &:nth-child(odd) {
+      background-color: rgba(@color-black, .05);
+    }
+
+    &:hover {
+      color: @color-white;
+      background-color: @color-brand;
+    }
+  }
+
+  td {
+    padding: 10px;
+
+    &:first-child {
+      font-weight: 700;
+    }
+  }
+}

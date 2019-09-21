@@ -19,7 +19,7 @@
         <li class="_header-navigation-item">
           <a href="./" class="_header-navigation-link">
             <svg class="_icon _header-navigation-logo">
-                 <use href="img/sprite.svg#swissplant-swooshless"></use>
+              <use href="img/sprite.svg#swissplant-swooshless"></use>
             </svg>
           </a>
         </li>
@@ -36,111 +36,103 @@
           <a class="_header-navigation-link" href="kontakt.html" translate="nav.contact"></a>
         </li>
         <li class="_header-navigation-item _header-navigation-lang-container">
-            <svg class="_icon _header-navigation-lang-icon">
-                 <use href="img/sprite.svg#settings"></use>
-            </svg>
-            <a class="_header-navigation-lang-button" data-ng-click="changeLang('de')" href="#">DE</a>
-            <a class="_header-navigation-lang-button" data-ng-click="changeLang('en')" href="#">EN</a>
+          <svg class="_icon _header-navigation-lang-icon">
+            <use href="img/sprite.svg#settings"></use>
+          </svg>
+          <a class="_header-navigation-lang-button" data-ng-click="changeLang('de')" href="#">DE</a>
+          <a class="_header-navigation-lang-button" data-ng-click="changeLang('en')" href="#">EN</a>
         </li>
       </ul>
     </nav>
   </header>
   <main ng-cloak>
-    <section id="landing" class="little-hero">
-      <div class="cover-parent">
-        <div class="cover-parent-background about-image top"></div>
-      </div>
+    <section class="_landing _landing--small">
+      <img src="img/three.jpg" alt="" class="_landing-image">
     </section>
-    <section id="ueber-uns">
-      <div class="wrapper copytext">
-        <h1 translate="nav.about"></h1>
-        <video controls>
-          <source src="video/swissplant.mp4" type="video/mp4">
-          Your Browser does not support HTML5 videos. Please consider upgrading.
-        </video>
-        <p translate="about.copy.first"></p>
-        <p translate="about.copy.second"></p>
-        <p translate="about.copy.third"></p>
-        <div class="photo-list clearfix">
-          <figure tabindex="0">
-            <img src="img/mitarbeiter/martin-loeffel.jpg" translate-attr="{alt: 'about.martin.alt'}">
-            <figcaption>
-              <span>Martin Löffel</span>
-              <span translate="about.martin.position"></span>
-              <span><a href="mailto:m.loeffel@swissplant.ch">m.loeffel@swissplant.ch</a></span>
-              <span><a href="tel:+41796314559">+41 79 631 45 59</a></span>
-            </figcaption>
-          </figure>
-          <figure tabindex="0">
-            <img src="img/mitarbeiter/telja-baumann.jpg" translate-attr="{alt: 'about.telja.alt'}">
-            <figcaption>
-              <span>Telja Baumann</span>
-              <span translate="about.telja.position"></span>
-              <span><a href="mailto:t.baumann@swissplant.ch">t.baumann@swissplant.ch</a></span>
-              <span><a href="tel:+41798153835">+41 79 815 38 35</a></span>
-            </figcaption>
-          </figure>
-          <figure tabindex="0">
-            <img src="img/mitarbeiter/pascal-probst.jpg" translate-attr="{alt: 'about.pascal.alt'}">
-            <figcaption>
-              <span>Pascal Probst</span>
-              <span translate="about.pascal.position"></span>
-              <span><a href="mailto:p.probst@swissplant.ch">p.probst@swissplant.ch</a></span>
-              <span><a href="tel:+41796415210">+41 79 641 52 10</a></span>
-            </figcaption>
-          </figure>
-          <figure tabindex="0">
-            <img src="img/mitarbeiter/sandro-loeffel.jpg" translate-attr="{alt: 'about.sandro.alt'}">
-            <figcaption>
-              <span>Sandro Löffel</span>
-              <span translate="about.sandro.position"></span>
-              <span><a href="mailto:s.loeffel@swissplant.ch">s.loeffel@swissplant.ch</a></span>
-              <span><a href="tel:+41797415210">+41 79 741 52 10</a></span>
-            </figcaption>
-          </figure>
-          <figure tabindex="0">
-            <img src="img/mitarbeiter/ivan-gross.jpg" translate-attr="{alt: 'about.ivan.alt'}">
-            <figcaption>
-              <span>Ivan Gross</span>
-              <span translate="about.ivan.position"></span>
-            </figcaption>
-          </figure>
-          <figure tabindex="0">
-            <img src="img/mitarbeiter/shpend-thaqi.jpg" translate-attr="{alt: 'about.shpend.alt'}">
-            <figcaption>
-              <span>Shpend Thaqi</span>
-              <span translate="about.shpend.position"></span>
-            </figcaption>
-          </figure>
-          <figure tabindex="0">
-            <img src="img/mitarbeiter/andrzej-mojsym.jpg" translate-attr="{alt: 'about.andrzej.alt'}">
-            <figcaption>
-              <span>Andrzej Mojsym</span>
-              <span translate="about.andrzej.position"></span>
-            </figcaption>
-          </figure>
-          <figure tabindex="0">
-            <img src="img/mitarbeiter/hans-peter-schwab.jpg" translate-attr="{alt: 'about.hans-peter.alt'}">
-            <figcaption>
-              <span>Hans-Peter Schwab</span>
-              <span translate="about.hans-peter.position"></span>
-            </figcaption>
-          </figure>
-          <figure tabindex="0">
-            <img src="img/mitarbeiter/placeholder.jpg" translate-attr="{alt: 'about.damian.alt'}">
-            <figcaption>
-              <span>Damian Makarewicz</span>
-              <span translate="about.damian.position"></span>
-            </figcaption>
-          </figure>
-          <figure tabindex="0">
-            <img src="img/mitarbeiter/placeholder.jpg" translate-attr="{alt: 'about.mariusz.alt'}">
-            <figcaption>
-              <span>Mariusz Wronski</span>
-              <span translate="about.mariusz.position"></span>
-            </figcaption>
-          </figure>
-        </div>
+    <section class="_content">
+      <h1 translate="nav.about"></h1>
+      <video controls>
+        <source src="video/swissplant.mp4" type="video/mp4">
+      </video>
+      <p translate="about.copy.first"></p>
+      <p translate="about.copy.second"></p>
+      <p translate="about.copy.third"></p>
+      <div class="_photo-list">
+        <article class="_photo-list-photo">
+          <img class="_photo-list-image" src="img/mitarbeiter/martin-loeffel.jpg" translate-attr="{alt: 'about.martin.alt'}">
+          <div class="_photo-list-content">
+            <span class="_photo-list-name">Martin Löffel</span>
+            <span class="_photo-list-role" translate="about.martin.position"></span>
+            <a class="_photo-list-mail" href="mailto:m.loeffel@swissplant.ch">m.loeffel@swissplant.ch</a>
+            <a class="_photo-list-tel" chref="tel:+41796314559">+41 79 631 45 59</a>
+          </div>
+        </article>
+        <article class="_photo-list-photo">
+          <img class="_photo-list-image" src="img/mitarbeiter/telja-baumann.jpg" translate-attr="{alt: 'about.telja.alt'}">
+          <span class="_photo-list-name">Telja Baumann</span>
+          <span class="_photo-list-role" translate="about.telja.position"></span>
+          <a class="_photo-list-mail" href="mailto:t.baumann@swissplant.ch">t.baumann@swissplant.ch</a>
+          <a class="_photo-list-tel" chref="tel:+41798153835">+41 79 815 38 35</a>
+        </article>
+        <article class="_photo-list-photo">
+          <img class="_photo-list-image" src="img/mitarbeiter/pascal-probst.jpg" translate-attr="{alt: 'about.pascal.alt'}">
+          <span class="_photo-list-name">Pascal Probst</span>
+          <span class="_photo-list-role" translate="about.pascal.position"></span>
+          <a class="_photo-list-mail" href="mailto:p.probst@swissplant.ch">p.probst@swissplant.ch</a>
+          <a class="_photo-list-tel" chref="tel:+41796415210">+41 79 641 52 10</a>
+        </article>
+
+        <figure tabindex="0">
+          <img src="img/mitarbeiter/sandro-loeffel.jpg" translate-attr="{alt: 'about.sandro.alt'}">
+          <figcaption>
+            <span>Sandro Löffel</span>
+            <span translate="about.sandro.position"></span>
+            <span><a href="mailto:s.loeffel@swissplant.ch">s.loeffel@swissplant.ch</a></span>
+            <span><a href="tel:+41797415210">+41 79 741 52 10</a></span>
+          </figcaption>
+        </figure>
+        <figure tabindex="0">
+          <img src="img/mitarbeiter/ivan-gross.jpg" translate-attr="{alt: 'about.ivan.alt'}">
+          <figcaption>
+            <span>Ivan Gross</span>
+            <span translate="about.ivan.position"></span>
+          </figcaption>
+        </figure>
+        <figure tabindex="0">
+          <img src="img/mitarbeiter/shpend-thaqi.jpg" translate-attr="{alt: 'about.shpend.alt'}">
+          <figcaption>
+            <span>Shpend Thaqi</span>
+            <span translate="about.shpend.position"></span>
+          </figcaption>
+        </figure>
+        <figure tabindex="0">
+          <img src="img/mitarbeiter/andrzej-mojsym.jpg" translate-attr="{alt: 'about.andrzej.alt'}">
+          <figcaption>
+            <span>Andrzej Mojsym</span>
+            <span translate="about.andrzej.position"></span>
+          </figcaption>
+        </figure>
+        <figure tabindex="0">
+          <img src="img/mitarbeiter/hans-peter-schwab.jpg" translate-attr="{alt: 'about.hans-peter.alt'}">
+          <figcaption>
+            <span>Hans-Peter Schwab</span>
+            <span translate="about.hans-peter.position"></span>
+          </figcaption>
+        </figure>
+        <figure tabindex="0">
+          <img src="img/mitarbeiter/placeholder.jpg" translate-attr="{alt: 'about.damian.alt'}">
+          <figcaption>
+            <span>Damian Makarewicz</span>
+            <span translate="about.damian.position"></span>
+          </figcaption>
+        </figure>
+        <figure tabindex="0">
+          <img src="img/mitarbeiter/placeholder.jpg" translate-attr="{alt: 'about.mariusz.alt'}">
+          <figcaption>
+            <span>Mariusz Wronski</span>
+            <span translate="about.mariusz.position"></span>
+          </figcaption>
+        </figure>
       </div>
     </section>
   </main>
@@ -167,7 +159,8 @@
     <hr class="_footer-hr">
     <div class="_footer-content">
       <p class="_footer-text">
-        <a href="." translate="nav.start"></a> &mdash; <a href="ueber-uns.html" translate="nav.about"></a> &mdash; <a href="angebot.html" translate="nav.portfolio"></a> &mdash; <a href="partner.html" translate="nav.partners"></a> &mdash; <a href="kontakt.html" translate="nav.contact"></a>
+        <a href="." translate="nav.start"></a> &mdash; <a href="ueber-uns.html" translate="nav.about"></a> &mdash; <a href="angebot.html" translate="nav.portfolio"></a> &mdash; <a href="partner.html" translate="nav.partners"></a> &mdash; <a href="kontakt.html"
+          translate="nav.contact"></a>
       </p>
     </div>
     <div class="_footer-content">
