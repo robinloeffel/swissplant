@@ -9,6 +9,8 @@ const scrollToTarget = event => {
   }
 
   jump(anchor.dataset.scrollTarget);
+
+  event.preventDefault();
 };
 
 for (let i = 0; i < links.length; i++) {

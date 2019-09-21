@@ -10,6 +10,7 @@ const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const stylelint = require('stylelint');
 const reporter = require('postcss-reporter');
+const lesssyntax = require('postcss-less');
 
 const prod = !process.argv.includes('--dev');
 
@@ -37,7 +38,9 @@ gulp.task('less', () => {
       reporter({
         clearReportedMessages: true
       })
-    ]))
+    ], {
+      syntax: lesssyntax
+    }))
     .pipe(gulp.dest('dist/css'))
     .pipe(connect.reload());
 });
@@ -49,14 +52,13 @@ gulp.task('less:lint', () => {
       reporter({
         clearReportedMessages: true
       })
-    ]));
+    ], {
+      syntax: lesssyntax
+    }));
 });
 
 gulp.task('img', () => {
-  return gulp.src([
-      'src/img/**/*',
-      'node_modules/feather-icons/dist/feather-sprite.svg'
-    ])
+  return gulp.src('src/img/**/*')
     .pipe(plumber())
     .pipe(imagemin([
       imagemin.jpegtran({
@@ -64,8 +66,7 @@ gulp.task('img', () => {
       }),
       imagemin.optipng({
         optimizationLevel: 7
-      }),
-      imagemin.svgo()
+      })
     ]))
     .pipe(gulp.dest('dist/img'))
     .pipe(connect.reload());

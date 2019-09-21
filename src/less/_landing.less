@@ -41,7 +41,7 @@
 
   &-image {
     object-fit: cover;
-    opacity: 0;
+    // opacity: 0;
     transition: opacity .5s ease-in-out;
 
     &-visible {
@@ -60,5 +60,26 @@
     display: inline-flex;
     color: inherit;
     padding: 10px;
+    animation: move 1s alternate infinite ease-in-out;
+
+    ._icon {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &-logo {
+    width: 600px;
+    height: 200px;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-5px);
   }
 }

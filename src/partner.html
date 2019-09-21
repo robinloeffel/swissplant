@@ -9,65 +9,38 @@
   <meta name="author" content="Robin Löffel">
   <title translate="partners.meta.title">SwissPlant</title>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css">
   <link rel="shortcut icon" href="img/favicon.png">
 </head>
 
 <body ng-controller="langCtrl">
-  <header ng-cloak translate-cloak>
-    <nav class="desktop-nav">
-      <ul class="clearfix">
-        <li>
-          <a href="./">
-            <img src="img/logo-swissplant-tilted.svg" translate-attr="{alt: 'common.logo.swissplant.alt'}">
+  <header class="_header" ng-cloak translate-cloak>
+    <nav class="_header-navigation">
+      <ul class="_header-navigation-list">
+        <li class="_header-navigation-item">
+          <a href="./" class="_header-navigation-link">
+            <svg class="_icon _header-navigation-logo">
+                 <use href="img/sprite.svg#swissplant-swooshless"></use>
+            </svg>
           </a>
         </li>
-        <li>
-          <a href="ueber-uns.html" translate="nav.about"></a>
+        <li class="_header-navigation-item">
+          <a class="_header-navigation-link" href="ueber-uns.html" translate="nav.about"></a>
         </li>
-        <li>
-          <a href="angebot.html" translate="nav.portfolio"></a>
+        <li class="_header-navigation-item">
+          <a class="_header-navigation-link" href="angebot.html" translate="nav.portfolio"></a>
         </li>
-        <li class="active">
-          <a href="partner.html" translate="nav.partners"></a>
+        <li class="_header-navigation-item">
+          <a class="_header-navigation-link" href="partner.html" translate="nav.partners"></a>
         </li>
-        <li>
-          <a href="kontakt.html" translate="nav.contact"></a>
+        <li class="_header-navigation-item">
+          <a class="_header-navigation-link" href="kontakt.html" translate="nav.contact"></a>
         </li>
-        <li class="mobile-menu">
-          <i class="icon icon--bars"></i>
-        </li>
-        <li class="lang-changer">
-          <div class="icon icon--globe lang-changer__icon">
-          </div>
-          <div class="lang-changer__button-container">
-            <span data-ng-click="changeLang('de')" class="lang-changer__button">de</span>
-            <span data-ng-click="changeLang('en')" class="lang-changer__button">en</span>
-          </div>
-        </li>
-      </ul>
-    </nav>
-    <nav class="mobile-nav mobile-only">
-      <ul class="clearfix">
-        <li>
-          <a href="#" class="close-mobile-nav">
-            <i class="icon icon--times"></i>
-          </a>
-        </li>
-        <li>
-          <a href="./" translate="nav.start"></a>
-        </li>
-        <li>
-          <a href="ueber-uns.html" translate="nav.about"></a>
-        </li>
-        <li>
-          <a href="angebot.html" translate="nav.portfolio"></a>
-        </li>
-        <li>
-          <a href="partner.html" translate="nav.partners"></a>
-        </li>
-        <li>
-          <a href="kontakt.html" translate="nav.contact"></a>
+        <li class="_header-navigation-item _header-navigation-lang-container">
+            <svg class="_icon _header-navigation-lang-icon">
+                 <use href="img/sprite.svg#settings"></use>
+            </svg>
+            <a class="_header-navigation-lang-button" data-ng-click="changeLang('de')" href="#">DE</a>
+            <a class="_header-navigation-lang-button" data-ng-click="changeLang('en')" href="#">EN</a>
         </li>
       </ul>
     </nav>
@@ -94,9 +67,13 @@
     <div class="wrapper clearfix">
       <div class="left">
         <p>
-          <img src="img/logo-swissplant-tilted.svg" class="footer-logo" translate-attr="{alt: 'common.logo.swissplant.alt'}">
-          <br />
-          <img src="img/logo-agriplant.svg" class="footer-logo" translate-attr="{alt: 'common.logo.agriplant.alt'}">
+          <svg class="_icon">
+               <use href="img/sprite.svg#swissplant-swooshless"></use>
+          </svg>
+          <br>
+          <svg class="_icon">
+               <use href="img/sprite.svg#agriplant-swooshless"></use>
+          </svg>
         </p>
         <p translate="footer.copyright"></p>
       </div>
@@ -126,7 +103,6 @@
       </div>
     </div>
   </footer>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
   <script src="js/swissplant.js"></script>
 </body>
 
