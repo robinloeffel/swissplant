@@ -107,3 +107,41 @@
     }
   }
 }
+
+@media (max-width: 900px) {
+  ._header {
+    transform: translateY(-83.33%);
+
+    &-navigation {
+      flex-basis: 100%;
+
+      &-list {
+        flex-direction: column-reverse;
+      }
+
+      &-link {
+        flex-basis: 100%;
+        justify-content: center;
+
+        &::after {
+          content: none;
+        }
+      }
+
+      &-item {
+        width: 100%;
+
+        &:first-child {
+          margin-right: 0;
+        }
+      }
+
+      &-lang {
+        &-container {
+          height: 92px;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
