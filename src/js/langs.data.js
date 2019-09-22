@@ -46,6 +46,10 @@ export const german = {
   "about.damian.position": "Stv. Leiter Produktionsanlage",
   "about.mariusz.alt": "Mariusz Wronski, Interner Transport",
   "about.mariusz.position": "Interner Transport",
+  "about.barbara.alt": "Barbara Dubler, Interner Transport",
+  "about.barbara.position": "Interner Transport",
+  "about.krzysztof.alt": "Mariusz Wronski, Maschinenführer",
+  "about.krzysztof.position": "Maschinenführer",
 
   "portfolio.meta.title": "SwissPlant GmbH &ndash; Angebot",
   "portfolio.meta.description": "Schauen Sie sich unser Angebot an. Wir bieten Warmhauspflanzen verschiedener Sorten an.",
@@ -144,6 +148,10 @@ export const english = {
   "about.damian.position": "Vice Chief of Production Plant",
   "about.mariusz.alt": "Mariusz Wronski, Internal Transport",
   "about.mariusz.position": "Internal Transport",
+  "about.barbara.alt": "Barbara Dubler, Internal Transport",
+  "about.barbara.position": "Internal Transport",
+  "about.krzysztof.alt": "Mariusz Wronski, Chief of Machinery",
+  "about.krzysztof.position": "Chief of Machinery",
 
   "portfolio.meta.title": "SwissPlant Ltd. &ndash; Portfolio",
   "portfolio.meta.description": "This is our portfolio. We offer a wide range of warm house plants and individual consultings.",
