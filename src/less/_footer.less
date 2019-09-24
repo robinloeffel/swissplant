@@ -65,13 +65,22 @@
 
 @media (max-width: 900px) {
   ._footer {
-    flex-wrap: wrap;
-
     &-content {
+      flex-wrap: wrap;
+
+      > ._footer-text {
+        text-align: center;
+      }
+
       &-left,
       &-center,
       &-right {
-        flex: 1 1 100%;
+        flex: 1 1 225px;
+        margin: 0;
+
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
       }
     }
   }
