@@ -36,8 +36,15 @@
 @media (max-width: 1200px) {
   ._split {
     flex-direction: column;
+    height: auto;
 
-    &-half {
+    &-image {
+      display: none;
+    }
+
+    &-text {
+      flex-basis: 80%;
+      margin: 10% 0;
     }
   }
 }
