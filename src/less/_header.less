@@ -115,7 +115,7 @@
 
 @media (max-width: 900px) {
   ._header {
-    transform: translateY(-(100% - (100% / 8)));
+    transform: translateY(-(100% - (100% / 5)));
     transition: transform .3s ease-in-out;
 
     &-open {
@@ -126,7 +126,7 @@
       flex-basis: 100%;
 
       &-list {
-        flex-direction: column-reverse;
+        flex-wrap: wrap-reverse;
       }
 
       &-link {
@@ -140,10 +140,12 @@
       }
 
       &-item {
-        width: 100%;
+        flex: 1 0 50%;
+        border: .5px solid rgba(@color-black, .025);
 
         &:first-child {
           margin-right: 0;
+          flex-basis: 100%;
         }
 
         &-home {
