@@ -33,6 +33,10 @@
       &:first-child {
         margin-right: auto;
       }
+
+      &-home {
+        display: none;
+      }
     }
 
     &-link {
@@ -110,7 +114,12 @@
 
 @media (max-width: 900px) {
   ._header {
-    transform: translateY(-83.33%);
+    transform: translateY(-(100% - (100% / 7)));
+    transition: transform .3s ease-in-out;
+
+    &-open {
+      transform: translateY(0);
+    }
 
     &-navigation {
       flex-basis: 100%;
@@ -133,6 +142,10 @@
 
         &:first-child {
           margin-right: 0;
+        }
+
+        &-home {
+          display: inherit;
         }
       }
 
