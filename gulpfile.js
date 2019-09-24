@@ -33,8 +33,8 @@ gulp.task('less', () => {
     .pipe(plumber())
     .pipe(less())
     .pipe(postcss([
+      autoprefixer(),
       ...(prod ? [
-        autoprefixer(),
         cssnano()
       ] : []),
       reporter({

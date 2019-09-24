@@ -20,5 +20,6 @@ angular.module('swissPlant', ['ngCookies', 'pascalprecht.translate'])
     /* @ngInject */
     $scope.changeLang = (langKey) => {
       $translate.use(langKey);
+      document.documentElement.lang = langKey + '-ch';
     };
   }]);

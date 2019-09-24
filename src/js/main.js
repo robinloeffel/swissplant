@@ -3,3 +3,4 @@ import './map';
 import './hero';
 import './jumplink';
 import './navigation';
+import './ie';

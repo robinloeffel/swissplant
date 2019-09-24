@@ -7,7 +7,7 @@ export const german = {
   "nav.contact": "Kontakt",
   "nav.start": "Start",
 
-  "home.meta.title": "SwissPlant GmbH &ndash; Ihr Spezialist für Gemüsejungpflanzen",
+  "home.meta.title": "SwissPlant GmbH – Ihr Spezialist für Gemüsejungpflanzen",
   "home.meta.description": "Die Swissplant GmbH ist Ihr Ansprechpartner für professionellen Gemüseanbau im Berner Seeland. Bei uns bekommen Sie Warmhauspflanzen in verschiedenen Varianten.",
   "home.meta.keywords": "gemüse, gemuese, jungpflanzen, setzlinge, salat, schweiz, seeland, müntschemier, muentschemier, swissplant, agriplant, swissplant gmbh, agriplant ag, anbau, warmhauspflanzen, distro",
   "home.about.heading": "Wer wir sind",
@@ -20,7 +20,7 @@ export const german = {
   "home.contact.intro": "Wir stehen natürlich gerne für allfällige Informationen und Ratschläge zur Verfügung. Egal, ob E-Mail, Telefon oder vor Ort.",
   "home.button.more": "Mehr erfahren",
 
-  "about.meta.title": "SwissPlant GmbH &ndash; Über uns",
+  "about.meta.title": "SwissPlant GmbH — Über uns",
   "about.meta.description": "Erfahren Sie mehr über die SwissPlant GmbH und wer überhaupt hinter ihr steckt.",
   "about.meta.keywords": "über uns, anfang, geschichte, müntschemier, martin löffel, erfahrung, gemüsebau, kompetent, muentschemier, swissplant, agriplant, swissplant gmbh, agriplant ag, angestellte, mitarbeiter, geschäftsführung",
   "about.copy.first": "Den Anfang nehmen all diese Gemüse und Salate als Jungpflanzen, die von der Firma AgriPlant AG in Müntschemier angezogen werden. Geschäftsführer unserer Firmen Martin Löffel, fasst den Weg der Keimlinge bis hin zu ausgewachsenen Pflanzen so zusammen: &laquo;Wir stehen als Zulieferbetrieb der Gemüsebaubetriebe am Anfang der Produktionskette und kultivieren die Jungpflanzen, die anschliessend von den Gemüsegärtnern gepflanzt werden.&raquo;",
@@ -51,7 +51,7 @@ export const german = {
   "about.krzysztof.alt": "Mariusz Wronski, Maschinenführer",
   "about.krzysztof.position": "Maschinenführer",
 
-  "portfolio.meta.title": "SwissPlant GmbH &ndash; Angebot",
+  "portfolio.meta.title": "SwissPlant GmbH – Angebot",
   "portfolio.meta.description": "Schauen Sie sich unser Angebot an. Wir bieten Warmhauspflanzen verschiedener Sorten an.",
   "portfolio.meta.keywords": "salat, sellerie, kohl, zucchini, tomaten, gurken, lauch, fenchel, setzlinge, warmhauspflanzen, steinwolle, erde, jungpflanzen, angebot, swissplant, agriplant",
   "portfolio.table.1x1": "3.2cm-Einzeltopf",
@@ -82,7 +82,7 @@ export const german = {
   "portfolio.table.14x2": "Warmhauspflanzen Hobbybereich unveredelt",
   "portfolio.description": "Alle Topfvarianten (3.2cm–6cm) werden in unserem Haus produziert, die übrigen Arten lassen wir von <a href=\"./partner.html\">unseren holländischen Partnern</a> herstellen. Wir bieten auch Warmhauspflanzen in verschiedenen Varianten an. Über unser reichhaltiges Jungpflanzensortiment informieren wir Sie gerne. Für kundenspezifische Auskünfte oder Fragen steht Ihnen <a href=\"./ueber-uns.html\">unser Verkaufspersonal</a> jederzeit zur Verfügung.",
 
-  "partners.meta.title": "SwissPlant GmbH &ndash; Partner",
+  "partners.meta.title": "SwissPlant GmbH – Partner",
   "partners.meta.description": "Wir arbeiten Hand in Hand mit unseren Partnern. Erfahren Sie mehr über unsere Kooperationen.",
   "partners.meta.keywords": "partner, geschäftspartner, partnerfirmen, partnerfirma, agriplant, agriplant ag, gipmans, gipmans holland, swissplant, kundschaft, spedition, wissen, können, innovationen, qualität",
   "partners.agriplant": "AgriPlant AG",
@@ -92,7 +92,7 @@ export const german = {
   "partners.gipmans.description.first": "Bei der Firma <a href=\"http://gipmans.nl\" target=\"_blank\">Gipmans</a> in Holland lassen wir unsere Speedy- und Warmhauspflanzen aussäen. Traypflanzen werden halbfertig bezogen, um sie anschliessend bei uns fertig zu kultivieren. Warmhauspflanzen werden fertig zu uns geliefert und durch unsere eigene Betriebsspedition direkt zum Kunden geliefert.",
   "partners.gipmans.description.second": "Die Firma Gipmans steht für eine marktorientiertes Wissen und Können. Gemeinsame Wissensentwicklungen und Innovationen führen nicht nur zu einem besseren Ertrag, sondern tragen auch dazu bei, dass wir uns weitaus besser auf Ihre jeweils spezifische Marktsituation und die gewünschte Qualität einstellen können.",
 
-  "contact.meta.title": "SwissPlant GmbH &ndash; Kontakt",
+  "contact.meta.title": "SwissPlant GmbH – Kontakt",
   "contact.meta.description": "Erfahren Sie, wie Sie am schnellsten zu uns finden oder uns am einfachsten erreichen.",
   "contact.meta.keywords": "kontakt, mail, email, telefon, bern, neuenburg, neuchatel, kerzers, müntschemier, muentschemier, ins, auto, autobahn, ankunft, anfahrt, swissplant, agriplant",
   "contact.from.bern": "Von Bern her",
@@ -108,7 +108,7 @@ export const german = {
   "footer.phone": "<a href=\"tel:+41323135210\">+41 32 313 52 10</a>",
   "footer.hours": "Montag bis Freitag<br>07:30&ndash;11:45 Uhr<br>13:30&ndash;17:30 Uhr",
   "footer.emails": "<a href=\"mailto:info@swissplant.ch\">info@swissplant.ch</a><br><a href=\"mailto:info@agriplant.ch\">info@agriplant.ch</a>",
-  "footer.robin": "Entwickelt und gestaltet von <a href=\"https://robinloeffel.ch\" target=\"_blank\">Robin Löffel</a>",
+  "footer.robin": "Entwickelt und gestaltet von <a href=\"https://robinloeffel.ch\">Robin Löffel</a>",
   "footer.copyright": "&copy; SwissPlant GmbH 2019"
 };
 
@@ -220,6 +220,6 @@ export const english = {
   "footer.phone": "<a href=\"tel:+41323135210\">+41 32 313 52 10</a>",
   "footer.hours": "Mondays to Fridays<br/>07:30&ndash;11:45<br/>13:30&ndash;17:30",
   "footer.emails": "<a href=\"mailto:info@swissplant.ch\">info@swissplant.ch</a><br/><a href=\"mailto:info@agriplant.ch\">info@agriplant.ch</a>",
-  "footer.robin": "Developed and designed by <a href=\"https://robinloeffel.ch\" target=\"_blank\">Robin Löffel</a>",
+  "footer.robin": "Developed and designed by <a href=\"https://robinloeffel.ch\">Robin Löffel</a>",
   "footer.copyright": "&copy; SwissPlant Ltd. 2019"
 };
