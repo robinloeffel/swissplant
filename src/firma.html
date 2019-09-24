@@ -1,0 +1,111 @@
+<!doctype html>
+<html data-ng-app="swissPlant" lang="de-ch">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" translate-attr="{ content: 'about.meta.description' }" content="Erfahren Sie mehr über die SwissPlant GmbH und wer überhaupt hinter ihr steckt.">
+  <meta name="keywords" translate-attr="{ content: 'about.meta.keywords' }" content="über uns, anfang, geschichte, müntschemier, martin löffel, erfahrung, gemüsebau, kompetent, muentschemier, swissplant, agriplant, swissplant gmbh, agriplant ag, angestellte, mitarbeiter, geschäftsführung">
+  <meta name="apple-mobile-web-app-title" content="SwissPlant">
+  <meta name="robots" content="index, follow">
+  <meta property="og:url" content="https://swissplant.ch/firma.html">
+  <meta property="og:image" content="https://swissplant.ch/img/og.jpg">
+  <meta property="og:title" translate-attr="{ content: 'about.meta.title' }" content="SwissPlant GmbH – Firma">
+  <meta property="og:description" translate-attr="{ content: 'about.meta.description' }" content="Erfahren Sie mehr über die SwissPlant GmbH und wer überhaupt hinter ihr steckt.">
+  <meta property="og:type" content="website">
+  <title translate="company.meta.title">SwissPlant GmbH – Firma</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" href="img/favicon.png">
+  <link rel="apple-touch-icon" href="img/apple.png">
+  <link rel="canonical" href="https://swissplant.ch/firma.html">
+</head>
+
+<body ng-controller="langCtrl">
+  <header class="_header" ng-cloak translate-cloak>
+    <nav class="_header-navigation">
+      <ul class="_header-navigation-list">
+        <li class="_header-navigation-item">
+          <a href="./" class="_header-navigation-link">
+            <svg class="_icon _header-navigation-logo">
+              <use href="img/sprite.svg#swissplant-swooshless"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="_header-navigation-item _header-navigation-item-home">
+          <a class="_header-navigation-link" href="." translate="nav.start"></a>
+        </li>
+        <li class="_header-navigation-item">
+          <a class="_header-navigation-link" href="firma.html" translate="nav.company"></a>
+        </li>
+        <li class="_header-navigation-item">
+          <a class="_header-navigation-link" href="team.html" translate="nav.team"></a>
+        </li>
+        <li class="_header-navigation-item">
+          <a class="_header-navigation-link" href="angebot.html" translate="nav.portfolio"></a>
+        </li>
+        <li class="_header-navigation-item">
+          <a class="_header-navigation-link" href="partner.html" translate="nav.partners"></a>
+        </li>
+        <li class="_header-navigation-item">
+          <a class="_header-navigation-link" href="kontakt.html" translate="nav.contact"></a>
+        </li>
+        <li class="_header-navigation-item _header-navigation-lang-container">
+          <svg class="_icon _header-navigation-lang-icon">
+            <use href="img/sprite.svg#settings"></use>
+          </svg>
+          <a class="_header-navigation-lang-button" data-ng-click="changeLang('de')" href="#">DE</a>
+          <a class="_header-navigation-lang-button" data-ng-click="changeLang('en')" href="#">EN</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main ng-cloak>
+    <section class="_landing _landing--small">
+      <img src="img/one.jpg" alt="" class="_landing-image">
+    </section>
+    <section class="_content">
+      <h1 translate="nav.company"></h1>
+      <div class="_video">
+        <iframe class="_video-iframe" src="https://www.youtube-nocookie.com/embed/M3-n0Gf2f2c" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <p translate="company.copy.first"></p>
+      <p translate="company.copy.second"></p>
+      <p translate="company.copy.third"></p>
+      <p translate="company.copy.fourth"></p>
+    </section>
+  </main>
+  <footer class="_footer" ng-cloak>
+    <div class="_footer-content">
+      <div class="_footer-content-left">
+        <svg class="_icon _footer-logo">
+          <use href="img/sprite.svg#swissplant-swooshless"></use>
+        </svg>
+        <svg class="_icon _footer-logo">
+          <use href="img/sprite.svg#agriplant-swooshless"></use>
+        </svg>
+        <p class="_footer-text" translate="footer.copyright"></p>
+      </div>
+      <div class="_footer-content-center">
+        <p class="_footer-text" translate="footer.address"></p>
+        <p class="_footer-text" translate="footer.emails"></p>
+      </div>
+      <div class="_footer-content-right">
+        <p class="_footer-text" translate="footer.hours"></p>
+        <p class="_footer-text" translate="footer.phone"></p>
+      </div>
+    </div>
+    <hr class="_footer-hr">
+    <div class="_footer-content">
+      <p class="_footer-text">
+        <a href="." translate="nav.start"></a> — <a href="firma.html" translate="nav.company"></a> — <a href="angebot.html" translate="nav.portfolio"></a> — <a href="partner.html" translate="nav.partners"></a> — <a href="kontakt.html"
+          translate="nav.contact"></a>
+      </p>
+    </div>
+    <div class="_footer-content">
+      <p class="_footer-text" translate="footer.robin"></p>
+    </div>
+  </footer>
+  <script src="js/swissplant.js"></script>
+</body>
+
+</html>

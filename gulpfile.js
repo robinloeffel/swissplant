@@ -78,9 +78,8 @@ gulp.task('img', () => {
 
 gulp.task('files', () => {
   return gulp.src([
-    'src/{*,}.*',
-    'src/video/**/*',
-    'src/font/**/*'
+      'src/{*,}.*',
+      'src/font/**/*'
     ], {
       base: 'src'
     })
@@ -132,9 +131,8 @@ gulp.task('watch:img', done => {
 
 gulp.task('watch:files', done => {
   gulp.watch([
-    'src/{*,}.*',
-    'src/video/**/*',
-    'src/font/**/*'
+      'src/{*,}.*',
+      'src/font/**/*'
     ], gulp.parallel('files'));
   done();
 });

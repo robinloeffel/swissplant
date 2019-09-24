@@ -2,4 +2,5 @@ https://swissplant.ch
 https://swissplant.ch/angebot.html
 https://swissplant.ch/kontakt.html
 https://swissplant.ch/partner.html
-https://swissplant.ch/ueber-uns.html
+https://swissplant.ch/firma.html
+https://swissplant.ch/team.html
