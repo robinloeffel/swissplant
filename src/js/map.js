@@ -1,24 +1,19 @@
-if ('google' in window) {
-  const initialize = () => {
-    const canvas = document.getElementsByClassName('_google-map')[0];
-    const position = new google.maps.LatLng(46.9913104, 7.1441492);
-    const options = {
-      center: position,
-      zoom: 10,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-    const marker = new google.maps.Marker({
-      position: position
-    });
-    const map = new google.maps.Map(canvas, options);
+import L from 'leaflet';
 
-    marker.setMap(map);
-  };
+const node = document.getElementsByClassName('_map')[0];
 
+if (node) {
   window.addEventListener('load', () => {
-    initialize();
-  }, {
-    capture: false,
-    once: true
-  });
+    const map = L.map(node).setView([46.9902244, 7.1445924], 14);
+
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+      maxZoom: 24,
+      id: 'mapbox.streets',
+      detectRetina: true,
+      attribution: 'Kartendaten © <a href="https://www.openstreetmap.org/">OpenStreetMap</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>; Bilder © <a href="https://www.mapbox.com/">Mapbox</a>',
+      accessToken: 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw'
+    }).addTo(map);
+
+    L.marker([46.9902244, 7.1445924]).addTo(map);
+  }, { once: true });
 }
