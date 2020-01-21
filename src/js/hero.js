@@ -1,4 +1,4 @@
-const images = document.getElementsByClassName('_landing-image');
+const images = document.querySelectorAll('._landing-image');
 const visible = '_landing-image-visible';
 let idx = 0;
 

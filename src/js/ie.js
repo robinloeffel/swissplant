@@ -1,5 +1,5 @@
 if (navigator.userAgent.includes('Trident')) {
-  const body = document.getElementsByTagName('body')[0];
+  const body = document.querySelector('body');
   const notice = document.createElement('div');
   const content = document.createElement('div');
   const heading = document.createElement('h1');

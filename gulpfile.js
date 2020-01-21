@@ -1,3 +1,5 @@
+/* eslint-env node */
+
 const gulp = require('gulp');
 const del = require('del');
 const open = require('open');
@@ -10,7 +12,7 @@ const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const stylelint = require('stylelint');
 const reporter = require('postcss-reporter');
-const lesssyntax = require('postcss-less');
+const presetEnv = require('postcss-preset-env');
 
 const prod = !process.argv.includes('--dev');
 
@@ -31,47 +33,35 @@ gulp.task('less', () => {
         sourcemaps: !prod
     })
     .pipe(plumber())
+    .pipe(postcss([
+      stylelint()
+    ]))
     .pipe(less())
     .pipe(postcss([
-      autoprefixer(),
-      ...(prod ? [
-        cssnano()
-      ] : []),
+      prod && presetEnv(),
+      prod && autoprefixer(),
+      prod && cssnano(),
       reporter({
         clearReportedMessages: true
       })
-    ], {
-      syntax: lesssyntax
-    }))
+    ].filter(plugin => plugin)))
     .pipe(gulp.dest('dist/css', {
         sourcemaps: '.'
     }))
     .pipe(connect.reload());
 });
 
-gulp.task('less:lint', () => {
-  return gulp.src('src/less/**/*')
-    .pipe(postcss([
-      stylelint(),
-      reporter({
-        clearReportedMessages: true
-      })
-    ], {
-      syntax: lesssyntax
-    }));
-});
-
 gulp.task('img', () => {
   return gulp.src('src/img/**/*')
     .pipe(plumber())
     .pipe(imagemin([
-      imagemin.jpegtran({
-        progressive: true
-      }),
+      imagemin.mozjpeg(),
       imagemin.optipng({
         optimizationLevel: 7
       })
-    ]))
+    ], {
+      verbose: !prod
+    }))
     .pipe(gulp.dest('dist/img'))
     .pipe(connect.reload());
 });
@@ -90,8 +80,8 @@ gulp.task('files', () => {
 gulp.task('rollup', async () => {
   const { rollup } = require('rollup');
   const babel = require('rollup-plugin-babel');
-  const resolve = require('rollup-plugin-node-resolve');
-  const commonjs = require('rollup-plugin-commonjs');
+  const resolve = require('@rollup/plugin-node-resolve');
+  const commonjs = require('@rollup/plugin-commonjs');
   const { terser } = require('rollup-plugin-terser');
   const { eslint } = require('rollup-plugin-eslint');
 
@@ -103,7 +93,7 @@ gulp.task('rollup', async () => {
       commonjs(),
       prod && babel(),
       prod && terser()
-    ]
+    ].filter(plugin => plugin)
   });
 
   await bundle.write({
@@ -115,7 +105,7 @@ gulp.task('rollup', async () => {
 
 
 gulp.task('watch:less', done => {
-  gulp.watch('src/less/**/*', gulp.parallel('less', 'less:lint'));
+  gulp.watch('src/less/**/*', gulp.parallel('less'));
   done();
 });
 
@@ -137,6 +127,6 @@ gulp.task('watch:files', done => {
   done();
 });
 
-gulp.task('build', gulp.parallel('less', 'less:lint', 'rollup', 'img', 'files'));
+gulp.task('build', gulp.parallel('less', 'rollup', 'img', 'files'));
 gulp.task('watch', gulp.parallel('watch:less', 'watch:js', 'watch:img', 'watch:files'));
 gulp.task('default', gulp.series('clean', 'build', 'watch', 'serve', 'open'));

@@ -18,7 +18,8 @@ angular.module('swissPlant', ['ngCookies', 'pascalprecht.translate'])
   }])
   .controller('langCtrl', ['$translate', '$scope', ($translate, $scope) => {
     /* @ngInject */
-    $scope.changeLang = (langKey) => {
+    $scope.changeLang = (langKey, $event) => {
+      $event.preventDefault();
       $translate.use(langKey);
       document.documentElement.lang = langKey + '-ch';
     };

@@ -1,6 +1,6 @@
 import L from 'leaflet';
 
-const node = document.getElementsByClassName('_map')[0];
+const node = document.querySelector('._map');
 
 if (node) {
   window.addEventListener('load', () => {
