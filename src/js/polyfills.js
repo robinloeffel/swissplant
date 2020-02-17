@@ -1,5 +1,3 @@
 import 'svgxuse';
-
-if (!('forEach' in NodeList.prototype)) {
-  NodeList.prototype.forEach = Array.prototype.forEach;
-}
+import 'mdn-polyfills/String.prototype.includes';
+import 'mdn-polyfills/NodeList.prototype.forEach';

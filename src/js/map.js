@@ -15,5 +15,5 @@ if (node) {
     }).addTo(map);
 
     L.marker([46.9902244, 7.1445924]).addTo(map);
-  }, { once: true });
+  });
 }
