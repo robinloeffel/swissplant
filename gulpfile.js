@@ -1,5 +1,3 @@
-/* eslint-env node */
-
 const gulp = require('gulp');
 const del = require('del');
 const open = require('open');
@@ -7,11 +5,12 @@ const connect = require('gulp-connect');
 const plumber = require('gulp-plumber');
 const less = require('gulp-less');
 const imagemin = require('gulp-imagemin');
+const rezzy = require('gulp-rezzy');
+const webp = require('gulp-webp');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const stylelint = require('stylelint');
-const reporter = require('postcss-reporter');
 const presetEnv = require('postcss-preset-env');
 
 const prod = !process.argv.includes('--dev');
@@ -38,38 +37,80 @@ gulp.task('less', () => {
     ]))
     .pipe(less())
     .pipe(postcss([
-      prod && presetEnv(),
+      presetEnv(),
       prod && autoprefixer(),
-      prod && cssnano(),
-      reporter({
-        clearReportedMessages: true
-      })
-    ].filter(plugin => plugin)))
+      prod && cssnano()
+    ].filter(p => p)))
     .pipe(gulp.dest('dist/css', {
         sourcemaps: '.'
     }))
     .pipe(connect.reload());
 });
 
-gulp.task('img', () => {
-  return gulp.src('src/img/**/*')
+gulp.task('img:meta', () => {
+  return gulp.src('src/img/{apple,favicon,og,poster}*')
     .pipe(plumber())
-    .pipe(imagemin([
-      imagemin.mozjpeg(),
-      imagemin.optipng({
-        optimizationLevel: 7
-      })
-    ], {
-      verbose: !prod
+    .pipe(imagemin({
+      verbose: true
+    }))
+    .pipe(gulp.dest('dist/img'));
+});
+
+gulp.task('img:workers', () => {
+  return gulp.src('src/img/mitarbeiter/*')
+    .pipe(plumber())
+    .pipe(rezzy([{
+      suffix: '-480w'
+    }, {
+      width: 300,
+      suffix: '-300w'
+    }]))
+    .pipe(imagemin({
+      verbose: true
+    }))
+    .pipe(gulp.dest('dist/img/mitarbeiter'))
+    .pipe(webp({
+      preset: 'photo',
+      method: 6
+    }))
+    .pipe(gulp.dest('dist/img/mitarbeiter'));
+});
+
+gulp.task('img:bgs', () => {
+  return gulp.src([
+      'src/img/*',
+      '!src/img/{apple,favicon,og,poster,sprite}*'
+    ])
+    .pipe(plumber())
+    .pipe(rezzy([{
+      width: 1600,
+      suffix: '-1600w'
+    }, {
+      width: 1200,
+      suffix: '-1200w'
+    }, {
+      width: 800,
+      suffix: '-800w'
+    }, {
+      width: 400,
+      suffix: '-400w'
+    }]))
+    .pipe(imagemin({
+      verbose: true
     }))
     .pipe(gulp.dest('dist/img'))
-    .pipe(connect.reload());
+    .pipe(webp({
+      preset: 'photo',
+      method: 6
+    }))
+    .pipe(gulp.dest('dist/img'));
 });
 
 gulp.task('files', () => {
   return gulp.src([
       'src/{*,}.*',
-      'src/font/**/*'
+      'src/font/**/*',
+      'src/img/sprite.svg'
     ], {
       base: 'src'
     })
@@ -79,7 +120,7 @@ gulp.task('files', () => {
 
 gulp.task('rollup', async () => {
   const { rollup } = require('rollup');
-  const babel = require('rollup-plugin-babel');
+  const buble = require('@rollup/plugin-buble');
   const resolve = require('@rollup/plugin-node-resolve');
   const commonjs = require('@rollup/plugin-commonjs');
   const { terser } = require('rollup-plugin-terser');
@@ -91,9 +132,13 @@ gulp.task('rollup', async () => {
       eslint(),
       resolve(),
       commonjs(),
-      prod && babel(),
-      prod && terser()
-    ].filter(plugin => plugin)
+      prod && buble(),
+      prod && terser({
+        output: {
+          comments: false
+        }
+      })
+    ].filter(p => p)
   });
 
   await bundle.write({
@@ -122,11 +167,13 @@ gulp.task('watch:img', done => {
 gulp.task('watch:files', done => {
   gulp.watch([
       'src/{*,}.*',
-      'src/font/**/*'
+      'src/font/**/*',
+      'src/img/sprite.svg'
     ], gulp.parallel('files'));
   done();
 });
 
+gulp.task('img', gulp.parallel('img:meta', 'img:workers', 'img:bgs'));
 gulp.task('build', gulp.parallel('less', 'rollup', 'img', 'files'));
 gulp.task('watch', gulp.parallel('watch:less', 'watch:js', 'watch:img', 'watch:files'));
 gulp.task('default', gulp.series('clean', 'build', 'watch', 'serve', 'open'));

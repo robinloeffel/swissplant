@@ -63,10 +63,26 @@
   <main ng-cloak>
     <section class="_landing">
       <div class="_landing-images">
-        <img src="img/one.jpg" alt="" class="_landing-image">
-        <img src="img/two.jpg" alt="" class="_landing-image">
-        <img src="img/three.jpg" alt="" class="_landing-image">
-        <img src="img/four.jpg" alt="" class="_landing-image">
+        <picture>
+          <source type="image/webp" srcset="img/one-400w.webp 400w, img/one-800w.webp 800w, img/one-1200w.webp 1200w, img/one-1600w.webp 1600w">
+          <source type="image/jpeg" srcset="img/one-400w.jpg 400w, img/one-800w.jpg 800w, img/one-1200w.jpg 1200w, img/one-1600w.jpg 1600w">
+          <img class="_landing-image" src="img/one-400w.jpg" loading="lazy" alt="">
+        </picture>
+        <picture>
+          <source type="image/webp" srcset="img/two-400w.webp 400w, img/two-800w.webp 800w, img/two-1200w.webp 1200w, img/two-1600w.webp 1600w">
+          <source type="image/jpeg" srcset="img/two-400w.jpg 400w, img/two-800w.jpg 800w, img/two-1200w.jpg 1200w, img/two-1600w.jpg 1600w">
+          <img class="_landing-image" src="img/two-400w.jpg" loading="lazy" alt="">
+        </picture>
+        <picture>
+          <source type="image/webp" srcset="img/partners-400w.webp 400w, img/partners-800w.webp 800w, img/partners-1200w.webp 1200w, img/partners-1600w.webp 1600w">
+          <source type="image/jpeg" srcset="img/partners-400w.jpg 400w, img/partners-800w.jpg 800w, img/partners-1200w.jpg 1200w, img/partners-1600w.jpg 1600w">
+          <img class="_landing-image" src="img/partners-400w.jpg" loading="lazy" alt="">
+        </picture>
+        <picture>
+          <source type="image/webp" srcset="img/four-400w.webp 400w, img/four-800w.webp 800w, img/four-1200w.webp 1200w, img/four-1600w.webp 1600w">
+          <source type="image/jpeg" srcset="img/four-400w.jpg 400w, img/four-800w.jpg 800w, img/four-1200w.jpg 1200w, img/four-1600w.jpg 1600w">
+          <img class="_landing-image" src="img/four-400w.jpg" loading="lazy" alt="">
+        </picture>
       </div>
       <div class="_landing-content">
         <svg class="_icon _landing-logo">
@@ -81,7 +97,11 @@
     </section>
     <section id="firma" class="_split">
       <div class="_split-half">
-        <img src="img/three.jpg" class="_split-image" alt="">
+        <picture>
+          <source type="image/webp" srcset="img/partners-400w.webp 400w, img/partners-800w.webp 800w, img/partners-1200w.webp 1200w, img/partners-1600w.webp 1600w">
+          <source type="image/jpeg" srcset="img/partners-400w.jpg 400w, img/partners-800w.jpg 800w, img/partners-1200w.jpg 1200w, img/partners-1600w.jpg 1600w">
+          <img class="_split-image" src="img/partners-400w.jpg" loading="lazy" alt="">
+        </picture>
       </div>
       <div class="_split-half">
         <div class="_split-text">
@@ -100,12 +120,20 @@
         </div>
       </div>
       <div class="_split-half">
-        <img src="img/portfolio.jpg" class="_split-image" alt="">
+        <picture>
+          <source type="image/webp" srcset="img/portfolio-400w.webp 400w, img/portfolio-800w.webp 800w, img/portfolio-1200w.webp 1200w, img/portfolio-1600w.webp 1600w">
+          <source type="image/jpeg" srcset="img/portfolio-400w.jpg 400w, img/portfolio-800w.jpg 800w, img/portfolio-1200w.jpg 1200w, img/portfolio-1600w.jpg 1600w">
+          <img class="_split-image" src="img/portfolio-400w.jpg" loading="lazy" alt="">
+        </picture>
       </div>
     </section>
     <section id="partner" class="_split">
       <div class="_split-half">
-        <img src="img/partners.jpg" class="_split-image" alt="">
+        <picture>
+          <source type="image/webp" srcset="img/partners-400w.webp 400w, img/partners-800w.webp 800w, img/partners-1200w.webp 1200w, img/partners-1600w.webp 1600w">
+          <source type="image/jpeg" srcset="img/partners-400w.jpg 400w, img/partners-800w.jpg 800w, img/partners-1200w.jpg 1200w, img/partners-1600w.jpg 1600w">
+          <img class="_split-image" src="img/partners-400w.jpg" loading="lazy" alt="">
+        </picture>
       </div>
       <div class="_split-half">
         <div class="_split-text">

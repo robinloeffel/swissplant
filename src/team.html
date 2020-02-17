@@ -61,13 +61,21 @@
   </header>
   <main ng-cloak>
     <section class="_landing _landing--small">
-      <img src="img/about.jpg" alt="" class="_landing-image">
+      <picture>
+        <source type="image/webp" srcset="img/about-400w.webp 400w, img/about-800w.webp 800w, img/about-1200w.webp 1200w, img/about-1600w.webp 1600w">
+        <source type="image/jpeg" srcset="img/about-400w.jpg 400w, img/about-800w.jpg 800w, img/about-1200w.jpg 1200w, img/about-1600w.jpg 1600w">
+        <img class="_split-image" src="img/about-400w.jpg" loading="lazy" alt="">
+      </picture>
     </section>
     <section class="_content">
       <h1 translate="nav.team"></h1>
       <div class="_photo-list">
         <article class="_photo-list-photo">
-          <img class="_photo-list-image" src="img/mitarbeiter/martin-loeffel.jpg" translate-attr="{alt: 'team.martin.alt'}">
+          <picture>
+            <source type="image/webp" srcset="img/mitarbeiter/martin-loeffel-300w.webp 300w, img/mitarbeiter/martin-loeffel-480w.webp 480w">
+            <source type="image/jpeg" srcset="img/mitarbeiter/martin-loeffel-300w.jpg 300w, img/mitarbeiter/martin-loeffel-300w.jpg 480w">
+            <img class="_photo-list-image" src="img/mitarbeiter/martin-loeffel-300w.jpg" loading="lazy" alt="{alt: 'team.martin.alt'}">
+          </picture>
           <div class="_photo-list-content">
             <span class="_photo-list-name">Martin Löffel</span>
             <span class="_photo-list-role" translate="team.martin.position"></span>
@@ -76,7 +84,11 @@
           </div>
         </article>
         <article class="_photo-list-photo">
-          <img class="_photo-list-image" src="img/mitarbeiter/telja-baumann.jpg" translate-attr="{alt: 'team.telja.alt'}">
+          <picture>
+            <source type="image/webp" srcset="img/mitarbeiter/telja-baumann-300w.webp 300w, img/mitarbeiter/telja-baumann-480w.webp 480w">
+            <source type="image/jpeg" srcset="img/mitarbeiter/telja-baumann-300w.jpg 300w, img/mitarbeiter/telja-baumann-300w.jpg 480w">
+            <img class="_photo-list-image" src="img/mitarbeiter/telja-baumann-300w.jpg" loading="lazy" alt="{alt: 'team.telja.alt'}">
+          </picture>
           <div class="_photo-list-content">
             <span class="_photo-list-name">Telja Baumann</span>
             <span class="_photo-list-role" translate="team.telja.position"></span>
@@ -85,7 +97,11 @@
           </div>
         </article>
         <article class="_photo-list-photo">
-          <img class="_photo-list-image" src="img/mitarbeiter/pascal-probst.jpg" translate-attr="{alt: 'team.pascal.alt'}">
+          <picture>
+            <source type="image/webp" srcset="img/mitarbeiter/pascal-probst-300w.webp 300w, img/mitarbeiter/pascal-probst-480w.webp 480w">
+            <source type="image/jpeg" srcset="img/mitarbeiter/pascal-probst-300w.jpg 300w, img/mitarbeiter/pascal-probst-300w.jpg 480w">
+            <img class="_photo-list-image" src="img/mitarbeiter/pascal-probst-300w.jpg" loading="lazy" alt="{alt: 'team.pascal.alt'}">
+          </picture>
           <div class="_photo-list-content">
             <span class="_photo-list-name">Pascal Probst</span>
             <span class="_photo-list-role" translate="team.pascal.position"></span>
@@ -94,7 +110,11 @@
           </div>
         </article>
         <article class="_photo-list-photo">
-          <img class="_photo-list-image" src="img/mitarbeiter/sandro-loeffel.jpg" translate-attr="{alt: 'team.sandro.alt'}">
+          <picture>
+            <source type="image/webp" srcset="img/mitarbeiter/sandro-loeffel-300w.webp 300w, img/mitarbeiter/sandro-loeffel-480w.webp 480w">
+            <source type="image/jpeg" srcset="img/mitarbeiter/sandro-loeffel-300w.jpg 300w, img/mitarbeiter/sandro-loeffel-300w.jpg 480w">
+            <img class="_photo-list-image" src="img/mitarbeiter/sandro-loeffel-300w.jpg" loading="lazy" alt="{alt: 'team.sandro.alt'}">
+          </picture>
           <div class="_photo-list-content">
             <span class="_photo-list-name">Sandro Löffel</span>
             <span class="_photo-list-role" translate="team.sandro.position"></span>
@@ -103,56 +123,88 @@
           </div>
         </article>
         <article class="_photo-list-photo">
-          <img class="_photo-list-image" src="img/mitarbeiter/ivan-gross.jpg" translate-attr="{alt: 'team.ivan.alt'}">
+          <picture>
+            <source type="image/webp" srcset="img/mitarbeiter/ivan-gross-300w.webp 300w, img/mitarbeiter/ivan-gross-480w.webp 480w">
+            <source type="image/jpeg" srcset="img/mitarbeiter/ivan-gross-300w.jpg 300w, img/mitarbeiter/ivan-gross-300w.jpg 480w">
+            <img class="_photo-list-image" src="img/mitarbeiter/ivan-gross-300w.jpg" loading="lazy" alt="{alt: 'team.ivan.alt'}">
+          </picture>
           <div class="_photo-list-content">
             <span class="_photo-list-name">Ivan Gross</span>
             <span class="_photo-list-role" translate="team.ivan.position"></span>
           </div>
         </article>
         <article class="_photo-list-photo">
-          <img class="_photo-list-image" src="img/mitarbeiter/shpend-thaqi.jpg" translate-attr="{alt: 'team.shpend.alt'}">
+          <picture>
+            <source type="image/webp" srcset="img/mitarbeiter/shpend-thaqi-300w.webp 300w, img/mitarbeiter/shpend-thaqi-480w.webp 480w">
+            <source type="image/jpeg" srcset="img/mitarbeiter/shpend-thaqi-300w.jpg 300w, img/mitarbeiter/shpend-thaqi-300w.jpg 480w">
+            <img class="_photo-list-image" src="img/mitarbeiter/shpend-thaqi-300w.jpg" loading="lazy" alt="{alt: 'team.shpend.alt'}">
+          </picture>
           <div class="_photo-list-content">
             <span class="_photo-list-name">Shpend Thaqi</span>
             <span class="_photo-list-role" translate="team.shpend.position"></span>
           </div>
         </article>
         <article class="_photo-list-photo">
-          <img class="_photo-list-image" src="img/mitarbeiter/andrzej-mojsym.jpg" translate-attr="{alt: 'team.andrzej.alt'}">
+          <picture>
+            <source type="image/webp" srcset="img/mitarbeiter/andrzej-mojsym-300w.webp 300w, img/mitarbeiter/andrzej-mojsym-480w.webp 480w">
+            <source type="image/jpeg" srcset="img/mitarbeiter/andrzej-mojsym-300w.jpg 300w, img/mitarbeiter/andrzej-mojsym-300w.jpg 480w">
+            <img class="_photo-list-image" src="img/mitarbeiter/andrzej-mojsym-300w.jpg" loading="lazy" alt="{alt: 'team.andrzej.alt'}">
+          </picture>
           <div class="_photo-list-content">
             <span class="_photo-list-name">Andrzej Mojsym</span>
             <span class="_photo-list-role" translate="team.andrzej.position"></span>
           </div>
         </article>
         <article class="_photo-list-photo">
-          <img class="_photo-list-image" src="img/mitarbeiter/hans-peter-schwab.jpg" translate-attr="{alt: 'team.hans-peter.alt'}">
+          <picture>
+            <source type="image/webp" srcset="img/mitarbeiter/hans-peter-schwab-300w.webp 300w, img/mitarbeiter/hans-peter-schwab-480w.webp 480w">
+            <source type="image/jpeg" srcset="img/mitarbeiter/hans-peter-schwab-300w.jpg 300w, img/mitarbeiter/hans-peter-schwab-300w.jpg 480w">
+            <img class="_photo-list-image" src="img/mitarbeiter/hans-peter-schwab-300w.jpg" loading="lazy" alt="{alt: 'team.hans-peter.alt'}">
+          </picture>
           <div class="_photo-list-content">
             <span class="_photo-list-name">Hans-Peter Schwab</span>
             <span class="_photo-list-role" translate="team.hans-peter.position"></span>
           </div>
         </article>
         <article class="_photo-list-photo">
-          <img class="_photo-list-image" src="img/mitarbeiter/mariusz-wronski.jpg" translate-attr="{alt: 'team.mariusz.alt'}">
+          <picture>
+            <source type="image/webp" srcset="img/mitarbeiter/mariusz-wronski-300w.webp 300w, img/mitarbeiter/mariusz-wronski-480w.webp 480w">
+            <source type="image/jpeg" srcset="img/mitarbeiter/mariusz-wronski-300w.jpg 300w, img/mitarbeiter/mariusz-wronski-300w.jpg 480w">
+            <img class="_photo-list-image" src="img/mitarbeiter/mariusz-wronski-300w.jpg" loading="lazy" alt="{alt: 'team.mariusz.alt'}">
+          </picture>
           <div class="_photo-list-content">
             <span class="_photo-list-name">Mariusz Wronski</span>
             <span class="_photo-list-role" translate="team.mariusz.position"></span>
           </div>
         </article>
         <article class="_photo-list-photo">
-          <img class="_photo-list-image" src="img/mitarbeiter/krzysztof-hoim.jpg" translate-attr="{alt: 'team.krzysztof.alt'}">
+          <picture>
+            <source type="image/webp" srcset="img/mitarbeiter/krzysztof-hoim-300w.webp 300w, img/mitarbeiter/krzysztof-hoim-480w.webp 480w">
+            <source type="image/jpeg" srcset="img/mitarbeiter/krzysztof-hoim-300w.jpg 300w, img/mitarbeiter/krzysztof-hoim-300w.jpg 480w">
+            <img class="_photo-list-image" src="img/mitarbeiter/krzysztof-hoim-300w.jpg" loading="lazy" alt="{alt: 'team.krzysztof.alt'}">
+          </picture>
           <div class="_photo-list-content">
             <span class="_photo-list-name">Krzysztof Hoim</span>
             <span class="_photo-list-role" translate="team.krzysztof.position"></span>
           </div>
         </article>
         <article class="_photo-list-photo">
-          <img class="_photo-list-image" src="img/mitarbeiter/damian-makarewicz.jpg" translate-attr="{alt: 'team.damian.alt'}">
+          <picture>
+            <source type="image/webp" srcset="img/mitarbeiter/damian-makarewicz-300w.webp 300w, img/mitarbeiter/damian-makarewicz-480w.webp 480w">
+            <source type="image/jpeg" srcset="img/mitarbeiter/damian-makarewicz-300w.jpg 300w, img/mitarbeiter/damian-makarewicz-300w.jpg 480w">
+            <img class="_photo-list-image" src="img/mitarbeiter/damian-makarewicz-300w.jpg" loading="lazy" alt="{alt: 'team.damian.alt'}">
+          </picture>
           <div class="_photo-list-content">
             <span class="_photo-list-name">Damian Makarewicz</span>
             <span class="_photo-list-role" translate="team.damian.position"></span>
           </div>
         </article>
         <article class="_photo-list-photo">
-          <img class="_photo-list-image" src="img/mitarbeiter/barbara-dubler.jpg" translate-attr="{alt: 'team.barbara.alt'}">
+          <picture>
+            <source type="image/webp" srcset="img/mitarbeiter/barbara-dubler-300w.webp 300w, img/mitarbeiter/barbara-dubler-480w.webp 480w">
+            <source type="image/jpeg" srcset="img/mitarbeiter/barbara-dubler-300w.jpg 300w, img/mitarbeiter/barbara-dubler-300w.jpg 480w">
+            <img class="_photo-list-image" src="img/mitarbeiter/barbara-dubler-300w.jpg" loading="lazy" alt="{alt: 'team.barbara.alt'}">
+          </picture>
           <div class="_photo-list-content">
             <span class="_photo-list-name">Barbara Dubler</span>
             <span class="_photo-list-role" translate="team.barbara.position"></span>
