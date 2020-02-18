@@ -8,7 +8,7 @@ let listening;
 const toggle = event => {
   event.preventDefault();
   navigation.classList.toggle(className);
-}
+};
 
 const checkMatch = () => {
   match = matchMedia('(max-width: 900px)').matches;
@@ -22,7 +22,7 @@ const checkMatch = () => {
     trigger.removeEventListener('click', toggle);
     listening = false;
   }
-}
+};
 
 window.addEventListener('resize', checkMatch);
 checkMatch();

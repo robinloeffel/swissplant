@@ -8,10 +8,17 @@ const imagemin = require('gulp-imagemin');
 const rezzy = require('gulp-rezzy');
 const webp = require('gulp-webp');
 const postcss = require('gulp-postcss');
+const reporter = require('postcss-reporter');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const stylelint = require('stylelint');
 const presetEnv = require('postcss-preset-env');
+const { rollup } = require('rollup');
+const buble = require('@rollup/plugin-buble');
+const resolve = require('@rollup/plugin-node-resolve');
+const commonjs = require('@rollup/plugin-commonjs');
+const { terser } = require('rollup-plugin-terser');
+const { eslint } = require('rollup-plugin-eslint');
 
 const prod = !process.argv.includes('--dev');
 
@@ -28,12 +35,15 @@ gulp.task('serve', done => {
 });
 
 gulp.task('less', () => {
-  return gulp.src('src/less/style.less',{
+  return gulp.src('src/less/style.less', {
         sourcemaps: !prod
     })
     .pipe(plumber())
     .pipe(postcss([
-      stylelint()
+      stylelint(),
+      reporter({
+        clearMessages: true
+      })
     ]))
     .pipe(less())
     .pipe(postcss([
@@ -118,14 +128,7 @@ gulp.task('files', () => {
     .pipe(connect.reload());
 });
 
-gulp.task('rollup', async () => {
-  const { rollup } = require('rollup');
-  const buble = require('@rollup/plugin-buble');
-  const resolve = require('@rollup/plugin-node-resolve');
-  const commonjs = require('@rollup/plugin-commonjs');
-  const { terser } = require('rollup-plugin-terser');
-  const { eslint } = require('rollup-plugin-eslint');
-
+gulp.task('js', async () => {
   const bundle = await rollup({
     input: 'src/js/main.js',
     plugins: [
@@ -155,7 +158,7 @@ gulp.task('watch:less', done => {
 });
 
 gulp.task('watch:js', done => {
-  gulp.watch('src/js/**/*', gulp.parallel('rollup'));
+  gulp.watch('src/js/**/*', gulp.parallel('js'));
   done();
 });
 
@@ -174,6 +177,6 @@ gulp.task('watch:files', done => {
 });
 
 gulp.task('img', gulp.parallel('img:meta', 'img:workers', 'img:bgs'));
-gulp.task('build', gulp.parallel('less', 'rollup', 'img', 'files'));
+gulp.task('build', gulp.parallel('less', 'js', 'img', 'files'));
 gulp.task('watch', gulp.parallel('watch:less', 'watch:js', 'watch:img', 'watch:files'));
 gulp.task('default', gulp.series('clean', 'build', 'watch', 'serve', 'open'));

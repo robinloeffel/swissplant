@@ -13,7 +13,7 @@ const rotate = () => {
 
   images[idx].classList.add(visible);
   idx = idx === images.length - 1 ? 0 : idx += 1;
-}
+};
 
 setInterval(rotate, 7500);
 rotate();
