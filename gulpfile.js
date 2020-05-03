@@ -34,7 +34,7 @@ gulp.task('serve', done => {
   done();
 });
 
-gulp.task('less', () => gulp.src('src/less/style.less', {
+gulp.task('less', () => gulp.src('src/less/page.less', {
         sourcemaps: !production
     })
     .pipe(plumber())
@@ -57,12 +57,10 @@ gulp.task('less', () => gulp.src('src/less/style.less', {
 
 gulp.task('img:meta', () => gulp.src('src/img/{apple,favicon,og,poster}*')
     .pipe(plumber())
-    .pipe(imagemin({
-      verbose: true
-    }))
+    .pipe(imagemin())
     .pipe(gulp.dest('dist/img')));
 
-gulp.task('img:workers', () => gulp.src('src/img/mitarbeiter/*')
+gulp.task('img:employees', () => gulp.src('src/img/mitarbeiter/*')
     .pipe(plumber())
     .pipe(rezzy([{
       suffix: '-480w'
@@ -70,9 +68,7 @@ gulp.task('img:workers', () => gulp.src('src/img/mitarbeiter/*')
       width: 300,
       suffix: '-300w'
     }]))
-    .pipe(imagemin({
-      verbose: true
-    }))
+    .pipe(imagemin())
     .pipe(gulp.dest('dist/img/mitarbeiter'))
     .pipe(webp({
       preset: 'photo',
@@ -98,9 +94,7 @@ gulp.task('img:bgs', () => gulp.src([
       width: 400,
       suffix: '-400w'
     }]))
-    .pipe(imagemin({
-      verbose: true
-    }))
+    .pipe(imagemin())
     .pipe(gulp.dest('dist/img'))
     .pipe(webp({
       preset: 'photo',
@@ -110,7 +104,6 @@ gulp.task('img:bgs', () => gulp.src([
 
 gulp.task('files', () => gulp.src([
       'src/{*,}.*',
-      'src/font/**/*',
       'src/img/sprite.svg'
     ], {
       base: 'src'
@@ -136,7 +129,7 @@ gulp.task('js', async () => {
 
   await bundle.write({
     sourcemap: !production,
-    file: 'dist/js/swissplant.js',
+    file: 'dist/js/page.js',
     format: 'iife'
   });
 });
@@ -160,13 +153,12 @@ gulp.task('watch:img', done => {
 gulp.task('watch:files', done => {
   gulp.watch([
       'src/{*,}.*',
-      'src/font/**/*',
       'src/img/sprite.svg'
     ], gulp.parallel('files'));
   done();
 });
 
-gulp.task('img', gulp.parallel('img:meta', 'img:workers', 'img:bgs'));
+gulp.task('img', gulp.parallel('img:meta', 'img:employees', 'img:bgs'));
 gulp.task('build', gulp.parallel('less', 'js', 'img', 'files'));
 gulp.task('watch', gulp.parallel('watch:less', 'watch:js', 'watch:img', 'watch:files'));
 gulp.task('default', gulp.series('clean', 'build', 'watch', 'serve', 'open'));

@@ -1,7 +1,7 @@
 import 'mdn-polyfills/Node.prototype.append';
 import 'mdn-polyfills/Node.prototype.remove';
 
-if (navigator.userAgent.includes('Trident')) {
+if (!NodeList.prototype.forEach) {
   const body = document.querySelector('body');
   const notice = document.createElement('div');
   const content = document.createElement('div');
