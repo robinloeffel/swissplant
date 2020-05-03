@@ -113,7 +113,7 @@ export const german = {
   'footer.hours': 'Montag bis Freitag<br>07:30–11:45 Uhr<br>13:30–17:30 Uhr',
   'footer.emails': '<a href="mailto:info@swissplant.ch">info@swissplant.ch</a><br><a href="mailto:info@agriplant.ch">info@agriplant.ch</a>',
   'footer.robin': 'Entwickelt und gestaltet von <a href="https://robinloeffel.ch">Robin Löffel</a>',
-  'footer.copyright': '&copy; SwissPlant GmbH 2019'
+  'footer.copyright': '&copy; SwissPlant GmbH 2020'
 };
 
 export const english = {
@@ -231,5 +231,5 @@ export const english = {
   'footer.hours': 'Mondays to Fridays<br/>07:30–11:45<br/>13:30–17:30',
   'footer.emails': '<a href="mailto:info@swissplant.ch">info@swissplant.ch</a><br/><a href="mailto:info@agriplant.ch">info@agriplant.ch</a>',
   'footer.robin': 'Developed and designed by <a href="https://robinloeffel.ch">Robin Löffel</a>',
-  'footer.copyright': '&copy; SwissPlant Ltd. 2019'
+  'footer.copyright': '&copy; SwissPlant Ltd. 2020'
 };

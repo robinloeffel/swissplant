@@ -1,4 +1,5 @@
 import jump from 'jump.js';
+
 const links = document.querySelectorAll('[data-scroll-target]');
 
 const scrollToTarget = event => {

@@ -3,7 +3,7 @@ import 'angular-cookies';
 import 'angular-translate';
 import 'angular-translate-storage-local';
 import 'angular-translate-storage-cookie';
-import { german, english } from './langs.data.js';
+import { german, english } from './langs.data';
 
 angular.module('swissPlant', [ 'ngCookies', 'pascalprecht.translate' ])
   .config([
@@ -15,7 +15,7 @@ angular.module('swissPlant', [ 'ngCookies', 'pascalprecht.translate' ])
         .preferredLanguage('de')
         .fallbackLanguage('en')
         .useLocalStorage()
-        .useSanitizeValueStrategy(null);
+        .useSanitizeValueStrategy(undefined);
     }
   ])
   .controller('langCtrl', [
@@ -24,7 +24,7 @@ angular.module('swissPlant', [ 'ngCookies', 'pascalprecht.translate' ])
       $scope.changeLang = (langKey, $event) => {
         $event.preventDefault();
         $translate.use(langKey);
-        document.documentElement.lang = langKey + '-ch';
+        document.documentElement.lang = `${langKey }-ch`;
       };
     }
   ]);

@@ -2,8 +2,8 @@ const trigger = document.querySelector('._header-navigation-link');
 const navigation = document.querySelector('._header');
 const className = '_header-open';
 
-let match;
-let listening;
+let match = false;
+let listening = false;
 
 const toggle = event => {
   event.preventDefault();

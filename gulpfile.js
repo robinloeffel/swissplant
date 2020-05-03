@@ -20,7 +20,7 @@ const commonjs = require('@rollup/plugin-commonjs');
 const { terser } = require('rollup-plugin-terser');
 const { eslint } = require('rollup-plugin-eslint');
 
-const prod = !process.argv.includes('--dev');
+const production = !process.argv.includes('--dev');
 
 
 gulp.task('clean', () => del('dist'));
@@ -34,9 +34,8 @@ gulp.task('serve', done => {
   done();
 });
 
-gulp.task('less', () => {
-  return gulp.src('src/less/style.less', {
-        sourcemaps: !prod
+gulp.task('less', () => gulp.src('src/less/style.less', {
+        sourcemaps: !production
     })
     .pipe(plumber())
     .pipe(postcss([
@@ -48,26 +47,22 @@ gulp.task('less', () => {
     .pipe(less())
     .pipe(postcss([
       presetEnv(),
-      prod && autoprefixer(),
-      prod && cssnano()
+      production && autoprefixer(),
+      production && cssnano()
     ].filter(p => p)))
     .pipe(gulp.dest('dist/css', {
         sourcemaps: '.'
     }))
-    .pipe(connect.reload());
-});
+    .pipe(connect.reload()));
 
-gulp.task('img:meta', () => {
-  return gulp.src('src/img/{apple,favicon,og,poster}*')
+gulp.task('img:meta', () => gulp.src('src/img/{apple,favicon,og,poster}*')
     .pipe(plumber())
     .pipe(imagemin({
       verbose: true
     }))
-    .pipe(gulp.dest('dist/img'));
-});
+    .pipe(gulp.dest('dist/img')));
 
-gulp.task('img:workers', () => {
-  return gulp.src('src/img/mitarbeiter/*')
+gulp.task('img:workers', () => gulp.src('src/img/mitarbeiter/*')
     .pipe(plumber())
     .pipe(rezzy([{
       suffix: '-480w'
@@ -83,11 +78,9 @@ gulp.task('img:workers', () => {
       preset: 'photo',
       method: 6
     }))
-    .pipe(gulp.dest('dist/img/mitarbeiter'));
-});
+    .pipe(gulp.dest('dist/img/mitarbeiter')));
 
-gulp.task('img:bgs', () => {
-  return gulp.src([
+gulp.task('img:bgs', () => gulp.src([
       'src/img/*',
       '!src/img/{apple,favicon,og,poster,sprite}*'
     ])
@@ -113,11 +106,9 @@ gulp.task('img:bgs', () => {
       preset: 'photo',
       method: 6
     }))
-    .pipe(gulp.dest('dist/img'));
-});
+    .pipe(gulp.dest('dist/img')));
 
-gulp.task('files', () => {
-  return gulp.src([
+gulp.task('files', () => gulp.src([
       'src/{*,}.*',
       'src/font/**/*',
       'src/img/sprite.svg'
@@ -125,8 +116,7 @@ gulp.task('files', () => {
       base: 'src'
     })
     .pipe(gulp.dest('dist'))
-    .pipe(connect.reload());
-});
+    .pipe(connect.reload()));
 
 gulp.task('js', async () => {
   const bundle = await rollup({
@@ -135,8 +125,8 @@ gulp.task('js', async () => {
       eslint(),
       resolve(),
       commonjs(),
-      prod && buble(),
-      prod && terser({
+      production && buble(),
+      production && terser({
         output: {
           comments: false
         }
@@ -145,7 +135,7 @@ gulp.task('js', async () => {
   });
 
   await bundle.write({
-    sourcemap: !prod,
+    sourcemap: !production,
     file: 'dist/js/swissplant.js',
     format: 'iife'
   });
