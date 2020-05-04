@@ -14,7 +14,7 @@
     "del": "^5.1.0",
     "eslint": "^6.8.0",
     "eslint-config-mourner": "^3.0.0",
-    "eslint-config-sweet": "^0.4.3",
+    "eslint-config-sweet": "^0.6.0",
     "feather-icons": "^4.28.0",
     "gulp": "^4.0.2",
     "gulp-connect": "^5.7.0",
@@ -44,18 +44,19 @@
     "start": "yarn dev"
   },
   "browserslist": [
-    ">1% in ch",
-    "not dead"
+    "last 2 major versions and >1% in ch",
+    "not dead",
+    "not ie 11"
   ],
+  "engines": {
+    "node": ">=14"
+  },
   "eslintConfig": {
-    "extends": "sweet",
-    "rules": {
-      "no-undefined": "off",
-      "import/no-extraneous-dependencies": "off"
-    },
-    "globals": {
-      "angular": "readonly"
-    }
+    "extends": "sweet/web",
+    "overrides": [{
+      "files": ["gulpfile.js"],
+      "extends": "sweet/node"
+    }]
   },
   "stylelint": {
     "extends": "stylelint-config-standard",
@@ -64,6 +65,5 @@
       "declaration-colon-newline-after": null,
       "number-leading-zero": "never"
     }
-  },
-  "dependencies": {}
+  }
 }

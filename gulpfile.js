@@ -35,82 +35,82 @@ gulp.task('serve', done => {
 });
 
 gulp.task('less', () => gulp.src('src/less/page.less', {
-        sourcemaps: !production
+    sourcemaps: !production
+  })
+  .pipe(plumber())
+  .pipe(postcss([
+    stylelint(),
+    reporter({
+      clearMessages: true
     })
-    .pipe(plumber())
-    .pipe(postcss([
-      stylelint(),
-      reporter({
-        clearMessages: true
-      })
-    ]))
-    .pipe(less())
-    .pipe(postcss([
-      presetEnv(),
-      production && autoprefixer(),
-      production && cssnano()
-    ].filter(p => p)))
-    .pipe(gulp.dest('dist/css', {
-        sourcemaps: '.'
-    }))
-    .pipe(connect.reload()));
+  ]))
+  .pipe(less())
+  .pipe(postcss([
+    presetEnv(),
+    production && autoprefixer(),
+    production && cssnano()
+  ].filter(p => p)))
+  .pipe(gulp.dest('dist/css', {
+    sourcemaps: '.'
+  }))
+  .pipe(connect.reload()));
 
 gulp.task('img:meta', () => gulp.src('src/img/{apple,favicon,og,poster}*')
-    .pipe(plumber())
-    .pipe(imagemin())
-    .pipe(gulp.dest('dist/img')));
+  .pipe(plumber())
+  .pipe(imagemin())
+  .pipe(gulp.dest('dist/img')));
 
 gulp.task('img:employees', () => gulp.src('src/img/mitarbeiter/*')
-    .pipe(plumber())
-    .pipe(rezzy([{
-      suffix: '-480w'
-    }, {
-      width: 300,
-      suffix: '-300w'
-    }]))
-    .pipe(imagemin())
-    .pipe(gulp.dest('dist/img/mitarbeiter'))
-    .pipe(webp({
-      preset: 'photo',
-      method: 6
-    }))
-    .pipe(gulp.dest('dist/img/mitarbeiter')));
+  .pipe(plumber())
+  .pipe(rezzy([{
+    suffix: '-480w'
+  }, {
+    width: 300,
+    suffix: '-300w'
+  }]))
+  .pipe(imagemin())
+  .pipe(gulp.dest('dist/img/mitarbeiter'))
+  .pipe(webp({
+    preset: 'photo',
+    method: 6
+  }))
+  .pipe(gulp.dest('dist/img/mitarbeiter')));
 
 gulp.task('img:bgs', () => gulp.src([
-      'src/img/*',
-      '!src/img/{apple,favicon,og,poster,sprite}*'
-    ])
-    .pipe(plumber())
-    .pipe(rezzy([{
-      width: 1600,
-      suffix: '-1600w'
-    }, {
-      width: 1200,
-      suffix: '-1200w'
-    }, {
-      width: 800,
-      suffix: '-800w'
-    }, {
-      width: 400,
-      suffix: '-400w'
-    }]))
-    .pipe(imagemin())
-    .pipe(gulp.dest('dist/img'))
-    .pipe(webp({
-      preset: 'photo',
-      method: 6
-    }))
-    .pipe(gulp.dest('dist/img')));
+    'src/img/*',
+    '!src/img/{apple,favicon,og,poster,sprite}*'
+  ])
+  .pipe(plumber())
+  .pipe(rezzy([{
+    width: 1600,
+    suffix: '-1600w'
+  }, {
+    width: 1200,
+    suffix: '-1200w'
+  }, {
+    width: 800,
+    suffix: '-800w'
+  }, {
+    width: 400,
+    suffix: '-400w'
+  }]))
+  .pipe(imagemin())
+  .pipe(gulp.dest('dist/img'))
+  .pipe(webp({
+    preset: 'photo',
+    method: 6
+  }))
+  .pipe(gulp.dest('dist/img')));
 
 gulp.task('files', () => gulp.src([
-      'src/{*,}.*',
-      'src/data/*',
-      'src/img/sprite.svg'
-    ], {
-      base: 'src'
-    })
-    .pipe(gulp.dest('dist'))
-    .pipe(connect.reload()));
+    'src/{*,}.*',
+    'src/data/*',
+    'src/img/sprite.svg'
+  ], {
+    base: 'src'
+  })
+  .pipe(gulp.dest('dist'))
+  .pipe(connect.reload()));
 
 gulp.task('js', async () => {
   const bundle = await rollup({
@@ -153,10 +153,10 @@ gulp.task('watch:img', done => {
 
 gulp.task('watch:files', done => {
   gulp.watch([
-      'src/{*,}.*',
-      'src/data/*',
-      'src/img/sprite.svg'
-    ], gulp.parallel('files'));
+    'src/{*,}.*',
+    'src/data/*',
+    'src/img/sprite.svg'
+  ], gulp.parallel('files'));
   done();
 });
 
