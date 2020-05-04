@@ -1,30 +1,9 @@
-import 'angular';
-import 'angular-cookies';
-import 'angular-translate';
-import 'angular-translate-storage-local';
-import 'angular-translate-storage-cookie';
-import { german, english } from './langs.data';
+import mehrsprachig from 'mehrsprachig';
 
-angular.module('swissPlant', [ 'ngCookies', 'pascalprecht.translate' ])
-  .config([
-    '$translateProvider', $translateProvider => {
-      /* @ngInject */
-      $translateProvider
-        .translations('de', german)
-        .translations('en', english)
-        .preferredLanguage('de')
-        .fallbackLanguage('en')
-        .useLocalStorage()
-        .useSanitizeValueStrategy(undefined);
-    }
-  ])
-  .controller('langCtrl', [
-    '$translate', '$scope', ($translate, $scope) => {
-      /* @ngInject */
-      $scope.changeLang = (langKey, $event) => {
-        $event.preventDefault();
-        $translate.use(langKey);
-        document.documentElement.lang = `${langKey }-ch`;
-      };
-    }
-  ]);
+mehrsprachig({
+  standard: 'de',
+  sources: {
+    de: '/data/de.json',
+    en: '/data/en.json'
+  }
+});

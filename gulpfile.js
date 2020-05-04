@@ -104,6 +104,7 @@ gulp.task('img:bgs', () => gulp.src([
 
 gulp.task('files', () => gulp.src([
       'src/{*,}.*',
+      'src/data/*',
       'src/img/sprite.svg'
     ], {
       base: 'src'
@@ -153,6 +154,7 @@ gulp.task('watch:img', done => {
 gulp.task('watch:files', done => {
   gulp.watch([
       'src/{*,}.*',
+      'src/data/*',
       'src/img/sprite.svg'
     ], gulp.parallel('files'));
   done();

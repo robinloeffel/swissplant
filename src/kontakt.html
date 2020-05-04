@@ -4,16 +4,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" translate-attr="{ content: 'contact.meta.description' }" content="Erfahren Sie, wie Sie am schnellsten zu uns finden oder uns am einfachsten erreichen.">
-  <meta name="keywords" translate-attr="{ content: 'contact.meta.keywords' }" content="kontakt, mail, email, telefon, bern, neuenburg, neuchatel, kerzers, müntschemier, muentschemier, ins, auto, autobahn, ankunft, anfahrt, swissplant, agriplant">
+  <meta name="description" data-mehrsprachig="content=contact.meta.description" content="Erfahren Sie, wie Sie am schnellsten zu uns finden oder uns am einfachsten erreichen.">
+  <meta name="keywords" data-mehrsprachig="content=contact.meta.keywords" content="kontakt, mail, email, telefon, bern, neuenburg, neuchatel, kerzers, müntschemier, muentschemier, ins, auto, autobahn, ankunft, anfahrt, swissplant, agriplant">
   <meta name="apple-mobile-web-app-title" content="SwissPlant">
   <meta name="robots" content="index, follow">
   <meta property="og:url" content="https://swissplant.ch/kontakt.html">
   <meta property="og:image" content="https://swissplant.ch/img/og.jpg">
-  <meta property="og:title" translate-attr="{ content: 'contact.meta.title' }" content="SwissPlant GmbH – Kontakt">
-  <meta property="og:description" translate-attr="{ content: 'contact.meta.description' }" content="Erfahren Sie, wie Sie am schnellsten zu uns finden oder uns am einfachsten erreichen.">
+  <meta property="og:title" data-mehrsprachig="content=contact.meta.title" content="SwissPlant GmbH – Kontakt">
+  <meta property="og:description" data-mehrsprachig="content=contact.meta.description" content="Erfahren Sie, wie Sie am schnellsten zu uns finden oder uns am einfachsten erreichen.">
   <meta property="og:type" content="website">
-  <title translate="contact.meta.title">SwissPlant GmbH – Kontakt</title>
+  <title data-mehrsprachig="contact.meta.title">SwissPlant GmbH – Kontakt</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
   <link rel="stylesheet" href="css/page.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css">
@@ -34,29 +34,29 @@
           </a>
         </li>
         <li class="_header-navigation-item _header-navigation-item-home">
-          <a class="_header-navigation-link" href="." translate="nav.start"></a>
+          <a class="_header-navigation-link" href="." data-mehrsprachig="nav.start"></a>
         </li>
         <li class="_header-navigation-item">
-          <a class="_header-navigation-link" href="firma.html" translate="nav.company"></a>
+          <a class="_header-navigation-link" href="firma.html" data-mehrsprachig="nav.company"></a>
         </li>
         <li class="_header-navigation-item">
-          <a class="_header-navigation-link" href="team.html" translate="nav.team"></a>
+          <a class="_header-navigation-link" href="team.html" data-mehrsprachig="nav.team"></a>
         </li>
         <li class="_header-navigation-item">
-          <a class="_header-navigation-link" href="angebot.html" translate="nav.portfolio"></a>
+          <a class="_header-navigation-link" href="angebot.html" data-mehrsprachig="nav.portfolio"></a>
         </li>
         <li class="_header-navigation-item">
-          <a class="_header-navigation-link" href="partner.html" translate="nav.partners"></a>
+          <a class="_header-navigation-link" href="partner.html" data-mehrsprachig="nav.partners"></a>
         </li>
         <li class="_header-navigation-item">
-          <a class="_header-navigation-link" href="kontakt.html" translate="nav.contact"></a>
+          <a class="_header-navigation-link" href="kontakt.html" data-mehrsprachig="nav.contact"></a>
         </li>
         <li class="_header-navigation-item _header-navigation-lang-container">
             <svg class="_icon _header-navigation-lang-icon">
                  <use href="img/sprite.svg#settings"></use>
             </svg>
-            <a class="_header-navigation-lang-button" data-ng-click="changeLang('de', $event)" href="#">DE</a>
-            <a class="_header-navigation-lang-button" data-ng-click="changeLang('en', $event)" href="#">EN</a>
+            <a class="_header-navigation-lang-button" data-mehrsprachig-trigger="de" href="#">DE</a>
+            <a class="_header-navigation-lang-button" data-mehrsprachig-trigger="en" href="#">EN</a>
         </li>
       </ul>
     </nav>
@@ -71,12 +71,12 @@
     </section>
     <section class="_content">
       <div class="wrapper copytext">
-        <h1 translate="nav.contact"></h1>
-        <h2 translate="contact.from.bern"></h2>
-        <p translate="contact.from.bern.description"></p>
-        <h2 translate="contact.from.neuchatel"></h2>
-        <p translate="contact.from.neuchatel.description"></p>
-        <h2 translate="contact.map"></h2>
+        <h1 data-mehrsprachig="nav.contact"></h1>
+        <h2 data-mehrsprachig="contact.from.bern.heading"></h2>
+        <p data-mehrsprachig="contact.from.bern.description"></p>
+        <h2 data-mehrsprachig="contact.from.neuchatel.heading"></h2>
+        <p data-mehrsprachig="contact.from.neuchatel.description"></p>
+        <h2 data-mehrsprachig="contact.map"></h2>
         <div class="_map"></div>
       </div>
     </section>
@@ -90,25 +90,25 @@
         <svg class="_icon _footer-logo">
           <use href="img/sprite.svg#agriplant-swooshless"></use>
         </svg>
-        <p class="_footer-text" translate="footer.copyright"></p>
+        <p class="_footer-text" data-mehrsprachig="footer.copyright"></p>
       </div>
       <div class="_footer-content-center">
-        <p class="_footer-text" translate="footer.address"></p>
-        <p class="_footer-text" translate="footer.emails"></p>
+        <p class="_footer-text" data-mehrsprachig="html:footer.address"></p>
+        <p class="_footer-text" data-mehrsprachig="html:footer.emails"></p>
       </div>
       <div class="_footer-content-right">
-        <p class="_footer-text" translate="footer.hours"></p>
-        <p class="_footer-text" translate="footer.phone"></p>
+        <p class="_footer-text" data-mehrsprachig="html:footer.hours"></p>
+        <p class="_footer-text" data-mehrsprachig="html:footer.phone"></p>
       </div>
     </div>
     <hr class="_footer-hr">
     <div class="_footer-content">
       <p class="_footer-text">
-        <a href="." translate="nav.start"></a> — <a href="firma.html" translate="nav.company"></a> — <a href="team.html" translate="nav.team"></a> — <a href="angebot.html" translate="nav.portfolio"></a> — <a href="partner.html" translate="nav.partners"></a> — <a href="kontakt.html" translate="nav.contact"></a>
+        <a href="." data-mehrsprachig="nav.start"></a> — <a href="firma.html" data-mehrsprachig="nav.company"></a> — <a href="team.html" data-mehrsprachig="nav.team"></a> — <a href="angebot.html" data-mehrsprachig="nav.portfolio"></a> — <a href="partner.html" data-mehrsprachig="nav.partners"></a> — <a href="kontakt.html" data-mehrsprachig="nav.contact"></a>
       </p>
     </div>
     <div class="_footer-content">
-      <p class="_footer-text" translate="footer.robin"></p>
+      <p class="_footer-text" data-mehrsprachig="html:footer.robin"></p>
     </div>
   </footer>
   <script src="js/page.js"></script>

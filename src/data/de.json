@@ -1,0 +1,197 @@
+{
+  "nav": {
+    "company": "Firma",
+    "team": "Team",
+    "portfolio": "Angebot",
+    "partners": "Partner",
+    "contact": "Kontakt",
+    "start": "Start"
+  },
+  "home": {
+    "meta": {
+      "title": "SwissPlant GmbH – Ihr Spezialist für Gemüsejungpflanzen",
+      "description": "Die Swissplant GmbH ist Ihr Ansprechpartner für professionellen Gemüseanbau im Berner Seeland. Bei uns bekommen Sie Warmhauspflanzen in verschiedenen Varianten.",
+      "keywords": "gemüse, gemuese, jungpflanzen, setzlinge, salat, schweiz, seeland, müntschemier, muentschemier, swissplant, agriplant, swissplant gmbh, agriplant ag, anbau, warmhauspflanzen, distro"
+    },
+    "about": {
+      "heading": "Wer wir sind",
+      "intro": "Die Firma SwissPlant GmbH ist Verkaufsstelle für Gemüsejungpflanzen der Firmen AgriPlant AG Schweiz und Gipmans Holland."
+    },
+    "portfolio": {
+      "heading": "Was wir Ihnen bieten",
+      "intro": "Unser Produktionsstandort der Firma AgriPlant AG befindet sich im Berner Seeland. Die zentrale Lage der Firma bietet uns die Möglichkeit Sie schnell und kompetent zu beliefern."
+    },
+    "partners": {
+      "heading": "Mit wem wir arbeiten",
+      "intro": "Die Firma Gipmans aus Holland beliefert uns als Sortimentsergänzung mit Warmhaus- und Speedypflanzen."
+    },
+    "contact": {
+      "heading": "Wie Sie uns erreichen",
+      "intro": "Wir stehen natürlich gerne für allfällige Informationen und Ratschläge zur Verfügung. Egal, ob E-Mail, Telefon oder vor Ort."
+    },
+    "button": {
+      "more": "Mehr erfahren"
+    }
+  },
+  "company": {
+    "meta": {
+      "title": "SwissPlant GmbH – Firma",
+      "description": "Informieren Sie sich darüber, wie die SwissPlant GmbH funktioniert.",
+      "keywords": "über uns, anfang, geschichte, müntschemier, erfahrung, gemüsebau, kompetent, muentschemier, swissplant, agriplant, swissplant gmbh, agriplant ag"
+    },
+    "copy": {
+      "first": "Den Anfang nehmen all diese Gemüse und Salate als Jungpflanzen, die von der Firma AgriPlant AG in Müntschemier angezogen werden. Geschäftsführer unserer Firmen Martin Löffel, fasst den Weg der Keimlinge bis hin zu ausgewachsenen Pflanzen so zusammen: &laquo;Wir stehen als Zulieferbetrieb der Gemüsebaubetriebe am Anfang der Produktionskette und kultivieren die Jungpflanzen, die anschliessend von den Gemüsegärtnern gepflanzt werden.&raquo;",
+      "second": "Die Handelsfirma SwissPlant GmbH, bietet Ihnen Gemüsejungpflanzen in allen möglichen Variationen und Grössen an. Durch unsere jahrelange Erfahrung im Gemüsebau können wir Ihnen eine kompetente und fachspezifische Beratung für unsere klimatischen Bedingungen garantieren. <a href=\"./angebot.html\">Unser Sortiment</a> ist eine Zusammenstellung aus verschiedenen Züchtungsprogrammen der weltweit tätigen Anbieter von Hochleistungssaatgut.",
+      "third": "Die AgriPlant AG erweiterte im Jahre 2016 ihre Betriebsfläche um 8'130km² auf insgesamt 42'000km². Mit dieser Erweiterung stiess die bestehende Heizölanlage an ihre Grenzen. Darum steht eine neue Zentrale mit Holzhackschnitzelheizung im Bau. Durch die Realisierung dieses Projektes kann die AgriPlant AG ihren CO₂-Ausstoss trotz dem Ausbau um satte 123 Tonnen reduzieren! Mittlerweile ist das Unternehmen zu 80% CO₂-neutral.",
+      "fourth": "Zu unseren Zulieferfirmen im Bereich Saatgut gehören: <a href=\"http://bejosamen.de\">Bejo</a>, <a href=\"http://enzazaden.de\">Enza</a>, <a href=\"http://rijkzwaan.de\">Rijk Zwaan</a>, <a href=\"http://hildsamen.de/ueber_uns.htm\">Hild</a>, <a href=\"http://syngenta.ch\">Syngenta</a> und <a href=\"http://www.sakata.com\">Sakata</a>. Unsere Anzuchterde beziehen wir bei den Firmen <a href=\"http://floragard.de\">Floragard</a> und <a href=\"http://klasmann-deilmann.com\">Klasmann</a>."
+    }
+  },
+  "team": {
+    "meta": {
+      "title": "SwissPlant GmbH – Team",
+      "description": "Erfahren Sie, wer bei der SwissPlant GmbH angestellt ist.",
+      "keywords": "mitarbeiter, angestellte, sales, kontaktdaten, muentschemier, müntschemier, swissplant, agriplant, swissplant gmbh, agriplant ag"
+    },
+    "martin": {
+      "alt": "Martin Löffel, Geschäftsführer",
+      "position": "Geschäftsführer & Verkauf"
+    },
+    "telja": {
+      "alt": "Telja Baumann, Administration",
+      "position": "Administration & Verkauf"
+    },
+    "pascal": {
+      "alt": "Pascal Probst, Verkauf und Logistik",
+      "position": "Verkauf & Logistik"
+    },
+    "sandro": {
+      "alt": "Sandro Löffel, Warendispo",
+      "position": "Warendispo & Stv. Betriebsleiter"
+    },
+    "ivan": {
+      "alt": "Ivan Gross, Betriebsleiter Gewächshaus",
+      "position": "Leiter Gewächshaus"
+    },
+    "shpend": {
+      "alt": "Shpend Thaqi, Leiter Produktionsanlage",
+      "position": "Leiter Produktionsanlage"
+    },
+    "andrzej": {
+      "alt": "Andrzej Mojsym, Mechaniker und Chauffeur",
+      "position": "Mechaniker & Chauffeur"
+    },
+    "hans-peter": {
+      "alt": "Hans-Peter Schwab, Chauffeur",
+      "position": "Interner Transport & Chauffeur"
+    },
+    "damian": {
+      "alt": "Damian Makarewicz, Stv. Leiter Produktionsanlage",
+      "position": "Stv. Leiter Produktionsanlage"
+    },
+    "mariusz": {
+      "alt": "Mariusz Wronski, Interner Transport",
+      "position": "Interner Transport"
+    },
+    "barbara": {
+      "alt": "Barbara Dubler, Interner Transport",
+      "position": "Interner Transport"
+    },
+    "krzysztof": {
+      "alt": "Mariusz Wronski, Maschinenführer",
+      "position": "Maschinenführer"
+    }
+  },
+  "portfolio": {
+    "meta": {
+      "title": "SwissPlant GmbH – Angebot",
+      "description": "Schauen Sie sich unser Angebot an. Wir bieten Warmhauspflanzen verschiedener Sorten an.",
+      "keywords": "salat, sellerie, kohl, zucchini, tomaten, gurken, lauch, fenchel, setzlinge, warmhauspflanzen, steinwolle, erde, jungpflanzen, angebot, swissplant, agriplant"
+    },
+    "table": {
+      "1x1": "3.2cm-Einzeltopf",
+      "1x2": "Buntsalate, Nüssler, Sellerie und Lauch",
+      "10x1": "3.2cm-Doppeltopf",
+      "10x2": "Buntsalate, Nüssler, Sellerie und Lauch",
+      "11x1": "3.7cm-Einzeltopf",
+      "11x2": "Buntsalate, Nüssler, Sellerie und Lauch",
+      "12x1": "3.7cm-Riegeltopf",
+      "12x2": "Buntsalate, Sellerie und Lauch",
+      "2x1": "4cm-Einzeltopf",
+      "2x2": "Buntsalate, Nüssler, Sellerie und Lauch",
+      "3x1": "4cm-Riegeltopf",
+      "3x2": "Buntsalate, Sellerie und Lauch",
+      "13x1": "5cm-Einzeltopf",
+      "13x2": "Buntsalate",
+      "4x1": "6cm-Geklebt",
+      "4x2": "Zucchetti",
+      "6x1": "Superseedling",
+      "6x2": "Lauch und Fenchel",
+      "7x1": "G195",
+      "7x2": "Kohlarten und Sellerie",
+      "8x1": "G280",
+      "8x2": "Kohlarten und Sellerie",
+      "9x1": "PT770",
+      "9x2": "Lauch- und Kohlarten",
+      "14x1": "TQ 10.5",
+      "14x2": "Warmhauspflanzen Hobbybereich unveredelt"
+    },
+    "description": "Alle Topfvarianten (3.2cm–6cm) werden in unserem Haus produziert, die übrigen Arten lassen wir von <a href=\"./partner.html\">unseren holländischen Partnern</a> herstellen. Wir bieten auch Warmhauspflanzen in verschiedenen Varianten an. Über unser reichhaltiges Jungpflanzensortiment informieren wir Sie gerne. Für kundenspezifische Auskünfte oder Fragen steht Ihnen <a href=\"./team.html\">unser Verkaufspersonal</a> jederzeit zur Verfügung."
+  },
+  "partners": {
+    "meta": {
+      "title": "SwissPlant GmbH – Partner",
+      "description": "Wir arbeiten Hand in Hand mit unseren Partnern. Erfahren Sie mehr über unsere Kooperationen.",
+      "keywords": "partner, geschäftspartner, partnerfirmen, partnerfirma, agriplant, agriplant ag, gipmans, gipmans holland, swissplant, kundschaft, spedition, wissen, können, innovationen, qualität"
+    },
+    "agriplant": {
+      "heading": "AgriPlant AG",
+      "description": {
+        "first": "Durch unseren ortsansässigen Produktionsbetrieb wachsen unsere Jungpflanzen im selben «Haus», wo sie anschliessend weiter kultiviert werden. Dank der individuellen Ausliefertage und den kurzen Transportdistanzen zum Kunden, können wir Ihnen stressfreie Pflanzen anbieten.",
+        "second": "Um alle Wünsche und Bedürfnisse der Kundschaft zu erfüllen, stehen verschiedene Kulturräume zur Verfügung. Der Betrieb ist in der Lage Jungpflanzen von Auberginen bis Zwiebeln bestens zu kultivieren. Die Gewächshäuser entsprechen den neusten technischen Erkenntnissen im Gewächshausbau. Freilandflächen und Cabrio-Häuser zum Abhärten der Pflanzen garantieren optimale Startbedingungen nach dem Pflanzen."
+      }
+    },
+    "gipmans": {
+      "heading": "Gipmans Holland",
+      "description": {
+        "first": "Bei der Firma <a href=\"http://gipmans.nl\">Gipmans</a> in Holland lassen wir unsere Speedy- und Warmhauspflanzen aussäen. Traypflanzen werden halbfertig bezogen, um sie anschliessend bei uns fertig zu kultivieren. Warmhauspflanzen werden fertig zu uns geliefert und durch unsere eigene Betriebsspedition direkt zum Kunden geliefert.",
+        "second": "Die Firma Gipmans steht für eine marktorientiertes Wissen und Können. Gemeinsame Wissensentwicklungen und Innovationen führen nicht nur zu einem besseren Ertrag, sondern tragen auch dazu bei, dass wir uns weitaus besser auf Ihre jeweils spezifische Marktsituation und die gewünschte Qualität einstellen können."
+      }
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "SwissPlant GmbH – Kontakt",
+      "description": "Erfahren Sie, wie Sie am schnellsten zu uns finden oder uns am einfachsten erreichen.",
+      "keywords": "kontakt, mail, email, telefon, bern, neuenburg, neuchatel, kerzers, müntschemier, muentschemier, ins, auto, autobahn, ankunft, anfahrt, swissplant, agriplant"
+    },
+    "from": {
+      "bern": {
+        "heading": "Von Bern her",
+        "description": "Autobahn Bern–Neuenburg Ausfahrt Kerzers anschliessend Richtung Neuenburg. In Müntschemier Richtung Bahnhof. Firmenwegweiser beachten."
+      },
+      "neuchatel": {
+        "heading": "Von Neuchâtel her",
+        "description": "Richtung Ins–Müntschemier anschliessend in Müntschemier Richtung Bahnhof. Firmenwegweiser beachten."
+      }
+    },
+    "map": "Karte"
+  },
+  "common": {
+    "logo": {
+      "swissplant": {
+        "alt": "Logo der SwissPlant GmbH"
+      },
+      "agriplant": {
+        "alt": "Logo der AgriPlant AG"
+      }
+    }
+  },
+  "footer": {
+    "address": "Spitzallmendweg 11c<br>CH-3225 Müntschemier",
+    "phone": "<a href=\"tel:+41323135210\">+41 32 313 52 10</a>",
+    "hours": "Montag bis Freitag<br>07:30–11:45 Uhr<br>13:30–17:30 Uhr",
+    "emails": "<a href=\"mailto:info@swissplant.ch\">info@swissplant.ch</a><br><a href=\"mailto:info@agriplant.ch\">info@agriplant.ch</a>",
+    "robin": "Entwickelt und gestaltet von <a href=\"https://robinloeffel.ch\">Robin Löffel</a>",
+    "copyright": "© SwissPlant GmbH 2020"
+  }
+}

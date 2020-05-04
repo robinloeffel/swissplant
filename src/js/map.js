@@ -3,7 +3,7 @@ import L from 'leaflet';
 const node = document.querySelector('._map');
 
 if (node) {
-  window.addEventListener('load', () => {
+  window.addEventListener('DOMContentLoaded', () => {
     const map = L.map(node).setView([ 46.9902244, 7.1445924 ], 14);
 
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
