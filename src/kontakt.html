@@ -1,5 +1,5 @@
 <!doctype html>
-<html data-ng-app="swissPlant" lang="de-ch">
+<html lang="de-ch">
 
 <head>
   <meta charset="utf-8">
@@ -22,14 +22,14 @@
   <link rel="canonical" href="https://swissplant.ch/kontakt.html">
 </head>
 
-<body ng-controller="langCtrl">
-  <header class="_header" ng-cloak translate-cloak>
+<body>
+  <header class="_header">
     <nav class="_header-navigation">
       <ul class="_header-navigation-list">
         <li class="_header-navigation-item">
           <a href="./" class="_header-navigation-link">
             <svg class="_icon _header-navigation-logo">
-                 <use href="img/sprite.svg#swissplant-swooshless"></use>
+              <use href="img/sprite.svg#swissplant-swooshless"></use>
             </svg>
           </a>
         </li>
@@ -53,7 +53,7 @@
         </li>
         <li class="_header-navigation-item _header-navigation-lang-container">
             <svg class="_icon _header-navigation-lang-icon">
-                 <use href="img/sprite.svg#settings"></use>
+              <use href="img/sprite.svg#settings"></use>
             </svg>
             <a class="_header-navigation-lang-button" data-mehrsprachig-trigger="de" href="#">DE</a>
             <a class="_header-navigation-lang-button" data-mehrsprachig-trigger="en" href="#">EN</a>
@@ -61,13 +61,15 @@
       </ul>
     </nav>
   </header>
-  <main ng-cloak>
+  <main>
     <section class="_landing _landing--small">
-      <picture>
-        <source type="image/webp" srcset="img/four-400w.webp 400w, img/four-800w.webp 800w, img/four-1200w.webp 1200w, img/four-1600w.webp 1600w">
-        <source type="image/jpeg" srcset="img/four-400w.jpg 400w, img/four-800w.jpg 800w, img/four-1200w.jpg 1200w, img/four-1600w.jpg 1600w">
-        <img class="_split-image" src="img/four-400w.jpg" loading="lazy" alt="">
-      </picture>
+      <div class="_landing-images">
+        <picture>
+          <source type="image/webp" srcset="img/four-400w.webp 400w, img/four-800w.webp 800w, img/four-1200w.webp 1200w, img/four-1600w.webp 1600w">
+          <source type="image/jpeg" srcset="img/four-400w.jpg 400w, img/four-800w.jpg 800w, img/four-1200w.jpg 1200w, img/four-1600w.jpg 1600w">
+          <img class="_landing-image _landing-image-visible" src="img/four-400w.jpg" loading="lazy" alt="">
+        </picture>
+      </div>
     </section>
     <section class="_content">
       <div class="wrapper copytext">
@@ -81,7 +83,7 @@
       </div>
     </section>
   </main>
-  <footer class="_footer" ng-cloak>
+  <footer class="_footer">
     <div class="_footer-content">
       <div class="_footer-content-left">
         <svg class="_icon _footer-logo">
