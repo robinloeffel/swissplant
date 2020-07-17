@@ -15,10 +15,10 @@ const stylelint = require('stylelint');
 const presetEnv = require('postcss-preset-env');
 const { rollup } = require('rollup');
 const buble = require('@rollup/plugin-buble');
-const resolve = require('@rollup/plugin-node-resolve');
+const { nodeResolve } = require('@rollup/plugin-node-resolve');
 const commonjs = require('@rollup/plugin-commonjs');
 const { terser } = require('rollup-plugin-terser');
-const { eslint } = require('rollup-plugin-eslint');
+const eslint = require('@rbnlffl/rollup-plugin-eslint');
 
 const production = !process.argv.includes('--dev');
 
@@ -117,7 +117,7 @@ gulp.task('js', async () => {
     input: 'src/js/main.js',
     plugins: [
       eslint(),
-      resolve(),
+      nodeResolve(),
       commonjs(),
       production && buble(),
       production && terser({
