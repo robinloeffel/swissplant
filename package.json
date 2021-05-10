@@ -1,10 +1,12 @@
 {
   "name": "swissplant",
+  "version": "1.1.0",
   "description": "Site for SwissPlant Ltd.",
-  "homepage": "http://swissplant.ch",
+  "homepage": "https://swissplant.ch",
+  "repository": "https://github.com/robinloeffel/swissplant.git",
+  "bugs": "https://github.com/robinloeffel/swissplant/issues",
   "author": "Robin Löffel <hi@robinloeffel.ch> (https://robinloeffel.ch)",
   "license": "MIT",
-  "repository": "robinloeffel/swissplant",
   "devDependencies": {
     "@rbnlffl/rollup-plugin-eslint": "^1.0.0",
     "@rollup/plugin-buble": "^0.21.3",
@@ -42,32 +44,5 @@
     "prod": "gulp",
     "dist": "gulp clean && gulp build",
     "start": "yarn dev"
-  },
-  "browserslist": [
-    "last 2 major versions and >1% in ch",
-    "not dead",
-    "not ie 11"
-  ],
-  "engines": {
-    "node": ">=14"
-  },
-  "eslintConfig": {
-    "extends": "sweet/web",
-    "overrides": [
-      {
-        "files": [
-          "gulpfile.js"
-        ],
-        "extends": "sweet/node"
-      }
-    ]
-  },
-  "stylelint": {
-    "extends": "stylelint-config-standard",
-    "rules": {
-      "indentation": 2,
-      "declaration-colon-newline-after": null,
-      "number-leading-zero": "never"
-    }
   }
 }
