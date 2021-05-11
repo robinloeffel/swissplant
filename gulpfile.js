@@ -9,16 +9,12 @@ const rezzy = require('gulp-rezzy');
 const webp = require('gulp-webp');
 const postcss = require('gulp-postcss');
 const reporter = require('postcss-reporter');
-const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const stylelint = require('stylelint');
 const presetEnv = require('postcss-preset-env');
-const { rollup } = require('rollup');
-const buble = require('@rollup/plugin-buble');
-const { nodeResolve } = require('@rollup/plugin-node-resolve');
-const commonjs = require('@rollup/plugin-commonjs');
-const { terser } = require('rollup-plugin-terser');
-const eslint = require('@rbnlffl/rollup-plugin-eslint');
+const ws = require('webpack-stream');
+const webpackConfig = require('./webpack.config.js');
+const webpack = require('webpack');
 
 const production = !process.argv.includes('--dev');
 
@@ -47,7 +43,6 @@ gulp.task('less', () => gulp.src('src/less/page.less', {
   .pipe(less())
   .pipe(postcss([
     presetEnv(),
-    production && autoprefixer(),
     production && cssnano()
   ].filter(p => p)))
   .pipe(gulp.dest('dist/css', {
@@ -112,29 +107,11 @@ gulp.task('files', () => gulp.src([
   .pipe(gulp.dest('dist'))
   .pipe(connect.reload()));
 
-gulp.task('js', async () => {
-  const bundle = await rollup({
-    input: 'src/js/main.js',
-    plugins: [
-      eslint(),
-      nodeResolve(),
-      commonjs(),
-      production && buble(),
-      production && terser({
-        output: {
-          comments: false
-        }
-      })
-    ].filter(p => p)
-  });
-
-  await bundle.write({
-    sourcemap: !production,
-    file: 'dist/js/page.js',
-    format: 'iife'
-  });
-});
-
+gulp.task('js', () => gulp.src('src/js/main.js')
+.pipe(plumber())
+.pipe(ws(webpackConfig, webpack))
+.pipe(gulp.dest('dist/js'))
+.pipe(connect.reload()));
 
 gulp.task('watch:less', done => {
   gulp.watch('src/less/**/*', gulp.parallel('less'));
