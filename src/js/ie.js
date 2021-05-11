@@ -1,28 +1,25 @@
-import 'mdn-polyfills/Node.prototype.append';
-import 'mdn-polyfills/Node.prototype.remove';
+if (
+  !window.fetch ||
+  !NodeList.prototype.forEach ||
+  !('scrollBehavior' in document.body.style)
+) {
+  import(
+      /* webpackChunkName: 'ie11-notice' */
+      '../partials/ie11-notice.html'
+  ).then(({
+    default: ie11NoticeAsText
+  }) => {
+    const domParser = new DOMParser();
+    const ie11NoticeDocument = domParser.parseFromString(ie11NoticeAsText, 'text/html');
 
-if (!NodeList.prototype.forEach) {
-  const body = document.querySelector('body');
-  const notice = document.createElement('div');
-  const content = document.createElement('div');
-  const heading = document.createElement('h1');
-  const paragraph = document.createElement('p');
-  const anyway = document.createElement('a');
+    const noticeContainer = ie11NoticeDocument.querySelector('[data-notice-container]');
+    const noticeRemoveTrigger = ie11NoticeDocument.querySelector('[data-notice-remove-trigger]');
 
-  notice.classList.add('_notice');
-  content.classList.add('_notice-content');
-  heading.textContent = 'Ihr Browser ist veraltet';
-  paragraph.innerHTML = 'Sie verwenden den Internet Explorer – dieser Browser wird von Microsoft nicht mehr gewartet. Auf dieser und vielen anderen Webseiten können Probleme auftreten. Um schnell und sicher im Internet zu surfen, wechseln Sie zu <a href="https://www.mozilla.org/de/firefox">Mozilla Firefox</a>, <a href="https://www.google.com/intl/de/chrome">Google Chrome</a> oder <a href="https://www.microsoft.com/de-ch/windows/microsoft-edge">Microsoft Edge</a>.';
-  anyway.textContent = 'Trotzdem weiter zur Webseite.';
-  anyway.href = '#';
-  anyway.addEventListener('click', event => {
-    event.preventDefault();
-    notice.remove();
+    noticeRemoveTrigger.addEventListener('click', event => {
+      event.preventDefault();
+      document.body.removeChild(noticeContainer);
+    });
+
+    document.body.appendChild(noticeContainer);
   });
-
-  content.append(heading);
-  content.append(paragraph);
-  content.append(anyway);
-  notice.append(content);
-  body.append(notice);
 }
