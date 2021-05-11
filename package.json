@@ -25,6 +25,7 @@
     "leaflet": "^1.7.1",
     "mehrsprachig": "^0.8.0",
     "open": "^8.0.8",
+    "postcss": "^8.2.15",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0",
     "terser-webpack-plugin": "^5.1.1",
