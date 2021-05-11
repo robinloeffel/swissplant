@@ -16,7 +16,6 @@
   <title data-mehrsprachig="contact.meta.title">SwissPlant GmbH – Kontakt</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
   <link rel="stylesheet" href="css/page.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css">
   <link rel="shortcut icon" href="img/favicon.png">
   <link rel="apple-touch-icon" href="img/apple.png">
   <link rel="canonical" href="https://swissplant.ch/kontakt.html">
@@ -79,7 +78,9 @@
         <h2 data-mehrsprachig="contact.from.neuchatel.heading"></h2>
         <p data-mehrsprachig="contact.from.neuchatel.description"></p>
         <h2 data-mehrsprachig="contact.map"></h2>
-        <div class="_map"></div>
+        <div class="_map">
+          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+        </div>
       </div>
     </section>
   </main>
