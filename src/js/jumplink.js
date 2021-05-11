@@ -1,19 +1,21 @@
-import jump from 'jump.js';
-
 const links = document.querySelectorAll('[data-scroll-target]');
 
-const scrollToTarget = event => {
-  let anchor = event.target;
+if (links.length > 0) {
+  const smoothScroll = event => {
+    event.preventDefault();
 
-  while (!anchor.dataset.scrollTarget) {
-    anchor = anchor.parentNode;
-  }
+    const { scrollTarget: selector } = event.target.dataset;
+    const { offsetTop: targetOffset } = document.querySelector(selector);
+    const navigationHeight = document.querySelector('._header').clientHeight;
 
-  jump(anchor.dataset.scrollTarget);
+    window.scrollTo({
+      top: targetOffset - navigationHeight,
+      behavior: 'smooth'
+    });
+  };
 
-  event.preventDefault();
-};
+  links.forEach(link => {
+    link.addEventListener('click', smoothScroll);
+  });
+}
 
-links.forEach(link => {
-  link.addEventListener('click', scrollToTarget);
-});
