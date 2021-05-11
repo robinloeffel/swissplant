@@ -7,16 +7,15 @@ const less = require('gulp-less');
 const imagemin = require('gulp-imagemin');
 const rezzy = require('gulp-rezzy');
 const webp = require('gulp-webp');
+const rename = require('gulp-rename');
 const postcss = require('gulp-postcss');
-const reporter = require('postcss-reporter');
 const cssnano = require('cssnano');
 const stylelint = require('stylelint');
-const presetEnv = require('postcss-preset-env');
 const ws = require('webpack-stream');
 const webpackConfig = require('./webpack.config.js');
 const webpack = require('webpack');
 
-const production = !process.argv.includes('--dev');
+const development = process.argv.includes('--dev');
 
 
 gulp.task('clean', () => del('dist'));
@@ -30,21 +29,18 @@ gulp.task('serve', done => {
   done();
 });
 
-gulp.task('less', () => gulp.src('src/less/page.less', {
-    sourcemaps: !production
+gulp.task('less', () => gulp.src('src/less/main.less', {
+    sourcemaps: development
   })
   .pipe(plumber())
   .pipe(postcss([
-    stylelint(),
-    reporter({
-      clearMessages: true
-    })
+    stylelint()
   ]))
   .pipe(less())
   .pipe(postcss([
-    presetEnv(),
-    production && cssnano()
-  ].filter(p => p)))
+    !development && cssnano()
+  ].filter(plugin => plugin)))
+  .pipe(rename('swissplant.css'))
   .pipe(gulp.dest('dist/css', {
     sourcemaps: '.'
   }))

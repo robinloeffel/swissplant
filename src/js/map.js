@@ -1,12 +1,12 @@
 const mapContainer = document.querySelector('._map');
 
 if (mapContainer) {
-  import(
-    /* webpackChunkName: 'leaflet' */
-    'leaflet'
-  ).then(({
-    default: Leaflet
-  }) => {
+  const initializeMap = async () => {
+    const Leaflet = await import(
+      /* webpackChunkName: 'leaflet' */
+      'leaflet/dist/leaflet-src.esm'
+    );
+
     const leafletMap = Leaflet.map(mapContainer);
     leafletMap.setView([ 46.9902244, 7.1445924 ], 14);
 
@@ -21,5 +21,7 @@ if (mapContainer) {
     }).addTo(leafletMap);
 
     Leaflet.marker([ 46.9902244, 7.1445924 ]).addTo(leafletMap);
-  });
+  };
+
+  initializeMap();
 }

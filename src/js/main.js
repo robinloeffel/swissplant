@@ -1,8 +1,6 @@
-import './ie';
-
-import './i18n';
-import './map';
+import './internationalization';
+import './navigation';
 import './hero';
 import './jumplink';
-import './navigation';
+import './map';
 import './spritesheet';
