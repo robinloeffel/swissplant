@@ -1,6 +1,4 @@
-const pageHasIcons = document.querySelectorAll('.icon').length > 0;
-
-if (pageHasIcons) {
+if (document.querySelectorAll('.icon').length > 0) {
   const inject = async () => {
     const domParser = new DOMParser();
     const response = await fetch('/img/sprite.svg');

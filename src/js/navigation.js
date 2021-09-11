@@ -1,7 +1,6 @@
 const trigger = document.querySelector('.header-navigation-link');
 const navigation = document.querySelector('.header');
 
-let match = false;
 let listening = false;
 
 const toggle = event => {
@@ -10,7 +9,7 @@ const toggle = event => {
 };
 
 const checkMatch = () => {
-  match = matchMedia('(max-width: 900px)').matches;
+  const match = matchMedia('(max-width: 900px)').matches;
 
   if (match && !listening) {
     trigger.addEventListener('click', toggle);

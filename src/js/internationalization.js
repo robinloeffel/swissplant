@@ -1,8 +1,11 @@
 import mehrsprachig from 'mehrsprachig';
 
-document.addEventListener('mehrsprachigTranslated', ({ detail: language }) => {
-  document.documentElement.lang = language;
-});
+document.addEventListener(
+  'mehrsprachigTranslated',
+  ({ detail: language }) => {
+    document.documentElement.lang = language;
+  }
+);
 
 mehrsprachig({
   standard: 'de',

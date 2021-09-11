@@ -2,17 +2,20 @@ const images = document.querySelectorAll('.landing-image');
 
 if (images.length > 0) {
   const visibleClass = 'landing-image-visible';
-  let [ currentlyVisible ] = images;
-  currentlyVisible.classList.add(visibleClass);
+  let index = 0;
 
-  window.setInterval(() => {
-    const hasNextSibling = !!currentlyVisible.parentElement.nextElementSibling;
-    const nextVisible = hasNextSibling
-      ? currentlyVisible.parentElement.nextElementSibling.lastElementChild
-      : images[0];
+  const rotate = () => {
+    const toShow = images.item(index);
+    const toHide = images.item(index - 1) ? images.item(index - 1) : images.item(images.length - 1);
 
-    currentlyVisible.classList.remove(visibleClass);
-    nextVisible.classList.add(visibleClass);
-    currentlyVisible = nextVisible;
-  }, 7500);
+    window.requestAnimationFrame(() => {
+      toShow.classList.add(visibleClass);
+      toHide.classList.remove(visibleClass);
+    });
+
+    index = index > images.length - 2 ? 0 : index + 1;
+  };
+
+  window.setInterval(rotate, 7500);
+  rotate();
 }
