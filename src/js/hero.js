@@ -1,6 +1,6 @@
 const images = document.querySelectorAll('.landing-image');
 
-if (images.length > 0) {
+if (images.length > 1) {
   const visibleClass = 'landing-image-visible';
   let index = 0;
 
