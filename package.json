@@ -23,7 +23,6 @@
     "gulp-imagemin": "7",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^9.0.1",
-    "gulp-rename": "^2.0.0",
     "gulp-rezzy": "^1.1.0",
     "gulp-webp": "^4.0.1",
     "mehrsprachig": "^0.8.0",

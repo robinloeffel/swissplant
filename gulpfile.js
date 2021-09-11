@@ -7,7 +7,6 @@ const sass = require('@rbnlffl/gulp-sass');
 const imagemin = require('gulp-imagemin');
 const rezzy = require('gulp-rezzy');
 const webp = require('gulp-webp');
-const rename = require('gulp-rename');
 const postcss = require('gulp-postcss');
 const stylelint = require('stylelint');
 const env = require('postcss-preset-env');
@@ -26,12 +25,16 @@ gulp.task('open', () => open('http://localhost:8080'));
 gulp.task('serve', done => {
   connect.server({
     livereload: true,
-    root: 'dist'
+    root: 'dist',
+    host: '0.0.0.0'
   });
   done();
 });
 
-gulp.task('sass', () => gulp.src('src/css/index.scss', {
+gulp.task('sass', () => gulp.src([
+    'src/css/swissplant.scss',
+    'src/css/ie.scss'
+  ], {
     sourcemaps: development
   })
   .pipe(plumber())
@@ -43,7 +46,6 @@ gulp.task('sass', () => gulp.src('src/css/index.scss', {
     env(),
     !development && cssnano()
   ].filter(plugin => plugin)))
-  .pipe(rename('swissplant.css'))
   .pipe(gulp.dest('dist/css', {
     sourcemaps: '.'
   }))
@@ -106,7 +108,7 @@ gulp.task('files', () => gulp.src([
   .pipe(gulp.dest('dist'))
   .pipe(connect.reload()));
 
-gulp.task('js', () => gulp.src('src/js/index.js')
+gulp.task('js', () => gulp.src('src/js/swissplant.js')
 .pipe(plumber())
 .pipe(rollup({
   plugins: [
@@ -118,7 +120,6 @@ gulp.task('js', () => gulp.src('src/js/index.js')
 }, {
   format: 'iife'
 }))
-.pipe(rename('swissplant.js'))
 .pipe(gulp.dest('dist/js'))
 .pipe(connect.reload()));
 

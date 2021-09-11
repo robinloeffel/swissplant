@@ -3,6 +3,10 @@
 
 <head>
   <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="css/swissplant.css" as="style">
+  <link rel="preload" href="js/swissplant.js" as="script">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" data-mehrsprachig="content=contact.meta.description" content="Erfahren Sie, wie Sie am schnellsten zu uns finden oder uns am einfachsten erreichen.">
   <meta name="keywords" data-mehrsprachig="content=contact.meta.keywords" content="kontakt, mail, email, telefon, bern, neuenburg, neuchatel, kerzers, müntschemier, muentschemier, ins, auto, autobahn, ankunft, anfahrt, swissplant, agriplant">
@@ -14,12 +18,17 @@
   <meta property="og:description" data-mehrsprachig="content=contact.meta.description" content="Erfahren Sie, wie Sie am schnellsten zu uns finden oder uns am einfachsten erreichen.">
   <meta property="og:type" content="website">
   <title data-mehrsprachig="contact.meta.title">SwissPlant GmbH – Kontakt</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
-  <link rel="stylesheet" href="css/swissplant.css">
   <link rel="shortcut icon" href="img/favicon.png">
   <link rel="apple-touch-icon" href="img/apple.png">
   <link rel="canonical" href="https://swissplant.ch/kontakt.html">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+  <link rel="stylesheet" href="css/swissplant.css">
   <script src="js/swissplant.js" defer></script>
+  <script>
+    if ('documentMode' in document) {
+      window.location = 'ie.html';
+    }
+  </script>
 </head>
 
 <body>
@@ -79,13 +88,11 @@
         <h2 data-mehrsprachig="contact.from.neuchatel.heading"></h2>
         <p data-mehrsprachig="contact.from.neuchatel.description"></p>
         <h2 data-mehrsprachig="contact.map"></h2>
-        <div class="_map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d87077.36113973339!2d7.146476148343918!3d46.99768327720842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478e1186bcd0321b%3A0x438446635d8d02ab!2sSwissPlant%20GmbH!5e0!3m2!1sen!2sch!4v1631345560961!5m2!1sen!2sch"
-            loading="lazy"
-            class="_map _split-map"
-          ></iframe>
-        </div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d87077.36113973339!2d7.146476148343918!3d46.99768327720842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478e1186bcd0321b%3A0x438446635d8d02ab!2sSwissPlant%20GmbH!5e0!3m2!1sen!2sch!4v1631345560961!5m2!1sen!2sch"
+          loading="lazy"
+          class="_map"
+        ></iframe>
       </div>
     </section>
   </main>

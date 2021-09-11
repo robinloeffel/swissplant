@@ -33,7 +33,8 @@
     flex-direction: column;
     height: auto;
 
-    &-image {
+    &-image,
+    &-map {
       display: none;
     }
 

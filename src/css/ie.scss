@@ -1,0 +1,38 @@
+@use 'variables';
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color: variables.$color-text;
+  font-size: variables.$font-size;
+  font-family: sans-serif;
+  line-height: 1.6;
+  background-color: variables.$color-white;
+}
+
+body {
+  width: 80%;
+  max-width: 680px;
+  margin: 200px auto;
+}
+
+h1,
+h2,
+p {
+  margin-bottom: 0.3em;
+}
+
+a {
+  color: variables.$color-brand;
+}
+
+small {
+  display: block;
+  margin-top: 2em;
+}
