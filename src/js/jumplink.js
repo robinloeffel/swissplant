@@ -6,7 +6,7 @@ if (links.length > 0) {
 
     const { scrollTarget: selector } = event.target.dataset;
     const { offsetTop: targetOffset } = document.querySelector(selector);
-    const navigationHeight = document.querySelector('._header').clientHeight;
+    const navigationHeight = document.querySelector('.header').clientHeight;
 
     window.scrollTo({
       top: targetOffset - navigationHeight,

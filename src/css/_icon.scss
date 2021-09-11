@@ -1,6 +1,6 @@
 @use 'variables';
 
-._icon {
+.icon {
   width: 25px;
   height: 25px;
   stroke-width: 2;
@@ -8,13 +8,13 @@
   stroke-linejoin: round;
   pointer-events: none;
 
-  &._footer-logo {
+  &.footer-logo {
     width: 100px;
     height: 30px;
     color: variables.$color-brand;
   }
 
-  &._header-navigation-logo {
+  &.header-navigation-logo {
     width: 121px;
     height: 32px;
     color: variables.$color-brand;

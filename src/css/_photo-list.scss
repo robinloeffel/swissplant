@@ -1,6 +1,6 @@
 @use 'variables';
 
-._photo-list {
+.photo-list {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -41,7 +41,7 @@
     }
 
     &:hover {
-      ._photo-list-content {
+      .photo-list-content {
         opacity: 1;
         pointer-events: auto;
       }

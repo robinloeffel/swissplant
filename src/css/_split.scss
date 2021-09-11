@@ -1,4 +1,4 @@
-._split {
+.split {
   display: flex;
   height: 65vh;
 
@@ -29,7 +29,7 @@
 }
 
 @media (max-width: 1200px) {
-  ._split {
+  .split {
     flex-direction: column;
     height: auto;
 

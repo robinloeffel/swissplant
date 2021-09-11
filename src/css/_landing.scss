@@ -1,6 +1,6 @@
 @use 'variables';
 
-._landing {
+.landing {
   position: relative;
   display: flex;
   align-items: center;
@@ -65,7 +65,7 @@
     color: inherit;
     animation: move 1s alternate infinite ease-in-out;
 
-    ._icon {
+    .icon {
       width: 30px;
       height: 30px;
     }
@@ -79,7 +79,7 @@
   &--small {
     height: 40vh;
 
-    ._landing-images::after {
+    .landing-images::after {
       content: none;
     }
   }

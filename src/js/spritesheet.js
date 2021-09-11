@@ -1,4 +1,4 @@
-const pageHasIcons = document.querySelectorAll('._icon').length > 0;
+const pageHasIcons = document.querySelectorAll('.icon').length > 0;
 
 if (pageHasIcons) {
   const inject = async () => {

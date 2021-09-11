@@ -1,7 +1,7 @@
 @use 'sass:math';
 @use 'variables';
 
-._header {
+.header {
   position: fixed;
   top: 0;
   left: 0;
@@ -77,12 +77,12 @@
         line-height: 2;
 
         &:hover {
-          ._header-navigation-lang-icon {
+          .header-navigation-lang-icon {
             opacity: 0;
             pointer-events: none;
           }
 
-          ._header-navigation-lang-button {
+          .header-navigation-lang-button {
             opacity: 1;
             pointer-events: auto;
           }
@@ -111,7 +111,7 @@
 }
 
 @media (max-width: 900px) {
-  ._header {
+  .header {
     transform: translateY(-(100% - math.div(100%, 5)));
     transition: transform 0.3s ease-in-out;
 

@@ -1,6 +1,6 @@
 @use 'variables';
 
-._footer {
+.footer {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -60,11 +60,11 @@
 }
 
 @media (max-width: 900px) {
-  ._footer {
+  .footer {
     &-content {
       flex-wrap: wrap;
 
-      > ._footer-text {
+      > .footer-text {
         text-align: center;
       }
 

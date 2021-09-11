@@ -1,7 +1,7 @@
-const images = document.querySelectorAll('._landing-image');
+const images = document.querySelectorAll('.landing-image');
 
 if (images.length > 0) {
-  const visibleClass = '_landing-image-visible';
+  const visibleClass = 'landing-image-visible';
   let [ currentlyVisible ] = images;
   currentlyVisible.classList.add(visibleClass);
 

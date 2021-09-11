@@ -1,13 +1,12 @@
-const trigger = document.querySelector('._header-navigation-link');
-const navigation = document.querySelector('._header');
-const className = '_header-open';
+const trigger = document.querySelector('.header-navigation-link');
+const navigation = document.querySelector('.header');
 
 let match = false;
 let listening = false;
 
 const toggle = event => {
   event.preventDefault();
-  navigation.classList.toggle(className);
+  navigation.classList.toggle('header-open');
 };
 
 const checkMatch = () => {

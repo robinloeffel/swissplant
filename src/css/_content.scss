@@ -1,11 +1,11 @@
-._content {
+.content {
   width: 90%;
   max-width: 800px;
   margin: 100px auto;
 }
 
 @media (max-width: 900px) {
-  ._content {
+  .content {
     width: 80%;
     margin: 10% auto;
   }
