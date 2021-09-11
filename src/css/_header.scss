@@ -10,9 +10,9 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  background-color: rgba(variables.$color-white, 0.9);
-  box-shadow: 0 2px 6px rgba(variables.$color-black, 0.1);
-  backdrop-filter: blur(10px) saturate(150%);
+  background-color: variables.$color-white-90-percent;
+  box-shadow: 0 2px 6px variables.$color-black-5-percent;
+  backdrop-filter: blur(10px);
 
   &-navigation {
     display: flex;
@@ -138,7 +138,7 @@
 
       &-item {
         flex: 1 0 50%;
-        border: 0.5px solid rgba(variables.$color-black, 0.025);
+        border: 0.5px solid variables.$color-black-5-percent;
 
         &:first-child {
           flex-basis: 100%;

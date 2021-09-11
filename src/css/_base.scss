@@ -4,12 +4,18 @@ html {
   color: variables.$color-text;
   font-size: variables.$font-size;
   font-family: variables.$font-family;
-  line-height: 1.6;
+  line-height: variables.$line-height;
+}
+
+h1,
+h2,
+h3 {
+  line-height: variables.$line-height-heading;
 }
 
 h1,
 table {
-  margin-bottom: 30px;
+  margin-bottom: variables.$space-big;
 }
 
 h1 {
@@ -18,7 +24,7 @@ h1 {
 
 h2,
 p:not(:last-child) {
-  margin-bottom: 15px;
+  margin-bottom: variables.$space-regular;
 }
 
 a {
@@ -27,6 +33,6 @@ a {
 
 @media (max-width: 900px) {
   html {
-    font-size: variables.$font-size * 0.9;
+    font-size: variables.$font-size-mobile;
   }
 }

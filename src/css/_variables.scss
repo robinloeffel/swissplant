@@ -1,7 +1,23 @@
+@use 'sass:color';
+
+// colors
 $color-black: #000;
 $color-brand: #007333;
 $color-text: #393939;
 $color-white: #fff;
-$font-family: 'Inter', system-ui;
+$color-black-5-percent: color.adjust($color-black, $alpha: -0.95);
+$color-white-90-percent: color.adjust($color-white, $alpha: -0.1);
+
+// typography
+$font-family: 'Inter', system-ui, sans-serif;
 $font-size-mobile: 110%;
 $font-size: 125%;
+$line-height: 1.6;
+$line-height-heading: 1.1;
+
+// spaces
+$space-regular: 15px;
+$space-big: $space-regular * 2;
+$space-huge: $space-regular * 3;
+$space-small: $space-regular * 0.5;
+$space-tiny: $space-regular * 0.25;

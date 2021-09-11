@@ -18,9 +18,9 @@
     height: 100%;
     padding: 15px;
     text-align: center;
-    background-color: rgba(variables.$color-white, 0.9);
+    background-color: variables.$color-white-90-percent;
     opacity: 0;
-    backdrop-filter: blur(10px) saturate(150%);
+    backdrop-filter: blur(10px);
     transition: opacity 0.3s ease-in-out;
     pointer-events: none;
   }
