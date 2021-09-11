@@ -12,20 +12,19 @@ html {
   color: variables.$color-text;
   font-size: variables.$font-size;
   font-family: sans-serif;
-  line-height: 1.6;
-  background-color: variables.$color-white;
+  line-height: variables.$line-height;
 }
 
 body {
   width: 80%;
   max-width: 680px;
-  margin: 200px auto;
+  margin: 10vh auto;
 }
 
 h1,
 h2,
 p {
-  margin-bottom: 0.3em;
+  margin-bottom: 0.25em;
 }
 
 a {
