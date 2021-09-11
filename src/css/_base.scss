@@ -1,0 +1,32 @@
+@use 'variables';
+
+html {
+  color: variables.$color-text;
+  font-size: variables.$font-size;
+  font-family: variables.$font-family;
+  line-height: 1.6;
+}
+
+h1,
+table {
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2,
+p:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+a {
+  color: variables.$color-brand;
+}
+
+@media (max-width: 900px) {
+  html {
+    font-size: variables.$font-size * 0.9;
+  }
+}

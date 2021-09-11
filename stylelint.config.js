@@ -1,8 +1,12 @@
 module.exports = {
-  extends: 'stylelint-config-standard',
+  extends: [
+    'stylelint-config-standard',
+    'stylelint-config-sass-guidelines',
+    'stylelint-config-rational-order'
+  ],
   rules: {
-    indentation: 2,
-    'declaration-colon-newline-after': null,
-    'number-leading-zero': 'never'
+    'order/properties-alphabetical-order': null,
+    'selector-class-pattern': null,
+    'max-nesting-depth': null
   }
 };

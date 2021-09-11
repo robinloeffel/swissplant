@@ -1,0 +1,34 @@
+@use 'variables';
+
+._more {
+  position: relative;
+  margin-top: 15px;
+  padding: 20px 25px;
+  font-size: 90%;
+  text-decoration: none;
+  border: 3px solid variables.$color-brand;
+  transition: color 0.3s ease-in-out;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: variables.$color-brand;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease-in-out;
+    content: '';
+  }
+
+  &:hover {
+    color: variables.$color-white;
+
+    &::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+  }
+}

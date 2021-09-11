@@ -3,20 +3,22 @@ const del = require('del');
 const open = require('open');
 const connect = require('gulp-connect');
 const plumber = require('gulp-plumber');
-const less = require('gulp-less');
+const sass = require('@rbnlffl/gulp-sass');
 const imagemin = require('gulp-imagemin');
 const rezzy = require('gulp-rezzy');
 const webp = require('gulp-webp');
 const rename = require('gulp-rename');
 const postcss = require('gulp-postcss');
-const cssnano = require('cssnano');
 const stylelint = require('stylelint');
-const ws = require('webpack-stream');
-const webpackConfig = require('./webpack.config.js');
-const webpack = require('webpack');
+const env = require('postcss-preset-env');
+const cssnano = require('cssnano');
+const rollup = require('@rbnlffl/gulp-rollup');
+const eslint = require('@rbnlffl/rollup-plugin-eslint');
+const { nodeResolve } = require('@rollup/plugin-node-resolve');
+const commonjs = require('@rollup/plugin-commonjs');
+const { terser } = require('rollup-plugin-terser');
 
 const development = process.argv.includes('--dev');
-
 
 gulp.task('clean', () => del('dist'));
 gulp.task('open', () => open('http://localhost:8080'));
@@ -29,15 +31,16 @@ gulp.task('serve', done => {
   done();
 });
 
-gulp.task('less', () => gulp.src('src/less/main.less', {
+gulp.task('sass', () => gulp.src('src/css/index.scss', {
     sourcemaps: development
   })
   .pipe(plumber())
   .pipe(postcss([
     stylelint()
   ]))
-  .pipe(less())
+  .pipe(sass())
   .pipe(postcss([
+    env(),
     !development && cssnano()
   ].filter(plugin => plugin)))
   .pipe(rename('swissplant.css'))
@@ -103,14 +106,24 @@ gulp.task('files', () => gulp.src([
   .pipe(gulp.dest('dist'))
   .pipe(connect.reload()));
 
-gulp.task('js', () => gulp.src('src/js/main.js')
+gulp.task('js', () => gulp.src('src/js/index.js')
 .pipe(plumber())
-.pipe(ws(webpackConfig, webpack))
+.pipe(rollup({
+  plugins: [
+    eslint(),
+    nodeResolve(),
+    commonjs(),
+    !development && terser()
+  ].filter(plugin => plugin)
+}, {
+  format: 'iife'
+}))
+.pipe(rename('swissplant.js'))
 .pipe(gulp.dest('dist/js'))
 .pipe(connect.reload()));
 
-gulp.task('watch:less', done => {
-  gulp.watch('src/less/**/*', gulp.parallel('less'));
+gulp.task('watch:sass', done => {
+  gulp.watch('src/css/**/*', gulp.parallel('sass'));
   done();
 });
 
@@ -134,6 +147,6 @@ gulp.task('watch:files', done => {
 });
 
 gulp.task('img', gulp.parallel('img:meta', 'img:employees', 'img:bgs'));
-gulp.task('build', gulp.parallel('less', 'js', 'img', 'files'));
-gulp.task('watch', gulp.parallel('watch:less', 'watch:js', 'watch:img', 'watch:files'));
+gulp.task('build', gulp.parallel('sass', 'js', 'img', 'files'));
+gulp.task('watch', gulp.parallel('watch:sass', 'watch:js', 'watch:img', 'watch:files'));
 gulp.task('default', gulp.series('clean', 'build', 'watch', 'serve', 'open'));
