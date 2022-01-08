@@ -2,13 +2,15 @@ import mehrsprachig from 'mehrsprachig';
 
 document.addEventListener(
   'mehrsprachigTranslated',
-  ({ detail: language }) => {
+  ({ detail: {
+    localeKey: language
+  } }) => {
     document.documentElement.lang = language;
   }
 );
 
 mehrsprachig({
-  standard: 'de',
+  fallback: 'de',
   sources: {
     de: '/data/de.json',
     en: '/data/en.json'

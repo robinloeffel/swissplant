@@ -4808,10 +4808,10 @@ mdn-data@2.0.14:
   resolved "https://registry.yarnpkg.com/mdn-data/-/mdn-data-2.0.14.tgz#7113fc4281917d63ce29b43446f701e68c25ba50"
   integrity sha512-dn6wd0uw5GsdswPFfsgMp5NSB0/aDe6fK94YJV/AJDYXL6HVLWBsxeq7js7Ad+mU2K9LAlwpk6kN2D5mwCPVow==
 
-mehrsprachig@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/mehrsprachig/-/mehrsprachig-1.0.0.tgz#b6905c3ae9711e2c32a68f2ea37c7ec4dd66f175"
-  integrity sha512-3pJj0giBP4rk0hEca+Kc0d3yrY1onBg/4K/rWQ6mcma0UN8NwhLbzxV8VSy7zm3Og+l2aYJJ1T+OVrWiEnaprw==
+mehrsprachig@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/mehrsprachig/-/mehrsprachig-1.0.1.tgz#11482a8438ae959d1a8bd51d1d61dca4ca18fada"
+  integrity sha512-mPqMmj28sU1C52hFcnNAsIv/LWAhNdGOwXFZ0rXla2vbDunktHEH9qzEnnyf0hdMfEe9OYPF1VNq6VRYItrxrg==
 
 meow@^3.3.0:
   version "3.7.0"
