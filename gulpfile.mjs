@@ -108,19 +108,25 @@ gulp.task('files', () => gulp.src([
   .pipe(gulp.dest('dist'))
   .pipe(connect.reload()));
 
-gulp.task('js', () => gulp.src('src/js/swissplant.js')
+gulp.task('js', () => gulp.src('src/js/swissplant.js', {
+  sourcemaps: development
+})
 .pipe(plumber())
 .pipe(rollup({
   plugins: [
     eslint(),
     nodeResolve(),
-    commonjs(),
+    commonjs()
+  ]
+}, {
+  format: 'iife',
+  plugins: [
     !development && terser()
   ].filter(plugin => plugin)
-}, {
-  format: 'iife'
 }))
-.pipe(gulp.dest('dist/js'))
+.pipe(gulp.dest('dist/js', {
+  sourcemaps: '.'
+}))
 .pipe(connect.reload()));
 
 gulp.task('watch:sass', done => {
