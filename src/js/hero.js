@@ -1,15 +1,15 @@
 const images = document.querySelectorAll('.landing-image');
 
 if (images.length > 1) {
-  let index = 0;
-  const firstImage = images[index];
   const visibleClass = 'landing-image-visible';
-  firstImage.classList.add(visibleClass);
+  images[0].classList.add(visibleClass);
 
   const rotate = () => {
+    let index = 0;
+
     window.setInterval(() => {
       const imageToHide = images[index];
-      const imageToShow = images[index + 1] || firstImage;
+      const imageToShow = images[index + 1] || images[0];
 
       window.requestAnimationFrame(() => {
         imageToHide.classList.remove(visibleClass);

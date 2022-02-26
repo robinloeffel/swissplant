@@ -18,4 +18,3 @@ if (links.length > 0) {
     link.addEventListener('click', smoothScroll);
   });
 }
-

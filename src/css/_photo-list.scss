@@ -3,17 +3,35 @@
 .photo-list {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+  gap: 15px;
+
+  &-photo {
+    position: relative;
+    display: grid;
+    place-content: center;
+    aspect-ratio: 1;
+    flex-basis: calc(33.33% - 10px);
+
+    &:hover {
+      .photo-list-content {
+        opacity: 1;
+      }
+    }
+  }
+
+  &-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
   &-content {
     position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    inset: 0;
+    display: grid;
+    place-content: center;
     width: 100%;
     height: 100%;
     padding: 15px;
@@ -22,44 +40,23 @@
     opacity: 0;
     backdrop-filter: blur(10px);
     transition: opacity 0.3s ease-in-out;
-    pointer-events: none;
-  }
-
-  &-photo {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 240px;
-    margin: 10px;
-
-    &::after {
-      position: absolute;
-      padding-top: 100%;
-      content: '';
-    }
-
-    &:hover {
-      .photo-list-content {
-        opacity: 1;
-        pointer-events: auto;
-      }
-    }
-  }
-
-  &-image {
-    top: 0;
-    left: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
   }
 
   &-role,
   &-mail,
   &-tel {
     font-size: 80%;
+  }
+}
+
+@media (max-width: 900px) {
+  .photo-list-photo {
+    flex-basis: calc(50% - 7.5px);
+  }
+}
+
+@media (max-width: 600px) {
+  .photo-list-photo {
+    flex-basis: 100%;
   }
 }

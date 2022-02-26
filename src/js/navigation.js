@@ -9,14 +9,14 @@ const toggle = event => {
 };
 
 const checkMatch = () => {
-  const match = matchMedia('(max-width: 900px)').matches;
+  const { matches } = matchMedia('(max-width: 900px)');
 
-  if (match && !listening) {
+  if (matches && !listening) {
     trigger.addEventListener('click', toggle);
     listening = true;
   }
 
-  if (!match && listening) {
+  if (!matches && listening) {
     trigger.removeEventListener('click', toggle);
     listening = false;
   }

@@ -3,11 +3,10 @@
 
 <head>
   <meta charset="utf-8">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" as="style">
-  <link rel="preload" href="css/swissplant.css" as="style">
-  <link rel="preload" href="js/swissplant.js" as="script">
+  <link rel="preload" type="font/woff2" href="https://unpkg.com/@fontsource/inter@4.5.4/files/inter-latin-variable-wghtOnly-normal.woff2" as="font" crossorigin>
+  <link rel="preload" type="text/css" href="https://unpkg.com/@fontsource/inter@4.5.4/variable.css" as="style" crossorigin>
+  <link rel="preload" type="text/css" href="css/swissplant.css" as="style">
+  <link rel="preload" type="text/javascript" href="js/swissplant.js" as="script">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" data-mehrsprachig="content=team.meta.description" content="Erfahren Sie mehr über die SwissPlant GmbH und wer überhaupt hinter ihr steckt.">
   <meta name="keywords" data-mehrsprachig="content=team.meta.keywords" content="über uns, anfang, geschichte, müntschemier, martin löffel, erfahrung, gemüsebau, kompetent, muentschemier, swissplant, agriplant, swissplant gmbh, agriplant ag, angestellte, mitarbeiter, geschäftsführung">
@@ -22,10 +21,10 @@
   <link rel="shortcut icon" href="img/favicon.png">
   <link rel="apple-touch-icon" href="img/apple.png">
   <link rel="canonical" href="https://swissplant.ch/team.html">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
-  <link rel="stylesheet" href="css/swissplant.css">
-  <script src="js/swissplant.js" defer></script>
-  <script>
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@fontsource/inter@4.5.4/variable.css" crossorigin>
+  <link rel="stylesheet" type="text/css" href="css/swissplant.css">
+  <script type="text/javascript" src="js/swissplant.js" defer></script>
+  <script type="text/javascript">
     if ('documentMode' in document) {
       window.location = 'ie.html';
     }
@@ -83,8 +82,8 @@
     </section>
     <section class="content">
       <h1 data-mehrsprachig="nav.team"></h1>
-      <div class="photo-list">
-        <article class="photo-list-photo">
+      <ul class="photo-list">
+        <li class="photo-list-photo">
           <picture>
             <source type="image/webp" srcset="img/mitarbeiter/martin-loeffel-300w.webp 300w, img/mitarbeiter/martin-loeffel-480w.webp 480w">
             <source type="image/jpeg" srcset="img/mitarbeiter/martin-loeffel-300w.jpg 300w, img/mitarbeiter/martin-loeffel-300w.jpg 480w">
@@ -96,8 +95,8 @@
             <a class="photo-list-mail" href="mailto:m.loeffel@swissplant.ch">m.loeffel@swissplant.ch</a>
             <a class="photo-list-tel" href="tel:+41796314559">+41 79 631 45 59</a>
           </div>
-        </article>
-        <article class="photo-list-photo">
+        </li>
+        <li class="photo-list-photo">
           <picture>
             <source type="image/webp" srcset="img/mitarbeiter/telja-baumann-300w.webp 300w, img/mitarbeiter/telja-baumann-480w.webp 480w">
             <source type="image/jpeg" srcset="img/mitarbeiter/telja-baumann-300w.jpg 300w, img/mitarbeiter/telja-baumann-300w.jpg 480w">
@@ -109,21 +108,8 @@
             <a class="photo-list-mail" href="mailto:t.baumann@swissplant.ch">t.baumann@swissplant.ch</a>
             <a class="photo-list-tel" href="tel:+41798153835">+41 79 815 38 35</a>
           </div>
-        </article>
-        <article class="photo-list-photo">
-          <picture>
-            <source type="image/webp" srcset="img/mitarbeiter/pascal-probst-300w.webp 300w, img/mitarbeiter/pascal-probst-480w.webp 480w">
-            <source type="image/jpeg" srcset="img/mitarbeiter/pascal-probst-300w.jpg 300w, img/mitarbeiter/pascal-probst-300w.jpg 480w">
-            <img class="photo-list-image" src="img/mitarbeiter/pascal-probst-300w.jpg" loading="lazy" alt="{alt: 'team.pascal.alt'}">
-          </picture>
-          <div class="photo-list-content">
-            <span class="photo-list-name">Pascal Probst</span>
-            <span class="photo-list-role" data-mehrsprachig="team.pascal.position"></span>
-            <a class="photo-list-mail" href="mailto:p.probst@swissplant.ch">p.probst@swissplant.ch</a>
-            <a class="photo-list-tel" href="tel:+41796415210">+41 79 641 52 10</a>
-          </div>
-        </article>
-        <article class="photo-list-photo">
+        </li>
+        <li class="photo-list-photo">
           <picture>
             <source type="image/webp" srcset="img/mitarbeiter/sandro-loeffel-300w.webp 300w, img/mitarbeiter/sandro-loeffel-480w.webp 480w">
             <source type="image/jpeg" srcset="img/mitarbeiter/sandro-loeffel-300w.jpg 300w, img/mitarbeiter/sandro-loeffel-300w.jpg 480w">
@@ -135,8 +121,8 @@
             <a class="photo-list-mail" href="mailto:s.loeffel@swissplant.ch">s.loeffel@swissplant.ch</a>
             <a class="photo-list-tel" href="tel:+41796415210">+41 79 741 52 10</a>
           </div>
-        </article>
-        <article class="photo-list-photo">
+        </li>
+        <li class="photo-list-photo">
           <picture>
             <source type="image/webp" srcset="img/mitarbeiter/ivan-gross-300w.webp 300w, img/mitarbeiter/ivan-gross-480w.webp 480w">
             <source type="image/jpeg" srcset="img/mitarbeiter/ivan-gross-300w.jpg 300w, img/mitarbeiter/ivan-gross-300w.jpg 480w">
@@ -146,8 +132,8 @@
             <span class="photo-list-name">Ivan Gross</span>
             <span class="photo-list-role" data-mehrsprachig="team.ivan.position"></span>
           </div>
-        </article>
-        <article class="photo-list-photo">
+        </li>
+        <li class="photo-list-photo">
           <picture>
             <source type="image/webp" srcset="img/mitarbeiter/shpend-thaqi-300w.webp 300w, img/mitarbeiter/shpend-thaqi-480w.webp 480w">
             <source type="image/jpeg" srcset="img/mitarbeiter/shpend-thaqi-300w.jpg 300w, img/mitarbeiter/shpend-thaqi-300w.jpg 480w">
@@ -157,8 +143,8 @@
             <span class="photo-list-name">Shpend Thaqi</span>
             <span class="photo-list-role" data-mehrsprachig="team.shpend.position"></span>
           </div>
-        </article>
-        <article class="photo-list-photo">
+        </li>
+        <li class="photo-list-photo">
           <picture>
             <source type="image/webp" srcset="img/mitarbeiter/andrzej-mojsym-300w.webp 300w, img/mitarbeiter/andrzej-mojsym-480w.webp 480w">
             <source type="image/jpeg" srcset="img/mitarbeiter/andrzej-mojsym-300w.jpg 300w, img/mitarbeiter/andrzej-mojsym-300w.jpg 480w">
@@ -168,8 +154,8 @@
             <span class="photo-list-name">Andrzej Mojsym</span>
             <span class="photo-list-role" data-mehrsprachig="team.andrzej.position"></span>
           </div>
-        </article>
-        <article class="photo-list-photo">
+        </li>
+        <li class="photo-list-photo">
           <picture>
             <source type="image/webp" srcset="img/mitarbeiter/hans-peter-schwab-300w.webp 300w, img/mitarbeiter/hans-peter-schwab-480w.webp 480w">
             <source type="image/jpeg" srcset="img/mitarbeiter/hans-peter-schwab-300w.jpg 300w, img/mitarbeiter/hans-peter-schwab-300w.jpg 480w">
@@ -179,8 +165,8 @@
             <span class="photo-list-name">Hans-Peter Schwab</span>
             <span class="photo-list-role" data-mehrsprachig="team.hans-peter.position"></span>
           </div>
-        </article>
-        <article class="photo-list-photo">
+        </li>
+        <li class="photo-list-photo">
           <picture>
             <source type="image/webp" srcset="img/mitarbeiter/mariusz-wronski-300w.webp 300w, img/mitarbeiter/mariusz-wronski-480w.webp 480w">
             <source type="image/jpeg" srcset="img/mitarbeiter/mariusz-wronski-300w.jpg 300w, img/mitarbeiter/mariusz-wronski-300w.jpg 480w">
@@ -190,8 +176,8 @@
             <span class="photo-list-name">Mariusz Wronski</span>
             <span class="photo-list-role" data-mehrsprachig="team.mariusz.position"></span>
           </div>
-        </article>
-        <article class="photo-list-photo">
+        </li>
+        <li class="photo-list-photo">
           <picture>
             <source type="image/webp" srcset="img/mitarbeiter/krzysztof-hoim-300w.webp 300w, img/mitarbeiter/krzysztof-hoim-480w.webp 480w">
             <source type="image/jpeg" srcset="img/mitarbeiter/krzysztof-hoim-300w.jpg 300w, img/mitarbeiter/krzysztof-hoim-300w.jpg 480w">
@@ -201,8 +187,8 @@
             <span class="photo-list-name">Krzysztof Hoim</span>
             <span class="photo-list-role" data-mehrsprachig="team.krzysztof.position"></span>
           </div>
-        </article>
-        <article class="photo-list-photo">
+        </li>
+        <li class="photo-list-photo">
           <picture>
             <source type="image/webp" srcset="img/mitarbeiter/damian-makarewicz-300w.webp 300w, img/mitarbeiter/damian-makarewicz-480w.webp 480w">
             <source type="image/jpeg" srcset="img/mitarbeiter/damian-makarewicz-300w.jpg 300w, img/mitarbeiter/damian-makarewicz-300w.jpg 480w">
@@ -212,8 +198,8 @@
             <span class="photo-list-name">Damian Makarewicz</span>
             <span class="photo-list-role" data-mehrsprachig="team.damian.position"></span>
           </div>
-        </article>
-        <article class="photo-list-photo">
+        </li>
+        <li class="photo-list-photo">
           <picture>
             <source type="image/webp" srcset="img/mitarbeiter/barbara-dubler-300w.webp 300w, img/mitarbeiter/barbara-dubler-480w.webp 480w">
             <source type="image/jpeg" srcset="img/mitarbeiter/barbara-dubler-300w.jpg 300w, img/mitarbeiter/barbara-dubler-300w.jpg 480w">
@@ -223,8 +209,8 @@
             <span class="photo-list-name">Barbara Dubler</span>
             <span class="photo-list-role" data-mehrsprachig="team.barbara.position"></span>
           </div>
-        </article>
-      </div>
+        </li>
+      </ul>
     </section>
   </main>
   <footer class="footer">
