@@ -1,16 +1,14 @@
 @use 'variables';
 
 .photo-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 15px;
 
   &-photo {
     position: relative;
-    display: grid;
-    place-content: center;
+    display: inline-block;
     aspect-ratio: 1;
-    flex-basis: calc(33.33% - 10px);
 
     &:hover {
       .photo-list-content {
@@ -45,18 +43,18 @@
   &-role,
   &-mail,
   &-tel {
-    font-size: 80%;
+    font-size: smaller;
   }
 }
 
 @media (max-width: 900px) {
-  .photo-list-photo {
-    flex-basis: calc(50% - 7.5px);
+  .photo-list {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (max-width: 600px) {
-  .photo-list-photo {
-    flex-basis: 100%;
+  .photo-list {
+    grid-template-columns: 1fr;
   }
 }
