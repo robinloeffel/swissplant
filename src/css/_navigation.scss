@@ -4,17 +4,15 @@
 .navigation {
   position: fixed;
   z-index: 9;
-  top: 0;
-  right: 0;
-  left: 0;
   overflow: hidden;
   width: min(100% - 30px, 560px);
-  height: var(--navigation-height-collapsed, initial);
+  height: var(--navigation-height-collapsed, auto);
   border-radius: 10px;
   margin: 15px auto;
-  backdrop-filter: blur(50px) saturate(2);
+  backdrop-filter: blur(25px);
   background-color: variables.$color-white-90;
   box-shadow: 0 5px 15px variables.$color-black-5;
+  inset: 0;
   transition: height 0.3s ease-in-out;
 
   &--open {
@@ -24,14 +22,13 @@
   &-list {
     display: grid;
     padding: variables.$space-big;
-    gap: variables.$space-big;
-    grid-auto-rows: 1fr;
-    grid-template-columns: 1fr;
+    row-gap: variables.$space-big;
   }
 
   &-item {
     display: inline-flex;
     align-items: center;
+    line-height: normal;
     transition: visibility 0.3s;
 
     &:not(&-logo, &-trigger) {
@@ -91,6 +88,7 @@
     &__button {
       border: 0;
       background: none;
+      color: inherit;
       cursor: pointer;
       font-size: smaller;
     }
