@@ -1,26 +1,17 @@
-const trigger = document.querySelector('.header-navigation-link');
-const navigation = document.querySelector('.header');
+const navigation = document.querySelector('.navigation');
+const list = navigation.querySelector('.navigation-list');
+const logo = navigation.querySelector('.navigation-item-logo');
+const trigger = navigation.querySelector('.navigation-mobile-button');
 
-let listening = false;
+const listGap = Number(window.getComputedStyle(list).gap.replace('px', ''));
+const logoHeight = logo.getBoundingClientRect().height;
 
-const toggle = event => {
-  event.preventDefault();
-  navigation.classList.toggle('header-open');
-};
+const navigationHeightExpanded = navigation.getBoundingClientRect().height;
+const navigationHeightCollapsed = listGap * 2 + logoHeight;
 
-const checkMatch = () => {
-  const { matches } = matchMedia('(max-width: 900px)');
+navigation.style.setProperty('--navigation-height-expanded', `${navigationHeightExpanded}px`);
+navigation.style.setProperty('--navigation-height-collapsed', `${navigationHeightCollapsed}px`);
 
-  if (matches && !listening) {
-    trigger.addEventListener('click', toggle);
-    listening = true;
-  }
-
-  if (!matches && listening) {
-    trigger.removeEventListener('click', toggle);
-    listening = false;
-  }
-};
-
-window.addEventListener('resize', checkMatch);
-checkMatch();
+trigger.addEventListener('click', () => {
+  navigation.classList.toggle('navigation--open', !navigation.classList.contains('navigation--open'));
+});

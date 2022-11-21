@@ -26,50 +26,41 @@
   <script type="text/javascript" src="js/swissplant.js" defer></script>
   <script type="text/javascript">
     if ('documentMode' in document) {
-      window.location = 'ie.html';
+      window.location.href = 'ie.html';
     }
   </script>
 </head>
 
 <body>
-  <header class="header">
-    <nav class="header-navigation">
-      <ul class="header-navigation-list">
-        <li class="header-navigation-item">
-          <a href="./" class="header-navigation-link">
-            <svg class="icon header-navigation-logo">
-              <use href="#swissplant-swooshless"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="header-navigation-item header-navigation-item-home">
-          <a class="header-navigation-link" href="." data-mehrsprachig="nav.start"></a>
-        </li>
-        <li class="header-navigation-item">
-          <a class="header-navigation-link" href="firma.html" data-mehrsprachig="nav.company"></a>
-        </li>
-        <li class="header-navigation-item">
-          <a class="header-navigation-link" href="team.html" data-mehrsprachig="nav.team"></a>
-        </li>
-        <li class="header-navigation-item">
-          <a class="header-navigation-link" href="angebot.html" data-mehrsprachig="nav.portfolio"></a>
-        </li>
-        <li class="header-navigation-item">
-          <a class="header-navigation-link" href="partner.html" data-mehrsprachig="nav.partners"></a>
-        </li>
-        <li class="header-navigation-item">
-          <a class="header-navigation-link" href="kontakt.html" data-mehrsprachig="nav.contact"></a>
-        </li>
-        <li class="header-navigation-item header-navigation-lang-container">
-            <svg class="icon header-navigation-lang-icon">
-                 <use href="#settings"></use>
-            </svg>
-            <a class="header-navigation-lang-button" data-mehrsprachig-trigger="de" href="#">DE</a>
-            <a class="header-navigation-lang-button" data-mehrsprachig-trigger="en" href="#">EN</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
+  <nav class="navigation">
+    <ul class="navigation-list">
+      <li class="navigation-item navigation-item-logo">
+        <a href="/" class="navigation-link" aria-label="SwissPlant Logo">
+          <svg class="icon header-navigation-logo">
+            <use href="#swissplant-swooshless"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="navigation-item navigation-item-trigger">
+        <button class="navigation-mobile-button">&darr;</button>
+      </li>
+      <li class="navigation-item">
+        <a class="navigation-link" href="firma.html" data-mehrsprachig="nav.company"></a>
+      </li>
+      <li class="navigation-item">
+        <a class="navigation-link" href="team.html" data-mehrsprachig="nav.team"></a>
+      </li>
+      <li class="navigation-item">
+        <a class="navigation-link" href="angebot.html" data-mehrsprachig="nav.portfolio"></a>
+      </li>
+      <li class="navigation-item">
+        <a class="navigation-link" href="partner.html" data-mehrsprachig="nav.partners"></a>
+      </li>
+      <li class="navigation-item">
+        <a class="navigation-link" href="kontakt.html" data-mehrsprachig="nav.contact"></a>
+      </li>
+    </ul>
+  </nav>
   <main>
     <section class="landing landing--small">
       <div class="landing-images">

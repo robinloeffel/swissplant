@@ -1,20 +1,20 @@
-@use 'variables';
+@use "variables";
 
 .table {
   width: 100%;
-  border: 1px solid variables.$color-black-5-percent;
+  border: 1px solid variables.$color-black-5;
   border-collapse: collapse;
 
   tr {
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 
     &:nth-child(odd) {
-      background-color: variables.$color-black-5-percent;
+      background-color: variables.$color-black-5;
     }
 
     &:hover {
-      color: variables.$color-white;
       background-color: variables.$color-brand;
+      color: variables.$color-white;
     }
   }
 

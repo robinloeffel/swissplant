@@ -1,15 +1,16 @@
 const links = document.querySelectorAll('[data-scroll-target]');
+const navigation = document.querySelector('nav');
+
+const navigationHeight = navigation.getBoundingClientRect().height;
+const navigationMarginY = window.getComputedStyle(navigation).marginBlock.replace('px', '') * 2;
 
 if (links.length > 0) {
-  const smoothScroll = event => {
-    event.preventDefault();
+  const smoothScroll = ({ currentTarget }) => {
+    const { scrollTarget: selector } = currentTarget.dataset;
+    const { offsetTop } = document.querySelector(selector);
 
-    const { scrollTarget: selector } = event.target.dataset;
-    const { offsetTop: targetOffset } = document.querySelector(selector);
-    const navigationHeight = document.querySelector('.header').clientHeight;
-
-    window.scrollTo({
-      top: targetOffset - navigationHeight,
+    window.scroll({
+      top: offsetTop - navigationHeight - navigationMarginY,
       behavior: 'smooth'
     });
   };

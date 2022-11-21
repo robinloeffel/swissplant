@@ -30,8 +30,8 @@
 
 @media (max-width: 1200px) {
   .split {
-    flex-direction: column;
     height: auto;
+    flex-direction: column;
 
     &-image,
     &-map {

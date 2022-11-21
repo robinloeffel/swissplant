@@ -1,11 +1,8 @@
-@use 'variables';
+@use "variables";
 
 .icon {
   width: 25px;
   height: 25px;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
   pointer-events: none;
 
   &.footer-logo {

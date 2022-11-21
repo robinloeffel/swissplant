@@ -1,0 +1,98 @@
+@use "sass:math" as math;
+@use "variables";
+
+.navigation {
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  width: min(100% - 30px, 560px);
+  height: var(--navigation-height-collapsed, initial);
+  border-radius: 10px;
+  margin: 15px auto;
+  backdrop-filter: blur(50px) saturate(2);
+  background-color: variables.$color-white-90;
+  box-shadow: 0 5px 15px variables.$color-black-5;
+  transition: height 0.3s ease-in-out;
+
+  &--open {
+    height: var(--navigation-height-expanded);
+  }
+
+  &-list {
+    display: grid;
+    padding: variables.$space-big;
+    gap: variables.$space-big;
+    grid-auto-rows: 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  &-item {
+    display: inline-flex;
+    align-items: center;
+    transition: visibility 0.3s;
+
+    &:not(&-logo, &-trigger) {
+      visibility: hidden;
+
+      .navigation--open & {
+        visibility: unset;
+      }
+    }
+
+    &-logo,
+    &-trigger {
+      grid-column: 1 / -1;
+      grid-row: 1;
+    }
+
+    &-logo {
+      justify-self: start;
+    }
+
+    &-trigger {
+      justify-self: end;
+    }
+  }
+
+  &-link {
+    display: inline-flex;
+    align-items: center;
+    color: unset;
+    text-decoration: none;
+  }
+
+  &-mobile-button {
+    border: 0;
+    background: none;
+    color: inherit;
+    cursor: pointer;
+    font-size: 125%;
+    transition: rotate 0.3s ease-in-out;
+
+    .navigation--open & {
+      rotate: 0.5turn;
+    }
+  }
+
+  &-language-switcher {
+    list-style: none;
+
+    &__item {
+      display: inline-block;
+
+      & + & {
+        margin-left: 10px;
+      }
+    }
+
+    &__button {
+      border: 0;
+      background: none;
+      cursor: pointer;
+      font-size: smaller;
+    }
+  }
+}

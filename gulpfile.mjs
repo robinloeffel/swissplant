@@ -1,5 +1,5 @@
 import gulp from 'gulp';
-import del from 'del';
+import { deleteAsync } from 'del';
 import open from 'open';
 import connect from 'gulp-connect';
 import plumber from 'gulp-plumber';
@@ -19,7 +19,7 @@ import { terser } from 'rollup-plugin-terser';
 
 const development = process.argv.includes('--dev');
 
-gulp.task('clean', () => del('dist'));
+gulp.task('clean', () => deleteAsync('dist'));
 gulp.task('open', () => open('http://localhost:8080'));
 
 gulp.task('serve', done => {
@@ -121,7 +121,11 @@ gulp.task('js', () => gulp.src('src/js/swissplant.js', {
 }, {
   format: 'iife',
   plugins: [
-    !development && terser()
+    !development && terser({
+      format: {
+        comments: false
+      }
+    })
   ].filter(plugin => plugin)
 }))
 .pipe(gulp.dest('dist/js', {

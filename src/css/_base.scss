@@ -1,10 +1,14 @@
-@use 'variables';
+@use "variables";
 
 html {
   color: variables.$color-text;
-  font-size: variables.$font-size;
   font-family: variables.$font-family;
+  font-size: variables.$font-size-mobile;
   line-height: variables.$line-height;
+
+  @media (width >= 900px) {
+    font-size: variables.$font-size;
+  }
 }
 
 h1,
@@ -29,10 +33,4 @@ p:not(:last-child) {
 
 a {
   color: variables.$color-brand;
-}
-
-@media (max-width: 900px) {
-  html {
-    font-size: variables.$font-size-mobile;
-  }
 }

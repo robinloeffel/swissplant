@@ -1,12 +1,9 @@
 .content {
-  width: 90%;
-  max-width: 800px;
-  margin: 100px auto;
-}
+  width: 80%;
+  margin: 10% auto;
 
-@media (max-width: 900px) {
-  .content {
-    width: 80%;
-    margin: 10% auto;
+  @media (width >= 900px) {
+    width: min(90%, 800px);
+    margin: 100px auto;
   }
 }

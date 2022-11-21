@@ -1,15 +1,17 @@
-@use 'sass:color';
+@use "sass:color" as color;
 
 // colors
 $color-black: #000;
 $color-brand: #007333;
 $color-text: #393939;
 $color-white: #fff;
-$color-black-5-percent: color.adjust($color-black, $alpha: -0.95);
-$color-white-90-percent: color.adjust($color-white, $alpha: -0.1);
+$color-black-5: color.adjust($color-black, $alpha: -0.95);
+$color-black-50: color.adjust($color-black, $alpha: -0.5);
+$color-white-5: color.adjust($color-white, $alpha: -0.95);
+$color-white-90: color.adjust($color-white, $alpha: -0.1);
 
 // typography
-$font-family: InterVariable, system-ui, sans-serif;
+$font-family: intervariable, system-ui, sans-serif;
 $font-size-mobile: 110%;
 $font-size: 125%;
 $line-height: 1.6;
