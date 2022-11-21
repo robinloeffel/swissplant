@@ -60,10 +60,6 @@
       "alt": "Telja Baumann, Administration",
       "position": "Administration & Sales"
     },
-    "pascal": {
-      "alt": "Pascal Probst, Sales and Logistics",
-      "position": "Sales & Logistics"
-    },
     "sandro": {
       "alt": "Sandro Löffel, Dispatcher",
       "position": "Dispatcher & Vice CEO"
@@ -95,10 +91,6 @@
     "barbara": {
       "alt": "Barbara Dubler, Internal Transport",
       "position": "Internal Transport"
-    },
-    "krzysztof": {
-      "alt": "Mariusz Wronski, Chief of Machinery",
-      "position": "Chief of Machinery"
     }
   },
   "portfolio": {

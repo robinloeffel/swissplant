@@ -60,10 +60,6 @@
       "alt": "Telja Baumann, Administration",
       "position": "Administration & Verkauf"
     },
-    "pascal": {
-      "alt": "Pascal Probst, Verkauf und Logistik",
-      "position": "Verkauf & Logistik"
-    },
     "sandro": {
       "alt": "Sandro Löffel, Warendispo",
       "position": "Warendispo & Stv. Betriebsleiter"
@@ -95,10 +91,6 @@
     "barbara": {
       "alt": "Barbara Dubler, Interner Transport",
       "position": "Interner Transport"
-    },
-    "krzysztof": {
-      "alt": "Mariusz Wronski, Maschinenführer",
-      "position": "Maschinenführer"
     }
   },
   "portfolio": {
