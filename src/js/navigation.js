@@ -22,9 +22,9 @@ window.addEventListener('scroll', () => {
   }
 }, { passive: true });
 
-window.addEventListener('load', () => {
+trigger.addEventListener('click', () => {
   navigation.style.setProperty('--navigation-height-expanded', `${list.clientHeight}px`);
-});
+}, { once: true });
 
 trigger.addEventListener('click', () => {
   navigation.classList.toggle('navigation--open', !navigation.classList.contains('navigation--open'));
