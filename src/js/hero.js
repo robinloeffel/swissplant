@@ -1,24 +1,13 @@
 const images = document.querySelectorAll('.landing-image');
+const visibleClass = 'landing-image-visible';
 
 if (images.length > 1) {
-  const visibleClass = 'landing-image-visible';
-  images[0].classList.add(visibleClass);
+  let [ visibleImage ] = images;
+  visibleImage.classList.add(visibleClass);
 
-  const rotate = () => {
-    let index = 0;
-
-    window.setInterval(() => {
-      const imageToHide = images[index];
-      const imageToShow = images[index + 1] || images[0];
-
-      window.requestAnimationFrame(() => {
-        imageToHide.classList.remove(visibleClass);
-        imageToShow.classList.add(visibleClass);
-      });
-
-      index = images[index + 1] ? index + 1 : 0;
-    }, 7500);
-  };
-
-  rotate();
+  window.setInterval(() => {
+    visibleImage.classList.remove(visibleClass);
+    visibleImage = visibleImage.parentElement.nextElementSibling?.lastElementChild || images[0];
+    visibleImage.classList.add(visibleClass);
+  }, 7500);
 }
