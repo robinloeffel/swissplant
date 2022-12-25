@@ -5,7 +5,8 @@
     "portfolio": "Portfolio",
     "partners": "Partners",
     "contact": "Contact",
-    "start": "Start"
+    "start": "Start",
+    "jobs": "Open Jobs"
   },
   "home": {
     "meta": {
@@ -28,6 +29,10 @@
     "contact": {
       "heading": "How to contact us",
       "intro": "Of course we stand by your side if you need more information or want some tips and tricks."
+    },
+    "jobs": {
+      "heading": "We're hiring",
+      "intro": "Our company culture is defined by flexibility, openness and flexibility. Currently we are looking for new people to join our team!"
     },
     "button": {
       "more": "Find out more"
@@ -167,6 +172,15 @@
       }
     },
     "map": "Map"
+  },
+  "jobs": {
+    "meta": {
+      "title": "SwissPlant GmbH – Open Jobs",
+      "description": "We are a future-oriented company in vegetable seedling production. Our company culture is characterized by flexibility, openness and adaptability.",
+      "keywords": "swissplant, agriplant, jobs, job offers, work"
+    },
+    "heading": "Open Jobs",
+    "intro": "We are a future-oriented company in vegetable seedling production. Our company culture is characterized by flexibility, openness and adaptability. To complement our team, we are looking for the following profiles with immediate effect or upon agreement."
   },
   "common": {
     "logo": {

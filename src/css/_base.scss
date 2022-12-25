@@ -27,10 +27,30 @@ h1 {
 }
 
 h2,
+h3,
+ul,
+ol,
 p:not(:last-child) {
   margin-bottom: variables.$space-regular;
 }
 
 a {
   color: variables.$color-brand;
+}
+
+ul,
+ol {
+  padding-left: variables.$space-big;
+}
+
+hr {
+  height: 2px;
+  border: 0;
+  margin: variables.$space-huge 0;
+  background-color: variables.$color-black-5;
+}
+
+address {
+  font-style: unset;
+  white-space: pre-line;
 }

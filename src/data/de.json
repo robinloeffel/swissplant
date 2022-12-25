@@ -5,7 +5,8 @@
     "portfolio": "Angebot",
     "partners": "Partner",
     "contact": "Kontakt",
-    "start": "Start"
+    "start": "Start",
+    "jobs": "Offene Stellen"
   },
   "home": {
     "meta": {
@@ -28,6 +29,10 @@
     "contact": {
       "heading": "Wie Sie uns erreichen",
       "intro": "Wir stehen natürlich gerne für allfällige Informationen und Ratschläge zur Verfügung. Egal, ob E-Mail, Telefon oder vor Ort."
+    },
+    "jobs": {
+      "heading": "Wir stellen ein",
+      "intro": "Unsere Firmenkultur ist geprägt durch Flexibilität, Offenheit und Anpassungsfähigkeit. Zurzeit sind wir auf der Suche nach Verstärkung!"
     },
     "button": {
       "more": "Mehr erfahren"
@@ -167,6 +172,15 @@
       }
     },
     "map": "Karte"
+  },
+  "jobs": {
+    "meta": {
+      "title": "SwissPlant GmbH – Offene Stellen",
+      "description": "Wir sind ein zukunftsorientiertes Unternehmen in der Gemüsejungpflanzenherstellung. Unsere Firmenkultur ist geprägt durch Flexibilität, Offenheit und Anpassungsfähigkeit.",
+      "keywords": "swissplant, agriplant, jobs, stellen, inserate, stelleninserate, jobangebot, arbeit"
+    },
+    "heading": "Offene Stellen",
+    "intro": "Wir sind ein zukunftsorientiertes Unternehmen in der Gemüsejungpflanzenherstellung. Unsere Firmenkultur ist geprägt durch Flexibilität, Offenheit und Anpassungsfähigkeit. Zur Ergänzung unseres Teams suchen wir ab sofort oder nach Vereinbarung folgende Profile."
   },
   "common": {
     "logo": {
