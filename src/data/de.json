@@ -6,7 +6,7 @@
     "partners": "Partner",
     "contact": "Kontakt",
     "start": "Start",
-    "jobs": "Offene Stellen"
+    "jobs": "Jobs"
   },
   "home": {
     "meta": {
@@ -175,7 +175,7 @@
   },
   "jobs": {
     "meta": {
-      "title": "SwissPlant GmbH – Offene Stellen",
+      "title": "SwissPlant GmbH – Jobs",
       "description": "Wir sind ein zukunftsorientiertes Unternehmen in der Gemüsejungpflanzenherstellung. Unsere Firmenkultur ist geprägt durch Flexibilität, Offenheit und Anpassungsfähigkeit.",
       "keywords": "swissplant, agriplant, jobs, stellen, inserate, stelleninserate, jobangebot, arbeit"
     },

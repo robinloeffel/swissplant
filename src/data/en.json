@@ -6,7 +6,7 @@
     "partners": "Partners",
     "contact": "Contact",
     "start": "Start",
-    "jobs": "Open Jobs"
+    "jobs": "Jobs"
   },
   "home": {
     "meta": {
@@ -175,11 +175,11 @@
   },
   "jobs": {
     "meta": {
-      "title": "SwissPlant GmbH – Open Jobs",
+      "title": "SwissPlant GmbH – Jobs",
       "description": "We are a future-oriented company in vegetable seedling production. Our company culture is characterized by flexibility, openness and adaptability.",
       "keywords": "swissplant, agriplant, jobs, job offers, work"
     },
-    "heading": "Open Jobs",
+    "heading": "Open Positions",
     "intro": "We are a future-oriented company in vegetable seedling production. Our company culture is characterized by flexibility, openness and adaptability. To complement our team, we are looking for the following profiles with immediate effect or upon agreement."
   },
   "common": {
