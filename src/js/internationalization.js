@@ -1,7 +1,7 @@
-import mehrsprachig from 'mehrsprachig';
+import mehrsprachig from "mehrsprachig";
 
 document.addEventListener(
-  'mehrsprachigTranslated',
+  "mehrsprachigTranslated",
   ({ detail: {
     localeKey: language
   } }) => {
@@ -10,9 +10,9 @@ document.addEventListener(
 );
 
 mehrsprachig({
-  fallback: 'de',
+  fallback: "de",
   sources: {
-    de: '/data/de.json',
-    en: '/data/en.json'
+    de: "/data/de.json",
+    en: "/data/en.json"
   }
 });

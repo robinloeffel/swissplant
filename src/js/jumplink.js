@@ -1,4 +1,4 @@
-const links = document.querySelectorAll('[data-scroll-target]');
+const links = document.querySelectorAll("[data-scroll-target]");
 
 if (links.length > 0) {
   const smoothScroll = ({ currentTarget }) => {
@@ -7,11 +7,11 @@ if (links.length > 0) {
 
     window.scroll({
       top: offsetTop,
-      behavior: 'smooth'
+      behavior: "smooth"
     });
   };
 
-  links.forEach(link => {
-    link.addEventListener('click', smoothScroll);
-  });
+  for (const link of links) {
+    link.addEventListener("click", smoothScroll);
+  }
 }

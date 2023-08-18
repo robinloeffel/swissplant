@@ -1,24 +1,22 @@
 {
   "name": "swissplant",
-  "version": "1.1.0",
-  "description": "Site for SwissPlant Ltd.",
-  "homepage": "https://swissplant.ch",
-  "repository": "https://github.com/robinloeffel/swissplant.git",
-  "bugs": "https://github.com/robinloeffel/swissplant/issues",
-  "author": "Robin Löffel <hi@robinloeffel.ch> (https://robinloeffel.ch)",
   "license": "MIT",
-  "browserslist": ">1% in ch",
   "type": "module",
+  "browserslist": ">1% in ch",
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.0.8"
+  },
   "devDependencies": {
     "@rbnlffl/gulp-rollup": "^0.2.0",
     "@rbnlffl/gulp-sass": "^0.1.2",
-    "@rbnlffl/rollup-plugin-eslint": "^4.0.0",
-    "@rollup/plugin-commonjs": "^24.0.1",
-    "@rollup/plugin-node-resolve": "^15.0.1",
-    "cssnano": "^5.1.14",
+    "@rbnlffl/rollup-plugin-eslint": "^5.0.0",
+    "@rollup/plugin-commonjs": "^25.0.4",
+    "@rollup/plugin-node-resolve": "^15.2.0",
+    "@types/eslint": "^8.44.2",
+    "cssnano": "^6.0.1",
     "del": "^7.0.0",
-    "eslint": "^8.33.0",
-    "eslint-config-sweet": "^9.0.1",
+    "eslint": "^8.47.0",
+    "eslint-config-sweet": "^11.0.2",
     "gulp": "^4.0.2",
     "gulp-connect": "^5.7.0",
     "gulp-imagemin": "8.0.0",
@@ -27,19 +25,22 @@
     "gulp-rezzy": "^2.0.0",
     "gulp-webp": "^4.0.1",
     "mehrsprachig": "^1.0.1",
-    "open": "^8.4.1",
-    "postcss": "^8.4.21",
-    "postcss-preset-env": "^8.0.1",
-    "rollup": "^3.14.0",
+    "open": "^9.1.0",
+    "postcss": "^8.4.28",
+    "postcss-html": "^1.5.0",
+    "postcss-preset-env": "^9.1.1",
+    "rollup": "^3.28.0",
     "rollup-plugin-terser": "^7.0.2",
-    "stylelint": "^15.0.0",
+    "stylelint": "^15.10.3",
+    "stylelint-config-html": "^1.1.0",
     "stylelint-config-idiomatic-order": "^9.0.0",
-    "stylelint-config-standard-scss": "^6.1.0"
+    "stylelint-config-standard-scss": "^10.0.0",
+    "typescript": "^5.1.6"
   },
   "scripts": {
+    "start": "yarn dev",
     "dev": "gulp --dev",
     "prod": "gulp",
-    "dist": "gulp clean && gulp build",
-    "start": "yarn dev"
+    "dist": "gulp clean && gulp build"
   }
 }
