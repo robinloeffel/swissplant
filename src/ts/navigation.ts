@@ -1,10 +1,10 @@
-const navigation = document.querySelector(".navigation");
-const list = navigation.querySelector(".navigation-list");
-const logo = navigation.querySelector(".navigation-item-logo");
-const trigger = navigation.querySelector(".navigation-mobile-button");
+const navigation = document.querySelector<HTMLElement>(".navigation")!;
+const list = navigation.querySelector<HTMLUListElement>(".navigation-list")!;
+const logo = navigation.querySelector<HTMLLIElement>(".navigation-item-logo")!;
+const trigger = navigation.querySelector<HTMLButtonElement>(".navigation-mobile-button")!;
 
 const listGap = Number(window.getComputedStyle(list).rowGap.replace("px", ""));
-const navigationHeightCollapsed = logo.clientHeight + listGap * 2;
+const navigationHeightCollapsed = logo.clientHeight + (listGap * 2);
 navigation.style.setProperty("--navigation-height-collapsed", `${navigationHeightCollapsed}px`);
 
 const scrollBuffer = 50;
@@ -20,7 +20,7 @@ window.addEventListener("scroll", () => {
     navigation.classList.remove("navigation--hidden");
     oldScrollY = window.scrollY;
   }
-}, { passive: true });
+});
 
 trigger.addEventListener("click", () => {
   navigation.style.setProperty("--navigation-height-expanded", `${list.clientHeight}px`);

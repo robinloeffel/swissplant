@@ -9,6 +9,7 @@ import rezzy from "gulp-rezzy";
 import webp from "gulp-webp";
 import imagemin from "gulp-imagemin";
 import postcss from "gulp-postcss";
+import rename from "gulp-rename";
 import stylelint from "stylelint";
 import env from "postcss-preset-env";
 import cssnano from "cssnano";
@@ -17,6 +18,7 @@ import eslint from "@rbnlffl/rollup-plugin-eslint";
 import nodeResolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import { terser } from "rollup-plugin-terser";
+import typescript from "@rollup/plugin-typescript";
 
 const development = process.argv.includes("--dev");
 
@@ -32,7 +34,7 @@ gulp.task("serve", done => {
   done();
 });
 
-gulp.task("sass", () => gulp.src("src/css/swissplant.scss", {
+gulp.task("scss", () => gulp.src("src/scss/swissplant.scss", {
     sourcemaps: development
   })
   .pipe(plumber())
@@ -107,7 +109,7 @@ gulp.task("files", () => gulp.src([
   .pipe(gulp.dest("dist"))
   .pipe(connect.reload()));
 
-gulp.task("js", () => gulp.src("src/js/swissplant.js", {
+gulp.task("ts", () => gulp.src("src/ts/swissplant.ts", {
     sourcemaps: development
   })
   .pipe(plumber())
@@ -115,7 +117,8 @@ gulp.task("js", () => gulp.src("src/js/swissplant.js", {
     plugins: [
       eslint(),
       nodeResolve(),
-      commonjs()
+      commonjs(),
+      typescript()
     ]
   }, {
     format: "iife",
@@ -127,6 +130,7 @@ gulp.task("js", () => gulp.src("src/js/swissplant.js", {
       })
     ].filter(Boolean)
   }))
+  .pipe(rename("swissplant.js"))
   .pipe(gulp.dest("dist/js", {
     sourcemaps: "."
   }))
@@ -142,13 +146,13 @@ gulp.task("font", () => {
   ]);
 });
 
-gulp.task("watch:sass", done => {
-  gulp.watch("src/css/**/*", gulp.parallel("sass"));
+gulp.task("watch:scss", done => {
+  gulp.watch("src/scss/**/*", gulp.parallel("scss"));
   done();
 });
 
-gulp.task("watch:js", done => {
-  gulp.watch("src/js/**/*", gulp.parallel("js"));
+gulp.task("watch:ts", done => {
+  gulp.watch("src/ts/**/*", gulp.parallel("ts"));
   done();
 });
 
@@ -167,6 +171,6 @@ gulp.task("watch:files", done => {
 });
 
 gulp.task("img", gulp.parallel("img:meta", "img:employees", "img:bgs"));
-gulp.task("build", gulp.series(gulp.parallel("sass", "js", "img", "files"), "font"));
-gulp.task("watch", gulp.parallel("watch:sass", "watch:js", "watch:img", "watch:files"));
+gulp.task("build", gulp.series(gulp.parallel("scss", "ts", "img", "files"), "font"));
+gulp.task("watch", gulp.parallel("watch:scss", "watch:ts", "watch:img", "watch:files"));
 gulp.task("default", gulp.series("clean", "build", "watch", "serve", "open"));
