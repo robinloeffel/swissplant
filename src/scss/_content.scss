@@ -17,4 +17,28 @@
       color: variables.$color-brand;
     }
   }
+
+  > * + *,
+  li + li {
+    margin-top: 2em;
+  }
+
+
+  .two-column {
+    display: grid;
+    margin-bottom: 2em;
+    grid-template-columns: 1fr 1fr;
+
+    > * {
+      min-width: 0;
+    }
+
+    .left {
+      grid-column: 1 / span 1;
+    }
+
+    .right {
+      grid-column: 2 / span 1;
+    }
+  }
 }

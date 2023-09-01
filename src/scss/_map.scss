@@ -3,4 +3,9 @@
   height: 100%;
   border: 0;
   aspect-ratio: 16 / 10;
+
+  &.wide {
+    width: 110%;
+    margin: 0 -5%;
+  }
 }
