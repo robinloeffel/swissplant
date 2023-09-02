@@ -5,7 +5,7 @@ const inject = async () => {
 
   const { documentElement: spriteElement } = domParser.parseFromString(spriteAsText, "image/svg+xml");
   spriteElement.classList.add("visually-hidden");
-  document.body.prepend(spriteElement);
+  document.body.append(spriteElement);
 };
 
-inject();
+document.addEventListener("DOMContentLoaded", inject);
