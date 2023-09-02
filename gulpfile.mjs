@@ -10,6 +10,7 @@ import webp from "gulp-webp";
 import imagemin from "gulp-imagemin";
 import postcss from "gulp-postcss";
 import rename from "gulp-rename";
+import svgSprite from "gulp-svg-sprite";
 import stylelint from "stylelint";
 import env from "postcss-preset-env";
 import cssnano from "cssnano";
@@ -99,10 +100,16 @@ gulp.task("img:bgs", () => gulp.src([
   }))
   .pipe(gulp.dest("dist/img")));
 
+gulp.task("img:svg-sprite", () => gulp.src("src/icons/*.svg")
+  .pipe(svgSprite({
+    mode: { symbol: true }
+  }))
+  .pipe(rename("sprite.svg"))
+  .pipe(gulp.dest("dist/img")));
+
 gulp.task("files", () => gulp.src([
     "src/{*,}.*",
-    "src/data/*",
-    "src/img/sprite.svg"
+    "src/data/*"
   ], {
     base: "src"
   })
@@ -161,16 +168,20 @@ gulp.task("watch:img", done => {
   done();
 });
 
+gulp.task("watch:svg-sprite", done => {
+  gulp.watch("src/icons/**/*", gulp.parallel("img:svg-sprite"));
+  done();
+});
+
 gulp.task("watch:files", done => {
   gulp.watch([
     "src/{*,}.*",
-    "src/data/*",
-    "src/img/sprite.svg"
+    "src/data/*"
   ], gulp.parallel("files"));
   done();
 });
 
-gulp.task("img", gulp.parallel("img:meta", "img:employees", "img:bgs"));
+gulp.task("img", gulp.parallel("img:meta", "img:employees", "img:bgs", "img:svg-sprite"));
 gulp.task("build", gulp.series(gulp.parallel("scss", "ts", "img", "files"), "font"));
 gulp.task("watch", gulp.parallel("watch:scss", "watch:ts", "watch:img", "watch:files"));
 gulp.task("default", gulp.series("clean", "build", "watch", "serve", "open"));
