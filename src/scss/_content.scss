@@ -19,26 +19,35 @@
   }
 
   > * + *,
-  li + li {
+  ol li + li {
     margin-top: 2em;
   }
 
 
   .two-column {
-    display: grid;
-    margin-bottom: 2em;
-    grid-template-columns: 1fr 1fr;
-
-    > * {
-      min-width: 0;
+    > * + * {
+      margin-top: 2em;
     }
 
-    .left {
-      grid-column: 1 / span 1;
-    }
+    @media (width >= 640px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
 
-    .right {
-      grid-column: 2 / span 1;
+      > * + * {
+        margin-top: unset;
+      }
+
+      > * {
+        min-width: 0;
+      }
+
+      .left {
+        grid-column: 1 / span 1;
+      }
+
+      .right {
+        grid-column: 2 / span 1;
+      }
     }
   }
 }

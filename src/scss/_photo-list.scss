@@ -2,13 +2,15 @@
 
 .photo-list {
   display: grid;
+  padding: 0;
   gap: 15px;
   grid-template-columns: 1fr 1fr 1fr;
 
   &-photo {
     position: relative;
-    display: inline-block;
-    aspect-ratio: 1;
+    display: block;
+    min-width: 0;
+    margin: 0;
 
     &:hover {
       .photo-list-content {
@@ -18,10 +20,9 @@
   }
 
   &-image {
-    position: absolute;
+    display: block;
     width: 100%;
-    height: 100%;
-    inset: 0;
+    aspect-ratio: 1;
     object-fit: cover;
   }
 
@@ -47,13 +48,13 @@
   }
 }
 
-@media (max-width: 900px) {
+@media (width <= 900px) {
   .photo-list {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-@media (max-width: 600px) {
+@media (width <= 600px) {
   .photo-list {
     grid-template-columns: 1fr;
   }
