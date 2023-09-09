@@ -5,6 +5,7 @@ module.exports = {
     "sweet/configs/typescript-typed.cjs"
   ],
   rules: {
+    indent: [ "error", 2 ],
     "no-extra-parens": "off"
   },
   overrides: [{

@@ -6,8 +6,8 @@ const trigger = navigation.querySelector<HTMLButtonElement>(".navigation-mobile-
 const listGap = Number(window.getComputedStyle(list).rowGap.replace("px", ""));
 const navigationHeightCollapsed = logo.clientHeight + (listGap * 2);
 navigation.style.setProperty("--navigation-height-collapsed", `${navigationHeightCollapsed}px`);
-
 const scrollBuffer = 50;
+
 let oldScrollY = window.scrollY;
 
 window.addEventListener("scroll", () => {

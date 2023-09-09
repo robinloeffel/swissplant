@@ -59,7 +59,7 @@
   }
 }
 
-@media (max-width: 900px) {
+@media (width <= 900px) {
   .footer {
     &-content {
       flex-wrap: wrap;

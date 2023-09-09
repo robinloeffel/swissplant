@@ -19,7 +19,7 @@ import rollup from "@rbnlffl/gulp-rollup";
 import eslint from "@rbnlffl/rollup-plugin-eslint";
 import nodeResolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
-import { terser } from "rollup-plugin-terser";
+import terser from "@rollup/plugin-terser";
 import typescript from "@rollup/plugin-typescript";
 
 const development = process.argv.includes("--dev");
@@ -37,8 +37,8 @@ gulp.task("serve", done => {
 });
 
 gulp.task("scss", () => gulp.src("src/scss/swissplant.scss", {
-    sourcemaps: development
-  })
+  sourcemaps: development
+})
   .pipe(plumber())
   .pipe(postcss([
     stylelint()
@@ -76,9 +76,9 @@ gulp.task("img:employees", () => gulp.src("src/img/mitarbeiter/*")
   .pipe(gulp.dest("dist/img/mitarbeiter")));
 
 gulp.task("img:bgs", () => gulp.src([
-    "src/img/*",
-    "!src/img/{apple,favicon,og,poster,sprite}*"
-  ])
+  "src/img/*",
+  "!src/img/{apple,favicon,og,poster,sprite}*"
+])
   .pipe(plumber())
   .pipe(rezzy([{
     width: 1600,
@@ -118,17 +118,17 @@ gulp.task("sprite", () => gulp.src("src/icons/*.svg")
   .pipe(gulp.dest("dist/img")));
 
 gulp.task("files", () => gulp.src([
-    "src/{*,}.*",
-    "src/data/*"
-  ], {
-    base: "src"
-  })
+  "src/{*,}.*",
+  "src/data/*"
+], {
+  base: "src"
+})
   .pipe(gulp.dest("dist"))
   .pipe(connect.reload()));
 
 gulp.task("ts", () => gulp.src("src/ts/swissplant.ts", {
-    sourcemaps: development
-  })
+  sourcemaps: development
+})
   .pipe(plumber())
   .pipe(rollup({
     plugins: [
@@ -139,13 +139,15 @@ gulp.task("ts", () => gulp.src("src/ts/swissplant.ts", {
     ]
   }, {
     format: "iife",
-    plugins: [
-      !development && terser({
-        format: {
-          comments: false
-        }
-      })
-    ].filter(Boolean)
+    ...!development && {
+      plugins: [
+        terser({
+          format: {
+            comments: false
+          }
+        })
+      ]
+    }
   }))
   .pipe(rename("swissplant.js"))
   .pipe(gulp.dest("dist/js", {
