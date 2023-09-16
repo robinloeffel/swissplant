@@ -1,5 +1,4 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
     "strict": true,
     "target": "esnext",
@@ -9,9 +8,7 @@
     "forceConsistentCasingInFileNames": true,
     "verbatimModuleSyntax": true,
     "isolatedModules": true,
-    "esModuleInterop": true,
-    "noEmit": true,
-    "sourceMap": true
+    "noEmit": true
   },
   "include": ["src"]
 }

@@ -2,13 +2,17 @@
   "name": "swissplant",
   "license": "MIT",
   "type": "module",
-  "browserslist": ">1% in ch",
+  "browserslist": ">=1% in ch",
+  "engines": {
+    "node": "^18",
+    "yarn": "^1"
+  },
   "dependencies": {
     "@fontsource-variable/inter": "^5.0.8"
   },
   "devDependencies": {
-    "@rbnlffl/gulp-rollup": "^0.2.0",
-    "@rbnlffl/gulp-sass": "^0.1.2",
+    "@rbnlffl/gulp-rollup": "^0.2.2",
+    "@rbnlffl/gulp-sass": "^0.2.1",
     "@rbnlffl/rollup-plugin-eslint": "^5.0.0",
     "@rollup/plugin-commonjs": "^25.0.4",
     "@rollup/plugin-node-resolve": "^15.2.1",
@@ -34,7 +38,8 @@
     "postcss": "^8.4.29",
     "postcss-html": "^1.5.0",
     "postcss-preset-env": "^9.1.3",
-    "rollup": "^3.29.0",
+    "rollup": "^3.29.2",
+    "sass": "^1.67.0",
     "stylelint": "^15.10.3",
     "stylelint-config-html": "^1.1.0",
     "stylelint-config-idiomatic-order": "^9.0.0",
@@ -47,6 +52,7 @@
     "start": "yarn dev",
     "dev": "gulp --dev",
     "prod": "gulp",
-    "dist": "gulp clean && gulp build"
+    "dist": "gulp clean && gulp build",
+    "postinstall": "browserslist --update-db"
   }
 }
