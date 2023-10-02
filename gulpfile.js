@@ -1,4 +1,5 @@
 import fs from "node:fs/promises";
+import process from "node:process";
 
 import gulp from "gulp";
 import { deleteAsync } from "del";

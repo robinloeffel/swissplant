@@ -3,12 +3,11 @@
     "strict": true,
     "target": "esnext",
     "module": "esnext",
-    "moduleResolution": "bundler",
     "lib": ["esnext", "dom", "dom.iterable"],
+    "moduleResolution": "bundler",
     "forceConsistentCasingInFileNames": true,
     "verbatimModuleSyntax": true,
-    "isolatedModules": true,
-    "noEmit": true
+    "isolatedModules": true
   },
   "include": ["src"]
 }
