@@ -3,23 +3,16 @@
 
 .navigation {
   position: fixed;
+  inset: 0 0 auto;
   z-index: 9;
-  overflow: hidden;
   width: min(100% - 30px, 560px);
-  height: var(--navigation-height-collapsed, auto);
-  border-radius: 10px;
   margin: 15px auto;
-  backdrop-filter: blur(25px);
+  overflow: hidden;
   background-color: variables.$color-white-90;
+  backdrop-filter: blur(25px);
+  border-radius: 10px;
   box-shadow: 0 5px 15px variables.$color-black-5;
-  inset: 0;
-  transition:
-    height 0.3s ease-in-out,
-    translate 0.3s ease-in-out;
-
-  &--open {
-    height: var(--navigation-height-expanded);
-  }
+  transition: translate 0.3s ease-in-out;
 
   &--hidden {
     translate: 0 calc(-100% - 30px);
@@ -27,28 +20,46 @@
 
   &-list {
     display: grid;
+    grid-template-rows: auto 0fr;
     padding: variables.$space-big;
-    row-gap: variables.$space-big;
+    margin: 0;
+    transition: grid-template-rows 0.3s ease-in-out;
+    will-change: grid-template-rows;
+
+    .navigation--open & {
+      grid-template-rows: auto 1fr;
+    }
+  }
+
+  &-expando {
+    display: grid;
+    overflow: hidden;
+    visibility: hidden;
+    transition:
+      margin-top 0.3s ease-in-out,
+      visibility 0.3s ease-in-out;
+    will-change: margin-top;
+
+    .navigation--open & {
+      margin-top: variables.$space-big;
+      visibility: unset;
+    }
+  }
+
+  &-expando-wrapper {
+    display: grid;
+    row-gap: variables.$space-regular;
+    padding: 0;
+    margin: 0;
   }
 
   &-item {
     display: inline-flex;
     align-items: center;
-    line-height: normal;
-    transition: visibility 0.3s;
-
-    &:not(&-logo, &-trigger) {
-      visibility: hidden;
-
-      .navigation--open & {
-        visibility: unset;
-      }
-    }
 
     &-logo,
     &-trigger {
-      grid-column: 1 / -1;
-      grid-row: 1;
+      grid-area: 1 / 1 / 2 / -1;
     }
 
     &-logo {
@@ -68,11 +79,11 @@
   }
 
   &-mobile-button {
-    border: 0;
-    background: none;
+    font-size: 125%;
     color: inherit;
     cursor: pointer;
-    font-size: 125%;
+    background: none;
+    border: 0;
     transition: rotate 0.3s ease-in-out;
 
     .navigation--open & {
@@ -94,11 +105,11 @@
     }
 
     &__button {
-      border: 0;
-      background: none;
+      font-size: smaller;
       color: inherit;
       cursor: pointer;
-      font-size: smaller;
+      background: none;
+      border: 0;
     }
   }
 }

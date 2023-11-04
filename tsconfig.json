@@ -1,13 +1,15 @@
 {
   "compilerOptions": {
-    "strict": true,
-    "target": "esnext",
-    "module": "esnext",
-    "lib": ["esnext", "dom", "dom.iterable"],
+    "target": "es2022",
+    "module": "es2022",
     "moduleResolution": "bundler",
-    "forceConsistentCasingInFileNames": true,
+    "lib": ["es2022", "dom", "dom.iterable"],
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "skipLibCheck": true,
     "verbatimModuleSyntax": true,
-    "isolatedModules": true
-  },
-  "include": ["src"]
+    "moduleDetection": "force",
+    "outDir": "dist",
+    "noEmit": true
+  }
 }

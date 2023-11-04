@@ -1,12 +1,14 @@
 import mehrsprachig from "mehrsprachig";
 
+const handleMehrsprachigTranslated = (
+  { detail }: CustomEventInit<{ localeKey: string }>
+) => {
+  document.documentElement.lang = detail?.localeKey ?? "de";
+};
+
 document.addEventListener(
   "mehrsprachigTranslated",
-  ({ detail: {
-    localeKey: language
-  } }) => {
-    document.documentElement.lang = language;
-  }
+  handleMehrsprachigTranslated
 );
 
 mehrsprachig({

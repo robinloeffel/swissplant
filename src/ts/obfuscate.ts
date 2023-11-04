@@ -50,11 +50,11 @@ const handleClick = (event: MouseEvent) => {
   event.preventDefault();
 
   const target = event.target as HTMLAnchorElement;
-  window.location.href = window.atob(target.dataset.obfuscate!);
+  window.location.href = window.atob(target.dataset.obfuscate ?? "");
 };
 
 for (const obfuscatedElement of obfuscated) {
-  const pair = pairs.get(obfuscatedElement.dataset.obfuscate!);
+  const pair = pairs.get(obfuscatedElement.dataset.obfuscate ?? "");
 
   if (pair) {
     obfuscatedElement.addEventListener("click", handleClick);

@@ -2,12 +2,15 @@ const links = document.querySelectorAll<HTMLButtonElement>("[data-scroll-target]
 
 const smoothScroll = (event: Event) => {
   const clicked = event.target as HTMLButtonElement;
-  const scrollTargetSelector = clicked.dataset.scrollTarget!;
-  const scrollTargetElement = document.querySelector<HTMLElement>(scrollTargetSelector);
+  const scrollTargetSelector = clicked.dataset.scrollTarget;
 
-  scrollTargetElement?.scrollIntoView({
-    behavior: "smooth"
-  });
+  if (scrollTargetSelector) {
+    const scrollTargetElement = document.querySelector<HTMLElement>(scrollTargetSelector);
+
+    scrollTargetElement?.scrollIntoView({
+      behavior: "smooth"
+    });
+  }
 };
 
 for (const link of links) {

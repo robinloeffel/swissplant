@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <link rel="preload" type="font/woff2" href="fonts/inter.woff2" as="font" crossorigin>
   <link rel="preload" type="text/css" href="css/swissplant.css" as="style">
-  <link rel="preload" type="text/javascript" href="js/swissplant.js" as="script">
+  <link rel="modulepreload" href="js/swissplant.js">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" data-mehrsprachig="content=partners.meta.description" content="Wir arbeiten Hand in Hand mit unseren Partnern. Erfahren Sie mehr über unsere Kooperationen.">
   <meta name="keywords" data-mehrsprachig="content=partners.meta.keywords" content="partner, geschäftspartner, partnerfirmen, partnerfirma, agriplant, agriplant ag, gipmans, gipmans holland, swissplant, kundschaft, spedition, wissen, können, innovationen, qualität">
@@ -20,7 +20,7 @@
   <link rel="icon" href="img/favicon.svg">
   <link rel="canonical" href="https://swissplant.ch/partner.html">
   <link rel="stylesheet" type="text/css" href="css/swissplant.css">
-  <script type="text/javascript" src="js/swissplant.js" defer></script>
+  <script type="module" src="js/swissplant.js"></script>
 </head>
 
 <body>
@@ -36,31 +36,35 @@
       <li class="navigation-item navigation-item-trigger">
         <button class="navigation-mobile-button">&darr;</button>
       </li>
-      <li class="navigation-item">
-        <a class="navigation-link" href="firma.html" data-mehrsprachig="nav.company"></a>
-      </li>
-      <li class="navigation-item">
-        <a class="navigation-link" href="team.html" data-mehrsprachig="nav.team"></a>
-      </li>
-      <li class="navigation-item">
-        <a class="navigation-link" href="angebot.html" data-mehrsprachig="nav.portfolio"></a>
-      </li>
-      <li class="navigation-item">
-        <a class="navigation-link" href="partner.html" data-mehrsprachig="nav.partners"></a>
-      </li>
-      <li class="navigation-item">
-        <a class="navigation-link" href="kontakt.html" data-mehrsprachig="nav.contact"></a>
-      </li>
-      <li class="navigation-item">
-        <a class="navigation-link" href="jobs.html" data-mehrsprachig="nav.jobs"></a>
-      </li>
-      <li class="navigation-item">
-        <ul class="navigation-language-switcher">
-          <li class="navigation-language-switcher__item">
-            <button type="button" data-mehrsprachig-trigger="de" class="navigation-language-switcher__button">DE</button>
+      <li class="navigation-expando">
+        <ul class="navigation-expando-wrapper">
+          <li class="navigation-item">
+            <a class="navigation-link" href="firma.html" data-mehrsprachig="nav.company"></a>
           </li>
-          <li class="navigation-language-switcher__item">
-            <button type="button" data-mehrsprachig-trigger="en" class="navigation-language-switcher__button">EN</button>
+          <li class="navigation-item">
+            <a class="navigation-link" href="team.html" data-mehrsprachig="nav.team"></a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-link" href="angebot.html" data-mehrsprachig="nav.portfolio"></a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-link" href="partner.html" data-mehrsprachig="nav.partners"></a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-link" href="kontakt.html" data-mehrsprachig="nav.contact"></a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-link" href="jobs.html" data-mehrsprachig="nav.jobs"></a>
+          </li>
+          <li class="navigation-item">
+            <ul class="navigation-language-switcher">
+              <li class="navigation-language-switcher__item">
+                <button type="button" data-mehrsprachig-trigger="de" class="navigation-language-switcher__button">DE</button>
+              </li>
+              <li class="navigation-language-switcher__item">
+                <button type="button" data-mehrsprachig-trigger="en" class="navigation-language-switcher__button">EN</button>
+              </li>
+            </ul>
           </li>
         </ul>
       </li>

@@ -140,7 +140,6 @@ gulp.task("ts", () => gulp.src("src/ts/swissplant.ts", {
       typescript()
     ]
   }, {
-    format: "iife",
     ...!development && {
       plugins: [
         terser({
