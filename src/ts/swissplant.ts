@@ -1,6 +1,6 @@
 import "./internationalization";
 import "./navigation";
-import "./hero";
+import "./landing";
 import "./jumplink";
 import "./spritesheet";
 import "./obfuscate";

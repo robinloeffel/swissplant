@@ -2,97 +2,82 @@
 
 .landing {
   position: relative;
-  display: grid;
-  place-content: center;
   height: 100vh;
-  color: variables.$color-white;
+  isolation: isolate;
+  border-bottom: 5px solid variables.$color-brand;
 
-  &::after {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    content: "";
-    background-color: variables.$color-brand;
+  &.small {
+    height: 33vh;
   }
 
-  &-images,
-  &-image {
+  &:not(.small)::before {
     position: absolute;
     inset: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-  }
-
-  &-images {
-    &::after {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      content: "";
-      background-color: variables.$color-black-50;
-    }
-  }
-
-  &-image {
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 2s ease-in-out;
-
-    &-visible {
-      opacity: unset;
-    }
-  }
-
-  &-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 75vw;
-    max-width: 1024px;
-  }
-
-  &-jump {
-    display: inline-grid;
-    place-items: center;
-    width: 50px;
-    height: 50px;
-    font-size: 150%;
-    color: inherit;
-    cursor: pointer;
-    background: none;
-    border: 0;
-
-    > * {
-      pointer-events: none;
-      animation: move 1s alternate infinite ease-in-out;
-    }
-  }
-
-  &-logo {
-    width: 100%;
-    height: 200px;
-  }
-
-  &--small {
-    height: 40vh;
-
-    .landing-images::after {
-      content: none;
-    }
+    z-index: 1;
+    content: "";
+    background-color: variables.$color-black-50;
   }
 }
 
-@keyframes move {
+.landing-images {
+  position: absolute;
+  inset: 0;
+  display: grid;
+
+  > * {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+}
+
+.landing-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+
+  &.is-animating {
+    transition: opacity 2.5s ease-in-out;
+  }
+
+  &.is-visible {
+    opacity: 1;
+  }
+}
+
+.landing-text {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: min(65%, 1024px);
+  height: fit-content;
+  margin: auto;
+}
+
+.landing-logo {
+  width: 100%;
+  aspect-ratio: 19 / 5;
+  color: variables.$color-white;
+}
+
+.landing-jump {
+  width: 64px;
+  height: 64px;
+  font-size: 32px;
+  color: variables.$color-white;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  animation: up-and-down 2s ease-in-out infinite alternate;
+}
+
+@keyframes up-and-down {
   from {
-    transform: translateY(5px);
+    translate: 0 -20%;
   }
 
   to {
-    transform: translateY(-5px);
+    translate: 0 20%;
   }
 }
