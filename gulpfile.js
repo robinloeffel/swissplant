@@ -69,8 +69,6 @@ gulp.task("img:employees", () => gulp.src("src/img/mitarbeiter/*")
     width: 300,
     suffix: "-300w"
   }]))
-  .pipe(imagemin())
-  .pipe(gulp.dest("dist/img/mitarbeiter"))
   .pipe(webp({
     preset: "photo",
     method: 6
@@ -95,8 +93,6 @@ gulp.task("img:bgs", () => gulp.src([
     width: 400,
     suffix: "-400w"
   }]))
-  .pipe(imagemin())
-  .pipe(gulp.dest("dist/img"))
   .pipe(webp({
     preset: "photo",
     method: 6
