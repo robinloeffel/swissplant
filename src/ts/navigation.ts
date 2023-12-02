@@ -4,6 +4,7 @@ const scrollBuffer = 50;
 
 let oldScrollY = window.scrollY;
 
+// eslint-disable-next-line github/prefer-observers -- no way to do that here
 window.addEventListener("scroll", () => {
   if (window.scrollY > oldScrollY + scrollBuffer) {
     navigation?.classList.add("navigation--hidden");

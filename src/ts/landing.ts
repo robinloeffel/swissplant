@@ -1,8 +1,9 @@
 const images = document.querySelectorAll(".landing-image");
+const visibleClass = "is-visible";
 
 if (images.length > 0) {
   let current = images.item(0)!;
-  current.classList.add("is-visible");
+  current.classList.add(visibleClass);
 
   if (images.length > 1) {
     window.setTimeout(() => {
@@ -14,8 +15,8 @@ if (images.length > 0) {
     window.setInterval(() => {
       const next = current.nextElementSibling ?? images.item(0)!;
 
-      current.classList.remove("is-visible");
-      next.classList.add("is-visible");
+      current.classList.remove(visibleClass);
+      next.classList.add(visibleClass);
 
       current = next;
     }, 7500);
