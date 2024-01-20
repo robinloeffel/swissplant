@@ -23,51 +23,67 @@
     <script type="module" src="js/swissplant.js"></script>
   </head>
   <body>
-    <nav class="navigation">
-      <ul class="navigation-list">
-        <li class="navigation-item navigation-item-logo">
-          <a href="/" class="navigation-link" aria-label="SwissPlant Logo">
-            <svg class="icon header-navigation-logo">
+    <nav class="navigation" data-module="navigation">
+      <ul class="navigation-bar">
+        <li class="navigation-bar-item">
+          <a class="navigation-bar-logo" href="/">
+            <span class="visually-hidden">Zur Startseite gehen.</span>
+            <svg class="icon header-navigation-logo" aria-hidden="true">
               <use href="#swissplant-logo-swooshless"></use>
             </svg>
           </a>
         </li>
-        <li class="navigation-item navigation-item-trigger">
-          <button type="button" class="navigation-mobile-button">&darr;</button>
-        </li>
-        <li class="navigation-expando">
-          <ul class="navigation-expando-wrapper">
-            <li class="navigation-item">
-              <a class="navigation-link" href="firma.html" data-mehrsprachig="nav.company"></a>
-            </li>
-            <li class="navigation-item">
-              <a class="navigation-link" href="team.html" data-mehrsprachig="nav.team"></a>
-            </li>
-            <li class="navigation-item">
-              <a class="navigation-link" href="angebot.html" data-mehrsprachig="nav.portfolio"></a>
-            </li>
-            <li class="navigation-item">
-              <a class="navigation-link" href="partner.html" data-mehrsprachig="nav.partners"></a>
-            </li>
-            <li class="navigation-item">
-              <a class="navigation-link" href="kontakt.html" data-mehrsprachig="nav.contact"></a>
-            </li>
-            <li class="navigation-item">
-              <a class="navigation-link" href="jobs.html" data-mehrsprachig="nav.jobs"></a>
-            </li>
-            <li class="navigation-item">
-              <ul class="navigation-language-switcher">
-                <li class="navigation-language-switcher__item">
-                  <button type="button" data-mehrsprachig-trigger="de" class="navigation-language-switcher__button">DE</button>
-                </li>
-                <li class="navigation-language-switcher__item">
-                  <button type="button" data-mehrsprachig-trigger="en" class="navigation-language-switcher__button">EN</button>
-                </li>
-              </ul>
-            </li>
-          </ul>
+        <li class="navigation-bar-item">
+          <button
+            id="navigation-bar-toggle"
+            class="navigation-bar-toggle"
+            type="button"
+            data-navigation="toggle"
+            aria-expanded="false"
+            aria-controls="navigation-expando"
+          >
+            <span class="visually-hidden">Die Hauptnavigationspunkte der Webseite.</span>
+            <span aria-hidden="true">&darr;</span>
+          </button>
         </li>
       </ul>
+      <div
+        class="navigation-expando"
+        id="navigation-expando"
+        role="region"
+        aria-labelledby="navigation-bar-toggle"
+      >
+        <ul class="navigation-list">
+          <li class="navigation-item">
+            <a class="navigation-link" href="firma.html" data-mehrsprachig="nav.company"></a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-link" href="team.html" data-mehrsprachig="nav.team"></a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-link" href="angebot.html" data-mehrsprachig="nav.portfolio"></a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-link" href="partner.html" data-mehrsprachig="nav.partners"></a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-link" href="kontakt.html" data-mehrsprachig="nav.contact"></a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-link" href="jobs.html" data-mehrsprachig="nav.jobs"></a>
+          </li>
+          <li class="navigation-item">
+            <button type="button" data-mehrsprachig-trigger="de" class="navigation-language-toggle">
+              <span class="visually-hidden">Sprache der Webseite auf Deutsch wechseln.</span>
+              <span>DE</span>
+            </button>
+            <button type="button" data-mehrsprachig-trigger="en" class="navigation-language-toggle">
+              <span class="visually-hidden">Change the language of the web site to English.</span>
+              <span>EN</span>
+            </button>
+          </li>
+        </ul>
+      </div>
     </nav>
     <header class="landing small" aria-hidden="true">
       <div class="landing-images">

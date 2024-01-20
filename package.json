@@ -12,6 +12,7 @@
     "@html-eslint/eslint-plugin": "^0.22.0",
     "@html-eslint/parser": "^0.22.0",
     "@isnotdefined/stylelint-plugin": "^4.0.0",
+    "@preact/signals-core": "^1.5.1",
     "@primer/stylelint-config": "^12.9.1",
     "@rbnlffl/gulp-rollup": "^0.2.3",
     "@rbnlffl/gulp-sass": "^0.2.1",
