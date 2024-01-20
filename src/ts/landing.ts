@@ -2,7 +2,7 @@ const images = document.querySelectorAll(".landing-image");
 const visibleClass = "is-visible";
 
 if (images.length > 0) {
-  let current = images.item(0)!;
+  let current = images.item(0);
   current.classList.add(visibleClass);
 
   if (images.length > 1) {
@@ -13,7 +13,7 @@ if (images.length > 0) {
     });
 
     window.setInterval(() => {
-      const next = current.nextElementSibling ?? images.item(0)!;
+      const next = current.nextElementSibling ?? images.item(0);
 
       current.classList.remove(visibleClass);
       next.classList.add(visibleClass);

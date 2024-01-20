@@ -12,10 +12,8 @@
     min-width: 0;
     margin: 0;
 
-    &:hover {
-      .photo-list-content {
-        opacity: 1;
-      }
+    &:hover .photo-list-content {
+      opacity: 1;
     }
   }
 
