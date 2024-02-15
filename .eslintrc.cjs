@@ -1,13 +1,8 @@
-/** @type {import("eslint").Linter.Config} */
-module.exports = {
+const { defineConfig } = require("eslint-define-config");
+
+module.exports = defineConfig({
   extends: "sweet",
   overrides: [{
-    files: "gulpfile.mjs",
-    env: {
-      browser: false,
-      node: true
-    }
-  }, {
     files: "*.html",
     parser: "@html-eslint/parser",
     plugins: [ "@html-eslint" ],
@@ -33,4 +28,4 @@ module.exports = {
       "@html-eslint/indent": [ "error", 2 ]
     }
   }]
-};
+});

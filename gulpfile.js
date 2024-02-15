@@ -1,3 +1,5 @@
+/* eslint-disable sonarjs/no-duplicate-string */
+
 import fs from "node:fs/promises";
 import process from "node:process";
 
@@ -8,12 +10,10 @@ import connect from "gulp-connect";
 import plumber from "gulp-plumber";
 import sass from "@rbnlffl/gulp-sass";
 import rezzy from "gulp-rezzy";
-import webp from "gulp-webp";
 import imagemin from "gulp-imagemin";
 import postcss from "gulp-postcss";
 import rename from "gulp-rename";
 import svgSprite from "gulp-svg-sprite";
-import svgmin from "gulp-svgmin";
 import stylelint from "stylelint";
 import env from "postcss-preset-env";
 import cssnano from "cssnano";
@@ -23,17 +23,17 @@ import nodeResolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import terser from "@rollup/plugin-terser";
 import typescript from "@rollup/plugin-typescript";
+import webp from "imagemin-webp";
 
 const development = process.argv.includes("--dev");
 
-gulp.task("clean", () => deleteAsync("dist"));
+gulp.task("clean", () => deleteAsync("public"));
 gulp.task("open", () => open("http://localhost:8080"));
 
 gulp.task("serve", done => {
   connect.server({
     livereload: true,
-    root: "dist",
-    host: "0.0.0.0"
+    root: "public"
   });
   done();
 });
@@ -50,7 +50,7 @@ gulp.task("scss", () => gulp.src("src/scss/swissplant.scss", {
     env(),
     !development && cssnano()
   ].filter(Boolean)))
-  .pipe(gulp.dest("dist/css", {
+  .pipe(gulp.dest("public/css", {
     sourcemaps: "."
   }))
   .pipe(connect.reload()));
@@ -58,7 +58,7 @@ gulp.task("scss", () => gulp.src("src/scss/swissplant.scss", {
 gulp.task("img:meta", () => gulp.src("src/img/{apple,favicon,og,poster}*")
   .pipe(plumber())
   .pipe(imagemin())
-  .pipe(gulp.dest("dist/img")));
+  .pipe(gulp.dest("public/img")));
 
 gulp.task("img:employees", () => gulp.src("src/img/mitarbeiter/*")
   .pipe(plumber())
@@ -69,11 +69,16 @@ gulp.task("img:employees", () => gulp.src("src/img/mitarbeiter/*")
     width: 300,
     suffix: "-300w"
   }]))
-  .pipe(webp({
-    preset: "photo",
-    method: 6
+  .pipe(imagemin([
+    webp({
+      preset: "photo",
+      method: 6
+    })
+  ]))
+  .pipe(rename({
+    extname: ".webp"
   }))
-  .pipe(gulp.dest("dist/img/mitarbeiter")));
+  .pipe(gulp.dest("public/img/mitarbeiter")));
 
 gulp.task("img:bgs", () => gulp.src([
   "src/img/*",
@@ -93,27 +98,27 @@ gulp.task("img:bgs", () => gulp.src([
     width: 400,
     suffix: "-400w"
   }]))
-  .pipe(webp({
-    preset: "photo",
-    method: 6
+  .pipe(imagemin([
+    webp({
+      preset: "photo",
+      method: 6
+    })
+  ]))
+  .pipe(rename({
+    extname: ".webp"
   }))
-  .pipe(gulp.dest("dist/img")));
+  .pipe(gulp.dest("public/img")));
 
 gulp.task("sprite", () => gulp.src("src/icons/*.svg")
   .pipe(plumber())
-  .pipe(svgmin({
-    multipass: true,
-    plugins: [{
-      name: "preset-default"
-    }]
-  }))
+  .pipe(imagemin())
   .pipe(svgSprite({
     mode: {
       symbol: true
     }
   }))
   .pipe(rename("sprite.svg"))
-  .pipe(gulp.dest("dist/img")));
+  .pipe(gulp.dest("public/img")));
 
 gulp.task("files", () => gulp.src([
   "src/{*,}.*",
@@ -121,7 +126,7 @@ gulp.task("files", () => gulp.src([
 ], {
   base: "src"
 })
-  .pipe(gulp.dest("dist"))
+  .pipe(gulp.dest("public"))
   .pipe(connect.reload()));
 
 gulp.task("ts", () => gulp.src("src/ts/swissplant.ts", {
@@ -147,17 +152,17 @@ gulp.task("ts", () => gulp.src("src/ts/swissplant.ts", {
     }
   }))
   .pipe(rename("swissplant.js"))
-  .pipe(gulp.dest("dist/js", {
+  .pipe(gulp.dest("public/js", {
     sourcemaps: "."
   }))
   .pipe(connect.reload()));
 
 gulp.task("font", () => {
   const from = "node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2";
-  const to = "dist/fonts/inter.woff2";
+  const to = "public/fonts/inter.woff2";
 
   return Promise.all([
-    fs.mkdir("dist/fonts"),
+    fs.mkdir("public/fonts"),
     fs.copyFile(from, to)
   ]);
 });
