@@ -5,7 +5,7 @@
   "scripts": {
     "build": "gulp clean && gulp build",
     "dev": "gulp --dev",
-    "prepare": "husky",
+    "prepare": "husky && npx update-browserslist-db@latest",
     "prod": "gulp",
     "start": "gulp --dev"
   },
