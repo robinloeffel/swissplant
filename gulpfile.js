@@ -1,6 +1,5 @@
 /* eslint-disable sonarjs/no-duplicate-string */
 
-import fs from "node:fs/promises";
 import process from "node:process";
 
 import gulp from "gulp";
@@ -28,17 +27,18 @@ import webp from "imagemin-webp";
 const development = process.argv.includes("--dev");
 
 gulp.task("clean", () => deleteAsync("public"));
-gulp.task("open", () => open("http://localhost:8080"));
 
 gulp.task("serve", done => {
   connect.server({
     livereload: true,
     root: "public"
+  }, async() => {
+    await open("http://localhost:8080");
+    done();
   });
-  done();
 });
 
-gulp.task("scss", () => gulp.src("src/scss/swissplant.scss", {
+gulp.task("scss", () => gulp.src("src/scss/index.scss", {
   sourcemaps: development
 })
   .pipe(plumber())
@@ -50,6 +50,7 @@ gulp.task("scss", () => gulp.src("src/scss/swissplant.scss", {
     env(),
     !development && cssnano()
   ].filter(Boolean)))
+  .pipe(rename("style.css"))
   .pipe(gulp.dest("public/css", {
     sourcemaps: "."
   }))
@@ -129,7 +130,7 @@ gulp.task("files", () => gulp.src([
   .pipe(gulp.dest("public"))
   .pipe(connect.reload()));
 
-gulp.task("ts", () => gulp.src("src/ts/swissplant.ts", {
+gulp.task("ts", () => gulp.src("src/ts/index.ts", {
   sourcemaps: development
 })
   .pipe(plumber())
@@ -151,21 +152,18 @@ gulp.task("ts", () => gulp.src("src/ts/swissplant.ts", {
       ]
     }
   }))
-  .pipe(rename("swissplant.js"))
+  .pipe(rename("script.js"))
   .pipe(gulp.dest("public/js", {
     sourcemaps: "."
   }))
   .pipe(connect.reload()));
 
-gulp.task("font", () => {
-  const from = "node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2";
-  const to = "public/fonts/inter.woff2";
-
-  return Promise.all([
-    fs.mkdir("public/fonts"),
-    fs.copyFile(from, to)
-  ]);
-});
+gulp.task("font", () => gulp.src("node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2")
+  .pipe(plumber())
+  .pipe(rename({
+    basename: "inter"
+  }))
+  .pipe(gulp.dest("public/font")));
 
 gulp.task("watch:scss", done => {
   gulp.watch("src/scss/**/*", gulp.parallel("scss"));
@@ -196,6 +194,6 @@ gulp.task("watch:files", done => {
 });
 
 gulp.task("img", gulp.parallel("img:meta", "img:employees", "img:bgs"));
-gulp.task("build", gulp.series(gulp.parallel("scss", "ts", "img", "sprite", "files"), "font"));
+gulp.task("build", gulp.series("clean", gulp.parallel("scss", "ts", "img", "sprite", "files"), "font"));
 gulp.task("watch", gulp.parallel("watch:scss", "watch:ts", "watch:img", "watch:sprite", "watch:files"));
-gulp.task("default", gulp.series("clean", "build", "watch", "serve", "open"));
+gulp.task("default", gulp.series("build", "watch", "serve"));

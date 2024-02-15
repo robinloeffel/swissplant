@@ -1,7 +1,9 @@
 https://swissplant.ch
 https://swissplant.ch/angebot
+https://swissplant.ch/datenschutz
+https://swissplant.ch/firma
+https://swissplant.ch/impressum
+https://swissplant.ch/jobs
 https://swissplant.ch/kontakt
 https://swissplant.ch/partner
-https://swissplant.ch/firma
 https://swissplant.ch/team
-https://swissplant.ch/jobs

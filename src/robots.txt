@@ -1,3 +1,3 @@
-User-agent: *
-Allow: /
-Sitemap: https://swissplant.ch/sitemap.txt
+user-agent: *
+allow: /
+sitemap: https://swissplant.ch/sitemap.txt
