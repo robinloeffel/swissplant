@@ -6,7 +6,7 @@
     "source": "/js/stats.js",
     "destination": "https://eu.umami.is/script.js"
   }, {
-    "source": "/api/send",
+    "source": "/js/api/send",
     "destination": "https://eu.umami.is/api/send"
   }]
 }
