@@ -1,5 +1,12 @@
 {
 	"$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "rewrites": [{
+    "source": "/js/stats.js",
+    "destination": "https://eu.umami.is/script.js"
+  }, {
+    "source": "/api/send",
+    "destination": "https://eu.umami.is/api/send"
+  }]
 }
