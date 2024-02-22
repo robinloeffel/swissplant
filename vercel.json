@@ -3,10 +3,7 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [{
-    "source": "/js/stats.js",
-    "destination": "https://eu.umami.is/script.js"
-  }, {
-    "source": "/js/api/send",
-    "destination": "https://eu.umami.is/api/send"
+    "source": "/stats/:match*",
+    "destination": "https://eu.umami.is/:match*"
   }]
 }
