@@ -110,7 +110,12 @@ gulp.task("img:bgs", () => gulp.src([
   }))
   .pipe(gulp.dest("public/img")));
 
-gulp.task("sprite", () => gulp.src("src/icons/*.svg")
+gulp.task("sprite", () => gulp.src([
+  "./src/icons/*.svg",
+  "./node_modules/feather-icons/dist/icons/chevrons-down.svg",
+  "./node_modules/feather-icons/dist/icons/menu.svg",
+  "./node_modules/feather-icons/dist/icons/x.svg"
+])
   .pipe(plumber())
   .pipe(imagemin())
   .pipe(svgSprite({

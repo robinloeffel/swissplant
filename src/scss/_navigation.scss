@@ -45,6 +45,8 @@
 }
 
 .navigation-bar-toggle {
+  display: grid;
+  place-items: center;
   width: 32px;
   height: 32px;
   font-size: 125%;
@@ -52,11 +54,6 @@
   cursor: pointer;
   background: 0;
   border: 0;
-  transition: rotate 0.3s ease-in-out;
-
-  .open & {
-    rotate: 0.5turn;
-  }
 }
 
 .navigation-expando {
@@ -67,6 +64,31 @@
 
   .open & {
     grid-template-rows: 1fr;
+  }
+}
+
+.navigation-bar-toggle-icon-menu,
+.navigation-bar-toggle-icon-x {
+  grid-area: 1 / 1 / 1 / 1;
+  width: 24px;
+  height: 24px;
+  transition:
+    scale 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
+}
+
+.open .navigation-bar-toggle-icon-menu {
+  opacity: 0;
+  scale: 0;
+}
+
+.navigation-bar-toggle-icon-x {
+  opacity: 0;
+  scale: 0;
+
+  .open & {
+    opacity: 1;
+    scale: 1;
   }
 }
 

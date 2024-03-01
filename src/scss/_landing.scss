@@ -63,6 +63,8 @@
 }
 
 .landing-jump {
+  display: grid;
+  place-items: center;
   width: 64px;
   height: 64px;
   font-size: 32px;
@@ -71,6 +73,11 @@
   background: none;
   border: 0;
   animation: up-and-down 2s ease-in-out infinite alternate;
+}
+
+.landing-jump-icon {
+  width: 50%;
+  height: 50%;
 }
 
 @keyframes up-and-down {

@@ -5,8 +5,8 @@
     "module": "esnext",
     "moduleResolution": "bundler",
     "moduleDetection": "force",
-    "noEmit": true,
+    "noPropertyAccessFromIndexSignature": false,
     "verbatimModuleSyntax": true,
-    "noPropertyAccessFromIndexSignature": false
+    "noEmit": true
   }
 }
