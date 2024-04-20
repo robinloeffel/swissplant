@@ -3,13 +3,13 @@
 .table {
   width: 100%;
   border-collapse: collapse;
-  border: 1px solid variables.$color-black-5;
+  border: 1px solid variables.$color-black-05;
 
   tr {
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 
     &:nth-child(odd) {
-      background-color: variables.$color-black-5;
+      background-color: variables.$color-black-05;
     }
 
     &:hover {

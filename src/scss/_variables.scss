@@ -5,10 +5,10 @@ $color-black: #000;
 $color-brand: #007333;
 $color-text: #393939;
 $color-white: #fff;
-$color-black-5: color.adjust($color-black, $alpha: -0.95);
-$color-black-50: color.adjust($color-black, $alpha: -0.5);
-$color-white-5: color.adjust($color-white, $alpha: -0.95);
-$color-white-90: color.adjust($color-white, $alpha: -0.1);
+$color-black-05: color.change($color-black, $alpha: 0.05);
+$color-black-50: color.change($color-black, $alpha: 0.5);
+$color-white-05: color.change($color-white, $alpha: 0.05);
+$color-white-90: color.change($color-white, $alpha: 0.9);
 
 // typography
 $font-family: inter, system-ui;

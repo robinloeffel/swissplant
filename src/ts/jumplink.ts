@@ -5,8 +5,9 @@ const smoothScroll = (event: Event) => {
   const scrollTargetSelector = clicked.dataset.scrollTarget;
 
   if (scrollTargetSelector) {
-    const scrollTargetElement = document.querySelector(scrollTargetSelector);
+    const scrollTargetElement = document.querySelector<HTMLElement>(scrollTargetSelector);
     scrollTargetElement?.scrollIntoView({ behavior: "smooth" });
+    scrollTargetElement?.focus();
   }
 };
 

@@ -11,9 +11,9 @@
   background-blend-mode: soft-light;
   isolation: isolate;
   backdrop-filter: blur(8px);
-  border: 1px solid variables.$color-black-5;
+  border: 1px solid variables.$color-black-05;
   border-radius: 16px;
-  box-shadow: 0 4px 8px variables.$color-black-5;
+  box-shadow: 0 4px 8px variables.$color-black-05;
   transition: translate 0.3s ease-in-out;
 
   &.hidden {
@@ -107,19 +107,19 @@
 
 .navigation-item {
   &:nth-child(-n + 2) {
-    border-top: 1px solid variables.$color-black-5;
+    border-top: 1px solid variables.$color-black-05;
   }
 
   &:not(:last-child) {
-    border-bottom: 1px solid variables.$color-black-5;
+    border-bottom: 1px solid variables.$color-black-05;
   }
 
   &:nth-child(odd) {
-    border-right: 0.5px solid variables.$color-black-5;
+    border-right: 0.5px solid variables.$color-black-05;
   }
 
   &:nth-child(even) {
-    border-left: 0.5px solid variables.$color-black-5;
+    border-left: 0.5px solid variables.$color-black-05;
   }
 
   &:last-child {
