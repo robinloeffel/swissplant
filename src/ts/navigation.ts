@@ -1,15 +1,20 @@
-import { signal, effect } from "@preact/signals-core";
+import { effect, signal } from "@preact/signals-core";
 
-const navigation = document.querySelector<HTMLElement>("[data-module~=navigation]")!;
-const toggle = navigation.querySelector<HTMLButtonElement>("[data-navigation~=toggle]")!;
+const navigation = document.querySelector<HTMLElement>("[data-module~=navigation]");
+const toggle = navigation?.querySelector<HTMLButtonElement>("[data-navigation~=toggle]");
+
 const scrollBuffer = 50;
 const isOpen = signal(false);
 
 let oldScrollY = window.scrollY;
 
 effect(() => {
-  navigation.classList.toggle("open", isOpen.value);
-  toggle.setAttribute("aria-expanded", String(isOpen.value));
+  navigation?.classList.toggle("open", isOpen.value);
+  toggle?.setAttribute("aria-expanded", String(isOpen.value));
+});
+
+toggle?.addEventListener("click", () => {
+  isOpen.value = !isOpen.value;
 });
 
 // eslint-disable-next-line github/prefer-observers -- no way to do that here
@@ -32,11 +37,7 @@ window.addEventListener("keydown", ({ key }) => {
 });
 
 window.addEventListener("click", ({ target }) => {
-  if (isOpen.value && !navigation.contains(target as Element)) {
+  if (isOpen.value && !navigation?.contains(target as HTMLElement)) {
     isOpen.value = false;
   }
-});
-
-toggle.addEventListener("click", () => {
-  isOpen.value = !isOpen.value;
 });
