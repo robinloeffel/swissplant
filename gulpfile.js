@@ -63,13 +63,6 @@ gulp.task("img:meta", () => gulp.src("src/img/{apple,favicon,og,poster}*")
 
 gulp.task("img:employees", () => gulp.src("src/img/mitarbeiter/*")
   .pipe(plumber())
-  .pipe(rezzy([{
-    width: 480,
-    suffix: "-480w"
-  }, {
-    width: 300,
-    suffix: "-300w"
-  }]))
   .pipe(imagemin([
     webp({
       preset: "photo",
