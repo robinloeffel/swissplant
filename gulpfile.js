@@ -1,28 +1,27 @@
 /* eslint-disable sonarjs/no-duplicate-string */
 
-import process from "node:process";
-
-import gulp from "gulp";
-import { deleteAsync } from "del";
-import open from "open";
-import connect from "gulp-connect";
-import plumber from "gulp-plumber";
-import sass from "@rbnlffl/gulp-sass";
-import rezzy from "gulp-rezzy";
-import imagemin from "gulp-imagemin";
-import postcss from "gulp-postcss";
-import rename from "gulp-rename";
-import svgSprite from "gulp-svg-sprite";
-import stylelint from "stylelint";
-import env from "postcss-preset-env";
-import cssnano from "cssnano";
 import rollup from "@rbnlffl/gulp-rollup";
+import sass from "@rbnlffl/gulp-sass";
 import eslint from "@rbnlffl/rollup-plugin-eslint";
-import nodeResolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
+import nodeResolve from "@rollup/plugin-node-resolve";
 import terser from "@rollup/plugin-terser";
 import typescript from "@rollup/plugin-typescript";
+import cssnano from "cssnano";
+import { deleteAsync } from "del";
+import gulp from "gulp";
+import connect from "gulp-connect";
+import imagemin from "gulp-imagemin";
+import plumber from "gulp-plumber";
+import postcss from "gulp-postcss";
+import rename from "gulp-rename";
+import rezzy from "gulp-rezzy";
+import svgSprite from "gulp-svg-sprite";
 import webp from "imagemin-webp";
+import process from "node:process";
+import open from "open";
+import env from "postcss-preset-env";
+import stylelint from "stylelint";
 
 const development = process.argv.includes("--dev");
 

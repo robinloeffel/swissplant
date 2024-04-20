@@ -1,6 +1,6 @@
 import "./internationalization";
-import "./navigation";
-import "./landing";
 import "./jumplink";
-import "./spritesheet";
+import "./landing";
+import "./navigation";
 import "./obfuscate";
+import "./spritesheet";
