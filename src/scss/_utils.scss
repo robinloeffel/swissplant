@@ -1,8 +1,6 @@
-.visually-hidden {
+.sr-only {
   position: absolute;
-  width: 0;
-  height: 0;
-  overflow: hidden;
+  width: 1px;
+  height: 1px;
   clip-path: circle(0);
-  opacity: 0;
 }

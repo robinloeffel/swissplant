@@ -27,7 +27,7 @@
       <ul class="navigation-bar">
         <li class="navigation-bar-item">
           <a class="navigation-bar-logo" href="/" data-umami-event="navigation-bar-link-home">
-            <span class="visually-hidden">Zur Startseite gehen.</span>
+            <span class="sr-only">Zur Startseite gehen.</span>
             <svg class="icon header-navigation-logo" aria-hidden="true">
               <use href="#swissplant-logo-swooshless"></use>
             </svg>
@@ -43,7 +43,7 @@
             aria-controls="navigation-expando"
             data-umami-event="navigation-bar-toggle"
           >
-            <span class="visually-hidden">Das Navigationsmenü auf- und zuklappen.</span>
+            <span class="sr-only">Das Navigationsmenü auf- und zuklappen.</span>
             <svg class="navigation-bar-toggle-icon-menu" aria-hidden="true">
               <use href="#menu"></use>
             </svg>
@@ -80,11 +80,11 @@
           </li>
           <li class="navigation-item">
             <button type="button" data-mehrsprachig-trigger="de" data-umami-event="navigation-bar-change-lang-de" class="navigation-language-toggle">
-              <span class="visually-hidden">Sprache der Webseite auf Deutsch wechseln.</span>
+              <span class="sr-only">Sprache der Webseite auf Deutsch wechseln.</span>
               <span>DE</span>
             </button>
             <button type="button" data-mehrsprachig-trigger="en" data-umami-event="navigation-bar-change-lang-en" class="navigation-language-toggle">
-              <span class="visually-hidden">Change the language of the web site to English.</span>
+              <span class="sr-only">Change the language of the web site to English.</span>
               <span>EN</span>
             </button>
           </li>
@@ -280,8 +280,9 @@
       </div>
     </footer>
     <span
-      class="visually-hidden"
-      aria-live="polite"
+      class="sr-only"
+      aria-live="assertive"
+      aria-atomic="true"
       data-live-region
     ></span>
   </body>

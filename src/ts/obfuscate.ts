@@ -41,7 +41,7 @@ const pairs = new Map([
 
 const sr = (link: HTMLAnchorElement, text: string) => {
   const srTextElement = document.createElement("span");
-  srTextElement.classList.add("visually-hidden");
+  srTextElement.classList.add("sr-only");
   srTextElement.textContent = text;
   link.append(srTextElement);
 };
