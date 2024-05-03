@@ -1,10 +1,5 @@
 {
-  "extends": "@tsconfig/strictest/tsconfig.json",
-  "compilerOptions": {
-    "target": "esnext",
-    "module": "preserve",
-    "moduleDetection": "force",
-    "noPropertyAccessFromIndexSignature": false,
-    "noEmit": true
-  }
+  "extends": "robins-tsconfig",
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules", "public", "vercel"]
 }

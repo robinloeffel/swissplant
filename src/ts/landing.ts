@@ -6,7 +6,7 @@ if (images.length > 0) {
   current.classList.add(visibleClass);
 
   if (images.length > 1) {
-    window.setTimeout(() => {
+    window.requestAnimationFrame(() => {
       for (const image of images) {
         image.classList.add("is-animating");
       }

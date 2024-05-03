@@ -18,42 +18,33 @@
     <script async src="/stats/script.js" data-website-id="394b5468-7f5b-4078-8102-ed21d4a664e4" data-domains="swissplant.ch"></script>
   </head>
   <body>
-    <nav class="navigation" data-module="navigation">
-      <ul class="navigation-bar">
-        <li class="navigation-bar-item">
-          <a class="navigation-bar-logo" href="/" data-umami-event="navigation-bar-link-home">
-            <span class="sr-only">Zur Startseite gehen.</span>
-            <svg class="icon header-navigation-logo" aria-hidden="true">
-              <use href="#swissplant-logo-swooshless"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="navigation-bar-item">
-          <button
-            id="navigation-bar-toggle"
-            class="navigation-bar-toggle"
-            type="button"
-            data-navigation="toggle"
-            aria-expanded="false"
-            aria-controls="navigation-expando"
-            data-umami-event="navigation-bar-toggle"
-          >
-            <span class="sr-only">Das Navigationsmenü auf- und zuklappen.</span>
-            <svg class="navigation-bar-toggle-icon-menu" aria-hidden="true">
-              <use href="#menu"></use>
-            </svg>
-            <svg class="navigation-bar-toggle-icon-x" aria-hidden="true">
-              <use href="#x"></use>
-            </svg>
-          </button>
-        </li>
-      </ul>
-      <div
-        class="navigation-expando"
-        id="navigation-expando"
-        role="region"
-        aria-labelledby="navigation-bar-toggle"
-      >
+    <nav class="navigation" data-module="navigation" aria-label="Hauptnavigation">
+      <div class="navigation-bar">
+        <a class="navigation-bar-logo" href="/" data-umami-event="navigation-bar-link-home">
+          <span class="sr-only">Zur Startseite gehen.</span>
+          <svg class="icon header-navigation-logo" aria-hidden="true">
+            <use href="#swissplant-logo-swooshless"></use>
+          </svg>
+        </a>
+        <button
+          id="navigation-bar-toggle"
+          class="navigation-bar-toggle"
+          type="button"
+          data-navigation="toggle"
+          aria-expanded="false"
+          aria-controls="navigation-expando"
+          data-umami-event="navigation-bar-toggle"
+        >
+          <span class="sr-only">Das Navigationsmenü auf- und zuklappen.</span>
+          <svg class="navigation-bar-toggle-icon-menu" aria-hidden="true">
+            <use href="#menu"></use>
+          </svg>
+          <svg class="navigation-bar-toggle-icon-x" aria-hidden="true">
+            <use href="#x"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="navigation-expando" id="navigation-expando">
         <ul class="navigation-list">
           <li class="navigation-item">
             <a class="navigation-link" href="firma.html" data-mehrsprachig="nav.company" data-umami-event="navigation-bar-link-company"></a>
@@ -172,26 +163,44 @@
         </div>
       </div>
       <hr class="footer-hr">
-      <div class="footer-content">
-        <p class="footer-text">
-          <a href="." data-mehrsprachig="nav.start" data-umami-event="footer-link-home"></a> —
-          <a href="firma.html" data-mehrsprachig="nav.company" data-umami-event="footer-link-company"></a> —
-          <a href="team.html" data-mehrsprachig="nav.team" data-umami-event="footer-link-team"></a> —
-          <a href="angebot.html" data-mehrsprachig="nav.portfolio" data-umami-event="footer-link-portfolio"></a> —
-          <a href="partner.html" data-mehrsprachig="nav.partners" data-umami-event="footer-link-partners"></a> —
-          <a href="kontakt.html" data-mehrsprachig="nav.contact" data-umami-event="footer-link-contact"></a> —
-          <a href="impressum.html" data-mehrsprachig="nav.imprint" data-umami-event="footer-link-imprint"></a> —
-          <a href="datenschutz.html" data-mehrsprachig="nav.privacy" data-umami-event="footer-link-privacy"></a> —
-          <a href="jobs.html" data-mehrsprachig="nav.jobs" data-umami-event="footer-link-jobs"></a>
-        </p>
-      </div>
+      <nav class="footer-navigation" aria-label="Navigation in der Fusszeile">
+        <ul class="footer-navigation-list">
+          <li class="footer-navigation-item">
+            <a href="." data-mehrsprachig="nav.start" data-umami-event="footer-link-home"></a>
+          </li>
+          <li class="footer-navigation-item">
+            <a href="firma.html" data-mehrsprachig="nav.company" data-umami-event="footer-link-company"></a>
+          </li>
+          <li class="footer-navigation-item">
+            <a href="team.html" data-mehrsprachig="nav.team" data-umami-event="footer-link-team"></a>
+          </li>
+          <li class="footer-navigation-item">
+            <a href="angebot.html" data-mehrsprachig="nav.portfolio" data-umami-event="footer-link-portfolio"></a>
+          </li>
+          <li class="footer-navigation-item">
+            <a href="partner.html" data-mehrsprachig="nav.partners" data-umami-event="footer-link-partners"></a>
+          </li>
+          <li class="footer-navigation-item">
+            <a href="kontakt.html" data-mehrsprachig="nav.contact" data-umami-event="footer-link-contact"></a>
+          </li>
+          <li class="footer-navigation-item">
+            <a href="impressum.html" data-mehrsprachig="nav.imprint" data-umami-event="footer-link-imprint"></a>
+          </li>
+          <li class="footer-navigation-item">
+            <a href="datenschutz.html" data-mehrsprachig="nav.privacy" data-umami-event="footer-link-privacy"></a>
+          </li>
+          <li class="footer-navigation-item">
+            <a href="jobs.html" data-mehrsprachig="nav.jobs" data-umami-event="footer-link-jobs"></a>
+          </li>
+        </ul>
+      </nav>
       <div class="footer-content">
         <p class="footer-text" data-mehrsprachig="html:footer.robin"></p>
       </div>
     </footer>
     <span
       class="sr-only"
-      aria-live="assertive"
+      aria-live="polite"
       aria-atomic="true"
       data-live-region
     ></span>

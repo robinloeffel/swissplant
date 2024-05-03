@@ -46,6 +46,21 @@
   text-wrap: wrap;
 }
 
-.footer-content + .footer-content {
-  margin-top: 25px;
+.footer-navigation {
+  margin-bottom: variables.$space-big;
+}
+
+.footer-navigation-list {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  list-style: none;
+}
+
+.footer-navigation-item {
+  display: inline-block;
+
+  &:not(:last-child)::after {
+    content: "— ";
+  }
 }

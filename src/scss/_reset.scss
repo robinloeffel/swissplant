@@ -6,3 +6,8 @@
   margin: 0;
   font-family: inherit;
 }
+
+*:focus-visible {
+  outline: 2px solid;
+  outline-offset: 2px;
+}
