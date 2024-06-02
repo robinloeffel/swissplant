@@ -1,5 +1,4 @@
 {
   "extends": "robins-tsconfig",
-  "include": ["**/*.ts"],
   "exclude": ["node_modules", "public", "vercel"]
 }

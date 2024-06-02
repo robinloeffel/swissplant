@@ -6,11 +6,6 @@ html {
   line-height: variables.$line-height;
   color: variables.$color-text;
   text-rendering: optimizelegibility;
-  text-wrap: balance;
-
-  @supports (text-wrap: pretty) {
-    text-wrap: pretty;
-  }
 
   @media (width >= 900px) {
     font-size: variables.$font-size;
@@ -22,6 +17,11 @@ h2,
 h3 {
   hyphens: auto;
   line-height: variables.$line-height-heading;
+  text-wrap: balance;
+
+  @supports (text-wrap: pretty) {
+    text-wrap: pretty;
+  }
 }
 
 h1,
