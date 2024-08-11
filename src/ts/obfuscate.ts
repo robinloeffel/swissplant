@@ -49,8 +49,9 @@ const sr = (link: HTMLAnchorElement, text: string) => {
 const handleClick = (event: MouseEvent) => {
   event.preventDefault();
 
-  const target = event.target as HTMLAnchorElement;
-  window.location.href = window.atob(target.dataset.obfuscate ?? "");
+  if (event.currentTarget instanceof HTMLAnchorElement && event.currentTarget.dataset.obfuscate) {
+    window.location.href = window.atob(event.currentTarget.dataset.obfuscate);
+  }
 };
 
 for (const obfuscatedElement of obfuscated) {

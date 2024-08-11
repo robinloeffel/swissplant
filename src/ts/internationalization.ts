@@ -1,25 +1,23 @@
 import mehrsprachig from "mehrsprachig";
 
+interface MehrsprachigEventPayload {
+  localeKey: "de" | "en";
+}
+
+type MehrsprachigEvent = CustomEventInit<MehrsprachigEventPayload>;
+
 const liveRegion = document.querySelector<HTMLElement>("[data-live-region]");
 
-const handleMehrsprachigTranslated = (
-  { detail }: CustomEventInit<{ localeKey: string }>
-) => {
-  document.documentElement.lang = detail?.localeKey ?? "de";
+const handleMehrsprachigTranslated = ({ detail }: MehrsprachigEvent) => {
+  if (detail?.localeKey && liveRegion) {
+    document.documentElement.lang = detail.localeKey;
 
-  if (liveRegion) {
-    switch (detail?.localeKey) {
-      case "de": {
-        liveRegion.textContent = "Die Sprache der Webseite wurde auf Deutsch geändert.";
-        break;
-      }
-      case "en": {
-        liveRegion.textContent = "The language of the page has been changed to English.";
-        break;
-      }
-      default: {
-        break;
-      }
+    if (detail.localeKey === "de") {
+      liveRegion.textContent = "Die Sprache der Webseite wurde auf Deutsch geändert.";
+    }
+
+    if (detail.localeKey === "en") {
+      liveRegion.textContent = "The language of the page has been changed to English.";
     }
   }
 };

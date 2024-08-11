@@ -18,6 +18,7 @@ import rename from "gulp-rename";
 import rezzy from "gulp-rezzy";
 import svgSprite from "gulp-svg-sprite";
 import webp from "imagemin-webp";
+import fs from "node:fs/promises";
 import process from "node:process";
 import open from "open";
 import env from "postcss-preset-env";
@@ -62,6 +63,11 @@ gulp.task("img:meta", () => gulp.src("src/img/{apple,favicon,og,poster}*")
 
 gulp.task("img:employees", () => gulp.src("src/img/mitarbeiter/*")
   .pipe(plumber())
+  .pipe(rezzy([{
+    width: 520,
+    height: 520,
+    suffix: "-520w"
+  }]))
   .pipe(imagemin([
     webp({
       preset: "photo",
@@ -162,6 +168,20 @@ gulp.task("font", () => gulp.src("node_modules/@fontsource-variable/inter/files/
   }))
   .pipe(gulp.dest("public/font")));
 
+gulp.task("sitemap", async() => {
+  const domain = "https://swissplant.ch";
+  const fileNames = await fs.readdir("./src");
+  const sitemap = fileNames
+    .filter(pageName => pageName.endsWith(".html"))
+    .map(pageName => pageName.replace(".html", ""))
+    // eslint-disable-next-line @stylistic/no-confusing-arrow
+    .map(pageName => pageName === "index" ? `${domain}/\n` : `${domain}/${pageName}\n`)
+    .sort((a, b) => a.localeCompare(b))
+    .join("");
+
+  await fs.writeFile("./public/sitemap.txt", sitemap, "utf8");
+});
+
 gulp.task("watch:scss", done => {
   gulp.watch("src/scss/**/*", gulp.parallel("scss"));
   done();
@@ -191,6 +211,6 @@ gulp.task("watch:files", done => {
 });
 
 gulp.task("img", gulp.parallel("img:meta", "img:employees", "img:bgs"));
-gulp.task("build", gulp.series("clean", gulp.parallel("scss", "ts", "img", "sprite", "files"), "font"));
+gulp.task("build", gulp.series("clean", gulp.parallel("scss", "ts", "img", "sprite", "files"), "font", "sitemap"));
 gulp.task("watch", gulp.parallel("watch:scss", "watch:ts", "watch:img", "watch:sprite", "watch:files"));
 gulp.task("default", gulp.series("build", "watch", "serve"));

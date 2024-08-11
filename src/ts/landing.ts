@@ -6,12 +6,6 @@ if (images.length > 0) {
   current.classList.add(visibleClass);
 
   if (images.length > 1) {
-    window.requestAnimationFrame(() => {
-      for (const image of images) {
-        image.classList.add("is-animating");
-      }
-    });
-
     window.setInterval(() => {
       const next = current.nextElementSibling ?? images.item(0);
 

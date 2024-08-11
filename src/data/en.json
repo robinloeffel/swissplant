@@ -79,10 +79,6 @@
       "alt": "Shpend Thaqi, Chief Production Plant",
       "position": "Chief of Production Plant"
     },
-    "andrzej": {
-      "alt": "Andrzej Mojsym, Mechanic and Chauffeur",
-      "position": "Mechanic & Chauffeur"
-    },
     "hans-peter": {
       "alt": "Hans-Peter Schwab, Chauffeur",
       "position": "Internal Transport & Chauffeur"
@@ -98,6 +94,14 @@
     "barbara": {
       "alt": "Barbara Dubler, Internal Transport",
       "position": "Internal Transport"
+    },
+    "markus": {
+      "alt": "Markus Niklaus, Machine Operator & Vice Chief of Greenhouse",
+      "position": "Machine Operator & Vice Chief of Greenhouse"
+    },
+    "miguel": {
+      "alt": "Arsénio Miguel Pereira da Silva, Machine Operator & Internal Transport",
+      "position": "Machine Operator & Internal Transport"
     }
   },
   "portfolio": {

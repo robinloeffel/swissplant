@@ -1,4 +1,3 @@
 {
-  "extends": "robins-tsconfig",
-  "exclude": ["node_modules", "public", "vercel"]
+  "extends": "robins-tsconfig"
 }

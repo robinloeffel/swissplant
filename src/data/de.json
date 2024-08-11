@@ -79,10 +79,6 @@
       "alt": "Shpend Thaqi, Leiter Produktionsanlage",
       "position": "Leiter Produktionsanlage"
     },
-    "andrzej": {
-      "alt": "Andrzej Mojsym, Mechaniker und Chauffeur",
-      "position": "Mechaniker & Chauffeur"
-    },
     "hans-peter": {
       "alt": "Hans-Peter Schwab, Chauffeur",
       "position": "Interner Transport & Chauffeur"
@@ -98,6 +94,14 @@
     "barbara": {
       "alt": "Barbara Dubler, Interner Transport",
       "position": "Interner Transport"
+    },
+    "markus": {
+      "alt": "Markus Niklaus, Maschinenführer & Stv. Leiter Gewächshaus",
+      "position": "Maschinenführer & Stv. Leiter Gewächshaus"
+    },
+    "miguel": {
+      "alt": "Arsénio Miguel Pereira da Silva, Maschinenführer & Interner Transport",
+      "position": "Maschinenführer & Interner Transport"
     }
   },
   "portfolio": {

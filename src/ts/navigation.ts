@@ -42,7 +42,7 @@ window.addEventListener("keydown", ({ key }) => {
 });
 
 window.addEventListener("click", ({ target }) => {
-  if (isOpen.value && !navigation?.contains(target as HTMLElement)) {
+  if (target instanceof HTMLElement && isOpen.value && !toggle?.contains(target)) {
     isOpen.value = false;
   }
 });
