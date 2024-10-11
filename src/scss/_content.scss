@@ -9,13 +9,6 @@
     margin: 100px auto;
   }
 
-  .copytext svg {
-    width: 100%;
-    height: min(75px, 10vw);
-    margin: variables.$space-small 0 variables.$space-big 0;
-    color: variables.$color-brand;
-  }
-
   > * + *,
   ol li + li {
     margin-top: 2em;

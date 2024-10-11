@@ -112,7 +112,8 @@ gulp.task("sprite", () => gulp.src([
   "./src/icons/*.svg",
   "./node_modules/feather-icons/dist/icons/chevrons-down.svg",
   "./node_modules/feather-icons/dist/icons/menu.svg",
-  "./node_modules/feather-icons/dist/icons/x.svg"
+  "./node_modules/feather-icons/dist/icons/x.svg",
+  "./node_modules/feather-icons/dist/icons/file-text.svg"
 ])
   .pipe(plumber())
   .pipe(imagemin())
