@@ -1,0 +1,33 @@
+<script lang="ts">
+	import { dev } from "$app/environment";
+	import { page } from "$app/stores";
+	import { favicon } from "$assets/img";
+	import { Footer, Navbar } from "$components";
+
+	const { children } = $props();
+</script>
+
+<svelte:head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<link rel="icon" href="{favicon}" />
+	<link rel="canonical" href="">
+	<title>SwissPlant &mdash; {$page.data.title}</title>
+
+	{#if !dev}
+		<script
+			async
+			data-domains="swissplant.ch"
+			data-website-id="394b5468-7f5b-4078-8102-ed21d4a664e4"
+			src="/stats/script.js"
+		></script>
+	{/if}
+</svelte:head>
+
+<Navbar />
+<main>
+	{@render children()}
+</main>
+<Footer />
