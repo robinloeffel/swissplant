@@ -3,8 +3,13 @@
 	import { page } from "$app/stores";
 	import { favicon } from "$assets/img";
 	import { Footer, Navbar } from "$components";
+	import type { Snippet } from "svelte";
 
-	const { children } = $props();
+	interface LayoutProperties {
+		children: Snippet;
+	}
+
+	const { children }: LayoutProperties = $props();
 </script>
 
 <svelte:head>

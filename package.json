@@ -6,30 +6,26 @@
 	"type": "module",
 	"scripts": {
 		"build": "vite build",
-		"prepare": "svelte-kit sync",
+		"prepare": "svelte-kit sync && npx update-browserslist-db@latest",
 		"preview": "vite preview",
 		"start": "vite dev"
 	},
 	"browserslist": ">=1% in ch, not dead",
 	"devDependencies": {
 		"@fontsource-variable/inter": "^5.1.0",
-		"@sveltejs/adapter-vercel": "^5.4.5",
-		"@sveltejs/kit": "^2.7.2",
+		"@sveltejs/adapter-vercel": "^5.4.6",
+		"@sveltejs/kit": "^2.7.3",
 		"@sveltejs/vite-plugin-svelte": "^4.0.0",
-		"eslint": "^8.57.1",
-		"eslint-config-sweet": "^21.0.0",
-		"eslint-define-config": "^2.1.0",
+		"eslint": "^9.13.0",
+		"eslint-config-sweet": "^22.0.0",
 		"eslint-plugin-svelte": "^2.46.0",
 		"feather-icons": "^4.29.2",
-		"postcss-html": "^1.7.0",
 		"robins-tsconfig": "^1.0.0",
-		"sass": "^1.79.5",
+		"sass": "^1.80.4",
 		"stylelint": "^16.10.0",
 		"stylelint-config-sweet": "^3.0.0",
-		"stylelint-define-config": "^1.6.0",
-		"svelte": "^5.0.4",
-		"svelte-define-config": "^1.0.0",
+		"svelte": "^5.1.3",
 		"typescript": "^5.6.3",
-		"vite": "^5.4.9"
+		"vite": "^5.4.10"
 	}
 }

@@ -1,4 +1,4 @@
 node_modules
 .vercel
-.sveltekit
+.svelte-kit
 .DS_Store
