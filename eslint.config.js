@@ -28,8 +28,7 @@ export default [
 			"@typescript-eslint/init-declarations": "off",
 
 			"svelte/block-lang": ["error", {
-				script: "ts",
-				style: "scss"
+				script: "ts"
 			}],
 			"svelte/indent": ["error", {
 				indent: "tab"

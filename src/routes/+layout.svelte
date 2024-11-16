@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { dev } from "$app/environment";
-	import { page } from "$app/stores";
 	import { favicon } from "$assets/img";
 	import { Footer, Navbar } from "$components";
 	import type { Snippet } from "svelte";
@@ -19,7 +18,6 @@
 	<meta name="keywords" content="" />
 	<link rel="icon" href="{favicon}" />
 	<link rel="canonical" href="">
-	<title>SwissPlant &mdash; {$page.data.title}</title>
 
 	{#if !dev}
 		<script
@@ -36,3 +34,11 @@
 	{@render children()}
 </main>
 <Footer />
+
+<style>
+	:global {
+		@import url("@fontsource-variable/inter") layer(font);
+		@import url("$styles/reset") layer(reset);
+		@import url("$styles/base") layer(base);
+	}
+</style>
