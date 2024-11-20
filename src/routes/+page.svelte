@@ -1,9 +1,8 @@
 <script lang="ts">
 	import { one } from "$assets/img";
-	import { Hero, SplitTile } from "$components";
-	import type { ComponentProps } from "svelte";
+	import { Hero, SplitTile, type HeroProperties } from "$components";
 
-	const hero: ComponentProps<typeof Hero> = {
+	const hero: HeroProperties = {
 		images: [one],
 		size: "large"
 	};

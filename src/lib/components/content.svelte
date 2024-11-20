@@ -1,15 +1,13 @@
-<script lang="ts">
-	interface Properties {
+<script lang="ts" module>
+	export interface ContentProperties {
 		body: string;
 	}
+</script>
 
-	const { body }: Properties = $props();
+<script lang="ts">
+	const { body }: ContentProperties = $props();
 </script>
 
 <section class="content">
 	{body}
 </section>
-
-<style>
-
-</style>

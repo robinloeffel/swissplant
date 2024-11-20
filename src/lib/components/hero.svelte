@@ -1,10 +1,12 @@
-<script lang="ts">
-	interface Properties {
+<script lang="ts" module>
+	export interface HeroProperties {
 		images: string[];
 		size?: "small" | "large";
 	}
+</script>
 
-	const { images, size = "small" }: Properties = $props();
+<script lang="ts">
+	const { images, size = "small" }: HeroProperties = $props();
 </script>
 
 <header class="hero {size}">

@@ -2,6 +2,9 @@
 export default {
 	extends: "stylelint-config-sweet",
 	rules: {
-		"@stylistic/indentation": "tab"
+		"@stylistic/indentation": "tab",
+		"selector-pseudo-class-no-unknown": [true, {
+			ignorePseudoClasses: ["global"]
+		}]
 	}
 };

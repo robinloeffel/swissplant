@@ -1,14 +1,47 @@
-<script lang="ts">
-	import { dev } from "$app/environment";
-	import { favicon } from "$assets/img";
-	import { Footer, Navbar } from "$components";
-	import type { Snippet } from "svelte";
-
+<script lang="ts" module>
 	interface LayoutProperties {
 		children: Snippet;
 	}
+</script>
+
+<script lang="ts">
+	import { dev } from "$app/environment";
+	import { favicon } from "$assets/img";
+	import { Footer, Navbar, type NavbarProperties } from "$components";
+	import type { Snippet } from "svelte";
 
 	const { children }: LayoutProperties = $props();
+
+	const navbar: NavbarProperties = {
+		pages: [{
+			name: "Start",
+			href: "/"
+		}, {
+			name: "Angebot",
+			href: "/angebot"
+		}, {
+			name: "Datenschutz",
+			href: "/datenschutz"
+		}, {
+			name: "Firma",
+			href: "/firma"
+		}, {
+			name: "Impressum",
+			href: "/impressum"
+		}, {
+			name: "Jobs",
+			href: "/jobs"
+		}, {
+			name: "Kontakt",
+			href: "/kontakt"
+		}, {
+			name: "Partner",
+			href: "/partner"
+		}, {
+			name: "Team",
+			href: "/team"
+		}]
+	};
 </script>
 
 <svelte:head>
@@ -29,7 +62,7 @@
 	{/if}
 </svelte:head>
 
-<Navbar />
+<Navbar {...navbar} />
 <main>
 	{@render children()}
 </main>
@@ -37,8 +70,8 @@
 
 <style>
 	:global {
-		@import url("@fontsource-variable/inter") layer(font);
-		@import url("$styles/reset") layer(reset);
-		@import url("$styles/base") layer(base);
+		@import "@fontsource-variable/inter" layer(font);
+		@import "$styles/reset" layer(reset);
+		@import "$styles/base" layer(base);
 	}
 </style>

@@ -1,14 +1,14 @@
 *,
 *::before,
 *::after {
-	margin: 0;
-	padding: 0;
 	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
 }
 
 body {
 	line-height: 1.5;
-	text-rendering: optimizeLegibility;
+	text-rendering: optimizelegibility;
 }
 
 img,
@@ -24,8 +24,8 @@ input,
 button,
 textarea,
 select {
-	color: currentColor;
 	font: inherit;
+	color: currentcolor;
 	letter-spacing: inherit;
 	word-spacing: inherit;
 }
