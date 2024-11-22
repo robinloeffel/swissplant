@@ -21,7 +21,7 @@
 		"robins-tsconfig": "^1.0.0",
 		"stylelint": "^16.10.0",
 		"stylelint-config-sweet": "^3.0.0",
-		"svelte": "^5.2.6",
+		"svelte": "^5.2.7",
 		"typescript": "^5.6.3",
 		"vite": "^5.4.11"
 	}

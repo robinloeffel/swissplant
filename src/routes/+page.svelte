@@ -1,6 +1,6 @@
 <script lang="ts">
+	import { Hero, SplitTile, type HeroProperties } from "#components";
 	import { one } from "$assets/img";
-	import { Hero, SplitTile, type HeroProperties } from "$components";
 
 	const hero: HeroProperties = {
 		images: [one],

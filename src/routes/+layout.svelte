@@ -5,9 +5,9 @@
 </script>
 
 <script lang="ts">
+	import { Footer, Navbar, type NavbarProperties } from "#components";
 	import { dev } from "$app/environment";
 	import { favicon } from "$assets/img";
-	import { Footer, Navbar, type NavbarProperties } from "$components";
 	import type { Snippet } from "svelte";
 
 	const { children }: LayoutProperties = $props();
@@ -72,6 +72,8 @@
 	:global {
 		@import "@fontsource-variable/inter" layer(font);
 		@import "$styles/reset" layer(reset);
+		@import "$styles/variables" layer(variables);
 		@import "$styles/base" layer(base);
+		@import "$styles/utils" layer(utils);
 	}
 </style>
