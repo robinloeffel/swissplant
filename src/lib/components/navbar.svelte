@@ -10,20 +10,21 @@
 </script>
 
 <script lang="ts">
-	import { Icon } from "#components";
+	import { Icon, NudeButton } from "#atoms";
 	import swissplantLogo from "$assets/svg/swissplant-logo-swooshless.svg?raw";
 	import burger from "iconoir/icons/regular/menu.svg?raw";
+	import xmark from "iconoir/icons/regular/xmark.svg?raw";
 
 	const { pages }: NavbarProperties = $props();
 	const [barItem, ...expandoItems] = pages;
 
 	let open = $state(false);
 
-	const toggleOpen = () => {
-		open = !open;
+	const openExpando = () => {
+		open = true;
 	};
 
-	const close = () => {
+	const closeExpando = () => {
 		open = false;
 	};
 </script>
@@ -37,17 +38,25 @@
 			</a>
 		</li>
 		<li class="navbar-item">
-			<button class="navbar-toggle" type="button" onclick="{toggleOpen}">
-				<Icon markup={burger} />
-				<span class="sr-only">Navigation auf- und zuklappen</span>
-			</button>
+			<div class="navbar-toggle">
+				<NudeButton
+					attributes={{ onclick: openExpando }}
+					icon={burger}
+					label="Navigation aufklappen"
+				/>
+				<NudeButton
+					attributes={{ onclick: closeExpando }}
+					icon={xmark}
+					label="Navigation zuklappen"
+				/>
+			</div>
 		</li>
 	</ul>
 	<div class="navbar-expando">
 		<ul class="navbar-list">
 			{#each expandoItems as page (page.href)}
 				<li class="navbar-item">
-					<a class="navbar-link" href="{page.href}" onclick="{close}">
+					<a class="navbar-link" href="{page.href}" onclick="{closeExpando}">
 						{page.name}
 					</a>
 				</li>
@@ -77,7 +86,15 @@
 	}
 
 	.navbar-bar {
-		padding: 2rem 2.5rem;
+		padding: 2rem;
+
+		:first-child {
+			place-self: center start;
+		}
+
+		:last-child {
+			place-self: center end;
+		}
 	}
 
 	.navbar-expando {
@@ -98,10 +115,13 @@
 	.navbar-item {
 		display: grid;
 		font-size: var(--font-size-md);
+		line-height: var(--line-height-tight);
 
 		.navbar-expando & {
 			text-align: center;
+			visibility: hidden;
 			border-top: 1px solid var(--black-05);
+			transition: visibility 0.25s ease-in-out;
 
 			&:nth-child(odd) {
 				border-right: 0.5px solid var(--black-05);
@@ -110,11 +130,16 @@
 			&:nth-child(even) {
 				border-left: 0.5px solid var(--black-05);
 			}
+
+			.navbar.open & {
+				visibility: visible;
+			}
 		}
 	}
 
 	.navbar-link {
 		color: var(--brand);
+		text-decoration: none;
 
 		.navbar-expando & {
 			padding: 1.5rem;
@@ -128,14 +153,34 @@
 	}
 
 	.navbar-toggle {
+		display: grid;
 		place-self: center end;
-		cursor: pointer;
-		background: 0;
-		border: 0;
 		transition: rotate 0.25s ease-in-out;
 
-		.navbar.open & {
-			rotate: 0.25turn;
+		> :global(*) {
+			grid-area: 1 / 1;
+			transition:
+				scale 0.25s ease-in-out,
+				opacity 0.25s ease-in-out,
+				visibility 0.25s ease-in-out;
+
+			.navbar.open &:first-child {
+				visibility: hidden;
+				opacity: 0;
+				scale: 0;
+			}
+
+			&:last-child {
+				visibility: hidden;
+				opacity: 0;
+				scale: 0;
+
+				.navbar.open & {
+					visibility: unset;
+					opacity: unset;
+					scale: unset;
+				}
+			}
 		}
 	}
 </style>

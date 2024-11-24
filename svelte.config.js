@@ -7,6 +7,7 @@ export default {
 	kit: {
 		adapter: vercel(),
 		alias: {
+			"#atoms": "./src/lib/atoms",
 			"#components": "./src/lib/components",
 			"$styles": "./src/lib/styles",
 			"$assets": "./src/lib/assets"

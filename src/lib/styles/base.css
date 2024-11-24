@@ -1,3 +1,25 @@
 body {
 	font-family: "Inter Variable", system-ui, sans-serif;
+	line-height: var(--line-height-loose);
+	color: var(--text);
+	text-rendering: optimizelegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	hyphens: auto;
+	line-height: var(--line-height-tight);
+	text-wrap: balance;
+}
+
+p {
+	text-wrap: pretty;
+}
+
+.app {
+	display: contents;
 }
