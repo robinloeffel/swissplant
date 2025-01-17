@@ -1,0 +1,14 @@
+@forward "fonts";
+@use "reset";
+
+#app {
+  display: contents;
+}
+
+body {
+  font-family: "Inter Variable", system-ui, sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  text-wrap: pretty;
+  text-rendering: optimizelegibility;
+}
