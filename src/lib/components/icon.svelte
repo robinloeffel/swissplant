@@ -13,7 +13,7 @@
     agriplant,
     menu,
     x
-  };
+  } as const;
 
   interface Properties {
     name: keyof typeof svgMap;

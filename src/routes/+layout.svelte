@@ -1,6 +1,6 @@
 <script lang="ts" module>
   import { dev } from "$app/environment";
-  import favicon from "$img/favicon.png";
+  import favicon from "$img/favicon.svg";
   import type { Snippet } from "svelte";
 
   interface Properties {

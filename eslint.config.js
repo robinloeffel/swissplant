@@ -4,9 +4,9 @@ import ts from "typescript-eslint";
 
 export default ts.config(
   ...sweet,
-  ...svelte.configs["flat/recommended"],
+  ...svelte.configs.recommended,
   {
-    files: ["**/*.svelte"],
+    files: ["**/*.svelte", "**/*.svelte.ts"],
     languageOptions: {
       parserOptions: {
         parser: ts.parser
@@ -15,13 +15,7 @@ export default ts.config(
     rules: {
       "@typescript-eslint/init-declarations": "off",
 
-      "svelte/no-dom-manipulating": "error",
-      "svelte/no-dupe-on-directives": "error",
-      "svelte/no-dupe-use-directives": "error",
       "svelte/no-target-blank": "error",
-      "svelte/no-raw-special-elements": "error",
-      "svelte/no-useless-children-snippet": "error",
-      "svelte/no-useless-mustaches": "error",
       "svelte/button-has-type": "error",
       "svelte/prefer-const": "error",
       "svelte/block-lang": [

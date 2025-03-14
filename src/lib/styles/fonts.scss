@@ -1,5 +1,6 @@
-@use "@fontsource-variable/inter/scss/mixins" as Inter;
-@include Inter.faces(
-  $subsets: "latin",
-  $directory: "@fontsource-variable/inter/files"
+@use "@fontsource-utils/scss" as fontsource;
+@use "@fontsource-variable/inter/scss" as inter;
+@include fontsource.faces(
+  $metadata: inter.$metadata,
+  $subsets: "latin"
 );

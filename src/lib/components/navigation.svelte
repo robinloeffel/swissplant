@@ -159,12 +159,12 @@
   width: min(100% - 20px, 480px);
   margin: 10px auto 0;
   background-color: variables.$color-white-90;
-  background-blend-mode: soft-light;
-  isolation: isolate;
-  backdrop-filter: blur(8px);
   border: 1px solid variables.$color-black-05;
   border-radius: 16px;
   box-shadow: 0 4px 8px variables.$color-black-05;
+  background-blend-mode: soft-light;
+  isolation: isolate;
+  backdrop-filter: blur(8px);
   transition: translate 0.3s ease-in-out;
 }
 
@@ -237,9 +237,9 @@
 
 .navigation-list {
   display: grid;
+  visibility: hidden;
   grid-template-columns: 1fr 1fr;
   overflow: hidden;
-  visibility: hidden;
   transition: visibility 0.3s ease-in-out;
 
   .open & {
