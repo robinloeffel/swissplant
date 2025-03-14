@@ -21,19 +21,25 @@
         CH-3225 Müntschemier
       </p>
       <p class="footer-text">
-        <a data-obfuscate="bWFpbHRvOmluZm9Ac3dpc3NwbGFudC5jaA==" data-umami-event="footer-swissplant-email" href="#"></a>
+        <a data-umami-event="footer-swissplant-email" href="mailto:info@swissplant.ch">
+          info@swissplant.ch
+        </a>
         <br />
-        <a data-obfuscate="bWFpbHRvOmluZm9AYWdyaXBsYW50LmNo" data-umami-event="footer-agriplant-email" href="#"></a>
+        <a data-umami-event="footer-agriplant-email" href="mailto:info@agriplant.ch">
+          info@agriplant.ch
+        </a>
       </p>
     </div>
     <div class="footer-content-right">
       <p class="footer-text">
         Montag bis Freitag<br />
-        07:30–11:45 Uhr<br />
-        13:30–17:30 Uhr
+        07:30 &ndash; 11:45 Uhr<br />
+        13:30 &ndash; 17:30 Uhr
       </p>
       <p class="footer-text">
-        <a data-obfuscate="dGVsOiArNDEgMzIgMzEzIDUyIDEw" data-umami-event="footer-phone" href="#"></a>
+        <a data-umami-event="footer-phone" href="tel:+41 32 313 52 10">
+          +41 32 313 52 10
+        </a>
       </p>
     </div>
   </div>
@@ -77,67 +83,67 @@
 </footer>
 
 <style lang="scss">
-@use "$styles/variables";
+  @use "$styles/variables";
 
-.footer {
-  padding: 75px;
-  font-size: 0.8rem;
-  color: variables.$color-white;
-  background-color: variables.$color-text;
-  border-top: 5px solid variables.$color-brand;
+  .footer {
+    padding: 75px;
+    font-size: 0.8rem;
+    color: variables.$color-white;
+    background-color: variables.$color-text;
+    border-top: 5px solid variables.$color-brand;
 
-  a {
-    color: inherit;
+    a {
+      color: inherit;
+    }
+
+    > * {
+      width: min(900px, 100%);
+      margin: auto;
+    }
   }
 
-  > * {
-    width: min(900px, 100%);
-    margin: auto;
+  .footer-hr {
+    height: 2px;
+    margin: 50px auto;
+    background-color: variables.$color-white-05;
   }
-}
 
-.footer-hr {
-  height: 2px;
-  margin: 50px auto;
-  background-color: variables.$color-white-05;
-}
-
-.footer-content {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  place-items: center start;
-}
-
-.footer-content > .footer-text {
-  grid-column: 1 / -1;
-  justify-self: center;
-  text-align: center;
-  text-wrap: wrap;
-}
-
-.footer-navigation {
-  margin-bottom: variables.$space-big;
-}
-
-.footer-navigation-list {
-  padding: 0;
-  margin: 0;
-  text-align: center;
-  list-style: none;
-}
-
-.footer-navigation-item {
-  display: inline-block;
-
-  &:not(:last-child)::after {
-    content: " — ";
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    place-items: center start;
   }
-}
 
-.footer-logo {
-  width: 100px;
-  height: 30px;
-  color: variables.$color-brand;
-}
+  .footer-content > .footer-text {
+    grid-column: 1 / -1;
+    justify-self: center;
+    text-align: center;
+    text-wrap: wrap;
+  }
+
+  .footer-navigation {
+    margin-bottom: variables.$space-big;
+  }
+
+  .footer-navigation-list {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    list-style: none;
+  }
+
+  .footer-navigation-item {
+    display: inline-block;
+
+    &:not(:last-child)::after {
+      content: " — ";
+    }
+  }
+
+  .footer-logo {
+    width: 100px;
+    height: 30px;
+    color: variables.$color-brand;
+  }
 </style>

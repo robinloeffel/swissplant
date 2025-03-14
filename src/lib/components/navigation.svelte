@@ -2,7 +2,7 @@
   import Icon from "$components/icon.svelte";
 
   let isOpen = $state(false);
-  let navigationReference: HTMLElement;
+  let navigationRef: HTMLElement;
 
   const toggle = () => {
     isOpen = !isOpen;
@@ -12,7 +12,7 @@
     if (
       isOpen
       && target instanceof HTMLElement
-      && !navigationReference.contains(target)
+      && !navigationRef.contains(target)
     ) {
       isOpen = false;
     }
@@ -26,7 +26,7 @@
 <svelte:window onclick={handleWindowClick} />
 
 <nav
-  bind:this={navigationReference}
+  bind:this={navigationRef}
   class="navigation"
   class:open={isOpen}
   aria-label="Hauptnavigation"
@@ -148,151 +148,151 @@
 </nav>
 
 <style lang="scss">
-@forward "$styles/utils";
-@use "sass:math";
-@use "$styles/variables";
+  @forward "$styles/utils";
+  @use "sass:math";
+  @use "$styles/variables";
 
-.navigation {
-  position: fixed;
-  inset: 0 0 auto;
-  z-index: 9;
-  width: min(100% - 20px, 480px);
-  margin: 10px auto 0;
-  background-color: variables.$color-white-90;
-  border: 1px solid variables.$color-black-05;
-  border-radius: 16px;
-  box-shadow: 0 4px 8px variables.$color-black-05;
-  background-blend-mode: soft-light;
-  isolation: isolate;
-  backdrop-filter: blur(8px);
-  transition: translate 0.3s ease-in-out;
-}
-
-.navigation-bar,
-.navigation-list {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.navigation-bar {
-  display: flex;
-  justify-content: space-between;
-  padding: 32px;
-}
-
-.navigation-bar-logo,
-.navigation-bar-toggle {
-  display: grid;
-  place-content: center;
-}
-
-.navigation-bar-toggle {
-  display: grid;
-  place-items: center;
-  width: 32px;
-  height: 32px;
-  font-size: 125%;
-  color: inherit;
-  cursor: pointer;
-  background: 0;
-  border: 0;
-}
-
-.navigation-expando {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.3s ease-in-out;
-  will-change: grid-template-rows;
-
-  .open & {
-    grid-template-rows: 1fr;
-  }
-}
-
-.navigation-bar-toggle-icon-menu,
-.navigation-bar-toggle-icon-x {
-  grid-area: 1 / 1 / 1 / 1;
-  width: 24px;
-  height: 24px;
-  transition:
-    scale 0.3s ease-in-out,
-    opacity 0.3s ease-in-out;
-}
-
-.open .navigation-bar-toggle-icon-menu {
-  opacity: 0;
-  scale: 0;
-}
-
-.navigation-bar-toggle-icon-x {
-  opacity: 0;
-  scale: 0;
-
-  .open & {
-    opacity: 1;
-    scale: 1;
-  }
-}
-
-.navigation-list {
-  display: grid;
-  visibility: hidden;
-  grid-template-columns: 1fr 1fr;
-  overflow: hidden;
-  transition: visibility 0.3s ease-in-out;
-
-  .open & {
-    visibility: unset;
-  }
-}
-
-.navigation-item {
-  &:nth-child(-n + 2) {
-    border-top: 1px solid variables.$color-black-05;
+  .navigation {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 9;
+    width: min(100% - 20px, 480px);
+    margin: 10px auto 0;
+    background-color: variables.$color-white-90;
+    border: 1px solid variables.$color-black-05;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px variables.$color-black-05;
+    background-blend-mode: soft-light;
+    isolation: isolate;
+    backdrop-filter: blur(8px);
+    transition: translate 0.3s ease-in-out;
   }
 
-  &:not(:last-child) {
-    border-bottom: 1px solid variables.$color-black-05;
+  .navigation-bar,
+  .navigation-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
   }
 
-  &:nth-child(odd) {
-    border-right: 0.5px solid variables.$color-black-05;
+  .navigation-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 32px;
   }
 
-  &:nth-child(even) {
-    border-left: 0.5px solid variables.$color-black-05;
+  .navigation-bar-logo,
+  .navigation-bar-toggle {
+    display: grid;
+    place-content: center;
   }
 
-  &:last-child {
-    grid-column: span 2;
-    text-align: center;
+  .navigation-bar-toggle {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    font-size: 125%;
+    color: inherit;
+    cursor: pointer;
+    background: 0;
     border: 0;
   }
-}
 
-.navigation-link {
-  display: block;
-  padding: 16px;
-  text-align: center;
-}
+  .navigation-expando {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease-in-out;
+    will-change: grid-template-rows;
 
-.navigation-language-toggle {
-  padding: 16px;
-  font: inherit;
-  color: inherit;
-  cursor: pointer;
-  background: 0;
-  border: 0;
-
-  > * {
-    pointer-events: none;
+    .open & {
+      grid-template-rows: 1fr;
+    }
   }
-}
 
-.header-navigation-logo {
-  width: 121px;
-  height: 32px;
-  color: variables.$color-brand;
-}
+  .navigation-bar-toggle-icon-menu,
+  .navigation-bar-toggle-icon-x {
+    grid-area: 1 / 1 / 1 / 1;
+    width: 24px;
+    height: 24px;
+    transition:
+      scale 0.3s ease-in-out,
+      opacity 0.3s ease-in-out;
+  }
+
+  .open .navigation-bar-toggle-icon-menu {
+    opacity: 0;
+    scale: 0;
+  }
+
+  .navigation-bar-toggle-icon-x {
+    opacity: 0;
+    scale: 0;
+
+    .open & {
+      opacity: 1;
+      scale: 1;
+    }
+  }
+
+  .navigation-list {
+    display: grid;
+    visibility: hidden;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+    transition: visibility 0.3s ease-in-out;
+
+    .open & {
+      visibility: unset;
+    }
+  }
+
+  .navigation-item {
+    &:nth-child(-n + 2) {
+      border-top: 1px solid variables.$color-black-05;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid variables.$color-black-05;
+    }
+
+    &:nth-child(odd) {
+      border-right: 0.5px solid variables.$color-black-05;
+    }
+
+    &:nth-child(even) {
+      border-left: 0.5px solid variables.$color-black-05;
+    }
+
+    &:last-child {
+      grid-column: span 2;
+      text-align: center;
+      border: 0;
+    }
+  }
+
+  .navigation-link {
+    display: block;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .navigation-language-toggle {
+    padding: 16px;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    background: 0;
+    border: 0;
+
+    > * {
+      pointer-events: none;
+    }
+  }
+
+  .header-navigation-logo {
+    width: 121px;
+    height: 32px;
+    color: variables.$color-brand;
+  }
 </style>

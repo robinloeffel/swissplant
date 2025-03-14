@@ -13,6 +13,14 @@ export default ts.config(
       }
     },
     rules: {
+      "unicorn/prevent-abbreviations": [
+        "error", {
+          allowList: {
+            Ref: true,
+            Props: true
+          }
+        }
+      ],
       "@typescript-eslint/init-declarations": "off",
 
       "svelte/no-target-blank": "error",

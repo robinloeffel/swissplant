@@ -15,14 +15,14 @@
     x
   } as const;
 
-  interface Properties {
+  interface Props {
     name: keyof typeof svgMap;
     size?: "flex" | "small";
   }
 </script>
 
 <script lang="ts">
-  const { name, size = "flex" }: Properties = $props();
+  const { name, size = "flex" }: Props = $props();
 </script>
 
 <div class="icon {size}" aria-hidden="true">
@@ -31,25 +31,25 @@
 </div>
 
 <style lang="scss">
-@use "$styles/variables";
+  @use "$styles/variables";
 
-.icon {
-  display: grid;
-  place-items: center;
+  .icon {
+    display: grid;
+    place-items: center;
 
-  &.small {
-    width: 25px;
-    height: 25px;
+    &.small {
+      width: 25px;
+      height: 25px;
+    }
+
+    &.flex {
+      width: 100%;
+      height: 100%;
+    }
+
+    &.link {
+      width: 0.8em;
+      height: 0.8em;
+    }
   }
-
-  &.flex {
-    width: 100%;
-    height: 100%;
-  }
-
-  &.link {
-    width: 0.8em;
-    height: 0.8em;
-  }
-}
 </style>
