@@ -1,8 +1,9 @@
 <script lang="ts">
-  import Hero, { type Props as HeroProps } from "$components/hero.svelte";
+  import Hero from "$components/hero.svelte";
   import two from "$img/aerials/2.jpg";
+  import type { HTMLImgAttributes } from "svelte/elements";
 
-  const images: HeroProps["images"] = [
+  const images: HTMLImgAttributes[] = [
     {
       src: two,
       alt: ""

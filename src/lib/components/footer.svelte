@@ -1,4 +1,5 @@
 <script lang="ts">
+  import ContactLink from "$components/contact-link.svelte";
   import Icon from "$components/icon.svelte";
 </script>
 
@@ -21,13 +22,9 @@
         CH-3225 Müntschemier
       </p>
       <p class="footer-text">
-        <a data-umami-event="footer-swissplant-email" href="mailto:info@swissplant.ch">
-          info@swissplant.ch
-        </a>
+        <ContactLink data-umami-event="footer-swissplant-email" value="mailto:info@swissplant.ch" />
         <br />
-        <a data-umami-event="footer-agriplant-email" href="mailto:info@agriplant.ch">
-          info@agriplant.ch
-        </a>
+        <ContactLink data-umami-event="footer-agriplant-email" value="mailto:info@agriplant.ch" />
       </p>
     </div>
     <div class="footer-content-right">
@@ -37,9 +34,7 @@
         13:30 &ndash; 17:30 Uhr
       </p>
       <p class="footer-text">
-        <a data-umami-event="footer-phone" href="tel:+41 32 313 52 10">
-          +41 32 313 52 10
-        </a>
+        <ContactLink data-umami-event="footer-phone" value="tel:+41 32 313 52 10" />
       </p>
     </div>
   </div>
@@ -77,7 +72,8 @@
   </nav>
   <div class="footer-content">
     <p class="footer-text">
-      Entwickelt und gestaltet von <a href="https://robinloeffel.ch">Robin Löffel</a>
+      <span>Entwickelt und gestaltet von</span>
+      <a data-umami-event="footer-link-robin" href="https://robinloeffel.ch">Robin Löffel</a>
     </p>
   </div>
 </footer>
@@ -103,9 +99,7 @@
   }
 
   .footer-hr {
-    height: 2px;
     margin: 50px auto;
-    background-color: variables.$color-white-05;
   }
 
   .footer-content {

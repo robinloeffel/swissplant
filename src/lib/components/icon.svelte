@@ -3,6 +3,7 @@
   import agriplant from "$svg/agriplant.svg?raw";
   import swissplantBare from "$svg/swissplant-bare.svg?raw";
   import swissplant from "$svg/swissplant.svg?raw";
+  import document from "feather-icons/dist/icons/file-text.svg?raw";
   import menu from "feather-icons/dist/icons/menu.svg?raw";
   import x from "feather-icons/dist/icons/x.svg?raw";
 
@@ -12,7 +13,8 @@
     swissplant,
     agriplant,
     menu,
-    x
+    x,
+    document
   } as const;
 
   interface Props {
@@ -34,7 +36,7 @@
   @use "$styles/variables";
 
   .icon {
-    display: grid;
+    display: inline-grid;
     place-items: center;
 
     &.small {

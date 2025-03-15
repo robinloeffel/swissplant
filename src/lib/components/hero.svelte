@@ -1,14 +1,9 @@
 <script lang="ts">
   import Icon from "$components/icon.svelte";
+  import type { HTMLImgAttributes } from "svelte/elements";
 
-  interface HeroImage {
-    src: string;
-    alt: string;
-    objectPosition?: string;
-  }
-
-  export interface Props {
-    images: HeroImage[];
+  interface Props {
+    images: HTMLImgAttributes[];
     big?: true;
   }
 
@@ -45,11 +40,12 @@
 
   .hero {
     display: grid;
-    height: 40vh;
+    height: min(250px, 25vh);
+    border-bottom: 5px solid variables.$color-brand;
 
     &.big {
       position: relative;
-      height: 80vh;
+      height: 90vh;
 
       &::after {
         position: absolute;
