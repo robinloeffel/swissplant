@@ -1,8 +1,12 @@
 <script lang="ts">
+  import { page } from "$app/state";
   import Icon from "$components/icon.svelte";
 
   let isOpen = $state(false);
   let navigationRef: HTMLElement;
+
+  const pathHrefDe = $derived(page.route.id?.replace("[lang=lang]", "de"));
+  const pathHrefEn = $derived(page.route.id?.replace("[lang=lang]", "en"));
 
   const toggle = () => {
     isOpen = !isOpen;
@@ -36,7 +40,7 @@
     <a
       class="navigation-bar-logo"
       data-umami-event="navigation-bar-link-home"
-      href="/"
+      href="./"
       onclick={handleItemClick}
     >
       <span class="sr-only">Zur Startseite gehen.</span>
@@ -79,7 +83,9 @@
           data-umami-event="navigation-bar-link-company"
           href="firma"
           onclick={handleItemClick}
-        >Firma</a>
+        >
+          Firma
+        </a>
       </li>
       <li class="navigation-item">
         <a
@@ -87,7 +93,9 @@
           data-umami-event="navigation-bar-link-team"
           href="team"
           onclick={handleItemClick}
-        >Team</a>
+        >
+          Team
+        </a>
       </li>
       <li class="navigation-item">
         <a
@@ -95,7 +103,9 @@
           data-umami-event="navigation-bar-link-portfolio"
           href="angebot"
           onclick={handleItemClick}
-        >Angebot</a>
+        >
+          Angebot
+        </a>
       </li>
       <li class="navigation-item">
         <a
@@ -103,7 +113,9 @@
           data-umami-event="navigation-bar-link-partners"
           href="partner"
           onclick={handleItemClick}
-        >Partner</a>
+        >
+          Partner
+        </a>
       </li>
       <li class="navigation-item">
         <a
@@ -111,7 +123,9 @@
           data-umami-event="navigation-bar-link-contact"
           href="kontakt"
           onclick={handleItemClick}
-        >Kontakt</a>
+        >
+          Kontakt
+        </a>
       </li>
       <li class="navigation-item">
         <a
@@ -119,29 +133,31 @@
           data-umami-event="navigation-bar-link-jobs"
           href="jobs"
           onclick={handleItemClick}
-        >Jobs</a>
+        >
+          Jobs
+        </a>
       </li>
       <li class="navigation-item">
-        <button
+        <a
           class="navigation-language-toggle"
           data-umami-event="navigation-bar-change-lang-de"
-          type="button"
+          href={pathHrefDe}
         >
           <span class="sr-only">
             Sprache der Webseite auf Deutsch wechseln.
           </span>
           <span>DE</span>
-        </button>
-        <button
+        </a>
+        <a
           class="navigation-language-toggle"
           data-umami-event="navigation-bar-change-lang-en"
-          type="button"
+          href={pathHrefEn}
         >
           <span class="sr-only">
             Change the language of the web site to English.
           </span>
           <span>EN</span>
-        </button>
+        </a>
       </li>
     </ul>
   </div>
@@ -278,16 +294,9 @@
   }
 
   .navigation-language-toggle {
+    display: inline-block;
     padding: 16px;
-    font: inherit;
-    color: inherit;
-    cursor: pointer;
-    background: 0;
-    border: 0;
-
-    > * {
-      pointer-events: none;
-    }
+    text-decoration: none;
   }
 
   .header-navigation-logo {

@@ -10,7 +10,8 @@ export default {
       $styles: "src/lib/styles",
       $components: "src/lib/components",
       $img: "src/lib/img",
-      $svg: "src/lib/svg"
+      $svg: "src/lib/svg",
+      $config: "src/lib/config"
     }
   }
 };
