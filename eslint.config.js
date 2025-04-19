@@ -3,8 +3,8 @@ import svelte from "eslint-plugin-svelte";
 import ts from "typescript-eslint";
 
 export default ts.config(
-  ...sweet,
-  ...svelte.configs.recommended,
+  sweet,
+  svelte.configs.recommended,
   {
     files: ["**/*.svelte", "**/*.svelte.ts"],
     languageOptions: {
