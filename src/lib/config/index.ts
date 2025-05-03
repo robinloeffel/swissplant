@@ -14,3 +14,7 @@ export const config: Config = {
 export const isLanguage = (value: unknown): value is Language => (
   typeof value === "string" && (value === "de" || value === "en")
 );
+
+export const getLanguage = (navigator: Navigator): Language => (
+  isLanguage(navigator.language) ? navigator.language : config.defaultLanguage
+);
