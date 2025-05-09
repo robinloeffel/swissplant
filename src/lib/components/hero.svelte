@@ -8,14 +8,23 @@
   }
 
   const { images, big }: Props = $props();
+
   let visibleIndex = $state(0);
 
   $effect(() => {
+    let interval: number | undefined;
+
     if (images.length > 1) {
-      globalThis.setInterval(() => {
+      interval = setInterval(() => {
         visibleIndex = (visibleIndex + 1) % images.length;
       }, 10_000);
     }
+
+    return () => {
+      if (interval) {
+        clearInterval(interval);
+      }
+    };
   });
 </script>
 

@@ -1,6 +1,8 @@
-import { error } from "@sveltejs/kit";
+import { config } from "$config";
+import { redirect } from "@sveltejs/kit";
 import type { PageServerLoad } from "./$types";
 
-export const load: PageServerLoad = () => {
-  error(404);
+export const load: PageServerLoad = ({ cookies }) => {
+  const language = cookies.get("lang") ?? config.defaultLanguage;
+  redirect(307, `/${language}`);
 };

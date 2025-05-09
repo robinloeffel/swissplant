@@ -1,12 +1,11 @@
 <script lang="ts">
+  import { goto } from "$app/navigation";
   import { page } from "$app/state";
   import Icon from "$components/icon.svelte";
+  import type { Language } from "$config";
 
   let isOpen = $state(false);
   let navigationRef: HTMLElement;
-
-  const pathHrefDe = $derived(page.route.id?.replace("[lang=lang]", "de"));
-  const pathHrefEn = $derived(page.route.id?.replace("[lang=lang]", "en"));
 
   const toggle = () => {
     isOpen = !isOpen;
@@ -25,6 +24,13 @@
   const handleItemClick = () => {
     isOpen = false;
   };
+
+  const handleLanguageClick = (lang: Language) => {
+    const currentPath = page.route.id;
+    const newPath = currentPath?.replace("[lang=lang]", lang) ?? lang;
+    isOpen = false;
+    void goto(newPath);
+  };
 </script>
 
 <svelte:window onclick={handleWindowClick} />
@@ -34,7 +40,6 @@
   class="navigation"
   class:open={isOpen}
   aria-label="Hauptnavigation"
-  data-module="navigation"
 >
   <div class="navigation-bar">
     <a
@@ -80,6 +85,7 @@
       <li class="navigation-item">
         <a
           class="navigation-link"
+          class:active={page.route.id?.includes("/firma")}
           data-umami-event="navigation-bar-link-company"
           href="firma"
           onclick={handleItemClick}
@@ -90,6 +96,7 @@
       <li class="navigation-item">
         <a
           class="navigation-link"
+          class:active={page.route.id?.includes("/team")}
           data-umami-event="navigation-bar-link-team"
           href="team"
           onclick={handleItemClick}
@@ -100,6 +107,7 @@
       <li class="navigation-item">
         <a
           class="navigation-link"
+          class:active={page.route.id?.includes("/angebot")}
           data-umami-event="navigation-bar-link-portfolio"
           href="angebot"
           onclick={handleItemClick}
@@ -110,6 +118,7 @@
       <li class="navigation-item">
         <a
           class="navigation-link"
+          class:active={page.route.id?.includes("/partner")}
           data-umami-event="navigation-bar-link-partners"
           href="partner"
           onclick={handleItemClick}
@@ -120,6 +129,7 @@
       <li class="navigation-item">
         <a
           class="navigation-link"
+          class:active={page.route.id?.includes("/kontakt")}
           data-umami-event="navigation-bar-link-contact"
           href="kontakt"
           onclick={handleItemClick}
@@ -130,6 +140,7 @@
       <li class="navigation-item">
         <a
           class="navigation-link"
+          class:active={page.route.id?.includes("/jobs")}
           data-umami-event="navigation-bar-link-jobs"
           href="jobs"
           onclick={handleItemClick}
@@ -138,26 +149,30 @@
         </a>
       </li>
       <li class="navigation-item">
-        <a
+        <button
           class="navigation-language-toggle"
+          class:active={page.params.lang === "de"}
           data-umami-event="navigation-bar-change-lang-de"
-          href={pathHrefDe}
+          onclick={() => {
+            handleLanguageClick("de");
+          }}
+          type="button"
         >
-          <span class="sr-only">
-            Sprache der Webseite auf Deutsch wechseln.
-          </span>
-          <span>DE</span>
-        </a>
-        <a
+          <span class="sr-only">Sprache der Webseite auf Deutsch wechseln.</span>
+          <span aria-hidden="true">DE</span>
+        </button>
+        <button
           class="navigation-language-toggle"
+          class:active={page.params.lang === "en"}
           data-umami-event="navigation-bar-change-lang-en"
-          href={pathHrefEn}
+          onclick={() => {
+            handleLanguageClick("en");
+          }}
+          type="button"
         >
-          <span class="sr-only">
-            Change the language of the web site to English.
-          </span>
-          <span>EN</span>
-        </a>
+          <span class="sr-only">Sprache der Webseite auf Englisch wechseln.</span>
+          <span aria-hidden="true">EN</span>
+        </button>
       </li>
     </ul>
   </div>
@@ -165,8 +180,8 @@
 
 <style lang="scss">
   @forward "$styles/utils";
-  @use "sass:math";
   @use "$styles/variables";
+  @use "sass:math";
 
   .navigation {
     position: fixed;
@@ -296,7 +311,19 @@
   .navigation-language-toggle {
     display: inline-block;
     padding: 16px;
+    font: inherit;
+    cursor: pointer;
+    background: 0;
+    border: 0;
+  }
+
+  .navigation-link,
+  .navigation-language-toggle {
     text-decoration: none;
+
+    &.active {
+      text-decoration: underline solid variables.$color-brand;
+    }
   }
 
   .header-navigation-logo {

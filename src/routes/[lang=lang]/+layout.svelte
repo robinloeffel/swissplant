@@ -46,7 +46,7 @@
   });
 
   $effect(() => {
-    document.documentElement.lang = page.params.lang ?? "";
+    document.documentElement.lang = page.params.lang ?? config.defaultLanguage;
   });
 </script>
 

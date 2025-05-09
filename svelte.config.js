@@ -6,6 +6,9 @@ export default {
   preprocess: vitePreprocess(),
   kit: {
     adapter: vercel(),
+    paths: {
+      relative: false
+    },
     alias: {
       $styles: "src/lib/styles",
       $components: "src/lib/components",
