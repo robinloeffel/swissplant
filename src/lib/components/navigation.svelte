@@ -3,6 +3,7 @@
   import { page } from "$app/state";
   import Icon from "$components/icon.svelte";
   import type { Language } from "$config";
+  import Cookies from "js-cookie";
 
   let isOpen = $state(false);
   let navigationRef: HTMLElement;
@@ -28,7 +29,13 @@
   const handleLanguageClick = (lang: Language) => {
     const currentPath = page.route.id;
     const newPath = currentPath?.replace("[lang=lang]", lang) ?? lang;
-    isOpen = false;
+
+    Cookies.set("lang", lang, {
+      expires: 365,
+      sameSite: "strict",
+      secure: true
+    });
+
     void goto(newPath);
   };
 </script>
