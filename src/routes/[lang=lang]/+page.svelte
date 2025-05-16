@@ -1,11 +1,11 @@
 <script lang="ts">
   import Hero from "$components/hero.svelte";
   import SplitTile, { type Props as SplitTileProps } from "$components/split-tile.svelte";
-  import one from "$img/aerials/1.jpg";
-  import two from "$img/aerials/2.jpg";
-  import crates from "$img/photoshoot/crates.jpg";
-  import machine from "$img/photoshoot/machine.jpg";
-  import tinu from "$img/photoshoot/tinu.jpg";
+  import one from "$img/aerials/1.avif";
+  import two from "$img/aerials/2.avif";
+  import crates from "$img/photoshoot/crates.avif";
+  import machine from "$img/photoshoot/machine.avif";
+  import tinu from "$img/photoshoot/tinu.avif";
   import type { HTMLImgAttributes } from "svelte/elements";
 
   const images: HTMLImgAttributes[] = [

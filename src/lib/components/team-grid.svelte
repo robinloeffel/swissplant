@@ -1,26 +1,26 @@
 <script lang="ts">
   import ContactLink from "$components/contact-link.svelte";
-  import barbara from "$img/employees/barbara.jpg";
-  import hansPeter from "$img/employees/hans-peter.jpg";
-  import ivan from "$img/employees/ivan.jpg";
-  import mariusz from "$img/employees/mariusz.jpg";
-  import markus from "$img/employees/markus.jpg";
-  import martin from "$img/employees/martin.jpg";
-  import miguel from "$img/employees/miguel.jpg";
-  import muhamet from "$img/employees/muhamet.jpg";
-  import sandro from "$img/employees/sandro.jpg";
-  import shpend from "$img/employees/shpend.jpg";
-  import telja from "$img/employees/telja.jpg";
+  import barbara from "$img/employees/barbara.avif";
+  import hansPeter from "$img/employees/hans-peter.avif";
+  import ivan from "$img/employees/ivan.avif";
+  import mariusz from "$img/employees/mariusz.avif";
+  import markus from "$img/employees/markus.avif";
+  import martin from "$img/employees/martin.avif";
+  import miguel from "$img/employees/miguel.avif";
+  import muhamet from "$img/employees/muhamet.avif";
+  import sandro from "$img/employees/sandro.avif";
+  import shpend from "$img/employees/shpend.avif";
+  import telja from "$img/employees/telja.avif";
   import type { HTMLImgAttributes } from "svelte/elements";
 
   interface Member {
     name: string;
     position: string;
-    contatct?: {
+    image: HTMLImgAttributes;
+    contact?: {
       email: string;
       phone: string;
     };
-    image: HTMLImgAttributes;
   }
 
   const members: Member[] = [
@@ -31,7 +31,7 @@
         src: martin,
         alt: "Martin Loeffel"
       },
-      contatct: {
+      contact: {
         email: "m.loeffel@swissplant.ch",
         phone: "+41 79 631 45 59"
       }
@@ -43,7 +43,7 @@
         src: sandro,
         alt: "Sandro"
       },
-      contatct: {
+      contact: {
         email: "s.loeffel@swissplant.ch",
         phone: "+41 79 641 52 10"
       }
@@ -55,7 +55,7 @@
         src: telja,
         alt: "Telja"
       },
-      contatct: {
+      contact: {
         email: "t.baumann@swissplant.ch",
         phone: "+41 79 815 38 35"
       }
@@ -138,14 +138,14 @@
           <span class="team-grid-item-name">{member.name}</span>
           <span class="team-grid-item-position">{member.position}</span>
 
-          {#if member.contatct}
+          {#if member.contact}
             <ContactLink
               data-umami-event={`team-email-click-${nameToAttribute(member.name)}`}
-              value="mailto:{member.contatct.email}"
+              value="mailto:{member.contact.email}"
             />
             <ContactLink
               data-umami-event={`team-phone-click-${nameToAttribute(member.name)}`}
-              value="tel:{member.contatct.phone}"
+              value="tel:{member.contact.phone}"
             />
           {/if}
         </div>

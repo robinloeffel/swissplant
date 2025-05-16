@@ -2,7 +2,7 @@
   import Article from "$components/article.svelte";
   import Hero from "$components/hero.svelte";
   import Iframe from "$components/iframe.svelte";
-  import two from "$img/aerials/2.jpg";
+  import two from "$img/aerials/2.avif";
   import type { HTMLImgAttributes } from "svelte/elements";
 
   const images: HTMLImgAttributes[] = [

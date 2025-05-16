@@ -21,7 +21,7 @@
     }
 
     return () => {
-      if (interval) {
+      if (typeof interval === "number") {
         clearInterval(interval);
       }
     };

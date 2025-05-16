@@ -19,7 +19,7 @@
     const suspiciousDomAttributes = new Set(["selenium", "webdriver", "driver", "playwright"]);
     const documentAttributes = new Set(document.documentElement.getAttributeNames());
 
-    detectors.hasWebDriver = Boolean(navigator.webdriver);
+    detectors.hasWebDriver = navigator.webdriver;
     detectors.hasHeadlessInUserAgent = navigator.userAgent.toLowerCase().includes("headless");
     detectors.hasNoUserLanguages = navigator.languages.length === 0;
     detectors.hasSetSuspiciousDomAttributes = suspiciousDomAttributes.intersection(documentAttributes).size > 0;

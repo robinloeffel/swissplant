@@ -6,6 +6,7 @@
   import { config } from "$config";
   import favicon from "$img/favicon.svg";
   import "$styles/base.scss";
+  import fontFile from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2";
   import type { Snippet } from "svelte";
 
   interface Props {
@@ -51,6 +52,7 @@
 </script>
 
 <svelte:head>
+  <link as="font" crossorigin="anonymous" href={fontFile} rel="preload" type="font/woff2" />
   <base href={pageMeta.base} />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -68,7 +70,7 @@
     <script
       data-domains="swissplant.ch"
       data-website-id="394b5468-7f5b-4078-8102-ed21d4a664e4"
-      defer src="/stats/script.js"
+      defer src="/stats.js"
     ></script>
   {/if}
 </svelte:head>

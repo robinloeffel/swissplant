@@ -2,7 +2,7 @@
   import Article from "$components/article.svelte";
   import Hero from "$components/hero.svelte";
   import Icon from "$components/icon.svelte";
-  import machine from "$img/photoshoot/machine.jpg";
+  import machine from "$img/photoshoot/machine.avif";
   import type { HTMLImgAttributes } from "svelte/elements";
 
   const images: HTMLImgAttributes[] = [

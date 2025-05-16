@@ -2,7 +2,7 @@
   import Article from "$components/article.svelte";
   import Hero from "$components/hero.svelte";
   import TeamGrid from "$components/team-grid.svelte";
-  import tinu from "$img/photoshoot/tinu.jpg";
+  import tinu from "$img/photoshoot/tinu.avif";
   import type { HTMLImgAttributes } from "svelte/elements";
 
   const images: HTMLImgAttributes[] = [

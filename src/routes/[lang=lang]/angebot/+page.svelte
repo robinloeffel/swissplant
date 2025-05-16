@@ -2,7 +2,7 @@
   import Article from "$components/article.svelte";
   import Hero from "$components/hero.svelte";
   import Iframe from "$components/iframe.svelte";
-  import crates from "$img/photoshoot/crates.jpg";
+  import crates from "$img/photoshoot/crates.avif";
   import type { HTMLImgAttributes } from "svelte/elements";
 
   const images: HTMLImgAttributes[] = [
