@@ -1,0 +1,23 @@
+@mixin above-phone {
+  @media (width > 480px) {
+    @content;
+  }
+}
+
+@mixin above-tablet {
+  @media (width > 768px) {
+    @content;
+  }
+}
+
+@mixin above-desktop {
+  @media (width > 1024px) {
+    @content;
+  }
+}
+
+@mixin above-wide {
+  @media (width > 1280px) {
+    @content;
+  }
+}

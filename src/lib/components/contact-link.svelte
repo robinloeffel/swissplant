@@ -2,10 +2,10 @@
   import type { HTMLAnchorAttributes } from "svelte/elements";
 
   interface Props extends HTMLAnchorAttributes {
-    value: `mailto:${string}` | `tel:${string}`;
+    href: `mailto:${string}` | `tel:${string}`;
   }
 
-  const { value, ...attributes }: Props = $props();
+  const { href, ...attributes }: Props = $props();
   const detectors = $state({
     hasWebDriver: false,
     hasHeadlessInUserAgent: false,
@@ -28,12 +28,12 @@
 
   const onclick = (event: MouseEvent) => {
     event.preventDefault();
-    window.open(value, "_self");
+    window.open(href, "_self");
   };
 </script>
 
 {#if isHuman}
-  <a {...attributes} aria-label={value.split(":")[1]} href="#!" {onclick}></a>
+  <a {...attributes} aria-label={href.split(":")[1]} href="#!" {onclick}></a>
 {/if}
 
 <style lang="scss">

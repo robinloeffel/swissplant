@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Iframe from "$components/iframe.svelte";
-  import type { HTMLIframeAttributes, HTMLImgAttributes } from "svelte/elements";
+  import { type IframeProps, default as Iframe } from "$components/iframe.svelte";
+  import type { HTMLImgAttributes } from "svelte/elements";
 
   interface BaseProps {
     even: boolean;
@@ -12,17 +12,17 @@
     };
   }
 
-  interface ImageProps extends BaseProps {
+  interface ImageTileProps extends BaseProps {
     type: "image";
     image: HTMLImgAttributes;
   }
 
-  interface IframeProps extends BaseProps {
+  interface IframeTileProps extends BaseProps {
     type: "iframe";
-    iframe: HTMLIframeAttributes;
+    iframe: IframeProps;
   }
 
-  export type Props = ImageProps | IframeProps;
+  export type Props = ImageTileProps | IframeTileProps;
 
   const { even, title, description, cta, ...variant }: Props = $props();
 </script>
@@ -48,28 +48,44 @@
 </section>
 
 <style lang="scss">
-  @use "$styles/variables";
+  @use "$styles/media-queries";
 
   .split-tile {
     display: grid;
-    grid-template-columns: 1fr 1fr;
     place-items: center;
 
     > * {
       min-width: 0;
+    }
+
+    @include media-queries.above-tablet {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .split-tile-image,
+  .split-tile-iframe {
+    display: none;
+
+    @include media-queries.above-tablet {
+      display: unset;
     }
   }
 
   .split-tile-image {
     width: 100%;
     height: 100%;
-    aspect-ratio: 3 / 2;
+    aspect-ratio: 4 / 3;
     object-fit: cover;
   }
 
   .split-tile-iframe {
     width: 100%;
     height: 100%;
+
+    :global(iframe) {
+      border-radius: 0;
+    }
   }
 
   .split-tile-content {
@@ -87,18 +103,18 @@
 
   .split-tile-cta {
     display: inline-block;
-    padding: 16px 24px;
-    font-size: 90%;
-    color: variables.$color-brand;
+    padding: var(--space-16) var(--space-24);
+    color: var(--color-brand);
     text-decoration: none;
-    border: 2px solid variables.$color-brand;
+    border: 2px solid var(--color-brand);
+    border-radius: var(--space-16);
     transition:
       color 0.3s ease-in-out,
       background-color 0.3s ease-in-out;
 
     &:is(:hover, :focus-visible) {
-      color: variables.$color-white;
-      background-color: variables.$color-brand;
+      color: var(--color-white);
+      background-color: var(--color-brand);
     }
   }
 </style>

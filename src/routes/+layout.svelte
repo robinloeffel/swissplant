@@ -15,22 +15,18 @@
     const path = page.route.id ?? "";
 
     return {
-      title:
-        typeof title === "string"
-          ? `${title} — SwissPlant GmbH`
-          : "SwissPlant GmbH — Ihr Spezialist für Gemüsejungpflanzen",
-      description:
-        typeof description === "string"
-          ? description
-          : "",
-      keywords:
-        typeof keywords === "string"
-          ? keywords
-          : "",
-      canonical:
-        dev
-          ? `http://localhost:5173${path}`
-          : `https://swissplant.ch${path}`
+      title: typeof title === "string"
+        ? `${title} — SwissPlant GmbH`
+        : "SwissPlant GmbH — Ihr Spezialist für Gemüsejungpflanzen",
+      description: typeof description === "string"
+        ? description
+        : "",
+      keywords: typeof keywords === "string"
+        ? keywords
+        : "",
+      canonical: dev
+        ? `http://localhost:5173${path}`
+        : `https://swissplant.ch${path}`
     };
   });
 </script>
@@ -56,5 +52,7 @@
 </svelte:head>
 
 <Navigation />
-{@render children()}
+<main>
+  {@render children()}
+</main>
 <Footer />

@@ -1,9 +1,10 @@
 <script lang="ts">
-  import Article from "$components/article.svelte";
+  import Content from "$components/content.svelte";
   import Hero from "$components/hero.svelte";
   import TeamGrid from "$components/team-grid.svelte";
   import tinu from "$img/photoshoot/tinu.avif";
   import type { HTMLImgAttributes } from "svelte/elements";
+  import type { PageProps } from "./$types";
 
   const images: HTMLImgAttributes[] = [
     {
@@ -11,13 +12,12 @@
       alt: "SwissPlant from above"
     }
   ];
+
+  const { data }: PageProps = $props();
 </script>
 
-<main>
-  <Hero {images} />
-
-  <Article>
-    <h1>Team</h1>
-    <TeamGrid />
-  </Article>
-</main>
+<Hero {images} />
+<Content>
+  <h1>{data.title}</h1>
+  <TeamGrid />
+</Content>

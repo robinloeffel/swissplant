@@ -141,11 +141,11 @@
           {#if member.contact}
             <ContactLink
               data-umami-event={`team-email-click-${nameToAttribute(member.name)}`}
-              value="mailto:{member.contact.email}"
+              href="mailto:{member.contact.email}"
             />
             <ContactLink
               data-umami-event={`team-phone-click-${nameToAttribute(member.name)}`}
-              value="tel:{member.contact.phone}"
+              href="tel:{member.contact.phone}"
             />
           {/if}
         </div>
@@ -157,20 +157,24 @@
 <style lang="scss">
   .team-grid-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+    gap: var(--space-16);
   }
 
   .team-grid-item {
-    font-size: 90%;
+    font-size: var(--type-16);
   }
 
   .team-grid-item-info {
     display: grid;
-    padding: 0.5rem;
+    padding: var(--space-8);
   }
 
   .team-grid-item-name {
     font-weight: bold;
+  }
+
+  .team-grid-item-image {
+    border-radius: var(--space-16);
   }
 </style>

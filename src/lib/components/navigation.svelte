@@ -1,9 +1,6 @@
 <script lang="ts">
-  import { goto } from "$app/navigation";
   import { page } from "$app/state";
   import Icon from "$components/icon.svelte";
-  import type { Language } from "$config";
-  import Cookies from "js-cookie";
 
   let isOpen = $state(false);
   let navigationRef: HTMLElement;
@@ -24,19 +21,6 @@
 
   const handleItemClick = () => {
     isOpen = false;
-  };
-
-  const handleLanguageClick = (lang: Language) => {
-    const currentPath = page.route.id;
-    const newPath = currentPath?.replace("[lang=lang]", lang) ?? lang;
-
-    Cookies.set("lang", lang, {
-      expires: 365,
-      sameSite: "strict",
-      secure: true
-    });
-
-    void goto(newPath);
   };
 </script>
 
@@ -158,11 +142,7 @@
       <li class="navigation-item">
         <button
           class="navigation-language-toggle"
-          class:active={page.params.lang === "de"}
           data-umami-event="navigation-bar-change-lang-de"
-          onclick={() => {
-            handleLanguageClick("de");
-          }}
           type="button"
         >
           <span class="sr-only">Sprache der Webseite auf Deutsch wechseln.</span>
@@ -170,11 +150,7 @@
         </button>
         <button
           class="navigation-language-toggle"
-          class:active={page.params.lang === "en"}
           data-umami-event="navigation-bar-change-lang-en"
-          onclick={() => {
-            handleLanguageClick("en");
-          }}
           type="button"
         >
           <span class="sr-only">Sprache der Webseite auf Englisch wechseln.</span>
@@ -187,22 +163,20 @@
 
 <style lang="scss">
   @forward "$styles/utils";
-  @use "$styles/variables";
-  @use "sass:math";
 
   .navigation {
     position: fixed;
-    inset: 0 0 auto;
+    inset: var(--space-16) 0 auto;
     z-index: 9;
-    width: min(100% - 20px, 480px);
-    margin: 10px auto 0;
-    background-color: variables.$color-white-90;
-    border: 1px solid variables.$color-black-05;
-    border-radius: 16px;
-    box-shadow: 0 4px 8px variables.$color-black-05;
+    width: min(100% - var(--space-32), 480px);
+    margin: auto;
+    background-color: var(--color-white-90);
+    border: 1px solid var(--color-black-05);
+    border-radius: var(--space-16);
+    box-shadow: 0 var(--space-4) var(--space-8) var(--color-black-05);
     background-blend-mode: soft-light;
     isolation: isolate;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(var(--space-8));
     transition: translate 0.3s ease-in-out;
   }
 
@@ -216,7 +190,7 @@
   .navigation-bar {
     display: flex;
     justify-content: space-between;
-    padding: 32px;
+    padding: var(--space-32);
   }
 
   .navigation-bar-logo,
@@ -228,11 +202,8 @@
   .navigation-bar-toggle {
     display: grid;
     place-items: center;
-    width: 32px;
-    height: 32px;
-    font-size: 125%;
-    color: inherit;
-    cursor: pointer;
+    width: var(--space-32);
+    height: var(--space-32);
     background: 0;
     border: 0;
   }
@@ -251,8 +222,8 @@
   .navigation-bar-toggle-icon-menu,
   .navigation-bar-toggle-icon-x {
     grid-area: 1 / 1 / 1 / 1;
-    width: 24px;
-    height: 24px;
+    width: var(--space-24);
+    height: var(--space-24);
     transition:
       scale 0.3s ease-in-out,
       opacity 0.3s ease-in-out;
@@ -287,19 +258,19 @@
 
   .navigation-item {
     &:nth-child(-n + 2) {
-      border-top: 1px solid variables.$color-black-05;
+      border-top: 1px solid var(--color-black-05);
     }
 
     &:not(:last-child) {
-      border-bottom: 1px solid variables.$color-black-05;
+      border-bottom: 1px solid var(--color-black-05);
     }
 
     &:nth-child(odd) {
-      border-right: 0.5px solid variables.$color-black-05;
+      border-right: 0.5px solid var(--color-black-05);
     }
 
     &:nth-child(even) {
-      border-left: 0.5px solid variables.$color-black-05;
+      border-left: 0.5px solid var(--color-black-05);
     }
 
     &:last-child {
@@ -311,31 +282,25 @@
 
   .navigation-link {
     display: block;
-    padding: 16px;
+    padding: var(--space-16);
     text-align: center;
+    text-decoration: none;
+
+    &.active {
+      text-decoration: underline solid var(--color-brand);
+    }
   }
 
   .navigation-language-toggle {
     display: inline-block;
-    padding: 16px;
-    font: inherit;
-    cursor: pointer;
+    padding: var(--space-16);
     background: 0;
     border: 0;
   }
 
-  .navigation-link,
-  .navigation-language-toggle {
-    text-decoration: none;
-
-    &.active {
-      text-decoration: underline solid variables.$color-brand;
-    }
-  }
-
   .header-navigation-logo {
     width: 121px;
-    height: 32px;
-    color: variables.$color-brand;
+    height: var(--space-32);
+    color: var(--color-brand);
   }
 </style>

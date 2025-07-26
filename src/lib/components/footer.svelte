@@ -12,9 +12,6 @@
       <div class="footer-logo">
         <Icon name="agriplant-bare" />
       </div>
-      <p class="footer-text">
-        &copy; SwissPlant GmbH 2025
-      </p>
     </div>
     <div class="footer-content-center">
       <p class="footer-text">
@@ -22,9 +19,9 @@
         CH-3225 Müntschemier
       </p>
       <p class="footer-text">
-        <ContactLink data-umami-event="footer-swissplant-email" value="mailto:info@swissplant.ch" />
+        <ContactLink data-umami-event="footer-swissplant-email" href="mailto:info@swissplant.ch" />
         <br />
-        <ContactLink data-umami-event="footer-agriplant-email" value="mailto:info@agriplant.ch" />
+        <ContactLink data-umami-event="footer-agriplant-email" href="mailto:info@agriplant.ch" />
       </p>
     </div>
     <div class="footer-content-right">
@@ -34,7 +31,7 @@
         13:30 &ndash; 17:30 Uhr
       </p>
       <p class="footer-text">
-        <ContactLink data-umami-event="footer-phone" value="tel:+41 32 313 52 10" />
+        <ContactLink data-umami-event="footer-phone" href="tel:+41 32 313 52 10" />
       </p>
     </div>
   </div>
@@ -72,25 +69,20 @@
   </nav>
   <div class="footer-content">
     <p class="footer-text">
-      <span>Entwickelt und gestaltet von</span>
-      <a data-umami-event="footer-link-robin" href="https://robinloeffel.ch">Robin Löffel</a>
+      &copy; SwissPlant GmbH &amp; AgriPlant AG, 2025
     </p>
   </div>
 </footer>
 
 <style lang="scss">
-  @use "$styles/variables";
+  @use "$styles/media-queries";
 
   .footer {
-    padding: 75px;
-    font-size: 0.8rem;
-    color: variables.$color-white;
-    background-color: variables.$color-text;
-    border-top: 5px solid variables.$color-brand;
-
-    a {
-      color: inherit;
-    }
+    padding: var(--space-64);
+    font-size: var(--type-16);
+    color: var(--color-white);
+    background-color: var(--color-text);
+    border-top: 5px solid var(--color-brand);
 
     > * {
       width: min(900px, 100%);
@@ -99,14 +91,25 @@
   }
 
   .footer-hr {
-    margin: 50px auto;
+    margin: var(--space-48) auto;
   }
 
   .footer-content {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    gap: var(--space-16);
     place-items: center start;
+
+    @include media-queries.above-phone {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media-queries.above-tablet {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  * + .footer-text {
+    margin-top: var(--space-8);
   }
 
   .footer-content > .footer-text {
@@ -117,7 +120,7 @@
   }
 
   .footer-navigation {
-    margin-bottom: variables.$space-big;
+    margin-bottom: var(--space-32);
   }
 
   .footer-navigation-list {
@@ -138,6 +141,10 @@
   .footer-logo {
     width: 100px;
     height: 30px;
-    color: variables.$color-brand;
+    color: var(--color-brand);
+
+    & + & {
+      margin-top: var(--space-4);
+    }
   }
 </style>

@@ -33,15 +33,13 @@
 </div>
 
 <style lang="scss">
-  @use "$styles/variables";
-
   .icon {
     display: inline-grid;
     place-items: center;
 
     &.small {
-      width: 25px;
-      height: 25px;
+      width: var(--space-24);
+      height: var(--space-24);
     }
 
     &.flex {

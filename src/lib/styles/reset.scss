@@ -15,11 +15,16 @@ img {
 h1,
 h2,
 h3 {
-  line-height: 1.2;
   hyphens: auto;
   text-wrap: balance;
 }
 
-a {
+a,
+button {
   color: inherit;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
 }

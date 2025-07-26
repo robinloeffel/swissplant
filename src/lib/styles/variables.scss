@@ -1,25 +1,42 @@
-@use "sass:color";
+:root {
+  /* colors */
+  --color-black: rgb(0 0 0);
+  --color-brand: rgb(0 115 51);
+  --color-text: rgb(57 57 57);
+  --color-white: rgb(255 255 255);
+  --color-black-05: color-mix(in srgb, var(--color-black), transparent 95%);
+  --color-black-50: color-mix(in srgb, var(--color-black), transparent 50%);
+  --color-white-05: color-mix(in srgb, var(--color-white), transparent 95%);
+  --color-white-90: color-mix(in srgb, var(--color-white), transparent 10%);
 
-// colors
-$color-black: #000;
-$color-brand: #007333;
-$color-text: #393939;
-$color-white: #fff;
-$color-black-05: color.change($color-black, $alpha: 0.05);
-$color-black-50: color.change($color-black, $alpha: 0.5);
-$color-white-05: color.change($color-white, $alpha: 0.05);
-$color-white-90: color.change($color-white, $alpha: 0.9);
+  /* typography */
+  --font-family: "Inter Variable", system-ui;
+  --font-size: 1rem;
+  --line-height: 1.6;
+  --line-height-heading: 1.1;
 
-// typography
-$font-family: inter, system-ui;
-$font-size-mobile: 110%;
-$font-size: 125%;
-$line-height: 1.6;
-$line-height-heading: 1.1;
+  /* space scale */
+  --space-4: calc(var(--font-size) * 0.25);
+  --space-8: calc(var(--font-size) * 0.5);
+  --space-12: calc(var(--font-size) * 0.75);
+  --space-16: var(--font-size);
+  --space-24: calc(var(--font-size) * 1.5);
+  --space-32: calc(var(--font-size) * 2);
+  --space-48: calc(var(--font-size) * 3);
+  --space-64: calc(var(--font-size) * 4);
+  --space-96: calc(var(--font-size) * 6);
+  --space-128: calc(var(--font-size) * 8);
 
-// spaces
-$space-regular: 15px;
-$space-big: $space-regular * 2;
-$space-huge: $space-regular * 3;
-$space-small: $space-regular * 0.5;
-$space-tiny: $space-regular * 0.25;
+  /* type scale */
+  --type-12: calc(var(--font-size) * 0.75);
+  --type-14: calc(var(--font-size) * 0.875);
+  --type-16: var(--font-size);
+  --type-18: calc(var(--font-size) * 1.125);
+  --type-20: calc(var(--font-size) * 1.25);
+  --type-24: calc(var(--font-size) * 1.5);
+  --type-30: calc(var(--font-size) * 1.875);
+  --type-36: calc(var(--font-size) * 2);
+  --type-48: calc(var(--font-size) * 3);
+  --type-60: calc(var(--font-size) * 3.75);
+  --type-72: calc(var(--font-size) * 4.5);
+}

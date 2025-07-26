@@ -45,12 +45,12 @@
 </header>
 
 <style lang="scss">
-  @use "$styles/variables";
-
   .hero {
     display: grid;
+    grid-template-areas: "all";
+    place-items: center;
     height: min(250px, 25vh);
-    border-bottom: 5px solid variables.$color-brand;
+    border-bottom: 5px solid var(--color-brand);
 
     &.big {
       position: relative;
@@ -60,13 +60,18 @@
         position: absolute;
         inset: 0;
         content: "";
-        background-color: variables.$color-black-50;
+        background-color: var(--color-black-50);
       }
+    }
+
+    > * {
+      min-width: 0;
+      min-height: 0;
     }
   }
 
   .hero-image {
-    grid-area: 1 / 1 / 2 / 2;
+    grid-area: all;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -80,9 +85,8 @@
 
   .hero-logo {
     z-index: 1;
-    grid-area: 1 / 1 / 2 / 2;
-    place-self: center;
+    grid-area: all;
     width: min(640px, 90%);
-    color: variables.$color-white;
+    color: var(--color-white);
   }
 </style>
