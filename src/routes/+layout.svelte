@@ -3,7 +3,6 @@
   import { page } from "$app/state";
   import Footer from "$components/footer.svelte";
   import Navigation from "$components/navigation.svelte";
-  import { config } from "$config";
   import favicon from "$img/favicon.svg";
   import "$styles/base.scss";
   import fontFile from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2";
@@ -13,16 +12,9 @@
 
   const pageMeta = $derived.by(() => {
     const { title, description, keywords } = page.data;
-    const lang = page.params.lang ?? "";
-    const path = page.route.id?.replace("[lang=lang]", lang) ?? "";
+    const path = page.route.id ?? "";
 
     return {
-      base: `/${lang}/`,
-      alternates: Object.fromEntries(
-        config.languages
-          .filter(language => language !== lang)
-          .map(language => [language, page.route.id?.replace("[lang=lang]", language) ?? ""])
-      ),
       title:
         typeof title === "string"
           ? `${title} — SwissPlant GmbH`
@@ -41,15 +33,10 @@
           : `https://swissplant.ch${path}`
     };
   });
-
-  $effect(() => {
-    document.documentElement.lang = page.params.lang ?? config.defaultLanguage;
-  });
 </script>
 
 <svelte:head>
   <link as="font" crossorigin="anonymous" href={fontFile} rel="preload" type="font/woff2" />
-  <base href={pageMeta.base} />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content={pageMeta.description} />
@@ -57,10 +44,6 @@
   <link href={pageMeta.canonical} rel="canonical" />
   <title>{pageMeta.title}</title>
   <link href={favicon} rel="icon" />
-
-  {#each Object.entries(pageMeta.alternates) as [hreflang, href] (hreflang)}
-    <link {href} {hreflang} rel="alternate" />
-  {/each}
 
   {#if !dev}
     <script
