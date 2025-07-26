@@ -4,7 +4,6 @@ import ts from "typescript-eslint";
 
 export default ts.config(
   sweet,
-  svelte.configs.recommended,
   {
     files: ["**/*.svelte", "**/*.svelte.ts"],
     languageOptions: {
@@ -12,17 +11,14 @@ export default ts.config(
         parser: ts.parser
       }
     },
+    extends: [svelte.configs.recommended],
     rules: {
-      "unicorn/prevent-abbreviations": [
-        "error", {
-          allowList: {
-            Ref: true,
-            Props: true
-          }
-        }
-      ],
-      "@typescript-eslint/init-declarations": "off",
+      "unicorn/prevent-abbreviations": 0,
+      "@typescript-eslint/init-declarations": 0,
 
+      "svelte/no-add-event-listener": "error",
+      "svelte/no-top-level-browser-globals": "error",
+      "svelte/require-event-prefix": "error",
       "svelte/no-target-blank": "error",
       "svelte/button-has-type": "error",
       "svelte/prefer-const": "error",

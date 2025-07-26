@@ -7,13 +7,9 @@
   import favicon from "$img/favicon.svg";
   import "$styles/base.scss";
   import fontFile from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2";
-  import type { Snippet } from "svelte";
+  import type { LayoutProps } from "./$types";
 
-  interface Props {
-    children: Snippet;
-  }
-
-  const { children }: Props = $props();
+  const { children }: LayoutProps = $props();
 
   const pageMeta = $derived.by(() => {
     const { title, description, keywords } = page.data;
@@ -70,7 +66,8 @@
     <script
       data-domains="swissplant.ch"
       data-website-id="394b5468-7f5b-4078-8102-ed21d4a664e4"
-      defer src="/stats.js"
+      defer
+      src="https://eu.umami.is/script.js"
     ></script>
   {/if}
 </svelte:head>

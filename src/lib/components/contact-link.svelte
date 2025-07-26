@@ -26,14 +26,14 @@
     detectors.hasNoWindowDimensions = !window.innerWidth || !window.innerHeight;
   });
 
-  const handleClick = (event: MouseEvent) => {
+  const onclick = (event: MouseEvent) => {
     event.preventDefault();
     window.open(value, "_self");
   };
 </script>
 
 {#if isHuman}
-  <a {...attributes} aria-label={value.split(":")[1]} href="#!" onclick={handleClick}></a>
+  <a {...attributes} aria-label={value.split(":")[1]} href="#!" {onclick}></a>
 {/if}
 
 <style lang="scss">
