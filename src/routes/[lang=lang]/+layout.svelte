@@ -8,13 +8,14 @@
   import fontFile from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2";
   import type { LayoutProps } from "./$types";
 
-  const { children }: LayoutProps = $props();
+  const { children, data }: LayoutProps = $props();
 
   const pageMeta = $derived.by(() => {
     const { title, description, keywords } = page.data;
-    const path = page.route.id ?? "";
+    const { lang, path } = data;
 
     return {
+      lang,
       title: typeof title === "string"
         ? `${title} — SwissPlant GmbH`
         : "SwissPlant GmbH — Ihr Spezialist für Gemüsejungpflanzen",
@@ -28,6 +29,10 @@
         ? `http://localhost:5173${path}`
         : `https://swissplant.ch${path}`
     };
+  });
+
+  $effect(() => {
+    document.documentElement.lang = pageMeta.lang;
   });
 </script>
 

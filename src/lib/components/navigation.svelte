@@ -1,20 +1,19 @@
 <script lang="ts">
+  import { resolve } from "$app/paths";
   import { page } from "$app/state";
   import Icon from "$components/icon.svelte";
+  import { on } from "svelte/events";
 
   let isOpen = $state(false);
   let navigationRef: HTMLElement;
+  const lang = $derived(page.data.lang);
 
   const toggle = () => {
     isOpen = !isOpen;
   };
 
-  const handleWindowClick = ({ target }: MouseEvent) => {
-    if (
-      isOpen
-      && target instanceof HTMLElement
-      && !navigationRef.contains(target)
-    ) {
+  const handleWindowClick: EventListener = ({ target }) => {
+    if (isOpen && target instanceof HTMLElement && !navigationRef.contains(target)) {
       isOpen = false;
     }
   };
@@ -22,21 +21,26 @@
   const handleItemClick = () => {
     isOpen = false;
   };
-</script>
 
-<svelte:window onclick={handleWindowClick} />
+  $effect(() => {
+    const off = on(document.body, "click", handleWindowClick);
+
+    return () => {
+      off();
+    };
+  });
+</script>
 
 <nav
   bind:this={navigationRef}
-  class="navigation"
-  class:open={isOpen}
+  class={["navigation", { open: isOpen }]}
   aria-label="Hauptnavigation"
 >
   <div class="navigation-bar">
     <a
       class="navigation-bar-logo"
       data-umami-event="navigation-bar-link-home"
-      href="./"
+      href={resolve("/[lang=lang]", { lang })}
       onclick={handleItemClick}
     >
       <span class="sr-only">Zur Startseite gehen.</span>
@@ -78,7 +82,7 @@
           class="navigation-link"
           class:active={page.route.id?.includes("/firma")}
           data-umami-event="navigation-bar-link-company"
-          href="firma"
+          href={resolve("/[lang=lang]/firma", { lang })}
           onclick={handleItemClick}
         >
           Firma
@@ -89,7 +93,7 @@
           class="navigation-link"
           class:active={page.route.id?.includes("/team")}
           data-umami-event="navigation-bar-link-team"
-          href="team"
+          href={resolve("/[lang=lang]/team", { lang })}
           onclick={handleItemClick}
         >
           Team
@@ -100,7 +104,7 @@
           class="navigation-link"
           class:active={page.route.id?.includes("/angebot")}
           data-umami-event="navigation-bar-link-portfolio"
-          href="angebot"
+          href={resolve("/[lang=lang]/angebot", { lang })}
           onclick={handleItemClick}
         >
           Angebot
@@ -111,7 +115,7 @@
           class="navigation-link"
           class:active={page.route.id?.includes("/partner")}
           data-umami-event="navigation-bar-link-partners"
-          href="partner"
+          href={resolve("/[lang=lang]/partner", { lang })}
           onclick={handleItemClick}
         >
           Partner
@@ -122,7 +126,7 @@
           class="navigation-link"
           class:active={page.route.id?.includes("/kontakt")}
           data-umami-event="navigation-bar-link-contact"
-          href="kontakt"
+          href={resolve("/[lang=lang]/kontakt", { lang })}
           onclick={handleItemClick}
         >
           Kontakt
@@ -133,29 +137,21 @@
           class="navigation-link"
           class:active={page.route.id?.includes("/jobs")}
           data-umami-event="navigation-bar-link-jobs"
-          href="jobs"
+          href={resolve("/[lang=lang]/jobs", { lang })}
           onclick={handleItemClick}
         >
           Jobs
         </a>
       </li>
       <li class="navigation-item">
-        <button
+        <a
           class="navigation-language-toggle"
-          data-umami-event="navigation-bar-change-lang-de"
-          type="button"
-        >
-          <span class="sr-only">Sprache der Webseite auf Deutsch wechseln.</span>
-          <span aria-hidden="true">DE</span>
-        </button>
-        <button
+          href={resolve("/[lang=lang]", { lang: "de" })}
+        >DE</a>
+        <a
           class="navigation-language-toggle"
-          data-umami-event="navigation-bar-change-lang-en"
-          type="button"
-        >
-          <span class="sr-only">Sprache der Webseite auf Englisch wechseln.</span>
-          <span aria-hidden="true">EN</span>
-        </button>
+          href={resolve("/[lang=lang]", { lang: "en" })}
+        >EN</a>
       </li>
     </ul>
   </div>
@@ -174,10 +170,7 @@
     border: 1px solid var(--color-black-05);
     border-radius: var(--space-16);
     box-shadow: 0 var(--space-4) var(--space-8) var(--color-black-05);
-    background-blend-mode: soft-light;
-    isolation: isolate;
     backdrop-filter: blur(var(--space-8));
-    transition: translate 0.3s ease-in-out;
   }
 
   .navigation-bar,
@@ -201,6 +194,7 @@
 
   .navigation-bar-toggle {
     display: grid;
+    grid-template-areas: "all";
     place-items: center;
     width: var(--space-32);
     height: var(--space-32);
@@ -211,8 +205,8 @@
   .navigation-expando {
     display: grid;
     grid-template-rows: 0fr;
+    contain: content;
     transition: grid-template-rows 0.3s ease-in-out;
-    will-change: grid-template-rows;
 
     .open & {
       grid-template-rows: 1fr;
@@ -221,7 +215,7 @@
 
   .navigation-bar-toggle-icon-menu,
   .navigation-bar-toggle-icon-x {
-    grid-area: 1 / 1 / 1 / 1;
+    grid-area: all;
     width: var(--space-24);
     height: var(--space-24);
     transition:
@@ -294,6 +288,7 @@
   .navigation-language-toggle {
     display: inline-block;
     padding: var(--space-16);
+    text-decoration: none;
     background: 0;
     border: 0;
   }

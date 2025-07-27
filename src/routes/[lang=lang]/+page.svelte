@@ -81,7 +81,6 @@
 </script>
 
 <Hero big={true} {images} />
-
 {#each splitTiles as splitTile (splitTile.title)}
   <SplitTile {...splitTile} />
 {/each}
