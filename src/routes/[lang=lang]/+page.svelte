@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { resolve } from "$app/paths";
   import Hero from "$components/hero.svelte";
   import SplitTile, { type Props as SplitTileProps } from "$components/split-tile.svelte";
   import one from "$img/aerials/1.avif";
@@ -7,6 +8,10 @@
   import machine from "$img/photoshoot/machine.avif";
   import tinu from "$img/photoshoot/tinu.avif";
   import type { HTMLImgAttributes } from "svelte/elements";
+  import type { PageProps } from "./$types";
+
+  const { data }: PageProps = $props();
+  const lang = $derived(data.lang);
 
   const images: HTMLImgAttributes[] = [
     {
@@ -19,7 +24,7 @@
     }
   ];
 
-  const splitTiles: SplitTileProps[] = [
+  const splitTiles = $derived<SplitTileProps[]>([
     {
       type: "image",
       even: false,
@@ -31,7 +36,7 @@
       description: "Die Firma SwissPlant GmbH ist Verkaufsstelle für Gemüsejungpflanzen der Firmen AgriPlant AG Schweiz und Gipmans Holland.",
       cta: {
         label: "Über uns",
-        url: "firma"
+        url: resolve("/[lang=lang]/firma", { lang })
       }
     },
     {
@@ -45,7 +50,7 @@
       description: "Unser Produktionsstandort der Firma AgriPlant AG befindet sich im Berner Seeland. Die zentrale Lage der Firma bietet uns die Möglichkeit Sie schnell und kompetent zu beliefern.",
       cta: {
         label: "Unser Angebot",
-        url: "angebot"
+        url: resolve("/[lang=lang]/angebot", { lang })
       }
     },
     {
@@ -59,7 +64,7 @@
       description: "Die Firma Gipmans aus Holland beliefert uns als Sortimentsergänzung mit Warmhaus- und Speedypflanzen.",
       cta: {
         label: "Unsere Partner",
-        url: "partner"
+        url: resolve("/[lang=lang]/partner", { lang })
       }
     },
     {
@@ -74,10 +79,10 @@
       description: "Wir stehen natürlich gerne für allfällige Informationen und Ratschläge zur Verfügung. Egal, ob E-Mail, Telefon oder vor Ort.",
       cta: {
         label: "Kontakt",
-        url: "kontakt"
+        url: resolve("/[lang=lang]/kontakt", { lang })
       }
     }
-  ];
+  ]);
 </script>
 
 <Hero big={true} {images} />

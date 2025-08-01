@@ -1,5 +1,5 @@
 import type { PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = () => ({
-  title: "Team"
+  title: "Team — SwissPlant GmbH"
 });

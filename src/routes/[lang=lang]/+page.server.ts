@@ -1,5 +1,10 @@
-import type { PageServerLoad } from "./$types";
+import type { EntryGenerator, PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = () => ({
-  description: "Yo whassup"
+  title: "SwissPlant GmbH — Ihr Spezialist für Gemüsejungpflanzen"
 });
+
+export const entries: EntryGenerator = () => [
+  { lang: "de" },
+  { lang: "en" }
+];

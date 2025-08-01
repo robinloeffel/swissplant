@@ -1,12 +1,17 @@
 <script lang="ts">
   import { resolve } from "$app/paths";
-  import { page } from "$app/state";
   import Icon from "$components/icon.svelte";
   import { on } from "svelte/events";
 
   let isOpen = $state(false);
   let navigationRef: HTMLElement;
-  const lang = $derived(page.data.lang);
+
+  interface NavigationProps {
+    lang: string;
+    path: string;
+  }
+
+  const { lang, path }: NavigationProps = $props();
 
   const toggle = () => {
     isOpen = !isOpen;
@@ -80,7 +85,7 @@
       <li class="navigation-item">
         <a
           class="navigation-link"
-          class:active={page.route.id?.includes("/firma")}
+          class:active={path.includes("/firma")}
           data-umami-event="navigation-bar-link-company"
           href={resolve("/[lang=lang]/firma", { lang })}
           onclick={handleItemClick}
@@ -91,7 +96,7 @@
       <li class="navigation-item">
         <a
           class="navigation-link"
-          class:active={page.route.id?.includes("/team")}
+          class:active={path.includes("/team")}
           data-umami-event="navigation-bar-link-team"
           href={resolve("/[lang=lang]/team", { lang })}
           onclick={handleItemClick}
@@ -102,7 +107,7 @@
       <li class="navigation-item">
         <a
           class="navigation-link"
-          class:active={page.route.id?.includes("/angebot")}
+          class:active={path.includes("/angebot")}
           data-umami-event="navigation-bar-link-portfolio"
           href={resolve("/[lang=lang]/angebot", { lang })}
           onclick={handleItemClick}
@@ -113,7 +118,7 @@
       <li class="navigation-item">
         <a
           class="navigation-link"
-          class:active={page.route.id?.includes("/partner")}
+          class:active={path.includes("/partner")}
           data-umami-event="navigation-bar-link-partners"
           href={resolve("/[lang=lang]/partner", { lang })}
           onclick={handleItemClick}
@@ -124,7 +129,7 @@
       <li class="navigation-item">
         <a
           class="navigation-link"
-          class:active={page.route.id?.includes("/kontakt")}
+          class:active={path.includes("/kontakt")}
           data-umami-event="navigation-bar-link-contact"
           href={resolve("/[lang=lang]/kontakt", { lang })}
           onclick={handleItemClick}
@@ -135,7 +140,7 @@
       <li class="navigation-item">
         <a
           class="navigation-link"
-          class:active={page.route.id?.includes("/jobs")}
+          class:active={path.includes("/jobs")}
           data-umami-event="navigation-bar-link-jobs"
           href={resolve("/[lang=lang]/jobs", { lang })}
           onclick={handleItemClick}

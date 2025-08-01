@@ -11,6 +11,13 @@ export default {
       $components: "src/lib/components",
       $img: "src/lib/img",
       $svg: "src/lib/svg"
+    },
+    prerender: {
+      handleMissingId: ({ id }) => {
+        if (id !== "!") {
+          throw new Error("missing prerendered page", id);
+        }
+      }
     }
   }
 };

@@ -5,7 +5,6 @@
   import Navigation from "$components/navigation.svelte";
   import favicon from "$img/favicon.svg";
   import "$styles/base.scss";
-  import fontFile from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2";
   import type { LayoutProps } from "./$types";
 
   const { children, data }: LayoutProps = $props();
@@ -16,18 +15,11 @@
 
     return {
       lang,
-      title: typeof title === "string"
-        ? `${title} — SwissPlant GmbH`
-        : "SwissPlant GmbH — Ihr Spezialist für Gemüsejungpflanzen",
-      description: typeof description === "string"
-        ? description
-        : "",
-      keywords: typeof keywords === "string"
-        ? keywords
-        : "",
-      canonical: dev
-        ? `http://localhost:5173${path}`
-        : `https://swissplant.ch${path}`
+      title,
+      description,
+      keywords,
+      path,
+      canonical: `https://swissplant.ch${path}`
     };
   });
 
@@ -37,7 +29,6 @@
 </script>
 
 <svelte:head>
-  <link as="font" crossorigin="anonymous" href={fontFile} rel="preload" type="font/woff2" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content={pageMeta.description} />
@@ -48,16 +39,15 @@
 
   {#if !dev}
     <script
-      data-domains="swissplant.ch"
+      async
       data-website-id="394b5468-7f5b-4078-8102-ed21d4a664e4"
-      defer
-      src="https://eu.umami.is/script.js"
+      src="https://cloud.umami.is/script.js"
     ></script>
   {/if}
 </svelte:head>
 
-<Navigation />
+<Navigation lang={pageMeta.lang} path={pageMeta.path} />
 <main>
   {@render children()}
 </main>
-<Footer />
+<Footer lang={pageMeta.lang} />
