@@ -5,28 +5,31 @@
   import Navigation from "$components/navigation.svelte";
   import favicon from "$img/favicon.svg";
   import "$styles/base.scss";
+  import type { Attachment } from "svelte/attachments";
   import type { LayoutProps } from "./$types";
 
   const { children, data }: LayoutProps = $props();
 
   const pageMeta = $derived.by(() => {
-    const { title, description, keywords } = page.data;
+    const { meta } = page.data;
     const { lang, path } = data;
 
     return {
       lang,
-      title,
-      description,
-      keywords,
       path,
+      title: meta.title,
+      description: meta.description,
+      keywords: meta.keywords,
       canonical: `https://swissplant.ch${path}`
     };
   });
 
-  $effect(() => {
-    document.documentElement.lang = pageMeta.lang;
-  });
+  const langAttach: Attachment<Document> = ({ documentElement }) => {
+    documentElement.lang = pageMeta.lang;
+  };
 </script>
+
+<svelte:document {@attach langAttach} />
 
 <svelte:head>
   <meta charset="utf-8" />

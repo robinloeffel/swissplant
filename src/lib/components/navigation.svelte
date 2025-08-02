@@ -1,6 +1,7 @@
 <script lang="ts">
   import { resolve } from "$app/paths";
   import Icon from "$components/icon.svelte";
+  import type { Attachment } from "svelte/attachments";
   import { on } from "svelte/events";
 
   let isOpen = $state(false);
@@ -17,7 +18,7 @@
     isOpen = !isOpen;
   };
 
-  const handleWindowClick: EventListener = ({ target }) => {
+  const handleOutsideClick: EventListener = ({ target }) => {
     if (isOpen && target instanceof HTMLElement && !navigationRef.contains(target)) {
       isOpen = false;
     }
@@ -27,14 +28,16 @@
     isOpen = false;
   };
 
-  $effect(() => {
-    const off = on(document.body, "click", handleWindowClick);
+  const outsideClick: Attachment<Window> = (element) => {
+    const off = on(element, "click", handleOutsideClick);
 
     return () => {
       off();
     };
-  });
+  };
 </script>
+
+<svelte:window {@attach outsideClick} />
 
 <nav
   bind:this={navigationRef}
@@ -151,11 +154,11 @@
       <li class="navigation-item">
         <a
           class="navigation-language-toggle"
-          href={resolve("/[lang=lang]", { lang: "de" })}
+          href={path.replace("en", "de")}
         >DE</a>
         <a
           class="navigation-language-toggle"
-          href={resolve("/[lang=lang]", { lang: "en" })}
+          href={path.replace("de", "en")}
         >EN</a>
       </li>
     </ul>

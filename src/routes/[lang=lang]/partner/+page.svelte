@@ -1,23 +1,14 @@
 <script lang="ts">
   import Content from "$components/content.svelte";
   import Hero from "$components/hero.svelte";
-  import machine from "$img/photoshoot/machine.avif";
-  import type { HTMLImgAttributes } from "svelte/elements";
   import type { PageProps } from "./$types";
-
-  const images: HTMLImgAttributes[] = [
-    {
-      src: machine,
-      alt: ""
-    }
-  ];
 
   const { data }: PageProps = $props();
 </script>
 
-<Hero {images} />
+<Hero {...data.hero} />
 <Content>
-  <h1>{data.title}</h1>
+  <h1>{data.heading}</h1>
 
   <h2>AgriPlant AG</h2>
   <p>Durch unseren ortsansässigen Produktionsbetrieb wachsen unsere Jungpflanzen im selben «Haus», wo sie anschliessend weiter kultiviert werden. Dank der individuellen Ausliefertage und den kurzen Transportdistanzen zum Kunden, können wir Ihnen stressfreie Pflanzen anbieten.</p>

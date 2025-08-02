@@ -1,16 +1,5 @@
 <script lang="ts">
   import ContactLink from "$components/contact-link.svelte";
-  import barbara from "$img/employees/barbara.avif";
-  import hansPeter from "$img/employees/hans-peter.avif";
-  import ivan from "$img/employees/ivan.avif";
-  import mariusz from "$img/employees/mariusz.avif";
-  import markus from "$img/employees/markus.avif";
-  import martin from "$img/employees/martin.avif";
-  import miguel from "$img/employees/miguel.avif";
-  import muhamet from "$img/employees/muhamet.avif";
-  import sandro from "$img/employees/sandro.avif";
-  import shpend from "$img/employees/shpend.avif";
-  import telja from "$img/employees/telja.avif";
   import type { HTMLImgAttributes } from "svelte/elements";
 
   interface Member {
@@ -23,108 +12,11 @@
     };
   }
 
-  const members: Member[] = [
-    {
-      name: "Martin Löffel",
-      position: "Geschäftsführer",
-      image: {
-        src: martin,
-        alt: "Martin Loeffel"
-      },
-      contact: {
-        email: "m.loeffel@swissplant.ch",
-        phone: "+41 79 631 45 59"
-      }
-    },
-    {
-      name: "Sandro Löffel",
-      position: "Stv. Geschäftsführer",
-      image: {
-        src: sandro,
-        alt: "Sandro"
-      },
-      contact: {
-        email: "s.loeffel@swissplant.ch",
-        phone: "+41 79 641 52 10"
-      }
-    },
-    {
-      name: "Telja Baumann",
-      position: "Empfang & Administration",
-      image: {
-        src: telja,
-        alt: "Telja"
-      },
-      contact: {
-        email: "t.baumann@swissplant.ch",
-        phone: "+41 79 815 38 35"
-      }
-    },
-    {
-      name: "Ivan Gross",
-      position: "Leiter Gewächshaus",
-      image: {
-        src: ivan,
-        alt: "Ivan"
-      }
-    },
-    {
-      name: "Shpend Thaqi",
-      position: "Leiter Produktion",
-      image: {
-        src: shpend,
-        alt: "Shpend"
-      }
-    },
-    {
-      name: "Hans-Peter Schwab",
-      position: "Transport",
-      image: {
-        src: hansPeter,
-        alt: "Hans Peter"
-      }
-    },
-    {
-      name: "Mariusz Wronski",
-      position: "Transport",
-      image: {
-        src: mariusz,
-        alt: "Mariusz"
-      }
-    },
-    {
-      name: "Muhamet Duraku",
-      position: "Produktion",
-      image: {
-        src: muhamet,
-        alt: "Muhamet"
-      }
-    },
-    {
-      name: "Barbara Dubler",
-      position: "Transport",
-      image: {
-        src: barbara,
-        alt: "Barbara"
-      }
-    },
-    {
-      name: "Markus Niklaus",
-      position: "Maschinenführer",
-      image: {
-        src: markus,
-        alt: "Markus"
-      }
-    },
-    {
-      name: "Miguel Pereira",
-      position: "Maschinenführer",
-      image: {
-        src: miguel,
-        alt: "Miguel"
-      }
-    }
-  ];
+  interface TeamGridProps {
+    members: Member[];
+  }
+
+  const { members }: TeamGridProps = $props();
 
   const nameToAttribute = (name: string) => name.toLowerCase().replaceAll(" ", "-");
 </script>

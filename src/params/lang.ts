@@ -1,3 +1,4 @@
-import type { ParamMatcher } from "@sveltejs/kit";
-
-export const match: ParamMatcher = (value: unknown): value is "de" | "en" => value === "de" || value === "en";
+// eslint-disable-next-line unicorn/prevent-abbreviations
+export const match = (param: string): param is "de" | "en" => (
+  param === "de" || param === "en"
+);
