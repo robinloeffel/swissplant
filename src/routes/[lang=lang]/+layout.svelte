@@ -42,8 +42,9 @@
 
   {#if !dev}
     <script
-      async
       data-website-id="394b5468-7f5b-4078-8102-ed21d4a664e4"
+      defer
+      fetchpriority="low"
       src="https://cloud.umami.is/script.js"
     ></script>
   {/if}

@@ -10,7 +10,7 @@
     hasWebDriver: false,
     hasHeadlessInUserAgent: false,
     hasNoUserLanguages: false,
-    hasSetSuspiciousDomAttributes: false,
+    hasSuspiciousDomAttributes: false,
     hasNoWindowDimensions: false
   });
   const isHuman = $derived(!Object.values(detectors).some(Boolean));
@@ -22,7 +22,7 @@
     detectors.hasWebDriver = navigator.webdriver;
     detectors.hasHeadlessInUserAgent = navigator.userAgent.toLowerCase().includes("headless");
     detectors.hasNoUserLanguages = navigator.languages.length === 0;
-    detectors.hasSetSuspiciousDomAttributes = suspiciousDomAttributes.intersection(documentAttributes).size > 0;
+    detectors.hasSuspiciousDomAttributes = suspiciousDomAttributes.intersection(documentAttributes).size > 0;
     detectors.hasNoWindowDimensions = !window.innerWidth || !window.innerHeight;
   });
 

@@ -1,6 +1,7 @@
 import sweet from "eslint-config-sweet";
 import svelte from "eslint-plugin-svelte";
 import ts from "typescript-eslint";
+import svelteConfig from "./svelte.config.js";
 
 export default ts.config(
   sweet,
@@ -8,7 +9,11 @@ export default ts.config(
     files: ["**/*.svelte", "**/*.svelte.ts"],
     languageOptions: {
       parserOptions: {
-        parser: ts.parser
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
+        extraFileExtensions: [".svelte"],
+        parser: ts.parser,
+        svelteConfig
       }
     },
     extends: [svelte.configs.recommended],

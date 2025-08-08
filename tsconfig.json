@@ -2,5 +2,10 @@
   "extends": [
     "robins-tsconfig",
     "./.svelte-kit/tsconfig.json"
+  ],
+  "exclude": [
+    "node_modules",
+    ".svelte-kit",
+    ".vercel"
   ]
 }
