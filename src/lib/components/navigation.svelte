@@ -4,7 +4,7 @@
   import type { Attachment } from "svelte/attachments";
   import { on } from "svelte/events";
 
-  let isOpen = $state(false);
+  let isOpen = $state.raw(false);
   let navigationRef: HTMLElement;
 
   interface NavigationProps {

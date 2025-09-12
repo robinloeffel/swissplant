@@ -1,5 +1,6 @@
 <script lang="ts">
   import Icon from "$components/icon.svelte";
+  import type { Attachment } from "svelte/attachments";
   import type { HTMLImgAttributes } from "svelte/elements";
 
   interface Props {
@@ -9,9 +10,9 @@
 
   const { images, big }: Props = $props();
 
-  let visibleIndex = $state(0);
+  let visibleIndex = $state.raw(0);
 
-  $effect(() => {
+  const startSlider: Attachment = () => {
     let interval: number | undefined;
 
     if (images.length > 1) {
@@ -21,14 +22,12 @@
     }
 
     return () => {
-      if (typeof interval === "number") {
-        clearInterval(interval);
-      }
+      clearInterval(interval);
     };
-  });
+  };
 </script>
 
-<header class="hero" class:big>
+<header class={["hero", { big }]} {@attach startSlider}>
   {#if big}
     <div class="hero-logo">
       <Icon name="swissplant" />
@@ -37,8 +36,7 @@
 
   {#each images as image, index (image.src)}
     <img
-      class="hero-image"
-      class:visible={index === visibleIndex}
+      class={["hero-image", { visible: index === visibleIndex }]}
       {...image}
     />
   {/each}

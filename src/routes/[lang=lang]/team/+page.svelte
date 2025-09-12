@@ -10,5 +10,5 @@
 <Hero {...data.hero} />
 <Content>
   <h1>{data.heading}</h1>
-  <TeamGrid {...data.teamGrid!} />
+  <TeamGrid {...data.teamGrid} />
 </Content>
