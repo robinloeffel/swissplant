@@ -1,7 +1,7 @@
 import machine from "$img/photoshoot/machine.avif";
 import type { PageServerLoad } from "./$types";
 
-const translations: App.Translations = {
+const translations = {
   de: {
     meta: {
       title: "Partner — SwissPlant GmbH",
@@ -34,6 +34,6 @@ const translations: App.Translations = {
       ]
     }
   }
-};
+} satisfies App.Translations;
 
 export const load: PageServerLoad = ({ params }) => translations[params.lang];

@@ -1,5 +1,5 @@
 import type { PageServerLoad } from "./$types";
 
-export const load: PageServerLoad = () => ({
-  title: "Angebot — SwissPlant GmbH"
-});
+const translations = {} satisfies App.Translations;
+
+export const load: PageServerLoad<App.ContentPageData> = ({ params }) => translations[params.lang];

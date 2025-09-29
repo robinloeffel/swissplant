@@ -6,11 +6,11 @@ import type { ComponentProps } from "svelte";
 declare global {
   namespace App {
     interface Translations {
-      de: PageData;
-      en: PageData;
+      de: ContentPageData;
+      en: ContentPageData;
     }
 
-    interface PageData {
+    interface ContentPageData {
       meta: {
         title: string;
         description: string;

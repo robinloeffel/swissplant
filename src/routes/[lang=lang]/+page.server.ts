@@ -6,7 +6,7 @@ import machine from "$img/photoshoot/machine.avif";
 import tinu from "$img/photoshoot/tinu.avif";
 import type { EntryGenerator, PageServerLoad } from "./$types";
 
-const translations: App.Translations = {
+const translations = {
   de: {
     meta: {
       title: "SwissPlant GmbH – Ihr Spezialist für Gemüsejungpflanzen",
@@ -167,7 +167,7 @@ const translations: App.Translations = {
       }
     ]
   }
-};
+} satisfies App.Translations;
 
 export const load: PageServerLoad = ({ params }) => translations[params.lang];
 

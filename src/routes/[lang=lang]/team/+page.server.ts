@@ -12,7 +12,7 @@ import telja from "$img/employees/telja.avif";
 import tinu from "$img/photoshoot/tinu.avif";
 import type { PageServerLoad } from "./$types";
 
-const translations: App.Translations = {
+const translations = {
   de: {
     meta: {
       title: "Team — SwissPlant GmbH",
@@ -253,6 +253,6 @@ const translations: App.Translations = {
       ]
     }
   }
-};
+} satisfies App.Translations;
 
 export const load: PageServerLoad = ({ params }) => translations[params.lang];

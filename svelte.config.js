@@ -19,5 +19,10 @@ export default {
         }
       }
     }
+  },
+  vitePlugin: {
+    inspector: {
+      showToggleButton: "always"
+    }
   }
 };
