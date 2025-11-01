@@ -10,6 +10,11 @@ declare global {
       en: ContentPageData;
     }
 
+    interface Richtext {
+      type: 'p' | 'h1' | 'h2' | 'h3' | 'ul' | 'ol' | 'li' | 'strong' | 'em' | 'a';
+      text: string;
+    }
+
     interface ContentPageData {
       meta: {
         title: string;
@@ -20,6 +25,7 @@ declare global {
       hero: ComponentProps<typeof Hero>;
       splitTiles?: ComponentProps<typeof SplitTile>[];
       teamGrid?: ComponentProps<typeof TeamGrid>;
+      richtext?: Richtext[];
     }
   }
 }

@@ -18,7 +18,8 @@ export default defineConfig(
         svelteConfig
       },
       globals: {
-        ...globals.browser
+        ...globals.browser,
+        App: "readonly"
       }
     },
     extends: [svelte.configs.recommended],

@@ -11,16 +11,13 @@
   const { children, data }: LayoutProps = $props();
 
   const pageMeta = $derived.by(() => {
-    const { meta } = page.data;
     const { lang, path } = data;
 
     return {
       lang,
       path,
-      title: meta.title,
-      description: meta.description,
-      keywords: meta.keywords,
-      canonical: `https://swissplant.ch${path}`
+      canonical: `https://swissplant.ch${path}`,
+      ...page.data.meta,
     };
   });
 
@@ -51,7 +48,5 @@
 </svelte:head>
 
 <Navigation lang={pageMeta.lang} path={pageMeta.path} />
-<main>
-  {@render children()}
-</main>
+<main>{@render children()}</main>
 <Footer lang={pageMeta.lang} />
