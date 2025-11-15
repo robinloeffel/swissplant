@@ -12,15 +12,6 @@ export default {
       $img: "src/lib/img",
       $svg: "src/lib/svg"
     },
-    csp: {
-      mode: "hash",
-      directives: {
-        "default-src": ["self"],
-        "script-src": ["self", "cloud.umami.is"],
-        "connect-src": ["self", "api-gateway.umami.dev"],
-        "frame-ancestors": ["none"]
-      }
-    },
     prerender: {
       handleMissingId: ({ id }) => {
         if (id !== "!") {
