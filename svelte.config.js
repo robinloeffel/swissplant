@@ -15,14 +15,9 @@ export default {
     prerender: {
       handleMissingId: ({ id }) => {
         if (id !== "!") {
-          throw new Error("missing prerendered page", id);
+          throw new Error("missing pre-rendered page", id);
         }
       }
-    }
-  },
-  vitePlugin: {
-    inspector: {
-      showToggleButton: "always"
     }
   }
 };

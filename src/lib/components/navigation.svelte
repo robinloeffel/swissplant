@@ -155,12 +155,12 @@
         <a
           class="navigation-language-toggle"
           data-sveltekit-noscroll
-          href={path.replace("en", "de")}
+          href={path.replace("/en", "/de")}
         >DE</a>
         <a
           class="navigation-language-toggle"
           data-sveltekit-noscroll
-          href={path.replace("de", "en")}
+          href={path.replace("/de", "/en")}
         >EN</a>
       </li>
     </ul>
