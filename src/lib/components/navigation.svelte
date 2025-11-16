@@ -154,11 +154,13 @@
       <li class="navigation-item">
         <a
           class="navigation-language-toggle"
+          class:active={path.includes("/de")}
           data-sveltekit-noscroll
           href={path.replace("/en", "/de")}
         >DE</a>
         <a
           class="navigation-language-toggle"
+          class:active={path.includes("/en")}
           data-sveltekit-noscroll
           href={path.replace("/de", "/en")}
         >EN</a>
@@ -291,7 +293,7 @@
     text-decoration: none;
 
     &.active {
-      text-decoration: underline solid var(--color-brand);
+      text-decoration: 2px underline solid var(--color-brand);
     }
   }
 
@@ -301,6 +303,10 @@
     text-decoration: none;
     background: 0;
     border: 0;
+
+    &.active {
+      text-decoration: 2px underline solid var(--color-brand);
+    }
   }
 
   .header-navigation-logo {
