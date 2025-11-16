@@ -92,9 +92,7 @@
           data-umami-event="navigation-bar-link-company"
           href={resolve("/[lang=lang]/firma", { lang })}
           onclick={handleItemClick}
-        >
-          Firma
-        </a>
+        >Firma</a>
       </li>
       <li class="navigation-item">
         <a
@@ -103,9 +101,7 @@
           data-umami-event="navigation-bar-link-team"
           href={resolve("/[lang=lang]/team", { lang })}
           onclick={handleItemClick}
-        >
-          Team
-        </a>
+        >Team</a>
       </li>
       <li class="navigation-item">
         <a
@@ -114,9 +110,7 @@
           data-umami-event="navigation-bar-link-portfolio"
           href={resolve("/[lang=lang]/angebot", { lang })}
           onclick={handleItemClick}
-        >
-          Angebot
-        </a>
+        >Angebot</a>
       </li>
       <li class="navigation-item">
         <a
@@ -125,9 +119,7 @@
           data-umami-event="navigation-bar-link-partners"
           href={resolve("/[lang=lang]/partner", { lang })}
           onclick={handleItemClick}
-        >
-          Partner
-        </a>
+        >Partner</a>
       </li>
       <li class="navigation-item">
         <a
@@ -136,9 +128,7 @@
           data-umami-event="navigation-bar-link-contact"
           href={resolve("/[lang=lang]/kontakt", { lang })}
           onclick={handleItemClick}
-        >
-          Kontakt
-        </a>
+        >Kontakt</a>
       </li>
       <li class="navigation-item">
         <a
@@ -147,9 +137,7 @@
           data-umami-event="navigation-bar-link-jobs"
           href={resolve("/[lang=lang]/jobs", { lang })}
           onclick={handleItemClick}
-        >
-          Jobs
-        </a>
+        >Jobs</a>
       </li>
       <li class="navigation-item">
         <a
@@ -303,9 +291,12 @@
     text-decoration: none;
     background: 0;
     border: 0;
+  }
 
+  .navigation-link,
+  .navigation-language-toggle {
     &.active {
-      text-decoration: 2px underline solid var(--color-brand);
+      text-decoration: underline solid var(--color-brand) 2px;
     }
   }
 

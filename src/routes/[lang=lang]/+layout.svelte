@@ -17,7 +17,7 @@
       lang,
       path,
       canonical: `https://swissplant.ch${path}`,
-      ...page.data.meta,
+      ...page.data.meta
     };
   });
 
