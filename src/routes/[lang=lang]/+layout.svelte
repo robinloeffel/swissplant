@@ -47,6 +47,6 @@
   {/if}
 </svelte:head>
 
-<Navigation lang={pageMeta.lang} path={pageMeta.path} />
+<Navigation />
 <main>{@render children()}</main>
-<Footer lang={pageMeta.lang} />
+<Footer />

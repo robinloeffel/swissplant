@@ -1,5 +1,6 @@
 <script lang="ts">
   import { resolve } from "$app/paths";
+  import { page } from "$app/state";
   import Icon from "$components/icon.svelte";
   import type { Attachment } from "svelte/attachments";
   import { on } from "svelte/events";
@@ -7,12 +8,74 @@
   let isOpen = $state.raw(false);
   let navigationRef: HTMLElement;
 
-  interface NavigationProps {
-    lang: string;
-    path: string;
-  }
+  const pageLang = $derived.by<App.Lang>(() => {
+    const { lang } = page.params;
+    return lang === "de" || lang === "en" ? lang : "de";
+  });
+  const pageId = $derived(page.route.id ?? "/[lang=lang]");
 
-  const { lang, path }: NavigationProps = $props();
+  const navigationItems = [
+    {
+      de: {
+        label: "Firma"
+      },
+      en: {
+        label: "Company"
+      },
+      event: "navigation-bar-link-company",
+      route: "/[lang=lang]/firma"
+    },
+    {
+      de: {
+        label: "Team"
+      },
+      en: {
+        label: "Team"
+      },
+      event: "navigation-bar-link-team",
+      route: "/[lang=lang]/team"
+    },
+    {
+      de: {
+        label: "Angebot"
+      },
+      en: {
+        label: "Portfolio"
+      },
+      event: "navigation-bar-link-portfolio",
+      route: "/[lang=lang]/angebot"
+    },
+    {
+      de: {
+        label: "Partner"
+      },
+      en: {
+        label: "Partners"
+      },
+      event: "navigation-bar-link-partners",
+      route: "/[lang=lang]/partner"
+    },
+    {
+      de: {
+        label: "Kontakt"
+      },
+      en: {
+        label: "Contact"
+      },
+      event: "navigation-bar-link-contact",
+      route: "/[lang=lang]/kontakt"
+    },
+    {
+      de: {
+        label: "Jobs"
+      },
+      en: {
+        label: "Jobs"
+      },
+      event: "navigation-bar-link-jobs",
+      route: "/[lang=lang]/jobs"
+    }
+  ];
 
   const toggle = () => {
     isOpen = !isOpen;
@@ -48,7 +111,7 @@
     <a
       class="navigation-bar-logo"
       data-umami-event="navigation-bar-link-home"
-      href={resolve("/[lang=lang]", { lang })}
+      href={resolve("/[lang=lang]", { lang: pageLang })}
       onclick={handleItemClick}
     >
       <span class="sr-only">Zur Startseite gehen.</span>
@@ -85,72 +148,29 @@
     class="navigation-expando"
   >
     <ul class="navigation-list">
-      <li class="navigation-item">
-        <a
-          class="navigation-link"
-          class:active={path.includes("/firma")}
-          data-umami-event="navigation-bar-link-company"
-          href={resolve("/[lang=lang]/firma", { lang })}
-          onclick={handleItemClick}
-        >Firma</a>
-      </li>
-      <li class="navigation-item">
-        <a
-          class="navigation-link"
-          class:active={path.includes("/team")}
-          data-umami-event="navigation-bar-link-team"
-          href={resolve("/[lang=lang]/team", { lang })}
-          onclick={handleItemClick}
-        >Team</a>
-      </li>
-      <li class="navigation-item">
-        <a
-          class="navigation-link"
-          class:active={path.includes("/angebot")}
-          data-umami-event="navigation-bar-link-portfolio"
-          href={resolve("/[lang=lang]/angebot", { lang })}
-          onclick={handleItemClick}
-        >Angebot</a>
-      </li>
-      <li class="navigation-item">
-        <a
-          class="navigation-link"
-          class:active={path.includes("/partner")}
-          data-umami-event="navigation-bar-link-partners"
-          href={resolve("/[lang=lang]/partner", { lang })}
-          onclick={handleItemClick}
-        >Partner</a>
-      </li>
-      <li class="navigation-item">
-        <a
-          class="navigation-link"
-          class:active={path.includes("/kontakt")}
-          data-umami-event="navigation-bar-link-contact"
-          href={resolve("/[lang=lang]/kontakt", { lang })}
-          onclick={handleItemClick}
-        >Kontakt</a>
-      </li>
-      <li class="navigation-item">
-        <a
-          class="navigation-link"
-          class:active={path.includes("/jobs")}
-          data-umami-event="navigation-bar-link-jobs"
-          href={resolve("/[lang=lang]/jobs", { lang })}
-          onclick={handleItemClick}
-        >Jobs</a>
-      </li>
+      {#each navigationItems as item (item.route)}
+        <li class="navigation-item">
+          <a
+            class="navigation-link"
+            class:active={pageId === item.route}
+            data-umami-event={item.event}
+            href={resolve(item.route, { lang: pageLang })}
+            onclick={handleItemClick}
+          >{item[pageLang].label}</a>
+        </li>
+      {/each}
       <li class="navigation-item">
         <a
           class="navigation-language-toggle"
-          class:active={path.includes("/de")}
+          class:active={page.params.lang === "de"}
           data-sveltekit-noscroll
-          href={path.replace("/en", "/de")}
+          href={resolve(pageId, { lang: "de" })}
         >DE</a>
         <a
           class="navigation-language-toggle"
-          class:active={path.includes("/en")}
+          class:active={page.params.lang === "en"}
           data-sveltekit-noscroll
-          href={path.replace("/de", "/en")}
+          href={resolve(pageId, { lang: "en" })}
         >EN</a>
       </li>
     </ul>

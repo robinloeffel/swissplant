@@ -6,15 +6,13 @@ import type { HTMLAttributes } from "svelte/elements";
 // https://svelte.dev/docs/kit/types#app.d.ts
 declare global {
   namespace App {
-    interface Translations {
-      de: ContentPageData;
-      en: ContentPageData;
-    }
+    type Lang = "de" | "en";
+    type Translations = Record<Lang, ContentPageData>;
 
-    interface Richtext {
+    interface Richtext<T extends HTMLElement = HTMLElement> {
       type: "p" | "h1" | "h2" | "h3" | "ul" | "ol" | "li" | "strong" | "em" | "a" | "address";
       text: string;
-      attributes?: HTMLAttributes<HTMLElement>;
+      attributes?: HTMLAttributes<T>;
     }
 
     interface ContentPageData {
@@ -30,5 +28,8 @@ declare global {
       richtext?: Richtext[];
       table?: ComponentProps<typeof Table>;
     }
+
+    // eslint-disable-next-line @typescript-eslint/no-empty-object-type -- allow interface merging
+    interface PageData extends ContentPageData {}
   }
 }

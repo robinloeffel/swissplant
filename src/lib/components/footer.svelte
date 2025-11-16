@@ -1,13 +1,106 @@
 <script lang="ts">
   import { resolve } from "$app/paths";
+  import { page } from "$app/state";
   import ContactLink from "$components/contact-link.svelte";
   import Icon from "$components/icon.svelte";
 
-  interface FooterProps {
-    lang: string;
-  }
+  const pageLang = $derived.by<App.Lang>(() => {
+    const { lang } = page.params;
+    return lang === "de" || lang === "en" ? lang : "de";
+  });
 
-  const { lang }: FooterProps = $props();
+  const navigationItems = [
+    {
+      de: {
+        label: "Home"
+      },
+      en: {
+        label: "Home"
+      },
+      event: "footer-link-home",
+      route: "/[lang=lang]"
+    },
+    {
+      de: {
+        label: "Firma"
+      },
+      en: {
+        label: "Company"
+      },
+      event: "footer-link-company",
+      route: "/[lang=lang]/firma"
+    },
+    {
+      de: {
+        label: "Team"
+      },
+      en: {
+        label: "Team"
+      },
+      event: "footer-link-team",
+      route: "/[lang=lang]/team"
+    },
+    {
+      de: {
+        label: "Angebot"
+      },
+      en: {
+        label: "Portfolio"
+      },
+      event: "footer-link-portfolio",
+      route: "/[lang=lang]/angebot"
+    },
+    {
+      de: {
+        label: "Partner"
+      },
+      en: {
+        label: "Partners"
+      },
+      event: "footer-link-partners",
+      route: "/[lang=lang]/partner"
+    },
+    {
+      de: {
+        label: "Kontakt"
+      },
+      en: {
+        label: "Contact"
+      },
+      event: "footer-link-contact",
+      route: "/[lang=lang]/kontakt"
+    },
+    {
+      de: {
+        label: "Impressum"
+      },
+      en: {
+        label: "Imprint"
+      },
+      event: "footer-link-imprint",
+      route: "/[lang=lang]/impressum"
+    },
+    {
+      de: {
+        label: "Datenschutz"
+      },
+      en: {
+        label: "Privacy"
+      },
+      event: "footer-link-privacy",
+      route: "/[lang=lang]/datenschutz"
+    },
+    {
+      de: {
+        label: "Jobs"
+      },
+      en: {
+        label: "Jobs"
+      },
+      event: "footer-link-jobs",
+      route: "/[lang=lang]/jobs"
+    }
+  ];
 </script>
 
 <footer class="footer">
@@ -45,65 +138,18 @@
   <hr class="footer-hr" />
   <nav class="footer-navigation" aria-label="Navigation in der Fusszeile">
     <ul class="footer-navigation-list">
-      <li class="footer-navigation-item">
-        <a
-          data-umami-event="footer-link-home"
-          href={resolve("/[lang=lang]", { lang })}
-        >Home</a>
-      </li>
-      <li class="footer-navigation-item">
-        <a
-          data-umami-event="footer-link-company"
-          href={resolve("/[lang=lang]/firma", { lang })}
-        >Firma</a>
-      </li>
-      <li class="footer-navigation-item">
-        <a
-          data-umami-event="footer-link-team"
-          href={resolve("/[lang=lang]/team", { lang })}
-        >Team</a>
-      </li>
-      <li class="footer-navigation-item">
-        <a
-          data-umami-event="footer-link-portfolio"
-          href={resolve("/[lang=lang]/angebot", { lang })}
-        >Angebot</a>
-      </li>
-      <li class="footer-navigation-item">
-        <a
-          data-umami-event="footer-link-partners"
-          href={resolve("/[lang=lang]/partner", { lang })}
-        >Partner</a>
-      </li>
-      <li class="footer-navigation-item">
-        <a
-          data-umami-event="footer-link-contact"
-          href={resolve("/[lang=lang]/kontakt", { lang })}
-        >Kontakt</a>
-      </li>
-      <li class="footer-navigation-item">
-        <a
-          data-umami-event="footer-link-imprint"
-          href={resolve("/[lang=lang]/impressum", { lang })}
-        >Impressum</a>
-      </li>
-      <li class="footer-navigation-item">
-        <a
-          data-umami-event="footer-link-privacy"
-          href={resolve("/[lang=lang]/datenschutz", { lang })}
-        >Datenschutz</a>
-      </li>
-      <li class="footer-navigation-item">
-        <a
-          data-umami-event="footer-link-jobs"
-          href={resolve("/[lang=lang]/jobs", { lang })}
-        >Jobs</a>
-      </li>
+      {#each navigationItems as item (item.route)}
+        <li class="footer-navigation-item">
+          <a data-umami-event={item.event} href={resolve(item.route, { lang: pageLang })}>
+            {item[pageLang].label}
+          </a>
+        </li>
+      {/each}
     </ul>
   </nav>
   <div class="footer-content">
     <p class="footer-text">
-      &copy; SwissPlant GmbH &amp; AgriPlant AG, 2025
+      &copy; SwissPlant GmbH &amp; AgriPlant AG, 2026
     </p>
   </div>
 </footer>
