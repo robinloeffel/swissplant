@@ -30,7 +30,7 @@
     "sass": "1.94.0",
     "stylelint": "16.25.0",
     "stylelint-config-sweet": "7.0.0",
-    "svelte": "5.43.7",
+    "svelte": "5.43.8",
     "typescript": "5.9.3",
     "typescript-eslint": "8.46.4",
     "vite": "7.2.2"

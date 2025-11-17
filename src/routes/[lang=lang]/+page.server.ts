@@ -9,7 +9,7 @@ import type { EntryGenerator, PageServerLoad } from "./$types";
 const translations = {
   de: {
     meta: {
-      title: "SwissPlant GmbH – Ihr Spezialist für Gemüsejungpflanzen",
+      title: "SwissPlant GmbH — Ihr Spezialist für Gemüsejungpflanzen",
       description: "Die Swissplant GmbH ist Ihr Ansprechpartner für professionellen Gemüseanbau im Berner Seeland. Bei uns bekommen Sie Warmhauspflanzen in verschiedenen Varianten.",
       keywords: "gemüse, gemuese, jungpflanzen, setzlinge, salat, schweiz, seeland, müntschemier, muentschemier, swissplant, agriplant, swissplant gmbh, agriplant ag, anbau, warmhauspflanzen, distro"
     },
@@ -89,7 +89,7 @@ const translations = {
   },
   en: {
     meta: {
-      title: "SwissPlant GmbH – Your specialist for vegetable young plants",
+      title: "SwissPlant GmbH — Your specialist for vegetable young plants",
       description: "Swissplant GmbH is your partner for professional vegetable cultivation in the Bernese Seeland. We offer warm house plants in various varieties.",
       keywords: "vegetable, young plants, seedlings, lettuce, switzerland, seeland, müntschemier, muentschemier, swissplant, agriplant, swissplant gmbh, agriplant ag, cultivation, warm house plants, distro"
     },
@@ -141,12 +141,12 @@ const translations = {
         even: false,
         image: {
           src: machine,
-          alt: "Eine Maschine, die Gemüsejungpflanzen herstellt."
+          alt: "A machine that produces vegetable seedlings."
         },
-        title: "Mit wem wir arbeiten",
-        description: "Die Firma Gipmans aus Holland beliefert uns als Sortimentsergänzung mit Warmhaus- und Speedypflanzen.",
+        title: "Who we work with",
+        description: "The company Gipmans from the Netherlands supplies us with warm house and speedy plants as a range extension.",
         cta: {
-          label: "Unsere Partner",
+          label: "Our partners",
           url: resolve("/[lang=lang]/partner", { lang: "en" })
         }
       },
@@ -158,10 +158,10 @@ const translations = {
           title: "Google Maps",
           ar: 4 / 3
         },
-        title: "Wie Sie uns erreichen",
-        description: "Wir stehen natürlich gerne für allfällige Informationen und Ratschläge zur Verfügung. Egal, ob E-Mail, Telefon oder vor Ort.",
+        title: "How to reach us",
+        description: "We are happy to provide any information and advice. Whether by email, phone or on site.",
         cta: {
-          label: "Kontakt",
+          label: "Contact",
           url: resolve("/[lang=lang]/kontakt", { lang: "en" })
         }
       }

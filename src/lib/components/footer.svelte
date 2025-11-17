@@ -9,6 +9,11 @@
     return lang === "de" || lang === "en" ? lang : "de";
   });
 
+  const openingHours = $derived.by(() => ({
+    de: "Montag bis Freitag\n07:30–11:45 Uhr\n13:30–17:30 Uhr",
+    en: "Mondays to Fridays\n07:30–11:45\n13:30–17:30"
+  }[pageLang]));
+
   const navigationItems = [
     {
       de: {
@@ -125,10 +130,8 @@
       </p>
     </div>
     <div class="footer-content-right">
-      <p class="footer-text">
-        Montag bis Freitag<br />
-        07:30 &ndash; 11:45 Uhr<br />
-        13:30 &ndash; 17:30 Uhr
+      <p class="footer-text footer-opening-hours">
+        {openingHours}
       </p>
       <p class="footer-text">
         <ContactLink data-umami-event="footer-phone" href="tel:+41 32 313 52 10" />
@@ -148,7 +151,7 @@
     </ul>
   </nav>
   <div class="footer-content">
-    <p class="footer-text">
+    <p class="footer-text footer-copyright">
       &copy; SwissPlant GmbH &amp; AgriPlant AG, 2026
     </p>
   </div>
@@ -192,11 +195,19 @@
     margin-top: var(--space-8);
   }
 
+  .footer-opening-hours {
+    white-space: pre-line;
+  }
+
   .footer-content > .footer-text {
     grid-column: 1 / -1;
     justify-self: center;
     text-align: center;
     text-wrap: wrap;
+
+    &.footer-copyright {
+      text-wrap: balance;
+    }
   }
 
   .footer-navigation {
@@ -214,7 +225,8 @@
     display: inline-block;
 
     &:not(:last-child)::after {
-      content: " — ";
+      margin: 0 var(--space-8);
+      content: "—";
     }
   }
 
