@@ -1,10 +1,13 @@
 <script lang="ts">
   import { resolve } from "$app/paths";
   import { page } from "$app/state";
-  import Icon from "$components/icon.svelte";
+  import { Icon } from "$components";
+  import { throttle } from "es-toolkit";
   import type { Attachment } from "svelte/attachments";
   import { on } from "svelte/events";
 
+  let prevScrollY = $state.raw(0);
+  let isHidden = $state.raw(false);
   let isOpen = $state.raw(false);
   let navigationRef: HTMLElement;
 
@@ -87,24 +90,33 @@
     }
   };
 
+  const handleWindowScroll = () => {
+    isHidden = window.scrollY > prevScrollY;
+    prevScrollY = window.scrollY;
+  };
+
   const handleItemClick = () => {
     isOpen = false;
   };
 
-  const outsideClick: Attachment<Window> = (element) => {
-    const off = on(element, "click", handleOutsideClick);
+  const setup: Attachment<Window> = (element) => {
+    prevScrollY = window.scrollY;
+
+    const offOutsideClick = on(element, "click", handleOutsideClick);
+    const offScrollDir = on(element, "scroll", throttle(handleWindowScroll, 250));
 
     return () => {
-      off();
+      offOutsideClick();
+      offScrollDir();
     };
   };
 </script>
 
-<svelte:window {@attach outsideClick} />
+<svelte:window {@attach setup} />
 
 <nav
   bind:this={navigationRef}
-  class={["navigation", { open: isOpen }]}
+  class={["navigation", { open: isOpen, hidden: isHidden }]}
   aria-label="Hauptnavigation"
 >
   <div class="navigation-bar">
@@ -191,6 +203,11 @@
     border-radius: var(--space-16);
     box-shadow: 0 var(--space-4) var(--space-8) var(--color-black-05);
     backdrop-filter: blur(var(--space-8));
+    transition: translate 0.3s ease-in-out;
+
+    &.hidden {
+      translate: 0 calc(-100% - var(--space-16));
+    }
   }
 
   .navigation-bar,
