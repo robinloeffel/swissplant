@@ -91,7 +91,16 @@
   };
 
   const handleWindowScroll = () => {
-    isHidden = window.scrollY > prevScrollY;
+    const newValue = window.scrollY > prevScrollY && window.scrollY > 100;
+
+    if (isHidden !== newValue) {
+      isHidden = newValue;
+
+      if (isHidden && isOpen) {
+        isOpen = false;
+      }
+    }
+
     prevScrollY = window.scrollY;
   };
 
@@ -103,7 +112,7 @@
     prevScrollY = window.scrollY;
 
     const offOutsideClick = on(element, "click", handleOutsideClick);
-    const offScrollDir = on(element, "scroll", throttle(handleWindowScroll, 250));
+    const offScrollDir = on(element, "scroll", throttle(handleWindowScroll, 100));
 
     return () => {
       offOutsideClick();
@@ -203,10 +212,13 @@
     border-radius: var(--space-16);
     box-shadow: 0 var(--space-4) var(--space-8) var(--color-black-05);
     backdrop-filter: blur(var(--space-8));
-    transition: translate 0.3s ease-in-out;
+    transition:
+      scale 0.3s ease-in-out,
+      translate 0.3s ease-in-out;
 
     &.hidden {
-      translate: 0 calc(-100% - var(--space-16));
+      scale: 0.9;
+      translate: 0 calc(-100% - var(--space-16) - var(--space-8));
     }
   }
 
