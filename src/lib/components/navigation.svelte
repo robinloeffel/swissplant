@@ -145,17 +145,17 @@
       class="navigation-bar-toggle"
       aria-controls="navigation-expando"
       aria-expanded={isOpen}
-      data-umami-event="navigation-bar-toggle"
+      data-umami-event={isOpen ? "navigation-bar-toggle-close" : "navigation-bar-toggle-open"}
       onclick={toggle}
       type="button"
     >
-      <div class="sr-only">
+      <span class="sr-only">
         {#if isOpen}
-          <span>Das Navigationsmenü zuklappen.</span>
+          Das Navigationsmenü zuklappen.
         {:else}
-          <span>Das Navigationsmenü aufklappen.</span>
+          Das Navigationsmenü aufklappen.
         {/if}
-      </div>
+      </span>
       <div class="navigation-bar-toggle-icon-menu">
         <Icon name="menu" size="small" />
       </div>
@@ -185,12 +185,14 @@
           class="navigation-language-toggle"
           class:active={page.params.lang === "de"}
           data-sveltekit-noscroll
+          data-umami-event="change-language-to-de"
           href={resolve(pageId, { lang: "de" })}
         >DE</a>
         <a
           class="navigation-language-toggle"
           class:active={page.params.lang === "en"}
           data-sveltekit-noscroll
+          data-umami-event="change-language-to-en"
           href={resolve(pageId, { lang: "en" })}
         >EN</a>
       </li>
@@ -200,6 +202,10 @@
 
 <style lang="scss">
   @forward "$styles/utils";
+
+  a {
+    text-decoration: none;
+  }
 
   .navigation {
     position: fixed;
@@ -327,17 +333,11 @@
     display: block;
     padding: var(--space-16);
     text-align: center;
-    text-decoration: none;
-
-    &.active {
-      text-decoration: 2px underline solid var(--color-brand);
-    }
   }
 
   .navigation-language-toggle {
     display: inline-block;
     padding: var(--space-16);
-    text-decoration: none;
     background: 0;
     border: 0;
   }
@@ -345,7 +345,10 @@
   .navigation-link,
   .navigation-language-toggle {
     &.active {
-      text-decoration: underline solid var(--color-brand) 2px;
+      // safari workaround
+      text-decoration-line: underline;
+      text-decoration-thickness: 2px;
+      text-decoration-color: var(--color-brand);
     }
   }
 

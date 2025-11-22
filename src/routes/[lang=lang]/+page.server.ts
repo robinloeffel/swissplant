@@ -39,7 +39,8 @@ const translations = {
         description: "Die Firma SwissPlant GmbH ist Verkaufsstelle für Gemüsejungpflanzen der Firmen AgriPlant AG Schweiz und Gipmans Holland.",
         cta: {
           label: "Über uns",
-          url: resolve("/[lang=lang]/firma", { lang: "de" })
+          url: resolve("/[lang=lang]/firma", { lang: "de" }),
+          event: "split-tile-about-us"
         }
       },
       {
@@ -53,7 +54,8 @@ const translations = {
         description: "Unser Produktionsstandort der Firma AgriPlant AG befindet sich im Berner Seeland. Die zentrale Lage der Firma bietet uns die Möglichkeit Sie schnell und kompetent zu beliefern.",
         cta: {
           label: "Unser Angebot",
-          url: resolve("/[lang=lang]/angebot", { lang: "de" })
+          url: resolve("/[lang=lang]/angebot", { lang: "de" }),
+          event: "split-tile-portfolio"
         }
       },
       {
@@ -67,7 +69,8 @@ const translations = {
         description: "Die Firma Gipmans aus Holland beliefert uns als Sortimentsergänzung mit Warmhaus- und Speedypflanzen.",
         cta: {
           label: "Unsere Partner",
-          url: resolve("/[lang=lang]/partner", { lang: "de" })
+          url: resolve("/[lang=lang]/partner", { lang: "de" }),
+          event: "split-tile-partners"
         }
       },
       {
@@ -76,13 +79,15 @@ const translations = {
         iframe: {
           src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d87077.36113973339!2d7.146476148343918!3d46.99768327720842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478e1186bcd0321b%3A0x438446635d8d02ab!2sSwissPlant%20GmbH!5e0!3m2!1sen!2sch!4v1631345560961!5m2!1sen!2sch",
           title: "Google Maps",
-          ar: 4 / 3
+          ar: 4 / 3,
+          loading: "lazy"
         },
         title: "Wie Sie uns erreichen",
         description: "Wir stehen natürlich gerne für allfällige Informationen und Ratschläge zur Verfügung. Egal, ob E-Mail, Telefon oder vor Ort.",
         cta: {
           label: "Kontakt",
-          url: resolve("/[lang=lang]/kontakt", { lang: "de" })
+          url: resolve("/[lang=lang]/kontakt", { lang: "de" }),
+          event: "split-tile-contact"
         }
       }
     ]
@@ -119,7 +124,8 @@ const translations = {
         description: "SwissPlant is the official point of selling of seedings and saplings from AgriPlant Switzerland and Gipmans Netherlands.",
         cta: {
           label: "About us",
-          url: resolve("/[lang=lang]/firma", { lang: "en" })
+          url: resolve("/[lang=lang]/firma", { lang: "en" }),
+          event: "split-tile-about-us"
         }
       },
       {
@@ -133,7 +139,8 @@ const translations = {
         description: "Our production site of AgriPlant AG is located in the Bernese Seeland. The central location allows us to deliver quickly and competently.",
         cta: {
           label: "Our portfolio",
-          url: resolve("/[lang=lang]/angebot", { lang: "en" })
+          url: resolve("/[lang=lang]/angebot", { lang: "en" }),
+          event: "split-tile-portfolio"
         }
       },
       {
@@ -147,7 +154,8 @@ const translations = {
         description: "The company Gipmans from the Netherlands supplies us with warm house and speedy plants as a range extension.",
         cta: {
           label: "Our partners",
-          url: resolve("/[lang=lang]/partner", { lang: "en" })
+          url: resolve("/[lang=lang]/partner", { lang: "en" }),
+          event: "split-tile-partners"
         }
       },
       {
@@ -156,13 +164,15 @@ const translations = {
         iframe: {
           src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d87077.36113973339!2d7.146476148343918!3d46.99768327720842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478e1186bcd0321b%3A0x438446635d8d02ab!2sSwissPlant%20GmbH!5e0!3m2!1sen!2sch!4v1631345560961!5m2!1sen!2sch",
           title: "Google Maps",
-          ar: 4 / 3
+          ar: 4 / 3,
+          loading: "lazy"
         },
         title: "How to reach us",
         description: "We are happy to provide any information and advice. Whether by email, phone or on site.",
         cta: {
           label: "Contact",
-          url: resolve("/[lang=lang]/kontakt", { lang: "en" })
+          url: resolve("/[lang=lang]/kontakt", { lang: "en" }),
+          event: "split-tile-contact"
         }
       }
     ]

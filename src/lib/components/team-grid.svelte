@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ContactLink from "$components/contact-link.svelte";
+  import { ContactLink } from "$components";
   import type { HTMLImgAttributes } from "svelte/elements";
 
   interface Member {

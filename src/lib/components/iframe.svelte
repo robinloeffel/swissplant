@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { HTMLIframeAttributes } from "svelte/elements";
 
-  export interface IframeProps extends HTMLIframeAttributes {
+  interface IframeProps extends HTMLIframeAttributes {
     ar?: number;
   }
 

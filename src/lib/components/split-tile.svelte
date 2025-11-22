@@ -1,5 +1,7 @@
 <script lang="ts">
-  import { type IframeProps, default as Iframe } from "$components/iframe.svelte";
+  import { resolve } from "$app/paths";
+  import { Iframe } from "$components";
+  import type { ComponentProps } from "svelte";
   import type { HTMLImgAttributes } from "svelte/elements";
 
   interface BaseProps {
@@ -9,6 +11,7 @@
     cta: {
       label: string;
       url: string;
+      event: string;
     };
   }
 
@@ -19,7 +22,7 @@
 
   interface IframeTileProps extends BaseProps {
     type: "iframe";
-    iframe: IframeProps;
+    iframe: ComponentProps<typeof Iframe>;
   }
 
   export type Props = ImageTileProps | IframeTileProps;
@@ -41,7 +44,7 @@
   <div class="split-tile-content">
     <h2 class="split-tile-title">{title}</h2>
     <p class="split-tile-description">{description}</p>
-    <a class="split-tile-cta" href={cta.url}>
+    <a class="split-tile-cta" data-umami-event={cta.event} href={resolve(cta.url, {})}>
       {cta.label}
     </a>
   </div>
@@ -58,8 +61,16 @@
       min-width: 0;
     }
 
+    &:not(:last-child) {
+      border-bottom: 2px solid var(--color-black-05);
+    }
+
     @include media-queries.above-tablet {
       grid-template-columns: 1fr 1fr;
+
+      &:not(:last-child) {
+        border-bottom: 0;
+      }
     }
   }
 

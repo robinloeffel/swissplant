@@ -1,8 +1,7 @@
 <script lang="ts">
   import { resolve } from "$app/paths";
   import { page } from "$app/state";
-  import ContactLink from "$components/contact-link.svelte";
-  import Icon from "$components/icon.svelte";
+  import { ContactLink, Icon } from "$components";
 
   const pageLang = $derived.by<App.Lang>(() => {
     const { lang } = page.params;

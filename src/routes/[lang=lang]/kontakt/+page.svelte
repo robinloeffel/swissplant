@@ -1,10 +1,6 @@
 <script lang="ts">
-  import Content from "$components/content.svelte";
-  import Hero from "$components/hero.svelte";
-  import Iframe from "$components/iframe.svelte";
-  import Richtext from "$components/richtext.svelte";
+  import { Content, Hero, Iframe, Richtext } from "$components";
   import type { PageProps } from "./$types";
-
   const { data }: PageProps = $props();
 </script>
 

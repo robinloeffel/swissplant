@@ -1,6 +1,7 @@
 @forward "variables";
 @forward "fonts";
-@use "reset";
+@forward "utils";
+@forward "reset";
 
 #app {
   display: contents;

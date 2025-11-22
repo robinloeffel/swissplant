@@ -1,10 +1,6 @@
 <script lang="ts">
-  import Content from "$components/content.svelte";
-  import Hero from "$components/hero.svelte";
-  import Icon from "$components/icon.svelte";
-  import Richtext from "$components/richtext.svelte";
+  import { Content, Hero, Icon, Richtext } from "$components";
   import type { PageProps } from "./$types";
-
   const { data }: PageProps = $props();
 </script>
 
@@ -17,8 +13,7 @@
     <li>
       <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
       <a href="/assets/annonce-betriebsleiter.pdf">
-        <Icon name="document" size="small" />
-        Betriebsleiter
+        <Icon name="document" size="small" /> Betriebsleiter
       </a>
     </li>
   </ul>

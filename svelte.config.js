@@ -7,8 +7,8 @@ export default {
   kit: {
     adapter: adapter(),
     alias: {
-      $styles: "src/lib/styles",
       $components: "src/lib/components",
+      $styles: "src/lib/styles",
       $img: "src/lib/img",
       $svg: "src/lib/svg"
     },

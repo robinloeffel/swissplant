@@ -28,6 +28,17 @@ export default defineConfig(
       "unicorn/prevent-abbreviations": 0,
       "@typescript-eslint/init-declarations": 0,
 
+      "no-restricted-imports": [
+        "error", {
+          patterns: [
+            {
+              group: ["$components/*"],
+              message: "use $components directly"
+            }
+          ]
+        }
+      ],
+
       "svelte/no-add-event-listener": "error",
       "svelte/no-top-level-browser-globals": "error",
       "svelte/require-event-prefix": "error",

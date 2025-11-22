@@ -1,8 +1,7 @@
 <script lang="ts">
   import { dev } from "$app/environment";
   import { page } from "$app/state";
-  import Footer from "$components/footer.svelte";
-  import Navigation from "$components/navigation.svelte";
+  import { Footer, Navigation } from "$components";
   import favicon from "$img/favicon.svg";
   import "$styles/base.scss";
   import type { Attachment } from "svelte/attachments";
@@ -12,13 +11,15 @@
 
   const pageMeta = $derived.by(() => {
     const { lang, path } = data;
+    const canonical = `https://swissplant.ch${path}`;
+    const alternates = ["en", "de"]
+      .filter(item => item !== lang)
+      .map(item => ({
+        lang: item,
+        href: canonical.replace(`/${lang}`, `/${item}`)
+      }));
 
-    return {
-      lang,
-      path,
-      canonical: `https://swissplant.ch${path}`,
-      ...page.data.meta
-    };
+    return { lang, path, canonical, alternates, ...page.data.meta };
   });
 
   const langAttach: Attachment<Document> = ({ documentElement }) => {
@@ -29,6 +30,7 @@
 <svelte:document {@attach langAttach} />
 
 <svelte:head>
+  <link href="https://api-gateway.umami.dev" rel="preconnect" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content={pageMeta.description} />
@@ -36,6 +38,10 @@
   <link href={pageMeta.canonical} rel="canonical" />
   <title>{pageMeta.title}</title>
   <link href={favicon} rel="icon" />
+
+  {#each pageMeta.alternates as { lang, href } (lang)}
+    <link {href} hreflang={lang} rel="alternate" />
+  {/each}
 
   {#if !dev}
     <script

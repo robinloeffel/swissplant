@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Icon from "$components/icon.svelte";
+  import { Icon } from "$components";
   import type { Attachment } from "svelte/attachments";
   import type { HTMLImgAttributes } from "svelte/elements";
 
