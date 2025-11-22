@@ -35,7 +35,9 @@ const translations = {
           position: "Geschäftsführer",
           image: {
             src: martin,
-            alt: "Martin Loeffel"
+            alt: "Martin Loeffel",
+            loading: "lazy",
+            fetchpriority: "low"
           },
           contact: {
             email: "m.loeffel@swissplant.ch",
@@ -47,7 +49,9 @@ const translations = {
           position: "Stv. Geschäftsführer",
           image: {
             src: sandro,
-            alt: "Sandro"
+            alt: "Sandro",
+            loading: "lazy",
+            fetchpriority: "low"
           },
           contact: {
             email: "s.loeffel@swissplant.ch",
@@ -59,7 +63,9 @@ const translations = {
           position: "Empfang & Administration",
           image: {
             src: telja,
-            alt: "Telja"
+            alt: "Telja",
+            loading: "lazy",
+            fetchpriority: "low"
           },
           contact: {
             email: "t.baumann@swissplant.ch",
@@ -71,7 +77,9 @@ const translations = {
           position: "Leiter Gewächshaus",
           image: {
             src: ivan,
-            alt: "Ivan"
+            alt: "Ivan",
+            loading: "lazy",
+            fetchpriority: "low"
           }
         },
         {
@@ -79,7 +87,9 @@ const translations = {
           position: "Leiter Produktion",
           image: {
             src: shpend,
-            alt: "Shpend"
+            alt: "Shpend",
+            loading: "lazy",
+            fetchpriority: "low"
           }
         },
         {
@@ -87,7 +97,9 @@ const translations = {
           position: "Transport",
           image: {
             src: hansPeter,
-            alt: "Hans Peter"
+            alt: "Hans Peter",
+            loading: "lazy",
+            fetchpriority: "low"
           }
         },
         {
@@ -95,7 +107,9 @@ const translations = {
           position: "Transport",
           image: {
             src: mariusz,
-            alt: "Mariusz"
+            alt: "Mariusz",
+            loading: "lazy",
+            fetchpriority: "low"
           }
         },
         {
@@ -103,7 +117,9 @@ const translations = {
           position: "Produktion",
           image: {
             src: muhamet,
-            alt: "Muhamet"
+            alt: "Muhamet",
+            loading: "lazy",
+            fetchpriority: "low"
           }
         },
         {
@@ -111,7 +127,9 @@ const translations = {
           position: "Transport",
           image: {
             src: barbara,
-            alt: "Barbara"
+            alt: "Barbara",
+            loading: "lazy",
+            fetchpriority: "low"
           }
         },
         {
@@ -119,7 +137,9 @@ const translations = {
           position: "Maschinenführer",
           image: {
             src: markus,
-            alt: "Markus"
+            alt: "Markus",
+            loading: "lazy",
+            fetchpriority: "low"
           }
         },
         {
@@ -127,7 +147,9 @@ const translations = {
           position: "Maschinenführer",
           image: {
             src: miguel,
-            alt: "Miguel"
+            alt: "Miguel",
+            loading: "lazy",
+            fetchpriority: "low"
           }
         }
       ]
@@ -155,7 +177,9 @@ const translations = {
           position: "CEO & Sales",
           image: {
             src: martin,
-            alt: "Martin Loeffel"
+            alt: "Martin Loeffel",
+            loading: "lazy",
+            fetchpriority: "low"
           },
           contact: {
             email: "m.loeffel@swissplant.ch",
@@ -167,7 +191,9 @@ const translations = {
           position: "Vice CEO & Sales",
           image: {
             src: sandro,
-            alt: "Sandro"
+            alt: "Sandro",
+            loading: "lazy",
+            fetchpriority: "low"
           },
           contact: {
             email: "s.loeffel@swissplant.ch",
@@ -179,7 +205,9 @@ const translations = {
           position: "Admin & Sales",
           image: {
             src: telja,
-            alt: "Telja"
+            alt: "Telja",
+            loading: "lazy",
+            fetchpriority: "low"
           },
           contact: {
             email: "t.baumann@swissplant.ch",
@@ -191,7 +219,9 @@ const translations = {
           position: "Greenhouse Manager",
           image: {
             src: ivan,
-            alt: "Ivan"
+            alt: "Ivan",
+            loading: "lazy",
+            fetchpriority: "low"
           }
         },
         {
@@ -199,7 +229,9 @@ const translations = {
           position: "Production Manager",
           image: {
             src: shpend,
-            alt: "Shpend"
+            alt: "Shpend",
+            loading: "lazy",
+            fetchpriority: "low"
           }
         },
         {
@@ -207,7 +239,9 @@ const translations = {
           position: "Transport",
           image: {
             src: hansPeter,
-            alt: "Hans Peter"
+            alt: "Hans Peter",
+            loading: "lazy",
+            fetchpriority: "low"
           }
         },
         {
@@ -215,7 +249,9 @@ const translations = {
           position: "Transport",
           image: {
             src: mariusz,
-            alt: "Mariusz"
+            alt: "Mariusz",
+            loading: "lazy",
+            fetchpriority: "low"
           }
         },
         {
@@ -223,7 +259,9 @@ const translations = {
           position: "Production",
           image: {
             src: muhamet,
-            alt: "Muhamet"
+            alt: "Muhamet",
+            loading: "lazy",
+            fetchpriority: "low"
           }
         },
         {
@@ -231,7 +269,9 @@ const translations = {
           position: "Transport",
           image: {
             src: barbara,
-            alt: "Barbara"
+            alt: "Barbara",
+            loading: "lazy",
+            fetchpriority: "low"
           }
         },
         {
@@ -239,7 +279,9 @@ const translations = {
           position: "Machine Operator",
           image: {
             src: markus,
-            alt: "Markus"
+            alt: "Markus",
+            loading: "lazy",
+            fetchpriority: "low"
           }
         },
         {
@@ -247,7 +289,9 @@ const translations = {
           position: "Machine Operator",
           image: {
             src: miguel,
-            alt: "Miguel"
+            alt: "Miguel",
+            loading: "lazy",
+            fetchpriority: "low"
           }
         }
       ]

@@ -1,5 +1,6 @@
 <script lang="ts">
   import { ContactLink } from "$components";
+  import { kebabCase } from "es-toolkit";
   import type { HTMLImgAttributes } from "svelte/elements";
 
   interface Member {
@@ -18,7 +19,9 @@
 
   const { members }: TeamGridProps = $props();
 
-  const nameToAttribute = (name: string) => name.toLowerCase().replaceAll(" ", "-");
+  const makeEvent = (name: string, type: "phone" | "email") => (
+    `team-${type}-${kebabCase(name)}`
+  );
 </script>
 
 <section class="team-grid">
@@ -32,11 +35,11 @@
 
           {#if member.contact}
             <ContactLink
-              data-umami-event={`team-email-click-${nameToAttribute(member.name)}`}
+              data-umami-event={makeEvent(member.name, "email")}
               href="mailto:{member.contact.email}"
             />
             <ContactLink
-              data-umami-event={`team-phone-click-${nameToAttribute(member.name)}`}
+              data-umami-event={makeEvent(member.name, "phone")}
               href="tel:{member.contact.phone}"
             />
           {/if}
@@ -67,6 +70,8 @@
   }
 
   .team-grid-item-image {
+    aspect-ratio: 1;
     border-radius: var(--space-16);
+    object-fit: cover;
   }
 </style>

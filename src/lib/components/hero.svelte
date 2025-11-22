@@ -37,7 +37,8 @@
   {#each images as image, index (image.src)}
     <img
       class={["hero-image", { visible: index === visibleIndex }]}
-      fetchpriority="high"
+      fetchpriority={index === 0 ? "high" : "low"}
+      loading={index > 0 ? "lazy" : null}
       {...image}
     />
   {/each}

@@ -33,7 +33,9 @@ const translations = {
         even: false,
         image: {
           src: tinu,
-          alt: "Martin Löffel, Gründer der SwissPlant AG."
+          alt: "Martin Löffel, Gründer der SwissPlant AG.",
+          loading: "lazy",
+          fetchpriority: "low"
         },
         title: "Wer wir sind",
         description: "Die Firma SwissPlant GmbH ist Verkaufsstelle für Gemüsejungpflanzen der Firmen AgriPlant AG Schweiz und Gipmans Holland.",
@@ -48,7 +50,9 @@ const translations = {
         even: true,
         image: {
           src: crates,
-          alt: "Kisten mit verschiedenen Gemüsesetzlingen."
+          alt: "Kisten mit verschiedenen Gemüsesetzlingen.",
+          loading: "lazy",
+          fetchpriority: "low"
         },
         title: "Was wir Ihnen bieten",
         description: "Unser Produktionsstandort der Firma AgriPlant AG befindet sich im Berner Seeland. Die zentrale Lage der Firma bietet uns die Möglichkeit Sie schnell und kompetent zu beliefern.",
@@ -63,7 +67,9 @@ const translations = {
         even: false,
         image: {
           src: machine,
-          alt: "Eine Maschine, die Gemüsejungpflanzen herstellt."
+          alt: "Eine Maschine, die Gemüsejungpflanzen herstellt.",
+          loading: "lazy",
+          fetchpriority: "low"
         },
         title: "Mit wem wir arbeiten",
         description: "Die Firma Gipmans aus Holland beliefert uns als Sortimentsergänzung mit Warmhaus- und Speedypflanzen.",
@@ -118,7 +124,9 @@ const translations = {
         even: false,
         image: {
           src: tinu,
-          alt: "Martin Löffel, founder of SwissPlant GmbH."
+          alt: "Martin Löffel, founder of SwissPlant GmbH.",
+          loading: "lazy",
+          fetchpriority: "low"
         },
         title: "Who we are",
         description: "SwissPlant is the official point of selling of seedings and saplings from AgriPlant Switzerland and Gipmans Netherlands.",
@@ -133,7 +141,9 @@ const translations = {
         even: true,
         image: {
           src: crates,
-          alt: "Boxes with various vegetable seedlings."
+          alt: "Boxes with various vegetable seedlings.",
+          loading: "lazy",
+          fetchpriority: "low"
         },
         title: "What we offer",
         description: "Our production site of AgriPlant AG is located in the Bernese Seeland. The central location allows us to deliver quickly and competently.",
@@ -148,7 +158,9 @@ const translations = {
         even: false,
         image: {
           src: machine,
-          alt: "A machine that produces vegetable seedlings."
+          alt: "A machine that produces vegetable seedlings.",
+          loading: "lazy",
+          fetchpriority: "low"
         },
         title: "Who we work with",
         description: "The company Gipmans from the Netherlands supplies us with warm house and speedy plants as a range extension.",
