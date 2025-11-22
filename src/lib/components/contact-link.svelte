@@ -1,5 +1,4 @@
 <script lang="ts">
-  import type { Attachment } from "svelte/attachments";
   import type { HTMLAnchorAttributes, MouseEventHandler } from "svelte/elements";
 
   interface Props extends HTMLAnchorAttributes {
@@ -7,41 +6,30 @@
   }
 
   const { href, ...attributes }: Props = $props();
+  const label = $derived(href.split(":").at(1));
 
-  let isHuman = $state.raw(false);
+  let sus = $state.raw(true);
 
   const onclick: MouseEventHandler<HTMLAnchorElement> = (event) => {
     event.preventDefault();
     window.location.href = href;
   };
 
-  const checkIsHuman: Attachment<HTMLSpanElement> = () => {
-    const suspiciousDomAttributes = new Set(["selenium", "webdriver", "driver", "playwright"]);
-    const documentAttributes = new Set(document.documentElement.getAttributeNames());
-
-    isHuman = [
-      navigator.webdriver,
-      navigator.userAgent.toLowerCase().includes("headless"),
-      navigator.languages.length === 0,
-      suspiciousDomAttributes.intersection(documentAttributes).size > 0,
-      !window.innerWidth || !window.innerHeight
-    ].every(v => !v);
-  };
+  $effect.pre(() => {
+    sus = navigator.webdriver
+      || navigator.userAgent.toLowerCase().includes("headless")
+      || navigator.languages.length === 0
+      || !window.innerWidth
+      || !window.innerHeight;
+  });
 </script>
 
-<span {@attach checkIsHuman}>
-  {#if isHuman}
-    <a
-      {...attributes}
-      aria-label={href.split(":")[1]}
-      href="#!"
-      {onclick}
-    ></a>
-  {/if}
-</span>
+{#if !sus}
+  <a {...attributes} aria-label={label} href="#!" {onclick}></a>
+{/if}
 
 <style lang="scss">
-  a::after {
+  a::before {
     content: attr(aria-label);
   }
 </style>
