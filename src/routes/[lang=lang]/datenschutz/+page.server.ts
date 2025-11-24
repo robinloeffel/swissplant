@@ -56,7 +56,7 @@ const translations = {
       },
       {
         type: "p",
-        text: "Unsere Website verwendet Umami, um anonymisierte Daten über Ihren Besuch zu aggregieren. Umami ist mit der DSGVO kompatibel und erfordert keine explizite Zustimmung. Diese Daten werden in der Europäischen Union verwahrt."
+        text: "Unsere Website verwendet Umami, um anonymisierte Daten über Ihren Besuch zu aggregieren. Umami ist mit der DSGVO kompatibel und erfordert keine explizite Zustimmung. Diese Daten werden in der Europäischen Union verwahrt und sind nicht auf einzelne Personen zurückführbar."
       },
       {
         type: "p",
@@ -68,11 +68,7 @@ const translations = {
       },
       {
         type: "p",
-        text: "Diese Webseite macht Gebrauch von Iframes, die auf YouTube und Google Maps verweisen. Zum Schutze Ihrer Privatsphäre wurde bei YouTube auf die sogenannte «No-Cookie»-Variante gesetzt; Google Maps bietet eine solche Funktion nicht an."
-      },
-      {
-        type: "p",
-        text: "Bitte machen Sie sich bei Bedarf mit den Datenschutzerklärungen von YouTube und Google Maps vertraut."
+        text: "Diese Webseite macht Gebrauch von Iframes, die auf YouTube und Google Maps verweisen. Zum Schutze Ihrer Privatsphäre wurde bei YouTube auf die sogenannte «No-Cookie»-Variante gesetzt; Google Maps bietet eine solche Funktion nicht an. Bitte machen Sie sich bei Bedarf mit den Datenschutzerklärungen von YouTube und Google Maps vertraut."
       },
       {
         type: "h2",
@@ -80,15 +76,11 @@ const translations = {
       },
       {
         type: "p",
-        text: " Diese Webseite läuft auf den Servern von Vercel. Bitte machen Sie sich bei Bedarf mit der Datenschutzerklärung von Vercel vertraut."
+        text: "Diese Webseite läuft auf der Plattform von Statichost. Anhand Ihrer IP-Adresse wird automatisch der nächstgelegene Server gewählt, um die Webseite bereitzustellen. Bitte machen Sie sich bei Bedarf mit der Datenschutzerklärung von Statichost vertraut."
       },
       {
         type: "p",
-        text: "Abhängig von Ihrem Standort wird automatisch der nächstgelegene Server gewählt. In der Regel ist dies Frankfurt am Main oder Paris. Hier können Sie alle Knoten des Vercel Edge Network nachschlagen."
-      },
-      {
-        type: "p",
-        text: "Müntschemier, August 2023"
+        text: "Müntschemier, November 2025"
       }
     ]
   },
@@ -146,7 +138,7 @@ const translations = {
       },
       {
         type: "p",
-        text: "Our website uses Umami to aggregate anonymized data about your visit. Umami is GDPR compliant and does not require explicit consent. This data is stored in the European Union."
+        text: "Our website uses Umami to aggregate anonymized data about your visit. Umami is GDPR compliant and does not require explicit consent. This data is stored in the European Union and is not traceable to an individual person."
       },
       {
         type: "p",
@@ -158,11 +150,7 @@ const translations = {
       },
       {
         type: "p",
-        text: "This website uses iframes that link to YouTube and Google Maps. To protect your privacy, we use YouTube's so-called \"no-cookie\" variant; Google Maps does not offer such a feature."
-      },
-      {
-        type: "p",
-        text: "Please familiarize yourself with the privacy policies of YouTube and Google Maps if needed."
+        text: "This website uses iframes that link to YouTube and Google Maps. To protect your privacy, we use YouTube's so-called \"no-cookie\" variant; Google Maps does not offer such a feature. Please familiarize yourself with the privacy policies of YouTube and Google Maps if needed."
       },
       {
         type: "h2",
@@ -170,15 +158,11 @@ const translations = {
       },
       {
         type: "p",
-        text: "This website runs on Vercel servers. Please familiarize yourself with Vercel's privacy policy if needed."
+        text: "This website is hosted on the Statichost platform. Based on your IP address, the nearest server is automatically selected to deliver the website. Please familiarize yourself with Statichost's privacy policy if needed."
       },
       {
         type: "p",
-        text: "Depending on your location, the nearest server is automatically selected. This is typically Frankfurt am Main or Paris. You can look up all nodes of the Vercel Edge Network here."
-      },
-      {
-        type: "p",
-        text: "Müntschemier, August 2023"
+        text: "Müntschemier, November 2025"
       }
     ]
   }
