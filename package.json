@@ -18,6 +18,7 @@
     "@total-typescript/ts-reset": "0.6.1",
     "browserslist": "4.28.0",
     "browserslist-to-esbuild": "2.1.1",
+    "datocms-structured-text-to-html-string": "5.1.6",
     "es-toolkit": "1.42.0",
     "eslint": "9.39.1",
     "eslint-config-sweet": "30.0.0",
@@ -29,11 +30,11 @@
     "postcss-preset-env": "10.4.0",
     "robins-tsconfig": "2.0.0",
     "sass": "1.94.2",
-    "stylelint": "16.26.0",
+    "stylelint": "16.26.1",
     "stylelint-config-sweet": "7.0.0",
-    "svelte": "5.43.14",
+    "svelte": "5.45.2",
     "typescript": "5.9.3",
-    "typescript-eslint": "8.47.0",
-    "vite": "7.2.4"
+    "typescript-eslint": "8.48.0",
+    "vite": "7.2.6"
   }
 }

@@ -1,4 +1,4 @@
-import type { Hero, SplitTile, Table, TeamGrid } from "$components";
+import type { Hero, SplitTile, StructuredText, Table, TeamGrid } from "$components";
 import "@total-typescript/ts-reset";
 import type { ComponentProps } from "svelte";
 import type { HTMLAttributes } from "svelte/elements";
@@ -27,6 +27,7 @@ declare global {
       teamGrid?: ComponentProps<typeof TeamGrid>;
       richtext?: Richtext[];
       table?: ComponentProps<typeof Table>;
+      structuredText?: ComponentProps<typeof StructuredText>;
     }
 
     // eslint-disable-next-line @typescript-eslint/no-empty-object-type -- allow interface merging
