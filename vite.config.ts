@@ -6,5 +6,12 @@ export default defineConfig({
   build: {
     target: browserslist()
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        silenceDeprecations: ["if-function"]
+      }
+    }
+  },
   plugins: [sveltekit()]
 });

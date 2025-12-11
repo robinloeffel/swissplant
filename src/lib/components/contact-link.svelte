@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { onMount } from "svelte";
   import type { HTMLAnchorAttributes, MouseEventHandler } from "svelte/elements";
 
   interface Props extends HTMLAnchorAttributes {
@@ -15,7 +16,7 @@
     window.location.href = href;
   };
 
-  $effect.pre(() => {
+  onMount(() => {
     sus = navigator.webdriver
       || navigator.userAgent.toLowerCase().includes("headless")
       || navigator.languages.length === 0
@@ -25,7 +26,7 @@
 </script>
 
 {#if !sus}
-  <a {...attributes} aria-label={label} href="#!" {onclick}></a>
+  <a {...attributes} aria-label={label} href="#contact-link" {onclick}></a>
 {/if}
 
 <style lang="scss">

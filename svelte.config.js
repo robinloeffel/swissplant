@@ -14,7 +14,7 @@ export default {
     },
     prerender: {
       handleMissingId: ({ id }) => {
-        if (id !== "!") {
+        if (id !== "contact-link") {
           throw new Error("missing pre-rendered page", id);
         }
       }
