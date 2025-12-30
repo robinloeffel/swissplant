@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Content, Hero, Icon, Richtext } from "$components";
+  import { Content, Hero, Richtext } from "$components";
   import type { PageProps } from "./$types";
   const { data }: PageProps = $props();
 </script>
@@ -11,10 +11,7 @@
   <hr />
   <ul>
     <li>
-      <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
-      <a href="/assets/annonce-betriebsleiter.pdf">
-        <Icon name="document" size="small" /> Betriebsleiter
-      </a>
+      Zurzeit sind keine Stellen ausgeschrieben.
     </li>
   </ul>
 </Content>
