@@ -12,12 +12,16 @@
   const pageMeta = $derived.by(() => {
     const { lang, path } = data;
     const canonical = `https://swissplant.ch${path}`;
-    const alternates = ["en", "de"]
-      .filter(item => item !== lang)
-      .map(item => ({
+    const alternates = [
+      {
+        lang: "x-default",
+        href: canonical.replace(`/${lang}`, `/de`)
+      },
+      ...["en", "de"].map(item => ({
         lang: item,
         href: canonical.replace(`/${lang}`, `/${item}`)
-      }));
+      }))
+    ];
 
     return { lang, path, canonical, alternates, ...page.data.meta };
   });

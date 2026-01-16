@@ -4,11 +4,15 @@ export const GET: RequestHandler = () => {
   const base = "https://swissplant.ch";
   const langs = new Set<App.Lang>(["de", "en"]);
   const pages = Object.keys(
-    import.meta.glob("../**/+page.svelte", { eager: true })
-  ).map(path => path
-    .replace("..", "")
-    .replace("/+page.svelte", "")
-  );
+    import.meta.glob("../**/+page.svelte", {
+      eager: true
+    })
+  )
+    .map(path => path
+      .replace("..", "")
+      .replace("/+page.svelte", "")
+    )
+    .filter(Boolean);
 
   const sitemap = new Set<string>();
   for (const lang of langs) {

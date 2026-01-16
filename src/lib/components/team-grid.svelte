@@ -71,7 +71,7 @@
 
   .team-grid-item-image {
     aspect-ratio: 1;
-    border-radius: var(--space-16);
     object-fit: cover;
+    border-radius: var(--space-16);
   }
 </style>
