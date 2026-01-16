@@ -4,21 +4,18 @@ export const GET: RequestHandler = () => {
   const base = "https://swissplant.ch";
   const langs = new Set<App.Lang>(["de", "en"]);
   const pages = Object.keys(
-    import.meta.glob("../**/+page.svelte", {
+    import.meta.glob("../[lang=lang]/**/+page.svelte", {
       eager: true
     })
-  )
-    .map(path => path
-      .replace("..", "")
-      .replace("/+page.svelte", "")
-    )
-    .filter(Boolean);
+  ).map(path => path
+    .replace("../[lang=lang]", "")
+    .replace("/+page.svelte", "")
+  );
 
   const sitemap = new Set<string>();
   for (const lang of langs) {
     for (const page of pages) {
-      const path = page.replace("/[lang=lang]", lang);
-      sitemap.add(`${base}/${path}`);
+      sitemap.add(`${base}/${lang}${page}`);
     }
   }
 
