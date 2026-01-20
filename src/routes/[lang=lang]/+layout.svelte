@@ -42,6 +42,7 @@
   <link href={pageMeta.canonical} rel="canonical" />
   <title>{pageMeta.title}</title>
   <link href={favicon} rel="icon" />
+  <meta name="theme-color" content="#fff" />
 
   {#each pageMeta.alternates as { lang, href } (lang)}
     <link {href} hreflang={lang} rel="alternate" />

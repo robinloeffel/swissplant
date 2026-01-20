@@ -12,14 +12,14 @@ export const GET: RequestHandler = () => {
     .replace("/+page.svelte", "")
   );
 
-  const sitemap = new Set<string>();
+  let sitemap = "";
   for (const lang of langs) {
     for (const page of pages) {
-      sitemap.add(`${base}/${lang}${page}`);
+      sitemap += `${base}/${lang}${page}\n`;
     }
   }
 
-  return text(`${[...sitemap].join("\n")}\n`);
+  return text(sitemap);
 };
 
 export const prerender = true;

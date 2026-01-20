@@ -13,7 +13,7 @@
     "@fontsource-utils/scss": "0.2.2",
     "@fontsource-variable/inter": "5.2.8",
     "@sveltejs/adapter-static": "3.0.10",
-    "@sveltejs/kit": "2.49.5",
+    "@sveltejs/kit": "2.50.0",
     "@sveltejs/vite-plugin-svelte": "6.2.4",
     "@total-typescript/ts-reset": "0.6.1",
     "datocms-structured-text-to-html-string": "5.1.7",
@@ -27,9 +27,9 @@
     "sass-embedded": "1.97.2",
     "stylelint": "16.26.1",
     "stylelint-config-sweet": "8.0.0",
-    "svelte": "5.46.4",
+    "svelte": "5.47.1",
     "typescript": "5.9.3",
-    "typescript-eslint": "8.53.0",
+    "typescript-eslint": "8.53.1",
     "vite": "7.3.1"
   }
 }
