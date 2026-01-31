@@ -10,14 +10,8 @@ export default {
       $components: "src/lib/components",
       $styles: "src/lib/styles",
       $img: "src/lib/img",
-      $svg: "src/lib/svg"
-    },
-    prerender: {
-      handleMissingId: ({ id }) => {
-        if (id !== "contact-link") {
-          throw new Error("missing pre-rendered page", id);
-        }
-      }
+      $svg: "src/lib/svg",
+      $params: "src/params"
     }
   }
 };

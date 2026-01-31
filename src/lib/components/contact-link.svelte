@@ -1,36 +1,25 @@
 <script lang="ts">
-  import { onMount } from "svelte";
-  import type { HTMLAnchorAttributes, MouseEventHandler } from "svelte/elements";
+  import type { Snippet } from "svelte";
+  import type { Attachment } from "svelte/attachments";
+  import type { HTMLAnchorAttributes } from "svelte/elements";
+  import { on } from "svelte/events";
 
   interface Props extends HTMLAnchorAttributes {
+    children?: Snippet;
     href: `mailto:${string}` | `tel:${string}`;
   }
 
-  const { href, ...attributes }: Props = $props();
-  const label = $derived(href.split(":").at(1));
+  const { children, href, ...attributes }: Props = $props();
 
-  let sus = $state.raw(true);
-
-  const onclick: MouseEventHandler<HTMLAnchorElement> = (event) => {
-    event.preventDefault();
-    window.location.href = href;
+  const mounted: Attachment<HTMLAnchorElement> = (element) => {
+    on(element, "click", (event) => {
+      event.preventDefault();
+      element.textContent = href.replace(/^(?:mailto:|tel:)/, "");
+      element.href = href;
+    }, { once: true });
   };
-
-  onMount(() => {
-    sus = navigator.webdriver
-      || navigator.userAgent.toLowerCase().includes("headless")
-      || navigator.languages.length === 0
-      || !window.innerWidth
-      || !window.innerHeight;
-  });
 </script>
 
-{#if !sus}
-  <a {...attributes} aria-label={label} href="#contact-link" {onclick}></a>
-{/if}
-
-<style lang="scss">
-  a::before {
-    content: attr(aria-label);
-  }
-</style>
+<a {@attach mounted} {...attributes} href="#!" rel="external">
+  {@render children?.()}
+</a>

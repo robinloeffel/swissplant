@@ -29,6 +29,8 @@ const translations = {
       ]
     },
     teamGrid: {
+      showEmailLabel: "E-Mail anzeigen",
+      showPhoneLabel: "Telefonnummer anzeigen",
       members: [
         {
           name: "Martin Löffel",
@@ -171,6 +173,8 @@ const translations = {
       ]
     },
     teamGrid: {
+      showEmailLabel: "Show email address",
+      showPhoneLabel: "Show phone number",
       members: [
         {
           name: "Martin Löffel",
@@ -188,7 +192,7 @@ const translations = {
         },
         {
           name: "Sandro Löffel",
-          position: "Vice CEO & Sales",
+          position: "Deputy CEO & Sales",
           image: {
             src: sandro,
             alt: "Sandro",
@@ -202,7 +206,7 @@ const translations = {
         },
         {
           name: "Telja Baumann",
-          position: "Admin & Sales",
+          position: "Reception & Administration",
           image: {
             src: telja,
             alt: "Telja",

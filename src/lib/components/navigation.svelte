@@ -2,6 +2,7 @@
   import { resolve } from "$app/paths";
   import { page } from "$app/state";
   import { Icon } from "$components";
+  import { match as isLang } from "$params/lang";
   import { throttle } from "es-toolkit";
   import type { Attachment } from "svelte/attachments";
   import { on } from "svelte/events";
@@ -11,70 +12,60 @@
   let isOpen = $state.raw(false);
   let navigationRef: HTMLElement;
 
-  const pageLang = $derived.by<App.Lang>(() => {
-    const { lang } = page.params;
-    return lang === "de" || lang === "en" ? lang : "de";
-  });
-  const pageId = $derived(page.route.id ?? "/[lang=lang]");
+  const lang = $derived(
+    isLang(page.params.lang) ? page.params.lang : "de"
+  );
+  const route = $derived(page.route.id ?? "/[lang=lang]");
+
+  const toggleSrOnlyText = $derived({
+    de: isOpen ? "Das Navigationsmenü zuklappen." : "Das Navigationsmenü aufklappen.",
+    en: isOpen ? "Close the navigation menu." : "Open the navigation menu."
+  }[lang]);
+
+  const homeLinkSrOnlyText = $derived({
+    de: "Zur Startseite gehen.",
+    en: "Go to the homepage."
+  }[lang]);
+
+  const mainNavigationAriaLabel = $derived({
+    de: "Hauptnavigation",
+    en: "Main navigation"
+  }[lang]);
 
   const navigationItems = [
     {
-      de: {
-        label: "Firma"
-      },
-      en: {
-        label: "Company"
-      },
+      de: "Firma",
+      en: "Company",
       event: "navigation-bar-link-company",
       route: "/[lang=lang]/firma"
     },
     {
-      de: {
-        label: "Team"
-      },
-      en: {
-        label: "Team"
-      },
+      de: "Team",
+      en: "Team",
       event: "navigation-bar-link-team",
       route: "/[lang=lang]/team"
     },
     {
-      de: {
-        label: "Angebot"
-      },
-      en: {
-        label: "Portfolio"
-      },
+      de: "Angebot",
+      en: "Portfolio",
       event: "navigation-bar-link-portfolio",
       route: "/[lang=lang]/angebot"
     },
     {
-      de: {
-        label: "Partner"
-      },
-      en: {
-        label: "Partners"
-      },
+      de: "Partner",
+      en: "Partners",
       event: "navigation-bar-link-partners",
       route: "/[lang=lang]/partner"
     },
     {
-      de: {
-        label: "Kontakt"
-      },
-      en: {
-        label: "Contact"
-      },
+      de: "Kontakt",
+      en: "Contact",
       event: "navigation-bar-link-contact",
       route: "/[lang=lang]/kontakt"
     },
     {
-      de: {
-        label: "Jobs"
-      },
-      en: {
-        label: "Jobs"
-      },
+      de: "Jobs",
+      en: "Jobs",
       event: "navigation-bar-link-jobs",
       route: "/[lang=lang]/jobs"
     }
@@ -108,8 +99,8 @@
     isOpen = false;
   };
 
-  const setup: Attachment<Window> = (element) => {
-    prevScrollY = window.scrollY;
+  const mounted: Attachment<Window> = (element) => {
+    prevScrollY = element.scrollY;
 
     const offOutsideClick = on(element, "click", handleOutsideClick);
     const offScrollDir = on(element, "scroll", throttle(handleWindowScroll, 100));
@@ -121,21 +112,22 @@
   };
 </script>
 
-<svelte:window {@attach setup} />
+<svelte:window {@attach mounted} />
 
 <nav
   bind:this={navigationRef}
   class={["navigation", { open: isOpen, hidden: isHidden }]}
-  aria-label="Hauptnavigation"
+  aria-label={mainNavigationAriaLabel}
 >
   <div class="navigation-bar">
     <a
       class="navigation-bar-logo"
+      data-sveltekit-noscroll
       data-umami-event="navigation-bar-link-home"
-      href={resolve("/[lang=lang]", { lang: pageLang })}
+      href={resolve("/[lang=lang]", { lang })}
       onclick={handleItemClick}
     >
-      <span class="sr-only">Zur Startseite gehen.</span>
+      <span class="sr-only">{homeLinkSrOnlyText}</span>
       <div class="header-navigation-logo">
         <Icon name="swissplant-bare" />
       </div>
@@ -149,13 +141,7 @@
       onclick={toggle}
       type="button"
     >
-      <span class="sr-only">
-        {#if isOpen}
-          Das Navigationsmenü zuklappen.
-        {:else}
-          Das Navigationsmenü aufklappen.
-        {/if}
-      </span>
+      <span class="sr-only">{toggleSrOnlyText}</span>
       <div class="navigation-bar-toggle-icon-menu">
         <Icon name="menu" size="small" />
       </div>
@@ -173,11 +159,11 @@
         <li class="navigation-item">
           <a
             class="navigation-link"
-            class:active={pageId === item.route}
+            class:active={item.route === route}
             data-umami-event={item.event}
-            href={resolve(item.route, { lang: pageLang })}
+            href={resolve(item.route, { lang })}
             onclick={handleItemClick}
-          >{item[pageLang].label}</a>
+          >{item[lang]}</a>
         </li>
       {/each}
       <li class="navigation-item">
@@ -186,14 +172,14 @@
           class:active={page.params.lang === "de"}
           data-sveltekit-noscroll
           data-umami-event="change-language-to-de"
-          href={resolve(pageId, { lang: "de" })}
+          href={resolve(route, { lang: "de" })}
         >DE</a>
         <a
           class="navigation-language-toggle"
           class:active={page.params.lang === "en"}
           data-sveltekit-noscroll
           data-umami-event="change-language-to-en"
-          href={resolve(pageId, { lang: "en" })}
+          href={resolve(route, { lang: "en" })}
         >EN</a>
       </li>
     </ul>

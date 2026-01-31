@@ -3,38 +3,37 @@
   import { page } from "$app/state";
   import { Footer, Navigation } from "$components";
   import favicon from "$img/favicon.svg";
+  import { match as isLang } from "$params/lang";
   import "$styles/base.scss";
-  import type { Attachment } from "svelte/attachments";
   import type { LayoutProps } from "./$types";
 
   const { children }: LayoutProps = $props();
 
   const pageMeta = $derived.by(() => {
     const { meta } = page.data;
-    const { lang = "de" } = page.params;
     const { url } = page;
+    const { params } = page;
+    const lang = isLang(params.lang) ? params.lang : "de";
 
     const canonical = `https://swissplant.ch${url.pathname}`;
     const alternates = [
       {
-        lang: "x-default",
-        href: canonical.replace(`/${lang}`, `/de`)
+        href: canonical.replace(`/${lang}`, `/de`),
+        hreflang: "x-default"
       },
       ...["en", "de"].map(item => ({
-        lang: item,
-        href: canonical.replace(`/${lang}`, `/${item}`)
+        href: canonical.replace(`/${lang}`, `/${item}`),
+        hreflang: item
       }))
     ];
 
     return { ...meta, lang, canonical, alternates };
   });
 
-  const langAttach: Attachment<Document> = ({ documentElement }) => {
-    documentElement.lang = pageMeta.lang;
-  };
+  $effect.pre(() => {
+    document.documentElement.lang = pageMeta.lang;
+  });
 </script>
-
-<svelte:document {@attach langAttach} />
 
 <svelte:head>
   <meta charset="utf-8" />
@@ -46,8 +45,8 @@
   <link href={favicon} rel="icon" />
 
   <link href={pageMeta.canonical} rel="canonical" />
-  {#each pageMeta.alternates as { lang, href } (lang)}
-    <link {href} hreflang={lang} rel="alternate" />
+  {#each pageMeta.alternates as { href, hreflang } (hreflang)}
+    <link {href} {hreflang} rel="alternate" />
   {/each}
 
   {#if !dev}

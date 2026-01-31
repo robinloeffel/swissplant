@@ -2,105 +2,84 @@
   import { resolve } from "$app/paths";
   import { page } from "$app/state";
   import { ContactLink, Icon } from "$components";
+  import { match as isLang } from "$params/lang";
 
-  const pageLang = $derived.by<App.Lang>(() => {
-    const { lang } = page.params;
-    return lang === "de" || lang === "en" ? lang : "de";
-  });
+  const lang = $derived(
+    isLang(page.params.lang) ? page.params.lang : "de"
+  );
 
-  const openingHours = $derived.by(() => ({
+  const openingHours = $derived({
     de: "Montag bis Freitag\n07:30–11:45 Uhr\n13:30–17:30 Uhr",
     en: "Mondays to Fridays\n07:30–11:45\n13:30–17:30"
-  }[pageLang]));
+  }[lang]);
+
+  const showSwissPlantEmail = $derived({
+    de: "E-Mail SwissPlant anzeigen",
+    en: "Show SwissPlant email"
+  }[lang]);
+
+  const showAgriPlantEmail = $derived({
+    de: "E-Mail AgriPlant anzeigen",
+    en: "Show AgriPlant email"
+  }[lang]);
+
+  const showPhoneNumber = $derived({
+    de: "Telefonnummer anzeigen",
+    en: "Show phone number"
+  }[lang]);
 
   const navigationItems = [
     {
-      de: {
-        label: "Home"
-      },
-      en: {
-        label: "Home"
-      },
+      de: "Home",
+      en: "Home",
       event: "footer-link-home",
       route: "/[lang=lang]"
     },
     {
-      de: {
-        label: "Firma"
-      },
-      en: {
-        label: "Company"
-      },
+      de: "Firma",
+      en: "Company",
       event: "footer-link-company",
       route: "/[lang=lang]/firma"
     },
     {
-      de: {
-        label: "Team"
-      },
-      en: {
-        label: "Team"
-      },
+      de: "Team",
+      en: "Team",
       event: "footer-link-team",
       route: "/[lang=lang]/team"
     },
     {
-      de: {
-        label: "Angebot"
-      },
-      en: {
-        label: "Portfolio"
-      },
+      de: "Angebot",
+      en: "Portfolio",
       event: "footer-link-portfolio",
       route: "/[lang=lang]/angebot"
     },
     {
-      de: {
-        label: "Partner"
-      },
-      en: {
-        label: "Partners"
-      },
+      de: "Partner",
+      en: "Partners",
       event: "footer-link-partners",
       route: "/[lang=lang]/partner"
     },
     {
-      de: {
-        label: "Kontakt"
-      },
-      en: {
-        label: "Contact"
-      },
+      de: "Kontakt",
+      en: "Contact",
       event: "footer-link-contact",
       route: "/[lang=lang]/kontakt"
     },
     {
-      de: {
-        label: "Impressum"
-      },
-      en: {
-        label: "Imprint"
-      },
+      de: "Impressum",
+      en: "Imprint",
       event: "footer-link-imprint",
       route: "/[lang=lang]/impressum"
     },
     {
-      de: {
-        label: "Datenschutz"
-      },
-      en: {
-        label: "Privacy"
-      },
+      de: "Datenschutz",
+      en: "Privacy",
       event: "footer-link-privacy",
       route: "/[lang=lang]/datenschutz"
     },
     {
-      de: {
-        label: "Jobs"
-      },
-      en: {
-        label: "Jobs"
-      },
+      de: "Jobs",
+      en: "Jobs",
       event: "footer-link-jobs",
       route: "/[lang=lang]/jobs"
     }
@@ -123,9 +102,13 @@
         CH-3225 Müntschemier
       </p>
       <p class="footer-text">
-        <ContactLink data-umami-event="footer-swissplant-email" href="mailto:info@swissplant.ch" />
+        <ContactLink data-umami-event="footer-swissplant-email" href="mailto:info@swissplant.ch">
+          {showSwissPlantEmail}
+        </ContactLink>
         <br />
-        <ContactLink data-umami-event="footer-agriplant-email" href="mailto:info@agriplant.ch" />
+        <ContactLink data-umami-event="footer-agriplant-email" href="mailto:info@agriplant.ch">
+          {showAgriPlantEmail}
+        </ContactLink>
       </p>
     </div>
     <div class="footer-content-right">
@@ -133,7 +116,9 @@
         {openingHours}
       </p>
       <p class="footer-text">
-        <ContactLink data-umami-event="footer-phone" href="tel:+41 32 313 52 10" />
+        <ContactLink data-umami-event="footer-phone" href="tel:+41 32 313 52 10">
+          {showPhoneNumber}
+        </ContactLink>
       </p>
     </div>
   </div>
@@ -142,8 +127,8 @@
     <ul class="footer-navigation-list">
       {#each navigationItems as item (item.route)}
         <li class="footer-navigation-item">
-          <a data-umami-event={item.event} href={resolve(item.route, { lang: pageLang })}>
-            {item[pageLang].label}
+          <a data-umami-event={item.event} href={resolve(item.route, { lang })}>
+            {item[lang]}
           </a>
         </li>
       {/each}
