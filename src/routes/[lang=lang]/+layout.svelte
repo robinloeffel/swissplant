@@ -7,11 +7,14 @@
   import type { Attachment } from "svelte/attachments";
   import type { LayoutProps } from "./$types";
 
-  const { children, data }: LayoutProps = $props();
+  const { children }: LayoutProps = $props();
 
   const pageMeta = $derived.by(() => {
-    const { lang, path } = data;
-    const canonical = `https://swissplant.ch${path}`;
+    const { meta } = page.data;
+    const { lang = "de" } = page.params;
+    const { url } = page;
+
+    const canonical = `https://swissplant.ch${url.pathname}`;
     const alternates = [
       {
         lang: "x-default",
@@ -23,7 +26,7 @@
       }))
     ];
 
-    return { lang, path, canonical, alternates, ...page.data.meta };
+    return { ...meta, lang, canonical, alternates };
   });
 
   const langAttach: Attachment<Document> = ({ documentElement }) => {
@@ -34,16 +37,15 @@
 <svelte:document {@attach langAttach} />
 
 <svelte:head>
-  <link href="https://api-gateway.umami.dev" rel="preconnect" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content={pageMeta.description} />
   <meta name="keywords" content={pageMeta.keywords} />
-  <link href={pageMeta.canonical} rel="canonical" />
+  <meta name="theme-color" content="#fff" />
   <title>{pageMeta.title}</title>
   <link href={favicon} rel="icon" />
-  <meta name="theme-color" content="#fff" />
 
+  <link href={pageMeta.canonical} rel="canonical" />
   {#each pageMeta.alternates as { lang, href } (lang)}
     <link {href} hreflang={lang} rel="alternate" />
   {/each}
