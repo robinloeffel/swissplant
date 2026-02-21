@@ -24,7 +24,7 @@ const translations = {
       },
       {
         type: "address",
-        text: "Spitzallmendweg 11c\nCH-3225 Müntschemier\n+41 32 313 52 10\ninfo@swissplant.ch"
+        text: "Spitzallmendweg 11c\nCH-3225 Müntschemier\n+41 32 313 52 10\n\ninfo@swissplant.ch"
       },
       {
         type: "h2",
@@ -32,7 +32,7 @@ const translations = {
       },
       {
         type: "address",
-        text: "Spitzallmendweg 11c\nCH-3225 Müntschemier\n+41 32 313 52 10\ninfo@agriplant.ch"
+        text: "Spitzallmendweg 11c\nCH-3225 Müntschemier\n+41 32 313 52 10\n\ninfo@agriplant.ch"
       },
       {
         type: "h2",

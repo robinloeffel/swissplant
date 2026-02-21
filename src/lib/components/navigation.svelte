@@ -187,12 +187,6 @@
 </nav>
 
 <style lang="scss">
-  @forward "$styles/utils";
-
-  a {
-    text-decoration: none;
-  }
-
   .navigation {
     position: fixed;
     inset: var(--space-16) 0 auto;
@@ -211,6 +205,10 @@
     &.hidden {
       scale: 0.9;
       translate: 0 calc(-100% - var(--space-16) - var(--space-8));
+    }
+
+    a {
+      text-decoration: none;
     }
   }
 

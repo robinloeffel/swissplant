@@ -1,25 +1,38 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
+  import { reverse } from "$lib/utils/string";
   import type { Attachment } from "svelte/attachments";
   import type { HTMLAnchorAttributes } from "svelte/elements";
   import { on } from "svelte/events";
 
   interface Props extends HTMLAnchorAttributes {
-    children?: Snippet;
+    label: string;
     href: `mailto:${string}` | `tel:${string}`;
   }
 
-  const { children, href, ...attributes }: Props = $props();
+  const { label, href, ...attributes }: Props = $props();
 
   const mounted: Attachment<HTMLAnchorElement> = (element) => {
-    on(element, "click", (event) => {
-      event.preventDefault();
-      element.textContent = href.replace(/^(?:mailto:|tel:)/, "");
-      element.href = href;
-    }, { once: true });
+    const address = href.split(":").at(1);
+
+    if (address) {
+      element.dataset.label = reverse(address);
+
+      on(element, "click", (event) => {
+        event.preventDefault();
+        document.location.assign(href);
+      });
+    }
   };
 </script>
 
 <a {@attach mounted} {...attributes} href="#!" rel="external">
-  {@render children?.()}
+  <span class="sr-only">{label}</span>
 </a>
+
+<style lang="scss">
+  a::after {
+    content: attr(data-label) / "";
+    direction: rtl;
+    unicode-bidi: bidi-override;
+  }
+</style>

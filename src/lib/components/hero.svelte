@@ -50,36 +50,31 @@
     grid-template-areas: "all";
     place-items: center;
     height: min(250px, 25vh);
+    contain: strict;
     border-bottom: 5px solid var(--color-brand);
 
     &.big {
       position: relative;
       height: 90vh;
-
-      &::after {
-        position: absolute;
-        inset: 0;
-        content: "";
-        background-color: var(--color-black-50);
-      }
-    }
-
-    > * {
-      min-width: 0;
-      min-height: 0;
     }
   }
 
   .hero-image {
     grid-area: all;
     width: 100%;
+    min-width: 0;
     height: 100%;
+    min-height: 0;
     object-fit: cover;
     opacity: 0;
     transition: opacity 2s ease-in-out;
 
     &.visible {
       opacity: 1;
+    }
+
+    .hero.big & {
+      filter: brightness(0.5);
     }
   }
 
@@ -88,5 +83,6 @@
     grid-area: all;
     width: min(640px, 90%);
     color: var(--color-white);
+    filter: drop-shadow(0 8px 16px var(--color-black-50));
   }
 </style>

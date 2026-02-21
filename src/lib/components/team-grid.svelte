@@ -14,12 +14,12 @@
   }
 
   interface TeamGridProps {
-    showEmailLabel: string;
-    showPhoneLabel: string;
+    emailLabel: string;
+    phoneLabel: string;
     members: Member[];
   }
 
-  const { showEmailLabel, showPhoneLabel, members }: TeamGridProps = $props();
+  const { emailLabel, phoneLabel, members }: TeamGridProps = $props();
 
   const makeEvent = (name: string, type: "phone" | "email") => (
     `team-${type}-${kebabCase(name)}`
@@ -34,16 +34,19 @@
         <div class="team-grid-item-info">
           <span class="team-grid-item-name">{member.name}</span>
           <span class="team-grid-item-position">{member.position}</span>
-
-          {#if member.contact}
+          {#if member.contact?.email}
             <ContactLink
               data-umami-event={makeEvent(member.name, "email")}
-              href="mailto:{member.contact.email}"
-            >{showEmailLabel}</ContactLink>
+              href={`mailto:${member.contact.email}`}
+              label={`${emailLabel}${member.name}`}
+            />
+          {/if}
+          {#if member.contact?.phone}
             <ContactLink
               data-umami-event={makeEvent(member.name, "phone")}
-              href="tel:{member.contact.phone}"
-            >{showPhoneLabel}</ContactLink>
+              href={`tel:${member.contact.phone}`}
+              label={`${phoneLabel}${member.name}`}
+            />
           {/if}
         </div>
       </li>

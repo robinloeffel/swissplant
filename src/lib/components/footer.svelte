@@ -13,19 +13,19 @@
     en: "Mondays to Fridays\n07:30–11:45\n13:30–17:30"
   }[lang]);
 
-  const showSwissPlantEmail = $derived({
-    de: "E-Mail SwissPlant anzeigen",
-    en: "Show SwissPlant email"
+  const swissPlantEmail = $derived({
+    de: "E-Mail an SwissPlant schreiben",
+    en: "Write an email to SwissPlant"
   }[lang]);
 
-  const showAgriPlantEmail = $derived({
-    de: "E-Mail AgriPlant anzeigen",
-    en: "Show AgriPlant email"
+  const agriPlantEmail = $derived({
+    de: "E-Mail an AgriPlant schreiben",
+    en: "Write an email to AgriPlant"
   }[lang]);
 
-  const showPhoneNumber = $derived({
-    de: "Telefonnummer anzeigen",
-    en: "Show phone number"
+  const phoneNumber = $derived({
+    de: "Anrufen",
+    en: "Call"
   }[lang]);
 
   const navigationItems = [
@@ -102,13 +102,17 @@
         CH-3225 Müntschemier
       </p>
       <p class="footer-text">
-        <ContactLink data-umami-event="footer-swissplant-email" href="mailto:info@swissplant.ch">
-          {showSwissPlantEmail}
-        </ContactLink>
+        <ContactLink
+          data-umami-event="footer-swissplant-email"
+          href="mailto:info@swissplant.ch"
+          label={swissPlantEmail}
+        />
         <br />
-        <ContactLink data-umami-event="footer-agriplant-email" href="mailto:info@agriplant.ch">
-          {showAgriPlantEmail}
-        </ContactLink>
+        <ContactLink
+          data-umami-event="footer-agriplant-email"
+          href="mailto:info@agriplant.ch"
+          label={agriPlantEmail}
+        />
       </p>
     </div>
     <div class="footer-content-right">
@@ -116,9 +120,11 @@
         {openingHours}
       </p>
       <p class="footer-text">
-        <ContactLink data-umami-event="footer-phone" href="tel:+41 32 313 52 10">
-          {showPhoneNumber}
-        </ContactLink>
+        <ContactLink
+          data-umami-event="footer-phone"
+          href="tel:+41 32 313 52 10"
+          label={phoneNumber}
+        />
       </p>
     </div>
   </div>

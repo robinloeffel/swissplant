@@ -29,8 +29,8 @@ const translations = {
       ]
     },
     teamGrid: {
-      showEmailLabel: "E-Mail anzeigen",
-      showPhoneLabel: "Telefonnummer anzeigen",
+      emailLabel: "E-Mail an: ",
+      phoneLabel: "Anrufen: ",
       members: [
         {
           name: "Martin Löffel",
@@ -173,8 +173,8 @@ const translations = {
       ]
     },
     teamGrid: {
-      showEmailLabel: "Show email address",
-      showPhoneLabel: "Show phone number",
+      emailLabel: "Write an email to: ",
+      phoneLabel: "Call: ",
       members: [
         {
           name: "Martin Löffel",
