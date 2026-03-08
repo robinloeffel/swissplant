@@ -26,7 +26,21 @@ const translations = {
             children: [
               {
                 type: "span",
-                value: "Den Anfang nehmen all diese Gemüse und Salate als Jungpflanzen, die von der Firma AgriPlant AG in Müntschemier angezogen werden. Geschäftsführer unserer Firmen Martin Löffel, fasst den Weg der Keimlinge bis hin zu ausgewachsenen Pflanzen so zusammen: «Wir stehen als Zulieferbetrieb der Gemüsebaubetriebe am Anfang der Produktionskette und kultivieren die Jungpflanzen, die anschliessend von den Gemüsegärtnern gepflanzt werden.»"
+                value: "Den Anfang nehmen all diese Gemüse und Salate als Jungpflanzen, die von der Firma AgriPlant AG in Müntschemier angezogen werden. Geschäftsführer unserer Firmen "
+              },
+              {
+                type: "link",
+                url: "./team",
+                children: [
+                  {
+                    type: "span",
+                    value: "Martin Löffel"
+                  }
+                ]
+              },
+              {
+                type: "span",
+                value: ", fasst den Weg der Keimlinge bis hin zu ausgewachsenen Pflanzen so zusammen: «Wir stehen als Zulieferbetrieb der Gemüsebaubetriebe am Anfang der Produktionskette und kultivieren die Jungpflanzen, die anschliessend von den Gemüsegärtnern gepflanzt werden.»"
               }
             ]
           },
@@ -234,7 +248,21 @@ const translations = {
             children: [
               {
                 type: "span",
-                value: "All these vegetables and salads begin as young plants, which are grown by AgriPlant AG in Müntschemier. Martin Löffel, Managing Director of our companies, summarizes the journey of seedlings to fully grown plants as follows: \"As a supplier to vegetable farms, we stand at the beginning of the production chain and cultivate the young plants that are subsequently planted by vegetable growers.\""
+                value: "All these vegetables and salads begin as young plants, which are grown by AgriPlant AG in Müntschemier. "
+              },
+              {
+                type: "link",
+                url: "./team",
+                children: [
+                  {
+                    type: "span",
+                    value: "Martin Löffel"
+                  }
+                ]
+              },
+              {
+                type: "span",
+                value: ", Managing Director of our companies, summarizes the journey of seedlings to fully grown plants as follows: \"As a supplier to vegetable farms, we stand at the beginning of the production chain and cultivate the young plants that are subsequently planted by vegetable growers.\""
               }
             ]
           },

@@ -26,7 +26,22 @@ const translations = {
             children: [
               {
                 type: "span",
-                value: "Alle Topfvarianten (3.2cm&ndash;6cm) werden in unserem Haus produziert, die übrigen Arten lassen wir von unseren holländischen Partnern herstellen. Wir bieten auch Warmhauspflanzen in verschiedenen Varianten an. Über unser reichhaltiges Jungpflanzensortiment informieren wir Sie gerne. Für kundenspezifische Auskünfte oder Fragen steht Ihnen unser Verkaufspersonal jederzeit zur Verfügung." }
+                value: "Alle Topfvarianten (3.2cm-6cm) werden in unserem Haus produziert, die übrigen Arten lassen wir von unseren holländischen Partnern herstellen. Wir bieten auch Warmhauspflanzen in verschiedenen Varianten an. Über unser reichhaltiges Jungpflanzensortiment informieren wir Sie gerne. Für kundenspezifische Auskünfte oder Fragen steht Ihnen "
+              },
+              {
+                type: "link",
+                url: "./team",
+                children: [
+                  {
+                    type: "span",
+                    value: "unser Verkaufspersonal"
+                  }
+                ]
+              },
+              {
+                type: "span",
+                value: " jederzeit zur Verfügung."
+              }
             ]
           }
         ]
@@ -74,7 +89,21 @@ const translations = {
             children: [
               {
                 type: "span",
-                value: "All pot variants (3.2cm to 6cm) are produced in-house. Everything else is produced by our dutch partners. We also offer warm house plants in various variants. If you need any information or have questions, our sales team will be happy to help you out!"
+                value: "All pot variants (3.2cm to 6cm) are produced in-house. Everything else is produced by our dutch partners. We also offer warm house plants in various variants. If you need any information or have questions, "
+              },
+              {
+                type: "link",
+                url: "./team",
+                children: [
+                  {
+                    type: "span",
+                    value: "our sales team"
+                  }
+                ]
+              },
+              {
+                type: "span",
+                value: " will be happy to help you out!"
               }
             ]
           }
