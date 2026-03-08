@@ -53,7 +53,35 @@ const translations = {
             children: [
               {
                 type: "span",
-                value: "Durch die Realisierung des Projektes kann die AgriPlant AG ihren CO2-Ausstoss trotz der Flächenerweiterung um satte 123 Tonnen reduzieren. Das Projekt wurde vom Büro der Energie-Agentur der Wirtschaft EnAW und der Stiftung Klimaschutz und CO2-Kompensation KliK begleitet. Mittlerweile haben wir die erste Heizsaison hinter uns und können mit Stolz bestätigen, dass wir zu 80% CO2-neutral unsere Gewächshäuser beheizen."
+                value: "Durch die Realisierung des Projektes kann die AgriPlant AG ihren CO2-Ausstoss trotz der Flächenerweiterung um satte 123 Tonnen reduzieren. Das Projekt wurde vom Büro der "
+              },
+              {
+                type: "link",
+                url: "https://enaw.ch/",
+                children: [
+                  {
+                    type: "span",
+                    value: "Energie-Agentur der Wirtschaft EnAW"
+                  }
+                ]
+              },
+              {
+                type: "span",
+                value: " und der "
+              },
+              {
+                type: "link",
+                url: "https://www.klik.ch/",
+                children: [
+                  {
+                    type: "span",
+                    value: "Stiftung Klimaschutz und CO2-Kompensation KliK"
+                  }
+                ]
+              },
+              {
+                type: "span",
+                value: " begleitet. Mittlerweile haben wir die erste Heizsaison hinter uns und können mit Stolz bestätigen, dass wir zu 80% CO2-neutral unsere Gewächshäuser beheizen."
               }
             ]
           },
@@ -121,7 +149,35 @@ const translations = {
             children: [
               {
                 type: "span",
-                value: "Through the realization of this project, AgriPlant AG can reduce its CO2 emissions by a substantial 123 tons despite the area expansion. The project was accompanied by the Energy Agency of the Economy EnAW and the Climate Protection and CO2 Compensation Foundation KliK. We have now completed our first heating season and can proudly confirm that we heat our greenhouses 80% CO2-neutral."
+                value: "Through the realization of this project, AgriPlant AG can reduce its CO2 emissions by a substantial 123 tons despite the area expansion. The project was accompanied by the "
+              },
+              {
+                type: "link",
+                url: "https://enaw.ch/",
+                children: [
+                  {
+                    type: "span",
+                    value: "Energy Agency of the Economy EnAW"
+                  }
+                ]
+              },
+              {
+                type: "span",
+                value: " and the "
+              },
+              {
+                type: "link",
+                url: "https://www.klik.ch/",
+                children: [
+                  {
+                    type: "span",
+                    value: "Climate Protection and CO2 Compensation Foundation KliK"
+                  }
+                ]
+              },
+              {
+                type: "span",
+                value: ". We have now completed our first heating season and can proudly confirm that we heat our greenhouses 80% CO2-neutral."
               }
             ]
           },
