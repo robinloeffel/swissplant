@@ -90,7 +90,119 @@ const translations = {
             children: [
               {
                 type: "span",
-                value: "Zu unseren Zulieferfirmen im Bereich Saatgut gehören: Bejo, Enza, Rijk Zwaan, Hild, Syngenta und Sakata. Unsere Anzuchterde beziehen wir bei den Firmen Floragard und Klasmann."
+                value: "Zu unseren Zulieferfirmen im Bereich Saatgut gehören: "
+              },
+              {
+                type: "link",
+                url: "https://www.bejo.com/",
+                children: [
+                  {
+                    type: "span",
+                    value: "Bejo"
+                  }
+                ]
+              },
+              {
+                type: "span",
+                value: ", "
+              },
+              {
+                type: "link",
+                url: "https://www.enzazaden.com/",
+                children: [
+                  {
+                    type: "span",
+                    value: "Enza Zaden"
+                  }
+                ]
+              },
+              {
+                type: "span",
+                value: ", "
+              },
+              {
+                type: "link",
+                url: "https://www.rijkzwaan.com/",
+                children: [
+                  {
+                    type: "span",
+                    value: "Rijk Zwaan"
+                  }
+                ]
+              },
+              {
+                type: "span",
+                value: ", "
+              },
+              {
+                type: "link",
+                url: "https://www.graines-voltz.com/",
+                children: [
+                  {
+                    type: "span",
+                    value: "Voltz"
+                  }
+                ]
+              },
+              {
+                type: "span",
+                value: ", "
+              },
+              {
+                type: "link",
+                url: "https://www.syngenta.com/",
+                children: [
+                  {
+                    type: "span",
+                    value: "Syngenta"
+                  }
+                ]
+              },
+              {
+                type: "span",
+                value: " und "
+              },
+              {
+                type: "link",
+                url: "https://www.sakata.com/",
+                children: [
+                  {
+                    type: "span",
+                    value: "Sakata"
+                  }
+                ]
+              },
+              {
+                type: "span",
+                value: ". Unsere Anzuchterde beziehen wir bei den Firmen "
+              },
+              {
+                type: "link",
+                url: "https://www.floragard.de/",
+                children: [
+                  {
+                    type: "span",
+                    value: "Floragard"
+                  }
+                ]
+              },
+              {
+                type: "span",
+                value: " und "
+              },
+              {
+                type: "link",
+                url: "https://www.klasmann-deilmann.com/",
+                children: [
+                  {
+                    type: "span",
+                    value: "Klasmann-Deilmann"
+                  }
+                ]
+              },
+              {
+                type: "span",
+                value: "."
               }
             ]
           }
@@ -186,7 +298,119 @@ const translations = {
             children: [
               {
                 type: "span",
-                value: "Our seed suppliers include: Bejo, Enza, Rijk Zwaan, Hild, Syngenta and Sakata. We source our growing soil from Floragard and Klasmann."
+                value: "Our seed suppliers include: "
+              },
+              {
+                type: "link",
+                url: "https://www.bejo.com/",
+                children: [
+                  {
+                    type: "span",
+                    value: "Bejo"
+                  }
+                ]
+              },
+              {
+                type: "span",
+                value: ", "
+              },
+              {
+                type: "link",
+                url: "https://www.enzazaden.com/",
+                children: [
+                  {
+                    type: "span",
+                    value: "Enza Zaden"
+                  }
+                ]
+              },
+              {
+                type: "span",
+                value: ", "
+              },
+              {
+                type: "link",
+                url: "https://www.rijkzwaan.com/",
+                children: [
+                  {
+                    type: "span",
+                    value: "Rijk Zwaan"
+                  }
+                ]
+              },
+              {
+                type: "span",
+                value: ", "
+              },
+              {
+                type: "link",
+                url: "https://www.graines-voltz.com/",
+                children: [
+                  {
+                    type: "span",
+                    value: "Voltz"
+                  }
+                ]
+              },
+              {
+                type: "span",
+                value: ", "
+              },
+              {
+                type: "link",
+                url: "https://www.syngenta.com/",
+                children: [
+                  {
+                    type: "span",
+                    value: "Syngenta"
+                  }
+                ]
+              },
+              {
+                type: "span",
+                value: " and "
+              },
+              {
+                type: "link",
+                url: "https://www.sakata.com/",
+                children: [
+                  {
+                    type: "span",
+                    value: "Sakata"
+                  }
+                ]
+              },
+              {
+                type: "span",
+                value: ". We source our growing soil from "
+              },
+              {
+                type: "link",
+                url: "https://www.floragard.de/",
+                children: [
+                  {
+                    type: "span",
+                    value: "Floragard"
+                  }
+                ]
+              },
+              {
+                type: "span",
+                value: " and "
+              },
+              {
+                type: "link",
+                url: "https://www.klasmann-deilmann.com/",
+                children: [
+                  {
+                    type: "span",
+                    value: "Klasmann-Deilmann"
+                  }
+                ]
+              },
+              {
+                type: "span",
+                value: "."
               }
             ]
           }
