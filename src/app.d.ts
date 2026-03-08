@@ -25,7 +25,6 @@ declare global {
       hero: ComponentProps<typeof Hero>;
       splitTiles?: ComponentProps<typeof SplitTile>[];
       teamGrid?: ComponentProps<typeof TeamGrid>;
-      richtext?: Richtext[];
       table?: ComponentProps<typeof Table>;
       structuredText?: ComponentProps<typeof StructuredText>;
     }

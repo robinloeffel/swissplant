@@ -17,32 +17,70 @@ const translations = {
         }
       ]
     },
-    richtext: [
-      {
-        type: "h2",
-        text: "SwissPlant GmbH"
-      },
-      {
-        type: "address",
-        text: "Spitzallmendweg 11c\nCH-3225 Müntschemier\n+41 32 313 52 10\n\ninfo@swissplant.ch"
-      },
-      {
-        type: "h2",
-        text: "AgriPlant AG"
-      },
-      {
-        type: "address",
-        text: "Spitzallmendweg 11c\nCH-3225 Müntschemier\n+41 32 313 52 10\n\ninfo@agriplant.ch"
-      },
-      {
-        type: "h2",
-        text: "Öffnungszeiten"
-      },
-      {
-        type: "p",
-        text: "Montag&ndash;Freitag: 07:30&ndash;11:45 Uhr, 13:30&ndash;17:30 Uhr"
+    structuredText: {
+      document: {
+        type: "root",
+        children: [
+          {
+            type: "heading",
+            level: 2,
+            children: [
+              {
+                type: "span",
+                value: "SwissPlant GmbH"
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "span",
+                value: "Spitzallmendweg 11c\nCH-3225 Müntschemier\n+41 32 313 52 10\n\ninfo@swissplant.ch"
+              }
+            ]
+          },
+          {
+            type: "heading",
+            level: 2,
+            children: [
+              {
+                type: "span",
+                value: "AgriPlant AG"
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "span",
+                value: "Spitzallmendweg 11c\nCH-3225 Müntschemier\n+41 32 313 52 10\n\ninfo@agriplant.ch"
+              }
+            ]
+          },
+          {
+            type: "heading",
+            level: 2,
+            children: [
+              {
+                type: "span",
+                value: "Öffnungszeiten"
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "span",
+                value: "Montag&ndash;Freitag: 07:30&ndash;11:45 Uhr, 13:30&ndash;17:30 Uhr"
+              }
+            ]
+          }
+        ]
       }
-    ]
+    }
   },
   en: {
     meta: {
@@ -59,32 +97,70 @@ const translations = {
         }
       ]
     },
-    richtext: [
-      {
-        type: "h2",
-        text: "SwissPlant GmbH"
-      },
-      {
-        type: "address",
-        text: "Spitzallmendweg 11c\nCH-3225 Müntschemier\n+41 32 313 52 10\ninfo@swissplant.ch"
-      },
-      {
-        type: "h2",
-        text: "AgriPlant AG"
-      },
-      {
-        type: "address",
-        text: "Spitzallmendweg 11c\nCH-3225 Müntschemier\n+41 32 313 52 10\ninfo@agriplant.ch"
-      },
-      {
-        type: "h2",
-        text: "Opening Hours"
-      },
-      {
-        type: "p",
-        text: "Monday&ndash;Friday: 07:30&ndash;11:45, 13:30&ndash;17:30"
+    structuredText: {
+      document: {
+        type: "root",
+        children: [
+          {
+            type: "heading",
+            level: 2,
+            children: [
+              {
+                type: "span",
+                value: "SwissPlant GmbH"
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "span",
+                value: "Spitzallmendweg 11c\nCH-3225 Müntschemier\n+41 32 313 52 10\ninfo@swissplant.ch"
+              }
+            ]
+          },
+          {
+            type: "heading",
+            level: 2,
+            children: [
+              {
+                type: "span",
+                value: "AgriPlant AG"
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "span",
+                value: "Spitzallmendweg 11c\nCH-3225 Müntschemier\n+41 32 313 52 10\ninfo@agriplant.ch"
+              }
+            ]
+          },
+          {
+            type: "heading",
+            level: 2,
+            children: [
+              {
+                type: "span",
+                value: "Opening Hours"
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "span",
+                value: "Monday&ndash;Friday: 07:30&ndash;11:45, 13:30&ndash;17:30"
+              }
+            ]
+          }
+        ]
       }
-    ]
+    }
   }
 } satisfies App.Translations;
 

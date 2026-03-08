@@ -17,12 +17,22 @@ const translations = {
         }
       ]
     },
-    richtext: [
-      {
-        type: "p",
-        text: "Wir sind zukunftsorientierte Gemüsejungpflanzenhersteller in Müntschemier im Berner Seeland. Wir kultivieren Jungpflanzen, die von Gemüsegärtnern in der ganzen Schweiz gepflanzt werden. Unsere 12 Mitarbeiter wiederspiegeln Qualität, Termintreue, Kundenzufriedenheit und machen unser Unternehmen einzigartig. Offenheit, Flexibilität und Anpassungsfähigkeit stehen bei uns an erster Stelle und prägen das freundliche und kollegiale Miteinander."
+    structuredText: {
+      document: {
+        type: "root",
+        children: [
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "span",
+                value: "Wir sind zukunftsorientierte Gemüsejungpflanzenhersteller in Müntschemier im Berner Seeland. Wir kultivieren Jungpflanzen, die von Gemüsegärtnern in der ganzen Schweiz gepflanzt werden. Unsere 12 Mitarbeiter wiederspiegeln Qualität, Termintreue, Kundenzufriedenheit und machen unser Unternehmen einzigartig. Offenheit, Flexibilität und Anpassungsfähigkeit stehen bei uns an erster Stelle und prägen das freundliche und kollegiale Miteinander."
+              }
+            ]
+          }
+        ]
       }
-    ]
+    }
   },
   en: {
     meta: {
@@ -39,12 +49,22 @@ const translations = {
         }
       ]
     },
-    richtext: [
-      {
-        type: "p",
-        text: "We are future-oriented vegetable young plant producers in Müntschemier in the Bernese Seeland. We cultivate young plants that are planted by vegetable growers throughout Switzerland. Our 12 employees reflect quality, adherence to deadlines, customer satisfaction and make our company unique. Openness, flexibility and adaptability are our top priorities and characterize the friendly and collegial way we work together."
+    structuredText: {
+      document: {
+        type: "root",
+        children: [
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "span",
+                value: "We are future-oriented vegetable young plant producers in Müntschemier in the Bernese Seeland. We cultivate young plants that are planted by vegetable growers throughout Switzerland. Our 12 employees reflect quality, adherence to deadlines, customer satisfaction and make our company unique. Openness, flexibility and adaptability are our top priorities and characterize the friendly and collegial way we work together."
+              }
+            ]
+          }
+        ]
       }
-    ]
+    }
   }
 } satisfies App.Translations;
 

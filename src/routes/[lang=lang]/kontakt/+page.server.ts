@@ -17,24 +17,51 @@ const translations = {
         }
       ]
     },
-    richtext: [
-      {
-        type: "h2",
-        text: "Von Bern her"
-      },
-      {
-        type: "p",
-        text: "Autobahn Bern &ndash; Neuenburg Ausfahrt Kerzers anschliessend Richtung Neuenburg. In Müntschemier Richtung Bahnhof. Firmenwegweiser beachten."
-      },
-      {
-        type: "h2",
-        text: "Von Neuchâtel her"
-      },
-      {
-        type: "p",
-        text: "Richtung Ins &ndash; Müntschemier anschliessend in Müntschemier Richtung Bahnhof. Firmenwegweiser beachten."
+    structuredText: {
+      document: {
+        type: "root",
+        children: [
+          {
+            type: "heading",
+            level: 2,
+            children: [
+              {
+                type: "span",
+                value: "Von Bern her"
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "span",
+                value: "Autobahn Bern-Neuenburg Ausfahrt Kerzers anschliessend Richtung Neuenburg. In Müntschemier Richtung Bahnhof. Firmenwegweiser beachten."
+              }
+            ]
+          },
+          {
+            type: "heading",
+            level: 2,
+            children: [
+              {
+                type: "span",
+                value: "Von Neuchâtel her"
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "span",
+                value: "Richtung Ins-Müntschemier anschliessend in Müntschemier Richtung Bahnhof. Firmenwegweiser beachten."
+              }
+            ]
+          }
+        ]
       }
-    ]
+    }
   },
   en: {
     meta: {
@@ -51,24 +78,51 @@ const translations = {
         }
       ]
     },
-    richtext: [
-      {
-        type: "h2",
-        text: "From Bern"
-      },
-      {
-        type: "p",
-        text: "Take the Bern &ndash; Neuchâtel freeway and exit at Kerzers, then follow the signs to Neuchâtel. In Müntschemier, follow the signs to the train station."
-      },
-      {
-        type: "h2",
-        text: "From Neuchâtel"
-      },
-      {
-        type: "p",
-        text: "Follow the signs to Ins &ndash; Müntschemier, then in Müntschemier follow the signs to the train station."
+    structuredText: {
+      document: {
+        type: "root",
+        children: [
+          {
+            type: "heading",
+            level: 2,
+            children: [
+              {
+                type: "span",
+                value: "From Bern"
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "span",
+                value: "Take the Bern-Neuchâtel freeway and exit at Kerzers, then follow the signs to Neuchâtel. In Müntschemier, follow the signs to the train station."
+              }
+            ]
+          },
+          {
+            type: "heading",
+            level: 2,
+            children: [
+              {
+                type: "span",
+                value: "From Neuchâtel"
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "span",
+                value: "Follow the signs to Ins-Müntschemier, then in Müntschemier follow the signs to the train station."
+              }
+            ]
+          }
+        ]
       }
-    ]
+    }
   }
 } satisfies App.Translations;
 

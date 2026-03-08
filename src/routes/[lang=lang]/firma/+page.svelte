@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Content, Hero, Iframe, Richtext } from "$components";
+  import { Content, Hero, Iframe, StructuredText } from "$components";
   import type { PageProps } from "./$types";
   const { data }: PageProps = $props();
 </script>
@@ -14,5 +14,5 @@
     src="https://www.youtube-nocookie.com/embed/M3-n0Gf2f2c"
     title="SwissPlant: Gemüsebau im Berner Seeland"
   />
-  <Richtext blocks={data.richtext} />
+  <StructuredText {...data.structuredText} />
 </Content>

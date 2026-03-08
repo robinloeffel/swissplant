@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Content, Hero, Iframe, Richtext, Table } from "$components";
+  import { Content, Hero, Iframe, StructuredText, Table } from "$components";
   import type { PageProps } from "./$types";
   const { data }: PageProps = $props();
 </script>
@@ -12,7 +12,7 @@
     <Table {...data.table} />
   {/if}
 
-  <Richtext blocks={data.richtext} />
+  <StructuredText {...data.structuredText} />
 
   <Iframe
     allow="fullscreen; picture-in-picture"
