@@ -36,7 +36,36 @@ const translations = {
             children: [
               {
                 type: "span",
-                value: "Spitzallmendweg 11c\nCH-3225 Müntschemier\n+41 32 313 52 10\n\ninfo@swissplant.ch"
+                value: "Spitzallmendweg 11c\nCH-3225 Müntschemier"
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "link",
+                url: "mailto:info@swissplant.ch",
+                children: [
+                  {
+                    type: "span",
+                    value: "info@swissplant.ch"
+                  }
+                ]
+              },
+              {
+                type: "span",
+                value: "\n"
+              },
+              {
+                type: "link",
+                url: "https://www.uid.admin.ch/Detail.aspx?uid_id=CHE-111.792.021",
+                children: [
+                  {
+                    type: "span",
+                    value: "CHE-111.792.021"
+                  }
+                ]
               }
             ]
           },
@@ -55,7 +84,36 @@ const translations = {
             children: [
               {
                 type: "span",
-                value: "Spitzallmendweg 11c\nCH-3225 Müntschemier\n+41 32 313 52 10\n\ninfo@agriplant.ch"
+                value: "Spitzallmendweg 11c\nCH-3225 Müntschemier"
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "link",
+                url: "mailto:info@agriplant.ch",
+                children: [
+                  {
+                    type: "span",
+                    value: "info@agriplant.ch"
+                  }
+                ]
+              },
+              {
+                type: "span",
+                value: "\n"
+              },
+              {
+                type: "link",
+                url: "https://www.uid.admin.ch/Detail.aspx?uid_id=CHE-308.084.278",
+                children: [
+                  {
+                    type: "span",
+                    value: "CHE-308.084.278"
+                  }
+                ]
               }
             ]
           },
@@ -74,7 +132,7 @@ const translations = {
             children: [
               {
                 type: "span",
-                value: "Montag&ndash;Freitag: 07:30&ndash;11:45 Uhr, 13:30&ndash;17:30 Uhr"
+                value: "Montag bis Freitag\n07:30–11:45 Uhr\n13:30–17:30 Uhr"
               }
             ]
           }
@@ -116,7 +174,36 @@ const translations = {
             children: [
               {
                 type: "span",
-                value: "Spitzallmendweg 11c\nCH-3225 Müntschemier\n+41 32 313 52 10\ninfo@swissplant.ch"
+                value: "Spitzallmendweg 11c\nCH-3225 Müntschemier"
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "link",
+                url: "mailto:info@swissplant.ch",
+                children: [
+                  {
+                    type: "span",
+                    value: "info@swissplant.ch"
+                  }
+                ]
+              },
+              {
+                type: "span",
+                value: "\n"
+              },
+              {
+                type: "link",
+                url: "https://www.uid.admin.ch/Detail.aspx?uid_id=CHE-111.792.021",
+                children: [
+                  {
+                    type: "span",
+                    value: "CHE-111.792.021"
+                  }
+                ]
               }
             ]
           },
@@ -135,7 +222,36 @@ const translations = {
             children: [
               {
                 type: "span",
-                value: "Spitzallmendweg 11c\nCH-3225 Müntschemier\n+41 32 313 52 10\ninfo@agriplant.ch"
+                value: "Spitzallmendweg 11c\nCH-3225 Müntschemier"
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "link",
+                url: "mailto:info@agriplant.ch",
+                children: [
+                  {
+                    type: "span",
+                    value: "info@agriplant.ch"
+                  }
+                ]
+              },
+              {
+                type: "span",
+                value: "\n"
+              },
+              {
+                type: "link",
+                url: "https://www.uid.admin.ch/Detail.aspx?uid_id=CHE-308.084.278",
+                children: [
+                  {
+                    type: "span",
+                    value: "CHE-308.084.278"
+                  }
+                ]
               }
             ]
           },
@@ -154,7 +270,7 @@ const translations = {
             children: [
               {
                 type: "span",
-                value: "Monday&ndash;Friday: 07:30&ndash;11:45, 13:30&ndash;17:30"
+                value: "Monday to Friday\n07:30–11:45\n13:30–17:30"
               }
             ]
           }

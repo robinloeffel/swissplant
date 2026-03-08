@@ -55,7 +55,7 @@ const translations = {
             children: [
               {
                 type: "span",
-                value: "Gipmans Holland"
+                value: "Gipmans"
               }
             ]
           },
@@ -64,7 +64,21 @@ const translations = {
             children: [
               {
                 type: "span",
-                value: "Bei der Firma Gipmans in Holland lassen wir unsere Speedy- und Warmhauspflanzen aussäen. Traypflanzen werden halbfertig bezogen, um sie anschliessend bei uns fertig zu kultivieren. Warmhauspflanzen werden fertig zu uns geliefert und durch unsere eigene Betriebsspedition direkt zum Kunden geliefert."
+                value: "Bei der Firma "
+              },
+              {
+                type: "link",
+                url: "https://gipmans.nl/",
+                children: [
+                  {
+                    type: "span",
+                    value: "Gipmans"
+                  }
+                ]
+              },
+              {
+                type: "span",
+                value: " in den Niederlanden lassen wir unsere Speedy- und Warmhauspflanzen aussäen. Traypflanzen werden halbfertig bezogen, um sie anschliessend bei uns fertig zu kultivieren. Warmhauspflanzen werden fertig zu uns geliefert und durch unsere eigene Betriebsspedition direkt zum Kunden geliefert."
               }
             ]
           },
@@ -143,7 +157,21 @@ const translations = {
             children: [
               {
                 type: "span",
-                value: "At Gipmans in the Netherlands, we seed our speedy and warm house saplings. Tray plants are obtained half-finished, so we can then cultivate them in our own house. The warm house plants are delivered to us already finished. They get delivered to our clients through our transportation units."
+                value: "At "
+              },
+              {
+                type: "link",
+                url: "https://gipmans.nl/",
+                children: [
+                  {
+                    type: "span",
+                    value: "Gipmans"
+                  }
+                ]
+              },
+              {
+                type: "span",
+                value: " in the Netherlands, we seed our speedy and warm house saplings. Tray plants are obtained half-finished, so we can then cultivate them in our own house. The warm house plants are delivered to us already finished. They get delivered to our clients through our transportation units."
               }
             ]
           },
