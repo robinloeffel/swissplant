@@ -1,4 +1,5 @@
-User-Agent: *
-Allow: /
-Sitemap: https://swissplant.ch/sitemap.txt
-Content-Signal: search=yes, ai-train=no, ai-input=no
+user-agent: *
+allow: /
+content-signal: search=yes, ai-train=no, ai-input=no
+
+sitemap: https://swissplant.ch/sitemap.txt
