@@ -27,7 +27,7 @@ const translations = {
             children: [
               {
                 type: "span",
-                value: "Kontaktadresse"
+                value: "Verantwortliche Stelle"
               }
             ]
           },
@@ -36,7 +36,7 @@ const translations = {
             children: [
               {
                 type: "span",
-                value: "Die Verantwortung über Verwaltung und Bearbeitung von personenbezogenen Daten obliegt der folgenden Stelle:"
+                value: "Verantwortlich für die Bearbeitung von Personendaten auf dieser Website ist:"
               }
             ]
           },
@@ -45,7 +45,17 @@ const translations = {
             children: [
               {
                 type: "span",
-                value: "SwissPlant GmbH\nSpitzallmendweg 11c\nCH-3225 Müntschemier\n\ninfo@swissplant.ch"
+                value: "SwissPlant GmbH\nSpitzallmendweg 11c\nCH-3225 Müntschemier\n"
+              },
+              {
+                type: "link",
+                url: "mailto:info@swissplant.ch",
+                children: [
+                  {
+                    type: "span",
+                    value: "info@swissplant.ch"
+                  }
+                ]
               }
             ]
           },
@@ -55,7 +65,7 @@ const translations = {
             children: [
               {
                 type: "span",
-                value: "Auskunft & Löschung"
+                value: "Grundsätze der Datenbearbeitung"
               }
             ]
           },
@@ -64,7 +74,7 @@ const translations = {
             children: [
               {
                 type: "span",
-                value: "Sollten Sie Fragen zu den von uns erhobenen Personendaten haben, können Sie sich an die oben erwähnte Stelle wenden. Möchten Sie, dass wir Daten von Ihnen löschen, so kommen wir diesem Wunsch so gut wie möglich entgegen."
+                value: "Wir bearbeiten Personendaten in Übereinstimmung mit dem Schweizer Bundesgesetz über den Datenschutz (DSG). Wir erheben nur diejenigen Daten, die für den jeweiligen Zweck erforderlich sind (Datensparsamkeit), und bewahren sie nicht länger auf als notwendig."
               }
             ]
           },
@@ -74,26 +84,7 @@ const translations = {
             children: [
               {
                 type: "span",
-                value: "Verschlüsselung"
-              }
-            ]
-          },
-          {
-            type: "paragraph",
-            children: [
-              {
-                type: "span",
-                value: "Alle Daten, die zwischen Ihnen und der Webseite fliessen sind verschlüsselt und nicht für Dritte einsehbar."
-              }
-            ]
-          },
-          {
-            type: "heading",
-            level: 2,
-            children: [
-              {
-                type: "span",
-                value: "Erhebung persönlicher Daten"
+                value: "Web-Analyse (Umami)"
               }
             ]
           },
@@ -116,7 +107,16 @@ const translations = {
               },
               {
                 type: "span",
-                value: ", um anonymisierte Daten über Ihren Besuch zu sammeln. Umami ist DSGVO-konform und benötigt keine explizite Zustimmung. Diese Daten werden in der Europäischen Union gespeichert und sind nicht auf eine einzelne Person zurückführbar. Bitte machen Sie sich bei Bedarf mit der "
+                value: ", einen datenschutzfreundlichen Analysdienst. Dabei werden ausschliesslich anonymisierte, nicht personenbezogene Statistikdaten über Websitebesuche erhoben (z. B. aufgerufene Seiten, Verweildauer, Herkunftsland)."
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "span",
+                value: "Weitere Informationen: "
               },
               {
                 type: "link",
@@ -127,19 +127,6 @@ const translations = {
                     value: "Datenschutzerklärung von Umami"
                   }
                 ]
-              },
-              {
-                type: "span",
-                value: " vertraut."
-              }
-            ]
-          },
-          {
-            type: "paragraph",
-            children: [
-              {
-                type: "span",
-                value: "Informationen, die im Rahmen eines Kundenverhältnisses oder sonstiger Kommunikation mit uns geteilt werden (etwa Name, Kontaktdaten, Bestellvolumen), werden gemäss schweizerischer Gesetzgebung behandelt und verwahrt."
               }
             ]
           },
@@ -149,7 +136,7 @@ const translations = {
             children: [
               {
                 type: "span",
-                value: "Dienste von Dritten"
+                value: "Hosting (Statichost)"
               }
             ]
           },
@@ -158,68 +145,7 @@ const translations = {
             children: [
               {
                 type: "span",
-                value: "Diese Webseite macht Gebrauch von Iframes, die auf "
-              },
-              {
-                type: "link",
-                url: "https://www.youtube.com",
-                children: [
-                  {
-                    type: "span",
-                    value: "YouTube"
-                  }
-                ]
-              },
-              {
-                type: "span",
-                value: " und "
-              },
-              {
-                type: "link",
-                url: "https://www.google.com/maps",
-                children: [
-                  {
-                    type: "span",
-                    value: "Google Maps"
-                  }
-                ]
-              },
-              {
-                type: "span",
-                value: " verlinken. Um Ihre Privatsphäre zu schützen, verwenden wir bei YouTube die sogenannte \"No-Cookie\"-Variante; Google Maps bietet eine solche Funktion nicht an. Bitte machen Sie sich bei Bedarf mit der "
-              },
-              {
-                type: "link",
-                url: "https://policies.google.com/privacy?hl=de-CH",
-                children: [
-                  {
-                    type: "span",
-                    value: "Datenschutzerklärung von Google"
-                  }
-                ]
-              },
-              {
-                type: "span",
-                value: " vertraut."
-              }
-            ]
-          },
-          {
-            type: "heading",
-            level: 2,
-            children: [
-              {
-                type: "span",
-                value: "Hosting"
-              }
-            ]
-          },
-          {
-            type: "paragraph",
-            children: [
-              {
-                type: "span",
-                value: "Diese Webseite läuft auf der Plattform von "
+                value: "Diese Website wird über die Plattform "
               },
               {
                 type: "link",
@@ -233,7 +159,16 @@ const translations = {
               },
               {
                 type: "span",
-                value: ". Anhand Ihrer IP-Adresse wird automatisch der nächstgelegene Server gewählt, um die Webseite bereitzustellen. Bitte machen Sie sich bei Bedarf mit der "
+                value: " bereitgestellt. Die IP-Adresse wird dabei technisch verarbeitet, um die Inhalte auszuliefern."
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "span",
+                value: "Weitere Informationen: "
               },
               {
                 type: "link",
@@ -244,10 +179,26 @@ const translations = {
                     value: "Datenschutzerklärung von Statichost"
                   }
                 ]
-              },
+              }
+            ]
+          },
+          {
+            type: "heading",
+            level: 2,
+            children: [
               {
                 type: "span",
-                value: " vertraut."
+                value: "Eingebettete Drittinhalte"
+              }
+            ]
+          },
+          {
+            type: "heading",
+            level: 3,
+            children: [
+              {
+                type: "span",
+                value: "YouTube"
               }
             ]
           },
@@ -256,7 +207,310 @@ const translations = {
             children: [
               {
                 type: "span",
-                value: "Müntschemier, November 2025"
+                value: "Auf unserer Website können Videos über "
+              },
+              {
+                type: "link",
+                url: "https://www.youtube.com",
+                children: [
+                  {
+                    type: "span",
+                    value: "YouTube"
+                  }
+                ]
+              },
+              {
+                type: "span",
+                value: " eingebettet sein. Wir verwenden dabei die «No-Cookie»-Variante, welche erst beim aktiven Wiedergeben von Videos Cookies setzt."
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "span",
+                value: "Weitere Informationen: "
+              },
+              {
+                type: "link",
+                url: "https://policies.google.com/privacy?hl=de-CH",
+                children: [
+                  {
+                    type: "span",
+                    value: "Datenschutzerklärung von Google"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: "heading",
+            level: 3,
+            children: [
+              {
+                type: "span",
+                value: "Google Maps"
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "span",
+                value: "Unsere Website verwendet "
+              },
+              {
+                type: "link",
+                url: "https://www.google.com/maps",
+                children: [
+                  {
+                    type: "span",
+                    value: "Google Maps"
+                  }
+                ]
+              },
+              {
+                type: "span",
+                value: " zur Darstellung von Karteninhalten. Beim Laden des Iframes überträgt Ihr Browser automatisch Daten an Google, einschliesslich Ihrer IP-Adresse."
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "span",
+                value: "Weitere Informationen: "
+              },
+              {
+                type: "link",
+                url: "https://policies.google.com/privacy?hl=de-CH",
+                children: [
+                  {
+                    type: "span",
+                    value: "Datenschutzerklärung von Google"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: "heading",
+            level: 2,
+            children: [
+              {
+                type: "span",
+                value: "Kontaktaufnahme und Kundenverhältnisse"
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "span",
+                value: "Wenn Sie uns per E-Mail oder anderweitig kontaktieren bzw. wenn ein Kunden- oder Geschäftsverhältnis besteht, bearbeiten wir die von Ihnen mitgeteilten Daten (Name, E-Mail-Adresse, Telefonnummer, Adresse, Bestellvolumen und sonstige im Rahmen der Kommunikation übermittelte Angaben)."
+              }
+            ]
+          },
+          {
+            type: "heading",
+            level: 2,
+            children: [
+              {
+                type: "span",
+                value: "Datensicherheit"
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "span",
+                value: "Alle Daten, die zwischen Ihrem Browser und unserer Website übertragen werden, sind mittels HTTPS gesichert und für Dritte nicht einsehbar."
+              }
+            ]
+          },
+          {
+            type: "heading",
+            level: 2,
+            children: [
+              {
+                type: "span",
+                value: "Rechte der betroffenen Personen"
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "span",
+                value: "Als betroffene Person haben Sie nach dem Schweizer Datenschutzgesetz (DSG) folgende Rechte:"
+              }
+            ]
+          },
+          {
+            type: "list",
+            style: "bulleted",
+            children: [
+              {
+                type: "listItem",
+                children: [
+                  {
+                    type: "paragraph",
+                    children: [
+                      {
+                        type: "span",
+                        value: "Auskunftsrecht (Art. 25 DSG): Sie können jederzeit Auskunft über die zu Ihrer Person gespeicherten Daten verlangen."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                type: "listItem",
+                children: [
+                  {
+                    type: "paragraph",
+                    children: [
+                      {
+                        type: "span",
+                        value: "Recht auf Berichtigung (Art. 32 DSG): Sie können die Berichtigung unrichtiger oder unvollständiger Daten verlangen."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                type: "listItem",
+                children: [
+                  {
+                    type: "paragraph",
+                    children: [
+                      {
+                        type: "span",
+                        value: "Recht auf Löschung (Art. 32 DSG): Sie können die Löschung Ihrer Daten verlangen, soweit keine gesetzlichen Aufbewahrungspflichten entgegenstehen."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                type: "listItem",
+                children: [
+                  {
+                    type: "paragraph",
+                    children: [
+                      {
+                        type: "span",
+                        value: "Recht auf Datenherausgabe und -übertragbarkeit (Art. 28 DSG): Sie können die Herausgabe Ihrer Daten in einem gängigen, maschinenlesbaren Format verlangen."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                type: "listItem",
+                children: [
+                  {
+                    type: "paragraph",
+                    children: [
+                      {
+                        type: "span",
+                        value: "Widerspruchsrecht: Sie können der Bearbeitung Ihrer Daten widersprechen, sofern diese nicht zur Vertragserfüllung oder aus gesetzlichen Gründen zwingend erforderlich ist."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "span",
+                value: "Zur Geltendmachung Ihrer Rechte wenden Sie sich bitte an: "
+              },
+              {
+                type: "link",
+                url: "mailto:info@swissplant.ch",
+                children: [
+                  {
+                    type: "span",
+                    value: "info@swissplant.ch"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: "heading",
+            level: 2,
+            children: [
+              {
+                type: "span",
+                value: "Beschwerderecht"
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "span",
+                value: "Sie haben das Recht, bei der zuständigen Datenschutzaufsichtsbehörde Beschwerde einzureichen:"
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "span",
+                value: "Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter (FDPIC)\nFeldeggweg 1\nCH-3003 Bern\n"
+              },
+              {
+                type: "link",
+                url: "https://www.edoeb.admin.ch",
+                children: [
+                  {
+                    type: "span",
+                    value: "www.edoeb.admin.ch"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: "heading",
+            level: 2,
+            children: [
+              {
+                type: "span",
+                value: "Änderungen dieser Datenschutzerklärung"
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "span",
+                value: "Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen, insbesondere bei Änderungen der genutzten Dienste oder gesetzlicher Anforderungen. Die jeweils aktuelle Version ist auf dieser Website abrufbar."
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "span",
+                value: "Müntschemier, März 2026"
               }
             ]
           }
@@ -289,7 +543,7 @@ const translations = {
             children: [
               {
                 type: "span",
-                value: "Contact Address"
+                value: "Responsible Party"
               }
             ]
           },
@@ -298,7 +552,7 @@ const translations = {
             children: [
               {
                 type: "span",
-                value: "The responsibility for the management and processing of personal data lies with the following entity:"
+                value: "The responsible party for processing personal data on this website is:"
               }
             ]
           },
@@ -307,7 +561,17 @@ const translations = {
             children: [
               {
                 type: "span",
-                value: "SwissPlant GmbH\nSpitzallmendweg 11c\nCH-3225 Müntschemier\n\ninfo@swissplant.ch"
+                value: "SwissPlant GmbH\nSpitzallmendweg 11c\nCH-3225 Müntschemier\n"
+              },
+              {
+                type: "link",
+                url: "mailto:info@swissplant.ch",
+                children: [
+                  {
+                    type: "span",
+                    value: "info@swissplant.ch"
+                  }
+                ]
               }
             ]
           },
@@ -317,7 +581,7 @@ const translations = {
             children: [
               {
                 type: "span",
-                value: "Information & Deletion"
+                value: "Principles of Data Processing"
               }
             ]
           },
@@ -326,7 +590,7 @@ const translations = {
             children: [
               {
                 type: "span",
-                value: "If you have any questions about the personal data we collect, you can contact the entity mentioned above. If you would like us to delete data about you, we will comply with this request as best as we can."
+                value: "We process personal data in accordance with the Swiss Federal Act on Data Protection (DSG). We only collect data that is necessary for the respective purpose (data minimization) and do not retain it longer than necessary."
               }
             ]
           },
@@ -336,26 +600,7 @@ const translations = {
             children: [
               {
                 type: "span",
-                value: "Encryption"
-              }
-            ]
-          },
-          {
-            type: "paragraph",
-            children: [
-              {
-                type: "span",
-                value: "All data transmitted between you and the website is encrypted and not accessible to third parties."
-              }
-            ]
-          },
-          {
-            type: "heading",
-            level: 2,
-            children: [
-              {
-                type: "span",
-                value: "Collection of Personal Data"
+                value: "Web Analytics (Umami)"
               }
             ]
           },
@@ -378,7 +623,16 @@ const translations = {
               },
               {
                 type: "span",
-                value: " to collect anonymized data about your visit. Umami is GDPR-compliant and does not require explicit consent. This data is stored in the European Union and cannot be traced back to an individual person. Please refer to the "
+                value: ", a privacy-friendly analytics service. Only anonymized, non-personal statistics about website visits are collected (e.g., pages visited, duration, country of origin)."
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "span",
+                value: "For more information: "
               },
               {
                 type: "link",
@@ -389,19 +643,6 @@ const translations = {
                     value: "Umami Privacy Policy"
                   }
                 ]
-              },
-              {
-                type: "span",
-                value: " if needed."
-              }
-            ]
-          },
-          {
-            type: "paragraph",
-            children: [
-              {
-                type: "span",
-                value: "Information shared with us in the context of a customer relationship or other communication (such as name, contact details, order volume) is handled and stored in accordance with Swiss legislation."
               }
             ]
           },
@@ -411,7 +652,7 @@ const translations = {
             children: [
               {
                 type: "span",
-                value: "Third-Party Services"
+                value: "Hosting (Statichost)"
               }
             ]
           },
@@ -420,68 +661,7 @@ const translations = {
             children: [
               {
                 type: "span",
-                value: "This website uses iframes that link to "
-              },
-              {
-                type: "link",
-                url: "https://www.youtube.com",
-                children: [
-                  {
-                    type: "span",
-                    value: "YouTube"
-                  }
-                ]
-              },
-              {
-                type: "span",
-                value: " and "
-              },
-              {
-                type: "link",
-                url: "https://www.google.com/maps",
-                children: [
-                  {
-                    type: "span",
-                    value: "Google Maps"
-                  }
-                ]
-              },
-              {
-                type: "span",
-                value: ". To protect your privacy, we use the so-called \"No-Cookie\" variant for YouTube; Google Maps does not offer such a feature. Please refer to the "
-              },
-              {
-                type: "link",
-                url: "https://policies.google.com/privacy?hl=en",
-                children: [
-                  {
-                    type: "span",
-                    value: "Google Privacy Policy"
-                  }
-                ]
-              },
-              {
-                type: "span",
-                value: " if needed."
-              }
-            ]
-          },
-          {
-            type: "heading",
-            level: 2,
-            children: [
-              {
-                type: "span",
-                value: "Hosting"
-              }
-            ]
-          },
-          {
-            type: "paragraph",
-            children: [
-              {
-                type: "span",
-                value: "This website is hosted on the platform of "
+                value: "This website is provided via the "
               },
               {
                 type: "link",
@@ -495,7 +675,16 @@ const translations = {
               },
               {
                 type: "span",
-                value: ". Based on your IP address, the nearest server is automatically selected to deliver the website. Please refer to the "
+                value: " platform. The IP address is technically processed to deliver the content."
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "span",
+                value: "For more information: "
               },
               {
                 type: "link",
@@ -506,10 +695,26 @@ const translations = {
                     value: "Statichost Privacy Policy"
                   }
                 ]
-              },
+              }
+            ]
+          },
+          {
+            type: "heading",
+            level: 2,
+            children: [
               {
                 type: "span",
-                value: " if needed."
+                value: "Embedded Third-Party Content"
+              }
+            ]
+          },
+          {
+            type: "heading",
+            level: 3,
+            children: [
+              {
+                type: "span",
+                value: "YouTube"
               }
             ]
           },
@@ -518,7 +723,310 @@ const translations = {
             children: [
               {
                 type: "span",
-                value: "Müntschemier, November 2025"
+                value: "Our website may embed videos from "
+              },
+              {
+                type: "link",
+                url: "https://www.youtube.com",
+                children: [
+                  {
+                    type: "span",
+                    value: "YouTube"
+                  }
+                ]
+              },
+              {
+                type: "span",
+                value: ". We use the \"No-Cookie\" variant, which restricts the setting of cookies by YouTube until active playback."
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "span",
+                value: "For more information: "
+              },
+              {
+                type: "link",
+                url: "https://policies.google.com/privacy?hl=en",
+                children: [
+                  {
+                    type: "span",
+                    value: "Google Privacy Policy"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: "heading",
+            level: 3,
+            children: [
+              {
+                type: "span",
+                value: "Google Maps"
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "span",
+                value: "Our website uses "
+              },
+              {
+                type: "link",
+                url: "https://www.google.com/maps",
+                children: [
+                  {
+                    type: "span",
+                    value: "Google Maps"
+                  }
+                ]
+              },
+              {
+                type: "span",
+                value: " to display map content. When loading the iframe, your browser automatically transmits data to Google, including your IP address."
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "span",
+                value: "For more information: "
+              },
+              {
+                type: "link",
+                url: "https://policies.google.com/privacy?hl=en",
+                children: [
+                  {
+                    type: "span",
+                    value: "Google Privacy Policy"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: "heading",
+            level: 2,
+            children: [
+              {
+                type: "span",
+                value: "Contact and Customer Relationships"
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "span",
+                value: "If you contact us by email or otherwise, or if a customer or business relationship exists, we process the data you provide (name, email address, telephone number, address, order volume, and other information transmitted in the context of communication)."
+              }
+            ]
+          },
+          {
+            type: "heading",
+            level: 2,
+            children: [
+              {
+                type: "span",
+                value: "Data Security"
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "span",
+                value: "All data transmitted between your browser and our website is secured via HTTPS and is not accessible to third parties."
+              }
+            ]
+          },
+          {
+            type: "heading",
+            level: 2,
+            children: [
+              {
+                type: "span",
+                value: "Rights of Data Subjects"
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "span",
+                value: "As a data subject, you have the following rights under the Swiss Data Protection Act (DSG):"
+              }
+            ]
+          },
+          {
+            type: "list",
+            style: "bulleted",
+            children: [
+              {
+                type: "listItem",
+                children: [
+                  {
+                    type: "paragraph",
+                    children: [
+                      {
+                        type: "span",
+                        value: "Right to information (Art. 25 DSG): You can request information about the data stored about you at any time."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                type: "listItem",
+                children: [
+                  {
+                    type: "paragraph",
+                    children: [
+                      {
+                        type: "span",
+                        value: "Right to rectification (Art. 32 DSG): You can request the correction of inaccurate or incomplete data."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                type: "listItem",
+                children: [
+                  {
+                    type: "paragraph",
+                    children: [
+                      {
+                        type: "span",
+                        value: "Right to erasure (Art. 32 DSG): You can request the deletion of your data, provided no legal retention obligations oppose this."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                type: "listItem",
+                children: [
+                  {
+                    type: "paragraph",
+                    children: [
+                      {
+                        type: "span",
+                        value: "Right to data portability (Art. 28 DSG): You can request the release of your data in a common, machine-readable format."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                type: "listItem",
+                children: [
+                  {
+                    type: "paragraph",
+                    children: [
+                      {
+                        type: "span",
+                        value: "Right to object: You can object to the processing of your data, unless this is absolutely necessary for contract fulfillment or for legal reasons."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "span",
+                value: "To exercise your rights, please contact: "
+              },
+              {
+                type: "link",
+                url: "mailto:info@swissplant.ch",
+                children: [
+                  {
+                    type: "span",
+                    value: "info@swissplant.ch"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: "heading",
+            level: 2,
+            children: [
+              {
+                type: "span",
+                value: "Right to Complain"
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "span",
+                value: "You have the right to file a complaint with the competent data protection authority:"
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "span",
+                value: "Federal Data Protection and Information Commissioner (FDPIC)\nFeldeggweg 1\nCH-3003 Bern\n"
+              },
+              {
+                type: "link",
+                url: "https://www.edoeb.admin.ch",
+                children: [
+                  {
+                    type: "span",
+                    value: "www.edoeb.admin.ch"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: "heading",
+            level: 2,
+            children: [
+              {
+                type: "span",
+                value: "Changes to this Privacy Policy"
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "span",
+                value: "We reserve the right to adapt this privacy policy as needed, particularly in the event of changes to the services used or legal requirements. The current version is available on this website."
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "span",
+                value: "Müntschemier, March 2026"
               }
             ]
           }

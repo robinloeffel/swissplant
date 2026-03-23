@@ -20,16 +20,16 @@
     "es-toolkit": "1.45.1",
     "eslint": "9.39.4",
     "eslint-config-sweet": "31.0.0",
-    "eslint-plugin-svelte": "3.15.2",
+    "eslint-plugin-svelte": "3.16.0",
     "feather-icons": "4.29.2",
     "globals": "17.4.0",
     "robins-tsconfig": "3.0.0",
     "sass-embedded": "1.98.0",
-    "stylelint": "17.4.0",
+    "stylelint": "17.5.0",
     "stylelint-config-sweet": "10.0.0",
-    "svelte": "5.53.12",
+    "svelte": "5.55.0",
     "typescript": "5.9.3",
-    "typescript-eslint": "8.57.0",
-    "vite": "8.0.0"
+    "typescript-eslint": "8.57.2",
+    "vite": "8.0.2"
   }
 }

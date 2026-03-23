@@ -59,6 +59,8 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
     gap: var(--space-16);
+    padding-left: 0;
+    list-style: none;
   }
 
   .team-grid-item {
