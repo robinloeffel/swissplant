@@ -1,5 +1,5 @@
 *
-  Cache-Control: public, max-age=604800
+  Cache-Control: public, max-age=0, must-revalidate
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   Content-Security-Policy: frame-ancestors 'none'
   X-Content-Type-Options: nosniff
